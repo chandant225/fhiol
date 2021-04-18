@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="{{ asset('adminlte/fontawesome-free/css/all.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('adminlte/css/adminlte.min.css') }}">
+
+  @livewireStyles
+  @stack('styles')
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -26,7 +29,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    {{-- <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -40,7 +43,7 @@
           </div>
         </div>
       </div><!-- /.container-fluid -->
-    </section>
+    </section> --}}
 
     <!-- Main content -->
     <section class="content">
@@ -75,5 +78,9 @@
 <script src="{{ asset('adminlte/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('adminlte/js/demo.js') }}/"></script>
+
+@livewireScripts
+
+@stack('scripts')
 </body>
 </html>
