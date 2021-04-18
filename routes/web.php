@@ -21,4 +21,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('backend/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+Route::get('backend/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('backend.logs');
