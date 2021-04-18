@@ -68,10 +68,18 @@
               <i class="nav-icon fas fa-exclamation-circle"></i>
               <p>
                 Category
-                {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('backend.products.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-exclamation-circle"></i>
+              <p>
+                Products
+              </p>
+            </a>
+          </li>
+
           <li class="nav-item">
             <a href="{{ route('backend.logs') }}" class="nav-link" target="_blank">
               <i class="nav-icon fas fa-exclamation-circle"></i>

@@ -8,6 +8,11 @@
             <div class="form-group">
                 <label for="">Name</label>
                 <input type="text" wire:model="category.name" class="form-control">
+                @error('category.name')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="form-group">

@@ -26,4 +26,9 @@ class Category extends Model
             ->saveSlugsTo('slug')
             ->doNotGenerateSlugsOnUpdate();
     }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

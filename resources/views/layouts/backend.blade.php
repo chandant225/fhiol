@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{ asset('adminlte/fontawesome-free/css/all.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('adminlte/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/summernote/summernote-bs4.min.css') }}">
 
   @livewireStyles
   @stack('styles')
@@ -57,9 +58,9 @@
 
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.1.0
+      <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; {{ date('Y') }} <a href="{{ url('/') }}">{{ config('app.name') }}</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -77,8 +78,8 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset('adminlte/js/demo.js') }}/"></script>
-
+<script src="{{ asset('adminlte/js/demo.js') }}"></script>
+<script src="{{ asset('assets/summernote/summernote-bs4.min.js') }}"></script>
 @livewireScripts
 
 @stack('scripts')

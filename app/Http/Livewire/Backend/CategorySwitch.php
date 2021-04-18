@@ -15,7 +15,7 @@ class CategorySwitch extends Component
         'user.status' => 'nullable|boolean',
     ];
 
-    public function mount(Category $category)
+    public function mount(Category $category)   
     {
         $this->category = $category;
     }
