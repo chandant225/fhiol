@@ -285,7 +285,7 @@
     </form>
 
     @if($product->exists)
-    {{-- <x-product-images-uploader :product="$product" /> --}}
+    <x-backend.product-images-uploader :product="$product" />
     @endif
 </div>
 
