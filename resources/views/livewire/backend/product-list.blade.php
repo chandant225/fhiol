@@ -52,7 +52,7 @@
                         @forelse($products as $product)
                         <tr>
                             <td>
-                                <img src="{{ $product->featuredImage->originalImageUrl() }}" style="width: 70px; height: 40px;">
+                                <img src="{{ $product->featuredImage->imageUrl() }}" style="width: 70px; height: 40px;">
                             </td>
                             <td>
                                 {{-- <a class="btn-link" href="{{ route('frontend.products.show', $product) }}" target="_blank">{{ $product->name }}</a> --}}
@@ -78,7 +78,7 @@
                                 <div>
                                     <a type="button" class="text-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="svg-icon svg-baseline">
-                                            {{-- @include('svg.verticle-dots') --}}
+                                            @include('svg.verticle-dots')
                                         </span>
                                     </a>
                                     <div class="dropdown-menu">

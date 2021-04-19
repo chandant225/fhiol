@@ -202,7 +202,8 @@
                 <x-box>
                     <button type="submit" class="btn btn-primary rounded-0 w-100 mx-0">{{ $product->exists ? 'Update' : 'Save' }}</button>
                     @if($product->exists)
-                    <a href="{{ route('frontend.products.show', $product) }}" class="btn btn-outline-primary btn-sm rounded-0 w-100 z-depth-0 mx-0" target="_blank">View</a>
+                    Show link
+                    {{-- <a href="{{ route('frontend.products.show', $product) }}" class="btn btn-outline-primary btn-sm rounded-0 w-100 z-depth-0 mx-0" target="_blank">View</a> --}}
                     @endif
                     <div class="text-muted mt-2">
                         Status: <span class="font-weight-bolder">Active</span>
@@ -231,7 +232,7 @@
                     <div class="text-center">
                         @php
                         if ( $product->exists ) {
-                            $imageUrl = $product->small_featured_image_url;
+                            $imageUrl = $product->featuredImage->imageUrl();
                         } else {
                             $imageUrl = 'https://dummyimage.com/600x600/f4f6f9/0011ff';
                         }

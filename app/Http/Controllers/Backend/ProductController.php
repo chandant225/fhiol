@@ -41,4 +41,13 @@ class ProductController extends Controller
 
         return redirect()->route('backend.products.index');
     }
+
+    public function edit(Product $product)
+    {
+        $product->load('featuredImage');
+
+        return view('product.create-edit', compact([
+            'product'
+        ]));
+    }
 }

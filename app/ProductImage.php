@@ -14,18 +14,16 @@ class ProductImage extends Model
         return $query->where('featured', true);
     }
 
-    public function smallImageUrl()
+    public function imageUrl($size = 'original')
     {
-        return Storage::url('thumbnail/' . $this->path);
-    }
+        if ($size == 'thumb') {
+            return Storage::url('thumbnail/' . $this->path);
+        }
 
-    public function mediumImageUrl()
-    {
-        return 'medium/' . $this->path;
-    }
+        if ($size == 'medium') {
+            return Storage::url('medium/' . $this->path);
+        }
 
-    public function originalImageUrl()
-    {
         return Storage::url($this->path);
     }
 

@@ -1,0 +1,90 @@
+[x-cloak] {
+    display: none;
+}
+
+/*================
+* Toggle Switch
+================*/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 3.2rem;
+    height: 1.5rem;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 2.5rem;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 0.8rem;
+    width: 0.8rem;
+    left: 0.4rem;
+    bottom: 0.4rem;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 2.5rem;
+}
+
+input:checked + .slider {
+    background-color: #2196f3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* SVG icon */
+.svg-icon {
+    display: inline-flex;
+    align-self: center;
+}
+
+.svg-icon svg {
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+}
+
+.svg-icon.svg-baseline svg {
+    top: 0.125em;
+    position: relative;
+}
+
+/* Required Labels */
+label.required::after {
+    content: " *";
+    color: #ff3648;
+}
+
+
+/* Summernote  */
+.note-editor.card {
+    box-shadow: none;
+}
+

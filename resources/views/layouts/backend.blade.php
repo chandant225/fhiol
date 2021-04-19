@@ -12,6 +12,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('adminlte/css/adminlte.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/summernote/summernote-bs4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/common.css') }}">
 
   @livewireStyles
   @stack('styles')
