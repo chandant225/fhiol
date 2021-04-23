@@ -9,6 +9,9 @@ class ProductImage extends Model
 {
     protected $guarded = ['id'];
 
+    public static $THUMBNAIL_DIR_NAME = 'thumbnail';
+    public static $MEDIUM_DIR_NAME = 'medium';
+
     public function scopeFeatured($query)
     {
         return $query->where('featured', true);

@@ -37,6 +37,7 @@ class ProductImageController extends Controller
         ]);
 
         $product->images()->save($productImage);
+        // Thumbnails are generated using observers
 
         return response()->json([
             'success' => 'Image Saved'
