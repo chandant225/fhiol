@@ -206,28 +206,19 @@
             </div>
         </div>
     </section>
+
+    @foreach ($categories as $category)
     <section class="new_product">
         <div class="container">
             <div class="border-title">
-                <h4 class="section-header__title"> Mixer and Grinder</h4>
+                <h4 class="section-header__title"> {{ $category->name }}</h4>
             </div>
             <div class="row">
+                @foreach ($category->products as $product)
                 <div class="col-md-4">
-                    <x-product-card></x-product-card>
+                    <x-frontend.product.product-card :product="$product"></x-frontend.product.product-card>
                 </div>
-                <div class="col-md-4">
-                    <x-product-card></x-product-card>
-                </div>
-                <div class="col-md-4">
-                    <x-product-card></x-product-card>
-                </div>
-                <div class="col-md-4">
-                    <x-product-card></x-product-card>
-                </div>
-                <div class="col-md-4">
-                    <x-product-card></x-product-card>
-                </div>
-
+                @endforeach
                 <!-- col-md-3 -->
                 <div class="col-md-4">
                     <div class="item-box">
@@ -248,4 +239,5 @@
             </div>
         </div>
     </section>
+    @endforeach
 </x-app-layout>

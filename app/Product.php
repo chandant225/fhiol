@@ -42,6 +42,11 @@ class Product extends Model
         return $query->whereStatus(true);
     }
 
+    public function currentPrice()
+    {
+        return $this->price;
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

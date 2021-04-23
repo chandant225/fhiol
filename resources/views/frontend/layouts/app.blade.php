@@ -21,11 +21,11 @@
 </head>
 
 <body>
-    <div class="sp-top-wrapper">
+    <div class="topbar-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <ul class="contact_info">
+                    <ul class="contact_info mb-0">
                         <li>
                             <a href="mailto:info@website.com"> <i class="fa fa-envelope-o" aria-hidden="true"></i>info@website.com</a>
                         </li>
@@ -36,7 +36,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-6">
-                    <ul class="social">
+                    <ul class="social mb-0">
                         <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
@@ -62,7 +62,7 @@
                             <a class="nav-link" href="#">About us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Shop</a>
+                            <a class="nav-link" href="{{ route('products.index') }}">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact us</a>
@@ -81,7 +81,8 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {{-- <script src="js/bootstrap.bundle.js"></script> --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/frontend.js') }}"></script>
 
 </body>

@@ -54,41 +54,11 @@
                 </div>
                 <section class="">
                     <div class="row">
+                        @foreach ($products as $product)
                         <div class="col-md-4">
-                            <x-product-card></x-product-card>
+                            <x-frontend.product.product-card :product="$product"></x-frontend.product.product-card>
                         </div>
-                        <div class="col-md-4">
-                            <x-product-card></x-product-card>
-                        </div>
-                        <div class="col-md-4">
-                            <x-product-card></x-product-card>
-                        </div>
-                        <div class="col-md-4">
-                            <x-product-card></x-product-card>
-                        </div>
-                        <div class="col-md-4">
-                            <x-product-card></x-product-card>
-                        </div>
-
-                        <!-- col-md-3 -->
-                        <div class="col-md-4">
-                            <div class="item-box">
-                                <div class="new_item">
-                                    <img src="{{ asset('theme') }}/images/coffe_maker2.jpg">
-                                </div>
-                                <div class="category_text">
-                                    <ul>
-                                        <li>6 Variable Browning Settings</li>
-                                        <li> Auto Pop-up and Auto Shut Off </li>
-                                        <li> Mid-Cycle Cancel Function </li>
-                                        <li> Cool Touch Body & Crump Tray </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!-- col-md-3 -->
+                        @endforeach
                     </div>
                 </section>
             </div>

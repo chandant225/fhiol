@@ -18,8 +18,11 @@ class ProductController extends Controller
         ]);        
     }
 
-    public function show()
+    public function show(Product $product)
     {
-        return view('frontend.product.show');        
+        return view('frontend.product.show', [
+            'pageTitle' => $product->name,
+            'product' => $product
+        ]);        
     }
 }

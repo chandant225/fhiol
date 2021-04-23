@@ -1,4 +1,6 @@
 <x-app-layout>
+    <x-slot name="pageTitle">{{ $pageTitle }}</x-slot>
+
     <div class="container">
         <div class="row">
             <div class="col-md-6">
