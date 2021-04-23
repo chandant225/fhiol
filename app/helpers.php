@@ -75,7 +75,7 @@ if (!function_exists('setActive')) {
 if (!function_exists('priceUnit')) {
     function priceUnit()
     {
-        return 'Nrs. ';
+        return 'Rs.';
         return settings()->get('price_unit', config('constants.price_unit'));
     }
 }
