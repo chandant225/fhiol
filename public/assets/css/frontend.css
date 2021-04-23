@@ -1,0 +1,61 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+    --theme-color: #e60d2e;
+    --dark-gray: #313445;
+    --prooduct-image-aspect-ratio: 4/4;
+}
+
+.text-theme-color {
+    color: var(--theme-color);
+}
+
+.bg-theme-color {
+    background-color: var(--theme-color);
+}
+
+.text-dark-gray {
+    color: var(--dark-gray);
+}
+
+@media screen AND (min-width: 1200px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1200px !important;
+    }
+}
+
+/* Product Category filter */
+.product__category__list {
+}
+
+.product__category__list li {
+}
+
+.product__category__list li::before {
+}
+
+.product__category__list li a {
+    text-decoration: none;
+    display: flex;
+    padding: 0 5px 5px 0;
+    color: var(--dark-gray);
+}
+
+.product__category__list li a::before {
+    color: rgb(153, 153, 153);
+    content: "❖";
+    margin-right: 10px;
+}
+
+.product__category__list li a::after {
+    content: "\203A";
+    margin-left: auto;
+    font-weight: 600;
+    color: rgb(153, 153, 153);
+}

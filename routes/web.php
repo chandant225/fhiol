@@ -22,3 +22,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('backend/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('backend.logs');
 
 Route::get('products', 'ProductController@index')->name('products.index');
+Route::get('products/show', 'ProductController@show')->name('products.show');

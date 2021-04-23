@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Observers\ProductImageObserver;
 use App\ProductImage;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,5 +27,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         ProductImage::observe(ProductImageObserver::class);
+
+        // Component Alias
+        Blade::component('frontend.layouts.app', 'app-layout');
     }
 }

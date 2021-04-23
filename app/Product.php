@@ -37,6 +37,11 @@ class Product extends Model
         return 'slug';
     }
 
+    public function scopeActive($query)
+    {
+        return $query->whereStatus(true);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

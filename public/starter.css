@@ -11,7 +11,7 @@ p{
 ul{
     margin: 0px;
     padding: 0px;
-    list-style: none;
+    /* list-style: none; */
 }
 body{
     font-family: 'Open Sans', sans-serif;
@@ -20,7 +20,7 @@ body{
 .sp-top-wrapper{
     background: linear-gradient(
         120deg
-        ,#e60d2e 50%,#f1c7cd 50%);
+        ,var(--theme-color) 50%,#f1c7cd 50%);
         padding: 6px 0px;
 }
 .contact_info li{
@@ -45,7 +45,7 @@ body{
     color: #ffff;
 }
 .social li a:hover{
-    color: #e60d2e;
+    color: var(--theme-color);
 }
 .navbar-expand-lg .navbar-nav .nav-link {
     /* padding-right: .5rem; */
@@ -112,7 +112,7 @@ nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
 }
 .border-title {
     padding-bottom: 11px;
-    border-bottom: 1px solid #f00;
+    border-bottom: 1px solid var(--theme-color);
     margin-bottom: 75px;
 }
 .product_add{
@@ -125,7 +125,7 @@ nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
     font-weight: bold;
     font-size: 20px;
     margin-top: 17px;
-    color: #ff0000;
+    color: var(--theme-color);
 }
 .grid-link__meta p{
     font-size: 15px;
@@ -249,16 +249,16 @@ nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
     position: relative;
     padding-bottom: 50px;
     overflow: hidden;
-    background: #e60d2e none repeat scroll 0 0;
+    background: var(--theme-color) none repeat scroll 0 0;
     color: #636c72;
 }
 .section-header__title{
     font-size: 26px;
-    border-bottom: 2px solid #e60d2e;
+    border-bottom: 2px solid var(--theme-color);
     /* width: 100%; */
     margin-bottom: 45px;
     font-family: 'Source Sans Pro', sans-serif;
-    background: red;
+    background: var(--theme-color);
     display: inline;
     padding: 8px 12px;
     color: #fff;
