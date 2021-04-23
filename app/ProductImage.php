@@ -9,8 +9,8 @@ class ProductImage extends Model
 {
     protected $guarded = ['id'];
 
-    public static $THUMBNAIL_DIR_NAME = 'thumbnail';
-    public static $MEDIUM_DIR_NAME = 'medium';
+    const THUMBNAIL_DIR_NAME = 'thumbnail';
+    const MEDIUM_DIR_NAME = 'medium';
 
     public function scopeFeatured($query)
     {
@@ -20,11 +20,11 @@ class ProductImage extends Model
     public function imageUrl($size = 'original')
     {
         if ($size == 'thumb') {
-            return Storage::url('thumbnail/' . $this->path);
+            return Storage::url(self::THUMBNAIL_DIR_NAME . '/' . $this->path);
         }
 
         if ($size == 'medium') {
-            return Storage::url('medium/' . $this->path);
+            return Storage::url(self::MEDIUM_DIR_NAME . '/' . $this->path);
         }
 
         return Storage::url($this->path);

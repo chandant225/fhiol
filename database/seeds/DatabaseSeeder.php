@@ -13,10 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserSeeder::class);
 
-        \App\Category::firstOrCreate([
-            'name' => 'Mixture & Grinder',
-            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci suscipit officia vero culpa dolores quia!',
-            'status' => true
-        ]);
+        $this->call(ProductSeeder::class);
+
+       $this->call(CategorySeeder::class);
     }
 }

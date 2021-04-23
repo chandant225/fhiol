@@ -1,6 +1,7 @@
 <div class="product__wrapper mb-4">
     <div class="product__image__wrapper">
-        <img class="" src="{{ asset('theme') }}/images/baltra_iron.jpg" alt="{{ __('Product one') }}">
+        {{-- <img class="" src="{{ asset('theme') }}/images/baltra_iron.jpg" alt="{{ __('Product one') }}"> --}}
+        <img class="" src="{{ $product->featuredImage->imageUrl('thumb') }}" alt="{{ __('Product one') }}">
         <span class="product__badge sale__badge">Sale !</span>
         <span class="product__badge new__badge">New</span>
     </div>
