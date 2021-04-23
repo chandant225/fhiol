@@ -9,7 +9,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $categries = Category::latest()->get();
+        $categries = Category::with(['products.featuredImage'])->latest()->get();
 
         return view('frontend.welcome', [
             'categories' => $categries

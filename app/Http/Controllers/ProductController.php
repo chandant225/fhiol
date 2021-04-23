@@ -10,8 +10,7 @@ class ProductController extends Controller
     public function index()
     {
         $title = 'Products';
-        $products = Product::active();
-        
+        $products = Product::with(['featuredImage'])->active();
 
         $products->when(request()->filled('category_id'), function($query) {
             return $query->whereHas('category', function($query) {
@@ -19,7 +18,7 @@ class ProductController extends Controller
             });
         });
         
-        $products = $products->latest()->get();
+        $products = $products->latest()->paginate(request()->query('per_page') ?? 15);
 
         return view('frontend.product.index', [
             'title' => $title,
