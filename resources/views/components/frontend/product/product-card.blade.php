@@ -2,8 +2,12 @@
     <div class="product__image__wrapper">
         {{-- <img class="" src="{{ asset('theme') }}/images/baltra_iron.jpg" alt="{{ __('Product one') }}"> --}}
         <img class="" src="{{ $product->featuredImage->imageUrl('thumb') }}" alt="{{ __('Product one') }}">
+        @if($product->isOnSale())
         <span class="product__badge sale__badge">Sale !</span>
+        @endif
+        @if($product->isMarkedNew())
         <span class="product__badge new__badge">New</span>
+        @endif
     </div>
     <div class="product__info__wrapper">
         <h1 class="line-clamp-2"><a href="{{ route('products.show', $product) }}" class="product__name text-dark-gray">{{ $product->name }}</a></h1>

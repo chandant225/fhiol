@@ -47,6 +47,21 @@ class Product extends Model
         return $this->price;
     }
 
+    public function hasDiscount()
+    {
+        return $this->sale_price ? true : false;
+    }
+
+    public function isOnSale()
+    {
+        return $this->hasDiscount();
+    }
+
+    public function isMarkedNew()
+    {
+        return rand(0, 1);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
