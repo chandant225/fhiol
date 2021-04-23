@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="pageTitle">{{ $pageTitle }}</x-slot>
 
-    <div class="container">
+    <div class="container py-3">
         <div class="row">
             <div class="col-md-6">
                 <div class="bg-light w-100">
@@ -15,10 +15,10 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <h6>Mixure & Grinder</h6>
-                <h1 class="text-dark-gray">Durable 2 Ultra Slim Mixture</h1>
-                <div>Offer Price: {{ priceUnit() }} 2500 (Inc. of all taxes)</div>
-                <div>{{ priceUnit() }} 3000</div>
+                <h6>{{ $product->category->name }}</h6>
+                <h1 class="text-dark-gray">{{ $product->name }}</h1>
+                <div>Offer Price: {{ priceUnit() }} {{ $product->currentPrice() }} (Inc. of all taxes)</div>
+                <div>{{ priceUnit() }} {{ $product->currentPrice() }}</div>
                 <div>You save {{ priceUnit() }} 500 <span class="text-theme-color">(6% off)</span></div>
 
                 <div>

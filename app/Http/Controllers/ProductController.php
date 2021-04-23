@@ -10,7 +10,16 @@ class ProductController extends Controller
     public function index()
     {
         $title = 'Products';
-        $products = Product::active()->latest()->get();
+        $products = Product::active();
+        
+
+        $products->when(request()->filled('category_id'), function($query) {
+            return $query->whereHas('category', function($query) {
+                return $query->whereId(request()->query('category_id'));
+            });
+        });
+        
+        $products = $products->latest()->get();
 
         return view('frontend.product.index', [
             'title' => $title,

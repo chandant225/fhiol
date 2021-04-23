@@ -8,31 +8,7 @@
             <div class="col-md-3">
                 <h4 class="text-dark-gray">Filters</h4>
 
-                <x-frontend.partials.block-title-box title="Product Categories" />
-
-                <ul class="product__category__list my-3">
-                    <li>
-                        <a href="#">Mixer & Grinder</a>
-                    </li>
-                    <li class="item">
-                        <a href="#">Rice Cooker
-                            <span class="float-right"></span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#">Washing Machine</a>
-                    </li>
-                    <li class="item">
-                        <a href="#">Refrigenator</a>
-                    </li>
-                    <li class="item">
-                        <a href="#">Irons</a>
-                    </li>
-                    <li class="item">
-                        <a href="#">Hair Dryer</a>
-                    </li>
-                </ul>
-
+               <x-frontend.partials.category-filter-list></x-frontend.partials.category-filter-list>
                 <div class="my-4"></div>
 
                 <x-frontend.partials.block-title-box title="Filter By Price" />
