@@ -12,7 +12,7 @@ class CategorySwitch extends Component
     public $status = true;
 
     protected $rules = [
-        'user.status' => 'nullable|boolean',
+        'category.status' => 'nullable|boolean',
     ];
 
     public function mount(Category $category)   
@@ -24,6 +24,12 @@ class CategorySwitch extends Component
     {
         $this->validate();
         $this->category->save();
+
+        $this->alert('success', 'Status Changed!', [
+            'text' =>  '', 
+            'confirmButtonText' =>  'Ok', 
+            'cancelButtonText' =>  'Cancel', 
+      ]);
     }
 
     public function render()
