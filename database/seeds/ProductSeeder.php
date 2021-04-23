@@ -54,7 +54,7 @@ class ProductSeeder extends Seeder
             'sale_price' => 2420,
             'description' => $this->getDescription(),
             'status' => true,
-            'category_id' => \App\Category::where('name', 'like', 'Mixer%')->first()->id,
+            'category_id' => \App\Category::where('name', 'like', 'Rice%')->first()->id,
         ]);
 
         $this->associateImage($product);
