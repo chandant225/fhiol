@@ -17,7 +17,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('starter.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/frontend.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/line-clamp.css') }}">
-    @stack('styes')
+    @stack('styles')
+    {{ $styles ?? '' }}
 
 </head>
 
@@ -47,7 +48,7 @@
         </div>
     </div>
 
-    <header>
+    <header style="border-bottom: 2px dotted #e5e5e5;">
         <nav class="navbar  navbar-expand-lg navbar-light top-navbar menu_top">
             <div class="container">
                 <a class="navbar-brand logo" href="{{ url('/') }}"><img style="height: 64px;" src="{{ asset('theme') }}/images/logo.png"></a>
@@ -72,13 +73,14 @@
                 </div>
             </div>
         </nav>
-        <div style="height: 2px; background-color: #e5e5e5;"></div>
-</header>
+        {{-- <div style="height: 2px; background-color: #e5e5e5;"></div> --}}
+    </header>
+
+    <x-frontend.partials.category-navbar />
 
     {{ $slot }}
 
     @include('frontend.layouts.partials.footer')
-
     
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {{-- <script src="js/bootstrap.bundle.js"></script> --}}
@@ -86,7 +88,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/frontend.js') }}"></script>
     <x-livewire-alert::scripts />
-    @stack('scripts')    
     @stack('scripts')
 </body>
 
