@@ -29,6 +29,12 @@ class CategoryNavbar extends Component
             return Category::select(['id', 'name', 'slug'])->get();
         });
 
+        $categories->prepend(new Category([
+            'id' => null,
+            'name' => 'All',
+            'slug' => null
+        ]));
+
         $activeCategoryId = request()->query('category_id') ?? 'null';
 
         return view('components.frontend.partials.category-navbar', [
