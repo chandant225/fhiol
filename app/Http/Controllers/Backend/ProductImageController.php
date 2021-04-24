@@ -7,15 +7,18 @@ use App\Http\Requests\ProductImageRequest;
 use App\Product;
 use App\ProductImage;
 use App\Service\ImageService;
+use App\Service\ProductImageService;
 use Illuminate\Http\Request;
 
 class ProductImageController extends Controller
 {
     private $imageService;
+    private $productImageService;
 
-    public function __construct(ImageService $imageService)
+    public function __construct(ImageService $imageService, ProductImageService $productImageService)
     {
         $this->imageService = $imageService;
+        $this->productImageService = $productImageService;
     }
 
     public function index(Product $product)
@@ -32,12 +35,13 @@ class ProductImageController extends Controller
     public function store(ProductImageRequest $request)
     {
         $product = Product::findOrFail($request->product_id);
-        $productImage = new ProductImage([
-            'path' => $this->imageService->storeImage($request->file('file'))
-        ]);
+        // $productImage = new ProductImage([
+        //     'path' => $this->imageService->storeImage($request->file('file')),
+        //     'thumbnail_path' => $this->imageService->storeImage($request->file('file')),
+        //     'medium_path' => $this->imageService->storeImage($request->file('file')),
+        // ]);
 
-        $product->images()->save($productImage);
-        // Thumbnails are generated using observers
+        $this->productImageService->create($product, $request->file('file'));
 
         return response()->json([
             'success' => 'Image Saved'

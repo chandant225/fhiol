@@ -167,6 +167,7 @@ return [
          */
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         App\Providers\AlertServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -230,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Alert' => App\Alert\Facades\Alert::class,
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

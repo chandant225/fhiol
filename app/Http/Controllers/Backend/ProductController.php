@@ -7,15 +7,18 @@ use App\Http\Requests\ProductRequest;
 use App\Product;
 use App\ProductImage;
 use App\Service\ImageService;
+use App\Service\ProductImageService;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     private $imageService;
+    private $productImageService;
 
-    public function __construct(ImageService $imageService)
+    public function __construct(ImageService $imageService, ProductImageService $productImageService)
     {
         $this->imageService = $imageService;
+        $this->productImageService = $productImageService;
     }
 
     public function index()
@@ -32,12 +35,14 @@ class ProductController extends Controller
     {
         $product = Product::create($request->validated());
         
-        $productImage = new ProductImage([
-            'path' => $this->imageService->storeImage($request->file('image')),
-            'featured' => true
-        ]);
+        $this->productImageService->create($product, $request->file('image'), $featured = true);
 
-        $product->images()->save($productImage);
+        // $productImage = new ProductImage([
+        //     'path' => $this->imageService->storeImage($request->file('image')),
+        //     'featured' => true
+        // ]);
+
+        // $product->images()->save($productImage);
 
         return redirect()->route('backend.products.index');
     }

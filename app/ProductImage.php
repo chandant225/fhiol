@@ -20,11 +20,11 @@ class ProductImage extends Model
     public function imageUrl($size = 'original')
     {
         if ($size == 'thumb') {
-            return Storage::url(self::THUMBNAIL_DIR_NAME . '/' . $this->path);
+            return Storage::url($this->thumbnail_path);
         }
 
         if ($size == 'medium') {
-            return Storage::url(self::MEDIUM_DIR_NAME . '/' . $this->path);
+            return Storage::url($this->medium_path);
         }
 
         return Storage::url($this->path);
@@ -33,5 +33,10 @@ class ProductImage extends Model
     public function product()
     {
         return $this->belongsTo(Product::class);
+    }
+
+    public function generateOtherSizeImages($image)
+    {
+        
     }
 }

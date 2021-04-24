@@ -3,7 +3,6 @@
 namespace App\Observers;
 
 use App\ProductImage;
-use Illuminate\Support\Facades\Storage;
 
 class ProductImageObserver
 {
@@ -15,11 +14,7 @@ class ProductImageObserver
      */
     public function created(ProductImage $productImage)
     {
-        // generate thumbnail
-        $imagePath = $productImage->path;
-        Storage::copy($imagePath, ProductImage::$THUMBNAIL_DIR_NAME . '/' . $imagePath);
-        Storage::copy($imagePath, ProductImage::$THUMBNAIL_DIR_NAME . '/' . $imagePath);
-        // generate medium size image
+        //
     }
 
     /**

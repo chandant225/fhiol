@@ -18,6 +18,8 @@ class CreateProductImagesTable extends Migration
             $table->string('path');
             $table->boolean('featured')->nullable();
             $table->foreignId('product_id')->constrained('products');
+            $table->string('thumbnail_path')->nullable();
+            $table->string('medium_path')->nullable();
             $table->timestamps();
         });
     }
