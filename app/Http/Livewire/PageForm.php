@@ -84,7 +84,7 @@ class PageForm extends Component
 
         $this->confirmFeaturedImageRemoval = false;
         $this->reset(['featuredImageUrl']);
-        $this->emit('toast', ['default', 'Removed featured image']);
+        $this->alert('success', 'Removed featured image !');
     }
 
     public function render()

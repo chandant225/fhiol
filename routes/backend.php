@@ -19,4 +19,10 @@ Route::name('backend.')->group(function () {
     Route::delete('pages/{page}', 'PageController@destroy')->name('pages.destroy');
     Route::patch('pages/{page}/restore', 'PageController@restore')->name('pages.restore');
     Route::delete('pages/{page}/force-delete', 'PageController@forceDelete')->name('pages.force-delete');
+
+    // image sliders
+    Route::get('image-sliders', 'ImageSliderController@index')->name('image-sliders.index');
+    Route::get('image-sliders/create', 'ImageSliderController@create')->name('image-sliders.create');
+    Route::get('image-sliders/{imageSlider}/edit', 'ImageSliderController@edit')->name('image-sliders.edit');
+    Route::delete('image-sliders/{imageSlider}', 'ImageSliderController@delete')->name('image-sliders.destroy');
 });

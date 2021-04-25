@@ -18,6 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::name('api.')->group(function () {
+    Route::get('image-sliders', 'API\ImageSliderController@index')->name('image-sliders.index');
+});
+
 Route::name('api.')->namespace('Backend')->group(function () {
     Route::get('product/{product}/product-images', 'ProductImageController@index')->name('product-images.index');
     Route::post('product-images', 'ProductImageController@store')->name('product-images.store');
