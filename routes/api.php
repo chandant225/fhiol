@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::name('api.')->namespace('backend')->group(function () {
+Route::name('api.')->namespace('Backend')->group(function () {
     Route::get('product/{product}/product-images', 'ProductImageController@index')->name('product-images.index');
     Route::post('product-images', 'ProductImageController@store')->name('product-images.store');
     Route::delete('product-images/{productImage}', 'ProductImageController@destroy')->name('product-images.destroy');
