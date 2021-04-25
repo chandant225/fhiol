@@ -6,7 +6,7 @@ body {
     --theme-color: #e60d2e;
     --theme-accent-color: #ff5353;
     --dark-gray: #313445;
-    --prooduct-image-aspect-ratio: 4/4;
+    --product-image-aspect-ratio: 4/4;
 }
 
 .text-theme-color {
@@ -96,10 +96,8 @@ body {
 .product__image__wrapper {
     text-align: center;
     position: relative;
-
-    position: relative;
     height: 0;
-    padding-bottom: calc(100% / (var(--prooduct-image-aspect-ratio)));
+    padding-bottom: calc(100% / (var(--product-image-aspect-ratio)));
 }
 
 .product__image__wrapper img {

@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/owl-carousel/css/owl.carousel.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/owl-carousel/css/owl.theme.default.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('starter.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/frontend.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/line-clamp.css') }}">
@@ -86,6 +88,7 @@
     {{-- <script src="js/bootstrap.bundle.js"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/owl-carousel/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('assets/js/frontend.js') }}"></script>
     <x-livewire-alert::scripts />
     @stack('scripts')

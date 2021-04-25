@@ -1,13 +1,6 @@
 <x-app-layout>
-    <section class="banner">
-        <div class="container">
-            <div class="banner_img">
-                <img src="{{ asset('theme') }}/images/4.jpg">
-            </div>
-            <div class="banner_title">
-                KITCHEN APPLIANCES
-            </div>
-        </div>
+    <section>
+        <x-frontend.partials.primary-image-slider />
     </section>
 
     <section class="product_wrap">
