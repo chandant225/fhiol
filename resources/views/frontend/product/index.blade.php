@@ -3,14 +3,14 @@
         Products | {{ config('app.name') }}
     </x-slot>
 
-    <div class="container-fluid bg-light">
-        <div class="container py-4">
-            <h1 class="text-dark-gray">Products</h1>
-            <div>
-                Home / Mixer & Grinder /Products
-            </div>
-        </div>
-    </div>
+    <x-frontend.partials.page-title>
+        <x-slot name="title">
+            Products
+        </x-slot>
+        <x-slot name="breadcrumbs">
+            Home / Mixer & Grinder /Products
+        </x-slot>
+    </x-frontend.partials.page-title>
 
     <div class="container py-4">
         <div class="row">

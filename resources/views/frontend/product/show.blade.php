@@ -1,6 +1,15 @@
 <x-app-layout>
     <x-slot name="pageTitle">{{ $pageTitle }}</x-slot>
 
+    <x-frontend.partials.page-title>
+        <x-slot name="title">
+            {{ $product->name }}
+        </x-slot>
+        <x-slot name="breadcrumbs">
+            Home / Mixer & Grinder /Products
+        </x-slot>
+    </x-frontend.partials.page-title>
+
     <div class="container py-3">
         <div class="row">
             <div class="col-md-6">
