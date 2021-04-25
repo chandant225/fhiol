@@ -5,6 +5,7 @@ namespace App;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 class Category extends Model
 {
@@ -30,5 +31,12 @@ class Category extends Model
     public function products()
     {
         return $this->hasMany(Product::class);
+    }
+
+    public static function getAll()
+    {
+        return Cache::remember('all-categories', now()->addDay(), function () {
+            return Category::select(['id', 'name', 'slug'])->get();
+        });
     }
 }

@@ -3,7 +3,6 @@
 namespace App\View\Components\Frontend\Partials;
 
 use App\Category;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\View\Component;
 
 class CategoryNavbar extends Component
@@ -25,9 +24,7 @@ class CategoryNavbar extends Component
      */
     public function render()
     {
-        $categories = Cache::rememberForever('category-filter-list', function () {
-            return Category::select(['id', 'name', 'slug'])->get();
-        });
+        $categories = Category::getAll();
 
         $categories->prepend(new Category([
             'id' => null,
