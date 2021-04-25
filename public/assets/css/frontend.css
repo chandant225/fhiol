@@ -29,6 +29,30 @@ body {
     color: var(--dark-gray);
 }
 
+.btn-theme {
+    color: #fff;
+    background-color: var(--theme-color);
+    border-color: var(--theme-color);
+}
+
+.btn-theme:hover {
+    color: #fff;
+    background-color: var(--theme-accent-color);
+    border-color: var(--theme-accent-color);
+}
+
+.btn-theme-accent {
+    color: #fff;
+    background-color: var(--theme-accent-color);
+    border-color: var(--theme-accent-color);
+}
+
+.btn-theme-accent:hover {
+    color: #fff;
+    background-color: var(--theme-color);
+    border-color: var(--theme-color);
+}
+
 @media screen AND (min-width: 1200px) {
     .container,
     .container-lg,

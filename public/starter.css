@@ -232,13 +232,13 @@ nav .nav-link.show,
 
 .footer-block,
 .footer-item {
-    color: #fff;
+    color: #ddd;
 }
 .site-footer__links li {
     margin-bottom: 12px;
 }
 .site-footer__links li a {
-    color: #fff;
+    color: #ddd;
     font-family: "Source Sans Pro", sans-serif;
 }
 .footer-block h4,
@@ -250,7 +250,8 @@ nav .nav-link.show,
     position: relative;
     padding-bottom: 50px;
     overflow: hidden;
-    background: var(--theme-color) none repeat scroll 0 0;
+    /* background: var(--theme-color) none repeat scroll 0 0; */
+    background: #17182b none repeat scroll 0 0;
     color: #636c72;
 }
 .section-header__title {

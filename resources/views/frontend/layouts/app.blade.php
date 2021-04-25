@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('starter.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/frontend.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/line-clamp.css') }}">
+    @livewireStyles
     @stack('styles')
     {{ $styles ?? '' }}
 
@@ -69,7 +70,7 @@
                             <a class="nav-link" href="{{ route('products.index') }}">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact us</a>
+                            <a class="nav-link" href="{{ route('contact-us.index') }}">Contact us</a>
                         </li>
                     </ul>
                 </div>
@@ -89,7 +90,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/owl-carousel/js/owl.carousel.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="{{ asset('assets/js/frontend.js') }}"></script>
+    @livewireScripts
     <x-livewire-alert::scripts />
     @stack('scripts')
 </body>
