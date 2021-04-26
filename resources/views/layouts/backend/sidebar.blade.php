@@ -79,7 +79,15 @@
                         </p>
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a href="{{ route('backend.contact-us.index') }}" class="nav-link">
+                        <i class="nav-icon fa fa-comments"></i>
+                        <p>
+                            Contact Messages
+                            <span class="right badge badge-danger">New</span>
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="{{ route('backend.logs') }}" class="nav-link" target="_blank">
                         <i class="nav-icon fas fa-exclamation-circle"></i>
