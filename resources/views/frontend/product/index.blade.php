@@ -8,7 +8,8 @@
             Products
         </x-slot>
         <x-slot name="breadcrumbs">
-            Home / Mixer & Grinder /Products
+            {{-- Home / Mixer & Grinder /Products --}}
+            {{ Breadcrumbs::render('products') }}
         </x-slot>
     </x-frontend.partials.page-title>
 

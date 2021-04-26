@@ -8,7 +8,8 @@
             Contact Us
         </x-slot>
         <x-slot name="breadcrumbs">
-            Home / Contact Us
+            {{-- Home / Contact Us --}}
+            {{ Breadcrumbs::render('contact-us') }}
         </x-slot>
     </x-frontend.partials.page-title>
 
