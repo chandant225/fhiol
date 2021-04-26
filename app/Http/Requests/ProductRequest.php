@@ -27,12 +27,16 @@ class ProductRequest extends FormRequest
 
         return [
             'name' => 'required',
-            'slug' => $updateMode ? 'required' : 'nullable',
+            'slug' => $updateMode
+                ? 'required'
+                : 'nullable',
             'price' => 'required|integer',
             'sale_price' => 'nullable|integer',
             'description' => 'nullable',
             'category_id' => 'required',
-            'image' => 'required'
+            'image' => $updateMode
+                ? 'required'
+                : 'nullable'
         ];
     }
 }

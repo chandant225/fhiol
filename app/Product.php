@@ -27,7 +27,7 @@ class Product extends Model
             ->doNotGenerateSlugsOnUpdate();
     }
 
-     /**
+    /**
      * Get the route key for the model.
      *
      * @return string
@@ -44,12 +44,24 @@ class Product extends Model
 
     public function currentPrice()
     {
-        return $this->price;
+        return $this->hasDiscount()
+            ? $this->sale_price
+            : $this->price;
     }
 
     public function hasDiscount()
     {
         return $this->sale_price ? true : false;
+    }
+
+    public function discountPercentage($withSign = true)
+    {
+        $discountAmount = (int)$this->price - (int)$this->sale_price;
+        $discountPercent = round(($discountAmount / $this->price) * 100);
+        if ($withSign) {
+            $discountPercent = $discountPercent . '%';
+        }
+        return $this->hasDiscount() ? $discountPercent : null;
     }
 
     public function isOnSale()

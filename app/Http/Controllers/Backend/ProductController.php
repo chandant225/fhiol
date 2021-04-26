@@ -5,10 +5,9 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Product;
-use App\ProductImage;
 use App\Service\ImageService;
 use App\Service\ProductImageService;
-use Illuminate\Http\Request;
+use App\Alert\Facades\Alert;
 
 class ProductController extends Controller
 {
@@ -54,5 +53,14 @@ class ProductController extends Controller
         return view('product.create-edit', compact([
             'product'
         ]));
+    }
+
+    public function update(ProductRequest $request, Product $product)
+    {
+        $product->update($request->validated());
+
+        Alert::message('Product Updated')->send();
+
+        return redirect()->back()->with('success', 'Product has been Updated');
     }
 }

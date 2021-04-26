@@ -92,10 +92,10 @@
                                                 </div>
 
                                                 <div class="col-md-6">
-                                                    {{-- <x-form.form-group for="sale_price">
+                                                    <x-form.form-group for="sale_price">
                                                         <x-form.label>Sale Price</x-form.label>
                                                         <x-fields.input type="number" name="sale_price" :value="old('sale_price', $product->sale_price)" min="0" />
-                                                    </x-form.form-group> --}}
+                                                    </x-form.form-group>
                                                 </div>
 
                                                 <div class="col-md-6">
@@ -196,6 +196,10 @@
                     </div>
                 </x-box>
                 {{-- End of details tab card --}}
+
+                <div>
+                    <label for="">Specitication</label>
+                </div>
             </div>
             {{-- End of col-md-8 --}}
             <div class="col-md-3">

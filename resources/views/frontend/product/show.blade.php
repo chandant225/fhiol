@@ -10,25 +10,29 @@
         </x-slot>
     </x-frontend.partials.page-title>
 
-    <div class="container py-3">
+    <div class="container single-product py-3">
         <div class="row">
             <div class="col-md-6">
                 <div class="bg-light w-100">
-                    <img src="{{ __('https://baltrav2.s3.ap-south-1.amazonaws.com/baltra_72932571873489961615623079117.jpg') }}" alt="{{ __('') }}">
+                    <img src="{{ $product->featuredImage->imageUrl() }}" alt="{{ __('') }}">
                 </div>
                 <div class="my-3"></div>
                 <div class="bg-light w-100 p-2 d-flex overflow-x-scroll">
-                    <img class="mr-2 border" src="{{ __('https://baltrav2.s3.ap-south-1.amazonaws.com/baltra_72932571873489961615623079117.jpg') }}" alt="{{ __('') }}" style="height: 80px;">
-                    <img class="mr-2 border" src="{{ __('https://baltrav2.s3.ap-south-1.amazonaws.com/baltra_72932571873489961615623079117.jpg') }}" alt="{{ __('') }}" style="height: 80px;">
-                    <img class="mr-2 border" src="{{ __('https://baltrav2.s3.ap-south-1.amazonaws.com/baltra_72932571873489961615623079117.jpg') }}" alt="{{ __('') }}" style="height: 80px;">
+                    @foreach($product->images as $image)
+                    <img class="mr-2 border" src="{{ $image->imageUrl() }}" alt="{{ $product->name }}" style="height: 80px;">
+                    @endforeach
                 </div>
             </div>
             <div class="col-md-6">
                 <h6>{{ $product->category->name }}</h6>
                 <h1 class="text-dark-gray">{{ $product->name }}</h1>
+                @if ($product->hasDiscount())
                 <div>Offer Price: {{ priceUnit() }} {{ $product->currentPrice() }} (Inc. of all taxes)</div>
+                @endif
                 <div>{{ priceUnit() }} {{ $product->currentPrice() }}</div>
-                <div>You save {{ priceUnit() }} 500 <span class="text-theme-color">(6% off)</span></div>
+                @if ($product->hasDiscount())
+                <div>You save {{ priceUnit() }} {{ $product->price }} <span class="text-theme-color">({{ $product->discountPercentage($withPercent = true) }} off)</span></div>
+                @endif
 
                 <div>
                     <div>Key Features</div>
