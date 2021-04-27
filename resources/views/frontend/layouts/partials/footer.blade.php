@@ -161,10 +161,7 @@
                     }
 
                 </style>
-                <form action="#" class="subscribe-form mt-3">
-                    <input name="email" type="text" placeholder="Your email id" value="" aria-required="true" aria-invalid="false" autocomplete="off">
-                    <button class="">Subscribe</button>
-                </form>
+                <livewire:frontend.subscription-form />
 
                 <div class="mt-4">Follow us</div>
                 <style>

@@ -27,4 +27,5 @@ Route::name('backend.')->group(function () {
     Route::delete('image-sliders/{imageSlider}', 'ImageSliderController@delete')->name('image-sliders.destroy');
 
     Route::get('contact-us', 'ContactUsController@index')->name('contact-us.index');
+    Route::get('subscribers', 'SubscriberController@index')->name('subscribers.index');
 });
