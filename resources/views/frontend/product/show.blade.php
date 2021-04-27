@@ -30,7 +30,7 @@
                 @if ($product->hasDiscount())
                 <div>Offer Price: {{ priceUnit() }} {{ $product->currentPrice() }} (Inc. of all taxes)</div>
                 @endif
-                <div>{{ priceUnit() }} {{ $product->currentPrice() }}</div>
+                <h3>{{ priceUnit() }} {{ $product->currentPrice() }}</h3>
                 @if ($product->hasDiscount())
                 <div>You save {{ priceUnit() }} {{ $product->price }} <span class="text-theme-color">({{ $product->discountPercentage($withPercent = true) }} off)</span></div>
                 @endif
