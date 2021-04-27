@@ -1,5 +1,4 @@
-<div class="card z-depth-0">
-    <div class="card-body">
+<x-box class="border-0 shadow-sm rounded">
         <table class="table table-hover table-responsive-sm">
             <tr>
                 <th>Title</th>
@@ -60,5 +59,4 @@
             </div>
             {{ $pages->links() }}
         </div>
-    </div>
-</div>
+</x-box>

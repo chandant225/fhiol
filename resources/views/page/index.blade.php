@@ -20,7 +20,7 @@
         <!-- /.container-fluid -->
     </section>
 
-    <section>
+    <section class="container-fluid">
         @include('alerts.all')
         <livewire:page-list />
     </section>

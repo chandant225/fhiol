@@ -1,4 +1,4 @@
-<div class="card">
+<x-box class="border-0 shadow rounded">
     <div class="card-header">
         <h5>Add New Category</h5>
     </div>
@@ -30,4 +30,4 @@
             </div>
         </form>
     </div>
-</div>
+</x-box>
