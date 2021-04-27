@@ -23,6 +23,8 @@ class CreateProductsTable extends Migration
             $table->boolean('status')->default(true);
             $table->foreignId('category_id')->nullable()->constrained('categories')->onDelete('set null');
             $table->text('specifications')->nullable();
+            $table->boolean('is_new')->nullable()->default(false);
+            $table->boolean('featured')->nullable()->default(false);
             $table->timestamps();
         });
     }

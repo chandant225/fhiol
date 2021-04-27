@@ -250,24 +250,45 @@
             <x-invalid-feedback field="category_id"></x-invalid-feedback>
         </div>
 
-    </x-box>
+        <div class="form-group">
+            {{-- <div class="form-check">
+                <input class="form-check-input  {{ invalid_class('is_new') }}" name="is_new" type="radio" id="newCheck" value="1" @if($product->isMarkedNew()) checked @endif>
+            <label class="form-check-label" for="newCheck">
+                Mark as New Product
+            </label>
+        </div> --}}
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" name="is_new" class="custom-control-input {{ invalid_class('is_new') }}" id="is_new" value="1" @if($product->isMarkedNew()) checked @endif>
+            <label class="custom-control-label" for="is_new">Mark as New Product</label>
+            <x-invalid-feedback field="is_new"></x-invalid-feedback>
+        </div>
+</div>
 
-    <div class="my-3"></div>
+<div class="form-group">
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" name="featured" class="custom-control-input {{ invalid_class('featured') }}" id="featured" @if($product->isFeatured()) checked @endif>
+        <label class="custom-control-label" for="featured">Mark as Featured</label>
+        <x-invalid-feedback field="featured"></x-invalid-feedback>
+    </div>
+</div>
+</x-box>
 
-    <x-box>
-        <div class="text-center">
-            @php
-            if ( $product->exists ) {
-            $imageUrl = $product->featuredImage->imageUrl();
-            } else {
-            $imageUrl = 'https://dummyimage.com/600x600/f4f6f9/0011ff';
-            }
-            @endphp
-            <div class="position-relative">
-                <img id="productImagePreview" class="img-fluid" src="{{ $imageUrl }}" alt="" style="max-height: 300px;">
-                <input type="file" name="image" id="productImage" value="{{ old('image') }}" accept="image/*" hidden>
-                {{-- <label for="logoImage" class="position-absolute btn btn-primary" for="" >Select Product Image</label> --}}
-                <label for="productImage" class="position-absolute" style="bottom: 0;
+<div class="my-3"></div>
+
+<x-box>
+    <div class="text-center">
+        @php
+        if ( $product->exists ) {
+        $imageUrl = $product->featuredImage->imageUrl();
+        } else {
+        $imageUrl = 'https://dummyimage.com/600x600/f4f6f9/0011ff';
+        }
+        @endphp
+        <div class="position-relative">
+            <img id="productImagePreview" class="img-fluid" src="{{ $imageUrl }}" alt="" style="max-height: 300px;">
+            <input type="file" name="image" id="productImage" value="{{ old('image') }}" accept="image/*" hidden>
+            {{-- <label for="logoImage" class="position-absolute btn btn-primary" for="" >Select Product Image</label> --}}
+            <label for="productImage" class="position-absolute" style="bottom: 0;
                                         left: 10px;
                                         padding: 5px 10px;
                                         border-radius: 5px;
@@ -275,32 +296,32 @@
                                         color: #fff;
                                         font-size: 0.8em;
                                         cursor: pointer;">
-                    <i class="fa fa-camera mr-2"></i> {{ $product->exists ? 'Change' : 'Choose' }} Product Image
-                </label>
-            </div>
-            @error('image')
-            <div class="text-left text-danger text-sm mt-2">{{ $message }}</div>
-            @enderror
-            <script>
-                let productImage = document.getElementById('productImage');
-                let productImagePreview = document.getElementById('productImagePreview');
-
-                function reloadProductImageUrl(input) {
-                    if (input.files && input.files[0]) {
-                        var reader = new FileReader();
-                        reader.onload = function(e) {
-                            productImagePreview.setAttribute('src', e.target.result);
-                        }
-                        reader.readAsDataURL(input.files[0]);
-                    }
-                }
-                productImage.addEventListener("change", function() {
-                    reloadProductImageUrl(this);
-                });
-
-            </script>
+                <i class="fa fa-camera mr-2"></i> {{ $product->exists ? 'Change' : 'Choose' }} Product Image
+            </label>
         </div>
-    </x-box>
+        @error('image')
+        <div class="text-left text-danger text-sm mt-2">{{ $message }}</div>
+        @enderror
+        <script>
+            let productImage = document.getElementById('productImage');
+            let productImagePreview = document.getElementById('productImagePreview');
+
+            function reloadProductImageUrl(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        productImagePreview.setAttribute('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            productImage.addEventListener("change", function() {
+                reloadProductImageUrl(this);
+            });
+
+        </script>
+    </div>
+</x-box>
 </div>
 
 <div class="col-md-12">
@@ -322,6 +343,7 @@
         </div>
         <button type="button" class="specfication-remove-btn btn btn-danger btn-md my-0 font-roboto"><span class="mr-2"><i class="fa fa-times fa-lg"></i></span>Remove</button>
     </div>
+
 </script>
 
 @if($product->exists)
@@ -341,7 +363,7 @@
 
     var specificationTemplate = $('#specification-input-template');
 
-    function addSpecificationInput(){
+    function addSpecificationInput() {
         $('#specification-wrapper').append(specificationTemplate.html());
     }
 

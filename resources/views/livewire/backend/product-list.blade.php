@@ -1,12 +1,14 @@
 <div class="row">
     <div class="col-md-12">
         <x-box class="mb-4 rounded">
-            <form wire:submit.prevent="search" class="form-inline">
+            <form wire:submit.prevent="search" class="form">
                 <div class="form-row align-items-center">
                     <div class="col-auto form-group">
+                        <label for="">Name</label>
                         <input wire:model.defer="filter.name" type="text" class="form-control" placeholder="Product name">
                     </div>
                     <div class="col-auto form-group ">
+                        <label for="">Category</label>
                         <select wire:model.defer="filter.category_id" class="custom-select">
                             <option value="all">All Categories</option>
                             @foreach ($categories as $category)
@@ -15,10 +17,27 @@
                         </select>
                     </div>
                     <div class="col-auto form-group ">
+                        <label for="">Status</label>
                         <select wire:model.defer="filter.status" class="custom-select">
                             <option value="all">All</option>
                             <option value="active">Active</option>
                             <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="col-auto form-group ">
+                        <label for="">Marked New</label>
+                        <select wire:model.defer="filter.is_new" class="custom-select">
+                            <option value="">All</option>
+                            <option value="1">Marked New</option>
+                            <option value="0">Not Marked New</option>
+                        </select>
+                    </div>
+                    <div class="col-auto form-group ">
+                        <label for="">Featured</label>
+                        <select wire:model.defer="filter.featured" class="custom-select">
+                            <option value="">All</option>
+                            <option value="1">Featured</option>
+                            <option value="0">Unfeatured</option>
                         </select>
                     </div>
                     <div class="col-auto">

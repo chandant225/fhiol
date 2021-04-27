@@ -14,7 +14,9 @@ class Product extends Model
 
     protected $casts = [
         'status' => 'boolean',
-        'specifications' => 'array'
+        'specifications' => 'array',
+        'is_new' => 'boolean',
+        'featured' => 'boolean',
     ];
 
     /**
@@ -72,7 +74,12 @@ class Product extends Model
 
     public function isMarkedNew()
     {
-        return rand(0, 1);
+        return $this->is_new;
+    }
+
+    public function isFeatured()
+    {
+        return $this->featured;
     }
 
     public function category()

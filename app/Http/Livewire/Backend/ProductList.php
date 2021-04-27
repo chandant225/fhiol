@@ -20,6 +20,8 @@ class ProductList extends Component
         'category_id' => 'all',
         'store_id' => 'all',
         'status' => true,
+        'is_new' => null,
+        'featured' => null,
     ];
 
     public $categories;
@@ -65,6 +67,19 @@ class ProductList extends Component
             }
         }
 
+        if ($this->filter['is_new'] != null) {
+            $products = $products->where('is_new', $this->filter['is_new']);
+        }
+
+        if ($this->filter['featured'] != null) {
+            $products = $products->where('featured', $this->filter['featured']);
+        }
+
         return $products;
+    }
+
+    public function search()
+    {
+        //
     }
 }

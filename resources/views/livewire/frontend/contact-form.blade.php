@@ -5,9 +5,8 @@
     </div>
     <form wire:submit.prevent="send()" method="POST">
         <div class="form-group">
-            {{ $name }}
             <label for="" class="required">Full Name</label>
-            <input type="text" wire:model.defer="name" class="form-control bg-light rounded-0 @error('name') is-invalid  @enderror">
+            <input type="text" wire:model="name" class="form-control bg-light rounded-0 @error('name') is-invalid  @enderror">
             <x-invalid-feedback field="name"></x-invalid-feedback>
         </div>
         <div class="form-group">

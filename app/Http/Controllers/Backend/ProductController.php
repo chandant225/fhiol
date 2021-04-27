@@ -58,7 +58,11 @@ class ProductController extends Controller
 
     public function update(ProductRequest $request, Product $product)
     {
-        $product->update($request->validated());
+        $product->update($request->validated() + [
+            'is_new' => $request->has('is_new'),
+            'featured' => $request->has('featured'),
+        ]);
+
         $product->syncSpecifications($request->specifications);
 
         if ($product->wasChanged()) {

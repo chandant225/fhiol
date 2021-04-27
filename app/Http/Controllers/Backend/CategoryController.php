@@ -10,8 +10,6 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        Alert::message('Category Page Loaded')->success()->send();
-
         return view('category.index');
     }
 }
