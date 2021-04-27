@@ -4,7 +4,9 @@ namespace App\View\Components;
 
 use App\Category;
 use App\Product;
+use App\ProductMeta;
 use Illuminate\View\Component;
+use Symfony\Component\CssSelector\Node\Specificity;
 
 class ProductForm extends Component
 {
@@ -28,9 +30,21 @@ class ProductForm extends Component
     public function render()
     {
         $categories = Category::all();
+        $specifications = $this->product->specifications();
+
+        if (!count($specifications)) {
+            $specifications->push(
+                new ProductMeta([
+                    'type' => 'specification',
+                    'key' => null,
+                    'value' => null
+                ])
+            );
+        }
 
         return view('components.product-form', [
-            'categories' => $categories
+            'categories' => $categories,
+            'specifications' => $specifications
         ]);
     }
 }

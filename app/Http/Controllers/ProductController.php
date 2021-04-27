@@ -30,7 +30,8 @@ class ProductController extends Controller
     {
         return view('frontend.product.show', [
             'pageTitle' => $product->name,
-            'product' => $product
+            'product' => $product,
+            'specifications' => $product->specifications()
         ]);        
     }
 }

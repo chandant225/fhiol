@@ -13,7 +13,8 @@ class Product extends Model
     protected $guarded = ['id'];
 
     protected $casts = [
-        'status' => 'boolean'
+        'status' => 'boolean',
+        'specifications' => 'array'
     ];
 
     /**
@@ -87,5 +88,38 @@ class Product extends Model
     public function featuredImage()
     {
         return $this->hasOne(ProductImage::class)->featured();
+    }
+
+    public function metas()
+    {
+        return $this->hasMany(ProductMeta::class);
+    }
+
+    public function syncSpecifications($specifications)
+    {
+        // Delete old meta keys
+        $this->metas()->delete();
+
+        // Insert new records
+        $productMetas = collect();
+        for ($index = 0; $index < count($specifications['key']); $index++) {
+
+            $key = $specifications['key'][$index];
+            $value = $specifications['value'][$index];
+
+            if ($key != null && $value != null) {
+                $productMetas->push(new ProductMeta([
+                    'type' => 'specification',
+                    'key' => $key,
+                    'value' => $value,
+                ]));
+            }
+        }
+        return $this->metas()->saveMany($productMetas);
+    }
+
+    public function specifications()
+    {
+        return $this->metas()->where('type', 'specification')->get();
     }
 }

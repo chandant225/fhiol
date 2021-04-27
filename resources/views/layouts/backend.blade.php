@@ -87,7 +87,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     @livewireScripts
     <x-livewire-alert::scripts />
-    @stack('scripts')
+    {{-- @stack('scripts') --}}
     @stack('scripts')
 </body>
 </html>

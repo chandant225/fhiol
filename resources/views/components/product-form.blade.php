@@ -25,6 +25,7 @@
                                     }
                                     return false;
                                 }
+
                             </script>
                             <label for="slug" class="text-muted">Slug: {{ $product->slug }} <a href="#" onclick="return toggleProductSlugInput()">Edit</a></label>
                             <input type="text" name="slug" id="product-slug" class="form-control {{ invalid_class('slug') }}" value="{{ old('slug', $product->slug) }}" @if(!$product->exists) disabled @endif style="display: none;">
@@ -51,18 +52,22 @@
                                 .product-details-nav {
                                     background-color: #fafafa;
                                 }
+
                                 .product-details-nav .nav-link {
                                     color: #2b5c86;
                                     padding: 15px 20px;
                                     border-bottom: 1px solid #ddd;
                                 }
+
                                 .product-details-nav .nav-link>i {
                                     font-size: 0.8rem;
                                     margin-right: 10px;
                                 }
+
                                 .product-details-nav .nav-link.active {
                                     background-color: #f1f1f1;
                                 }
+
                             </style>
                             <div class="d-flex">
                                 <div class="nav product-details-nav flex-column flex-shrink-0 border" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -178,74 +183,91 @@
                                                     <div class="form-group">
                                                         <label for="">Product Highlights</label>
                                                         <input name="product_highlights" class="form-control" multiple data-role="tagsinput" value="{{ old('product_highlights', $product->product_highlights) }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="">Purchase Note</label>
-                                                        <textarea name="purchase_note" class="form-control" cols="30" rows="5">{{ old('purchase_note', $product->purchase_note) }}</textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> --}}
                                 </div>
-
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Purchase Note</label>
+                                    <textarea name="purchase_note" class="form-control" cols="30" rows="5">{{ old('purchase_note', $product->purchase_note) }}</textarea>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </x-box>
-                {{-- End of details tab card --}}
+            </div> --}}
+        </div>
 
-                <div>
-                    <label for="">Specitication</label>
-                </div>
+</div>
+</div>
+</div>
+</x-box>
+{{-- End of details tab card --}}
+
+<div class="my-2"></div>
+
+<x-box>
+    <label for="">Specifications</label>
+    <div>
+        @foreach ($specifications as $specification)
+        <div class="document-input-container border my-3 d-flex justify-content-between white p-3">
+            <div class="align-self-center">
+                <input type="text" name="specifications[key][]" class="form-control" placeholder="Specification" value="{{ $specification->key }}">
             </div>
-            {{-- End of col-md-8 --}}
-            <div class="col-md-3">
-                <x-box>
-                    <button type="submit" class="btn btn-primary rounded-0 w-100 mx-0">{{ $product->exists ? 'Update' : 'Save' }}</button>
-                    @if($product->exists)
-                    Show link
-                    {{-- <a href="{{ route('frontend.products.show', $product) }}" class="btn btn-outline-primary btn-sm rounded-0 w-100 z-depth-0 mx-0" target="_blank">View</a> --}}
-                    @endif
-                    <div class="text-muted mt-2">
-                        Status: <span class="font-weight-bolder">Active</span>
-                    </div>
-                </x-box>
+            <div>
+                <input type="text" name="specifications[value][]" class="form-control" placeholder="Value" value="{{ $specification->value }}">
+            </div>
+            <button type="button" class="specfication-remove-btn btn btn-danger btn-md my-0 font-roboto"><span class="mr-2"><i class="fa fa-times fa-lg"></i></span>Remove</button>
+        </div>
+        @endforeach
+        <div id="specification-wrapper"></div>
+        <button type="button" id="specification-plus-btn" class="btn btn-success btn-md z-depth-0"><span><i class="fa fa-plus"></i></span> Add Item</button>
+    </div>
+</x-box>
+</div>
+{{-- End of col-md-8 --}}
+<div class="col-md-3">
+    <x-box>
+        <button type="submit" class="btn btn-primary rounded-0 w-100 mx-0">{{ $product->exists ? 'Update' : 'Save' }}</button>
+        @if($product->exists)
+        Show link
+        {{-- <a href="{{ route('frontend.products.show', $product) }}" class="btn btn-outline-primary btn-sm rounded-0 w-100 z-depth-0 mx-0" target="_blank">View</a> --}}
+        @endif
+        <div class="text-muted mt-2">
+            Status: <span class="font-weight-bolder">Active</span>
+        </div>
+    </x-box>
 
-                <div class="my-3"></div>
+    <div class="my-3"></div>
 
-                <x-box>
-                    <div class="form-group">
-                        <label for="category_id" class="required">Product Category</label>
-                        <select name="category_id" class="custom-select rounded-0 {{ invalid_class('category_id') }}">
-                            <option value="">Select Category</option>
-                            @foreach ($categories as $category)
-                            <option value="{{ $category->id }}" @if(old('category_id', $product->category_id) == $category->id) selected @endif>{{ $category->name }}</option>
-                            @endforeach
-                        </select>
-                        <x-invalid-feedback field="category_id"></x-invalid-feedback>
-                    </div>
+    <x-box>
+        <div class="form-group">
+            <label for="category_id" class="required">Product Category</label>
+            <select name="category_id" class="custom-select rounded-0 {{ invalid_class('category_id') }}">
+                <option value="">Select Category</option>
+                @foreach ($categories as $category)
+                <option value="{{ $category->id }}" @if(old('category_id', $product->category_id) == $category->id) selected @endif>{{ $category->name }}</option>
+                @endforeach
+            </select>
+            <x-invalid-feedback field="category_id"></x-invalid-feedback>
+        </div>
 
-                </x-box>
+    </x-box>
 
-                <div class="my-3"></div>
+    <div class="my-3"></div>
 
-                <x-box>
-                    <div class="text-center">
-                        @php
-                        if ( $product->exists ) {
-                            $imageUrl = $product->featuredImage->imageUrl();
-                        } else {
-                            $imageUrl = 'https://dummyimage.com/600x600/f4f6f9/0011ff';
-                        }
-                        @endphp
-                            <div class="position-relative">
-                                <img id="productImagePreview" class="img-fluid" src="{{ $imageUrl }}" alt="" style="max-height: 300px;">
-                                <input type="file" name="image" id="productImage" value="{{ old('image') }}" accept="image/*" hidden>
-                                {{-- <label for="logoImage" class="position-absolute btn btn-primary" for="" >Select Product Image</label> --}}
-                                <label for="productImage" class="position-absolute" style="bottom: 0;
+    <x-box>
+        <div class="text-center">
+            @php
+            if ( $product->exists ) {
+            $imageUrl = $product->featuredImage->imageUrl();
+            } else {
+            $imageUrl = 'https://dummyimage.com/600x600/f4f6f9/0011ff';
+            }
+            @endphp
+            <div class="position-relative">
+                <img id="productImagePreview" class="img-fluid" src="{{ $imageUrl }}" alt="" style="max-height: 300px;">
+                <input type="file" name="image" id="productImage" value="{{ old('image') }}" accept="image/*" hidden>
+                {{-- <label for="logoImage" class="position-absolute btn btn-primary" for="" >Select Product Image</label> --}}
+                <label for="productImage" class="position-absolute" style="bottom: 0;
                                         left: 10px;
                                         padding: 5px 10px;
                                         border-radius: 5px;
@@ -253,44 +275,58 @@
                                         color: #fff;
                                         font-size: 0.8em;
                                         cursor: pointer;">
-                                <i class="fa fa-camera mr-2"></i> {{ $product->exists ? 'Change' : 'Choose' }} Product Image
-                            </label>
-                            </div>
-                            @error('image')
-                            <div class="text-left text-danger text-sm mt-2">{{ $message }}</div>
-                            @enderror
-                        <script>
-                            let productImage = document.getElementById('productImage');
-                            let productImagePreview = document.getElementById('productImagePreview');
-                            function reloadProductImageUrl(input) {
-                                if (input.files && input.files[0]) {
-                                    var reader = new FileReader();
-                                    reader.onload = function(e) {
-                                        productImagePreview.setAttribute('src', e.target.result);
-                                    }
-                                    reader.readAsDataURL(input.files[0]);
-                                }
-                            }
-                            productImage.addEventListener("change", function() {
-                                reloadProductImageUrl(this);
-                            });
-                        </script>
-                    </div>
-                </x-box>
+                    <i class="fa fa-camera mr-2"></i> {{ $product->exists ? 'Change' : 'Choose' }} Product Image
+                </label>
             </div>
+            @error('image')
+            <div class="text-left text-danger text-sm mt-2">{{ $message }}</div>
+            @enderror
+            <script>
+                let productImage = document.getElementById('productImage');
+                let productImagePreview = document.getElementById('productImagePreview');
 
-            <div class="col-md-12">
-                <div class="form-group mt-3">
-                    <button type="submit" class="btn btn-success text-md ml-0 px-5">{{ $product->exists ? 'Update' : 'Save' }}</button>
-                </div>
-            </div>
+                function reloadProductImageUrl(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            productImagePreview.setAttribute('src', e.target.result);
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+                productImage.addEventListener("change", function() {
+                    reloadProductImageUrl(this);
+                });
 
+            </script>
         </div>
-    </form>
+    </x-box>
+</div>
 
-    @if($product->exists)
-    <x-backend.product-images-uploader :product="$product" />
-    @endif
+<div class="col-md-12">
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-success text-md ml-0 px-5">{{ $product->exists ? 'Update' : 'Save' }}</button>
+    </div>
+</div>
+
+</div>
+</form>
+
+<script type="text/javascript" id="specification-input-template">
+    <div class="document-input-container border my-3 d-flex justify-content-between white p-3">
+        <div class="align-self-center">
+            <input type="text" name="specifications[key][]" class="form-control" placeholder="Specification">
+        </div>
+        <div>
+            <input type="text" name="specifications[value][]" class="form-control" placeholder="Value">
+        </div>
+        <button type="button" class="specfication-remove-btn btn btn-danger btn-md my-0 font-roboto"><span class="mr-2"><i class="fa fa-times fa-lg"></i></span>Remove</button>
+    </div>
+</script>
+
+@if($product->exists)
+<x-backend.product-images-uploader :product="$product" />
+@endif
 </div>
 
 @push('scripts')
@@ -302,5 +338,20 @@
             , height: 400
         });
     });
+
+    var specificationTemplate = $('#specification-input-template');
+
+    function addSpecificationInput(){
+        $('#specification-wrapper').append(specificationTemplate.html());
+    }
+
+    $('#specification-plus-btn').click(function() {
+        addSpecificationInput();
+    });
+
+    $(document).on('click', '.specfication-remove-btn', function() {
+        $(this).parent().remove();
+    });
+
 </script>
 @endpush

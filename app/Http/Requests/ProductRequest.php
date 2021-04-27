@@ -36,7 +36,8 @@ class ProductRequest extends FormRequest
             'category_id' => 'required',
             'image' => $updateMode
                 ? 'required'
-                : 'nullable'
+                : 'nullable',
+            'specifications' => 'nullable'
         ];
     }
 }

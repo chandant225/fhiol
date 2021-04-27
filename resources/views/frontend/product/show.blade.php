@@ -64,16 +64,7 @@
             <div class="bg-light -theme-color p-2">Product Description</div>
             <div>
                 <div class="my-2 px-2">
-                    <p>Samsung Front load Washing Machine&nbsp;</p>
-                    <ul>
-                        <li>Design : Silver body color, Crystal Gloss Door, LED Display Panel</li>
-                        <li>Water Consumption : 48liters</li>
-                        <li>Power source : 230V/50Hz, Power Consumption : ( Min 150watt-450watt) ( Max : 2000watt-2400watt)</li>
-                        <li>Features: Eco bubble technology with bubble soak, Voltage Control(165V to 450V), Smart Check, Chile lock, delay End(3hours to 9hours), Diamond Drum, 1200RPM soeed motor, Transparent door</li>
-                        <li>Cycle: Super eco wash, 15min quick wash, cotton, e-cotton, Dark garment, baby care, Eco drum clean, Outdoor care, Option list, Rinse+spin, Synthetics, Wool</li>
-                        <li>Accessiories: Bolt Spanner, Assy water hose, USer manual, Hose hanger, Liquid Guide, Cap fixers</li>
-                        <li>5year warrenty on universal motor.&nbsp;</li>
-                    </ul>
+                 {!! $product->description !!}
                 </div>
             </div>
         </div>
@@ -83,18 +74,24 @@
         <div class="">
             <div class="bg-light -theme-color p-2">Specifications</div>
             <div>
-                <div class="my-2 px-2">
-                    <p>Samsung Front load Washing Machine&nbsp;</p>
-                    <ul>
-                        <li>Design : Silver body color, Crystal Gloss Door, LED Display Panel</li>
-                        <li>Water Consumption : 48liters</li>
-                        <li>Power source : 230V/50Hz, Power Consumption : ( Min 150watt-450watt) ( Max : 2000watt-2400watt)</li>
-                        <li>Features: Eco bubble technology with bubble soak, Voltage Control(165V to 450V), Smart Check, Chile lock, delay End(3hours to 9hours), Diamond Drum, 1200RPM soeed motor, Transparent door</li>
-                        <li>Cycle: Super eco wash, 15min quick wash, cotton, e-cotton, Dark garment, baby care, Eco drum clean, Outdoor care, Option list, Rinse+spin, Synthetics, Wool</li>
-                        <li>Accessiories: Bolt Spanner, Assy water hose, USer manual, Hose hanger, Liquid Guide, Cap fixers</li>
-                        <li>5year warrenty on universal motor.&nbsp;</li>
-                    </ul>
-                </div>
+                <style>
+                    .specifications-table {}
+
+                    .specifications-table .key {}
+
+                </style>
+                <table class="table table-hover specifications-table">
+                    @foreach($specifications as $specification)
+                    <tr>
+                        <td>
+                            <span class="key">{{ $specification->key }}</span>
+                        </td>
+                        <td>
+                            <span class="value">{{ $specification->value }}</span>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
             </div>
         </div>
     </div>
