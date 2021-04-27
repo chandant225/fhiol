@@ -10,11 +10,13 @@
         @endif
     </div>
     <div class="product__info__wrapper">
-        <h1 class="line-clamp-2"><a href="{{ route('products.show', $product) }}" class="product__name text-dark-gray">{{ $product->name }}</a></h1>
+        <h1 class="line-clamp-2"><a href="{{ route('products.show', $product) }}" class="product__name text-dark-gray" title="{{ $product->name }}">{{ $product->name }}</a></h1>
         <h6 class="product__subtitle ">Adjustable Temperature Control</h6>
         <h4>
-            <span _ngcontent-serverapp-c12="" class="product__price text-dark-gray">{{ priceUnit() }} {{ $product->currentPrice() }}</span>
-            <span _ngcontent-serverapp-c12="" class="product__old__price">{{ priceUnit() }} 1190</span>
+            <span class="product__price text-dark-gray">{{ priceUnit() }} {{ $product->currentPrice() }}</span>
+            @if ($product->hasDiscount())
+            <span class="product__old__price">{{ priceUnit() }} {{ $product->price }}</span>
+            @endif
         </h4>
         <div class="d-flex mt-3">
             <a href="{{ route('products.show', $product) }}" class="btn btn-danger text-uppercase product__button view__more__info__btn rounded-0 mr-3 px-3">Quick View</a>

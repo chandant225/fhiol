@@ -60,27 +60,24 @@
 
         <div class="my-3"></div>
 
+        @if($product->description)
         <div class="">
             <div class="bg-light -theme-color p-2">Product Description</div>
             <div>
                 <div class="my-2 px-2">
-                 {!! $product->description !!}
+                    {!! $product->description !!}
                 </div>
             </div>
         </div>
+        @endif
 
         <div class="my-3"></div>
 
+        @if(count($specifications))
         <div class="">
             <div class="bg-light -theme-color p-2">Specifications</div>
             <div>
-                <style>
-                    .specifications-table {}
-
-                    .specifications-table .key {}
-
-                </style>
-                <table class="table table-hover specifications-table">
+                <table class="table table-hover">
                     @foreach($specifications as $specification)
                     <tr>
                         <td>
@@ -94,5 +91,6 @@
                 </table>
             </div>
         </div>
+        @endif
     </div>
 </x-app-layout>

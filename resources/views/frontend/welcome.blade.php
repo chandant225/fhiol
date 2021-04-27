@@ -6,57 +6,15 @@
     <section class="product_wrap">
         <div class="container">
             <div class="border-title">
-                <h4 class="section-header__title"> Mixer and Grinder </h4>
+                <h4 class="section-header__title"> Featured Products </h4>
             </div>
             <div class="row">
-
                 <div class="col-md-4">
-                    <div class="product">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img class="prd_item" src="{{ asset('theme') }}/images/product-6_grande.jpg">
-                            </div>
-                            <!--  -->
-                            <div class="col-md-8 product_right_tag  ">
-                                <h3>800-Watt Juicer</h3>
-                                <div class="grid-link__meta">
-                                    <p>Donec vitae hendrerit arcu, sit amet faucibus nisl....</p>
-                                    <div class="product_price">
-                                        <div class="grid-link__org_price">
-                                            <span class="money" data-currency-usd="$320.00">$320.00</span>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
+                    @foreach($featuredProducts as $product)
+                    @break($loop->iteration == 2)
+                   <x-frontend.product.featured-product-card :product="$product" />
                     <!-- end of product -->
-                    <div class="product">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img src="{{ asset('theme') }}/images/pdt4.jpg">
-                            </div>
-                            <!--  -->
-                            <div class="col-md-8 product_right_tag  ">
-                                <h3>800-Watt Juicer</h3>
-                                <div class="grid-link__meta">
-                                    <p>Donec vitae hendrerit arcu, sit amet faucibus nisl....</p>
-                                    <div class="product_price">
-                                        <div class="grid-link__org_price">
-                                            <span class="money" data-currency-usd="$320.00">$320.00</span>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- end of product -->
+                    @endforeach
                 </div>
                 <!-- end of colmd -->
                 <div class="col-md-4">
@@ -122,57 +80,18 @@
                     <!-- product-img -->
                 </div>
                 <div class="col-md-4">
-                    <div class="product">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img src="{{ asset('theme') }}/images/product_1.png">
-                            </div>
-                            <!--  -->
-                            <div class="col-md-8 product_right_tag  ">
-                                <h3>800-Watt Juicer</h3>
-                                <div class="grid-link__meta">
-                                    <p>Donec vitae hendrerit arcu, sit amet faucibus nisl....</p>
-                                    <div class="product_price">
-                                        <div class="grid-link__org_price">
-                                            <span class="money" data-currency-usd="$320.00">$320.00</span>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
+                    @foreach($featuredProducts as $product)
+                    @break($loop->iteration == 2)
+                    <x-frontend.product.featured-product-card :product="$product" />
                     <!-- end of product -->
-                    <div class="product">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img src="{{ asset('theme') }}/images/product-6_grande.jpg">
-                            </div>
-                            <!--  -->
-                            <div class="col-md-8 product_right_tag  ">
-                                <h3>800-Watt Juicer</h3>
-                                <div class="grid-link__meta">
-                                    <p>Donec vitae hendrerit arcu, sit amet faucibus nisl....</p>
-                                    <div class="product_price">
-                                        <div class="grid-link__org_price">
-                                            <span class="money" data-currency-usd="$320.00">$320.00</span>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- end of product -->
+                    @endforeach
                 </div>
                 <!-- end of colmd -->
             </div>
         </div>
     </section>
+
+
     <section class="product_add">
         <div class="container">
             <div class="border-title">
@@ -201,6 +120,7 @@
     </section>
 
     @foreach ($categories as $category)
+    @if(count($category->products))
     <section class="new_product">
         <div class="container">
             <div class="border-title">
@@ -232,5 +152,6 @@
             </div>
         </div>
     </section>
+    @endif
     @endforeach
 </x-app-layout>

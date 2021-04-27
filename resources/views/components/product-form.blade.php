@@ -228,11 +228,10 @@
     <x-box>
         <button type="submit" class="btn btn-primary rounded-0 w-100 mx-0">{{ $product->exists ? 'Update' : 'Save' }}</button>
         @if($product->exists)
-        Show link
-        {{-- <a href="{{ route('frontend.products.show', $product) }}" class="btn btn-outline-primary btn-sm rounded-0 w-100 z-depth-0 mx-0" target="_blank">View</a> --}}
+        <a href="{{ route('products.show', $product) }}" class="btn btn-outline-primary btn-sm rounded-0 w-100 z-depth-0 mx-0 mt-2" target="_blank">View</a>
         @endif
         <div class="text-muted mt-2">
-            Status: <span class="font-weight-bolder">Active</span>
+            Status: <span class="font-weight-bolder">{{ $product->status ? 'Active' : 'Inactive' }}</span>
         </div>
     </x-box>
 
@@ -266,7 +265,7 @@
 
 <div class="form-group">
     <div class="custom-control custom-checkbox">
-        <input type="checkbox" name="featured" class="custom-control-input {{ invalid_class('featured') }}" id="featured" @if($product->isFeatured()) checked @endif>
+        <input type="checkbox" name="featured" class="custom-control-input {{ invalid_class('featured') }}" id="featured" value="1" @if($product->isFeatured()) checked @endif>
         <label class="custom-control-label" for="featured">Mark as Featured</label>
         <x-invalid-feedback field="featured"></x-invalid-feedback>
     </div>
