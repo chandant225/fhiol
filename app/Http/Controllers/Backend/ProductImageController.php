@@ -23,7 +23,7 @@ class ProductImageController extends Controller
 
     public function index(Product $product)
     {
-        $productImages = $product->images;
+        $productImages = $product->images()->where('featured', '!=', true)->get();
         $productImages = $productImages->map(function ($productImage) {
             $productImage['url'] = $productImage->imageUrl();
             return $productImage;
