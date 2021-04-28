@@ -46,6 +46,7 @@ class ProductController extends Controller
 
             // also delete images
             Alert::success()->message('An error occured while saving product')->send();
+            return redirect()->back()->withInput();
         }
 
         return redirect()->route('backend.products.index');
