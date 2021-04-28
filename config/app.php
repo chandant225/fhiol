@@ -169,6 +169,7 @@ return [
         App\Providers\AlertServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         JamesBhatta\AppSettings\AppSettingServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
         /*
          * Application Service Providers...
