@@ -68,6 +68,10 @@ class ProductController extends Controller
             'featured' => $request->has('featured'),
         ]);
 
+        if ($request->hasFile('image')) {
+            $this->productImageService->create($product, $request->file('image'), $featured = true);
+        }
+
         $product->syncSpecifications($request->specifications);
 
         if ($product->wasChanged()) {
