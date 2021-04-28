@@ -2,6 +2,7 @@
 
 use App\User;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 class UserSeeder extends Seeder
 {
@@ -12,6 +13,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $adminRole = Role::firstOrCreate(['name' => 'admin']);
+
         User::firstOrCreate([
             'name' => 'James Bhatta'
         ], [
@@ -19,5 +22,9 @@ class UserSeeder extends Seeder
             'password' => bcrypt('password'),
             'email_verified_at' => now()
         ]);
+
+        $user = User::where('email', 'jmsbhatta@gmail.com')->first();
+
+        $user->assignRole($adminRole);
     }
 }
