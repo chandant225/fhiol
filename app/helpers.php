@@ -48,12 +48,13 @@ if (!function_exists('setActive')) {
     }
 }
 
-// if (!function_exists('siteName')) {
-//     function siteName()
-//     {
-//         return settings('site_name', config('app.name'));
-//     }
-// }
+if (!function_exists('siteName')) {
+    function siteName()
+    {
+        return 'ok';
+        return appSettings('site_name', config('app.name'));
+    }
+}
 
 // if(!function_exists('tagline')){
 //     function tagline()
@@ -75,8 +76,7 @@ if (!function_exists('setActive')) {
 if (!function_exists('priceUnit')) {
     function priceUnit()
     {
-        return 'Rs.';
-        return settings()->get('price_unit', config('constants.price_unit'));
+        return appSettings()->get('price_unit', 'Rs.');
     }
 }
 

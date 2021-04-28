@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
-        {{ $siteTitle ?? config('app.name') }}
+        {{ $siteTitle ?? appSettings('site_name') }}
     </title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Source+Sans+Pro:wght@600;700&display=swap" rel="stylesheet">
@@ -32,19 +32,19 @@
                 <div class="col-md-6">
                     <ul class="contact_info mb-0">
                         <li>
-                            <a href="mailto:info@website.com"> <i class="fa fa-envelope-o" aria-hidden="true"></i>info@website.com</a>
+                            <a href="mailto{{ appSettings('email') }}"> <i class="fa fa-envelope-o" aria-hidden="true"></i>{{ appSettings('email') }}</a>
                         </li>
                         <li><a href="#">
-                                <i class="fa fa-phone" aria-hidden="true"></i> Call support free: 123 456 789
+                                <i class="fa fa-phone" aria-hidden="true"></i> Call support free: {{ appSettings('mobile') }}
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-6">
                     <ul class="social mb-0">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ appSettings('facebook_url') }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ appSettings('twitter_url') }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ appSettings('youtube_url') }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -61,10 +61,10 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav sub-menu">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Home</a>
+                            <a class="nav-link active" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About us</a>
+                            <a class="nav-link" href="{{ url(appSettings('about_us_page_url', '/')) }}">About us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('products.index') }}">Shop</a>

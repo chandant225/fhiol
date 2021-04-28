@@ -6,7 +6,6 @@
             {{ $product->name }}
         </x-slot>
         <x-slot name="breadcrumbs">
-            {{-- Home / Mixer & Grinder /Products --}}
             {{ Breadcrumbs::render('product', $product) }}
         </x-slot>
     </x-frontend.partials.page-title>
@@ -15,7 +14,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="bg-light w-100">
-                    <img src="{{ $product->featuredImage->imageUrl() }}" alt="{{ __('') }}">
+                    <img src="{{ $product->featuredImage->imageUrl() }}" alt="{{ $product->name }}">
                 </div>
                 <div class="my-3"></div>
                 <div class="bg-light w-100 p-2 d-flex overflow-x-scroll">

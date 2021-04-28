@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="siteTitle">
-        Contact Us | {{ config('app.name') }}
+        Contact Us | {{ appSettings('site_name') }}
     </x-slot>
 
     <x-frontend.partials.page-title>
@@ -8,7 +8,6 @@
             Contact Us
         </x-slot>
         <x-slot name="breadcrumbs">
-            {{-- Home / Contact Us --}}
             {{ Breadcrumbs::render('contact-us') }}
         </x-slot>
     </x-frontend.partials.page-title>
@@ -54,22 +53,22 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="bg-white h-100 p-4">
-                        <h3 class="block-title text-uppercase">Get In Touch</h3>
+                        <h3 class="block-title text-uppercase">{{ appSettings('contact_us_section_title') }}</h3>
                         <p class="block-description">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic officiis doloribus soluta? Animi incidunt laboriosam iusto, blanditiis aut ipsa voluptatem?
+                            {!! appSettings('contact_us_section_description') !!}
                         </p>
                         <div class="my-3"></div>
                         <div class="py-2">
                             <span class="text-theme-accent-color mr-3"><i class="fa fa-envelope"></i></span>
-                            <span>support@better.com.np</span>
+                            <span>{{ appSettings('email') }}</span>
                         </div>
                         <div class="py-2">
                             <span class="text-theme-accent-color mr-3"><i class="fa fa-phone"></i></span>
-                            <span>(+977) 0123-4256</span>
+                            <span>{{ appSettings('mobile') }}</span>
                         </div>
                         <div class="py-2">
                             <span class="text-theme-accent-color mr-3"><i class="fa fa-map-marker"></i></span>
-                            <span>Koteshwor-12, Kathmandu, Nepal</span>
+                            <span>{{ appSettings('address') }}</span>
                         </div>
                     </div>
                 </div>
