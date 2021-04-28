@@ -204,7 +204,7 @@
     <div class="bg-white">
         <div class="container text-center py-4">
             <div class="d-flex justify-content-center">
-                <div class="align-self-center">Find the entire Usha product range at:</div>
+                <div class="align-self-center">Find the entire Better product range at:</div>
                 <a class="align-self-center d-flex  mx-2" href="">
                     <img src="{{ asset('assets/images/daraz-logo.jpg') }}" alt="Daraz" style="max-height: 30px;">
                 </a>

@@ -28,4 +28,12 @@ Route::name('backend.')->group(function () {
 
     Route::get('contact-us', 'ContactUsController@index')->name('contact-us.index');
     Route::get('subscribers', 'SubscriberController@index')->name('subscribers.index');
+
+    Route::group(['namespace' => 'Setting'], function () {
+        Route::get('settings/general', 'GeneralSettingController@index')->name('settings.general.index');
+        Route::post('settings/general', 'GeneralSettingController@store')->name('settings.general.store');
+
+        Route::get('settings/page', 'PageSettingController@index')->name('settings.page.index');
+        Route::post('settings/page', 'PageSettingController@store')->name('settings.page.store');
+    });
 });

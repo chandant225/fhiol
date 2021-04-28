@@ -168,6 +168,7 @@ return [
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         App\Providers\AlertServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        JamesBhatta\AppSettings\AppSettingServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -232,6 +233,7 @@ return [
 
         'Alert' => App\Alert\Facades\Alert::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'AppSetting' => JamesBhatta\AppSettings\Facades\AppSetting::class
     ],
 
 ];

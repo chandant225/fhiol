@@ -122,33 +122,21 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../layout/top-nav.html" class="nav-link">
+                            <a href="{{ route('backend.settings.general.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>General</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../layout/top-nav-sidebar.html" class="nav-link">
+                            <a href="{{ route('backend.settings.page.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>API & Keys</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../layout/boxed.html" class="nav-link">
+                            <a href="{{ route('backend.settings.page.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Boxed</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/fixed-sidebar.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Fixed Sidebar</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/fixed-sidebar-custom.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Fixed Sidebar <small>+ Custom Area</small></p>
+                                <p>Page Settings</p>
                             </a>
                         </li>
                         <li class="nav-item">
