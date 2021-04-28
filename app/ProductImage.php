@@ -19,11 +19,11 @@ class ProductImage extends Model
 
     public function imageUrl($size = 'original')
     {
-        if ($size == 'thumb') {
+        if ($size == 'thumb' && $this->thumbnail_path) {
             return Storage::url($this->thumbnail_path);
         }
 
-        if ($size == 'medium') {
+        if ($size == 'medium' && $this->medium_path) {
             return Storage::url($this->medium_path);
         }
 
