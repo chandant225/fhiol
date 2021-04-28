@@ -69,6 +69,7 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
+            $product->featuredImage()->delete();
             $this->productImageService->create($product, $request->file('image'), $featured = true);
         }
 
