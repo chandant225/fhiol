@@ -45,7 +45,7 @@ class ProductController extends Controller
             DB::rollBack();
 
             // also delete images
-            Alert::type("error")->message('An error occured while saving product')->send();
+            Alert::success()->message('An error occured while saving product')->send();
         }
 
         return redirect()->route('backend.products.index');
