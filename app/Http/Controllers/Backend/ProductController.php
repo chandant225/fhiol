@@ -8,7 +8,7 @@ use App\Product;
 use App\Service\ImageService;
 use App\Service\ProductImageService;
 use App\Alert\Facades\Alert;
-use App\ProductMeta;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -33,16 +33,20 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
-        $product = Product::create($request->validated());
+        DB::beginTransaction();
+        try {
+            $product = Product::create($request->validated());
 
-        $this->productImageService->create($product, $request->file('image'), $featured = true);
+            $this->productImageService->create($product, $request->file('image'), $featured = true);
+            DB::commit();
+        } catch (\Exception $ex) {
+            info('Error while saving product, Ex: ' . $ex->getMessage());
+            //throw $th;
+            DB::rollBack();
 
-        // $productImage = new ProductImage([
-        //     'path' => $this->imageService->storeImage($request->file('image')),
-        //     'featured' => true
-        // ]);
-
-        // $product->images()->save($productImage);
+            // also delete images
+            Alert::type("error")->message('An error occured while saving product')->send();
+        }
 
         return redirect()->route('backend.products.index');
     }

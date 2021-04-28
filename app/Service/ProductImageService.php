@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Product;
 use App\ProductImage;
+use Illuminate\Support\Facades\Storage;
 
 class ProductImageService
 {
@@ -23,8 +24,8 @@ class ProductImageService
             'featured' => $featured
         ]);
 
-        $this->imageService->createThumbnail('storage/' . $productImage['thumbnail_path'], null, 350);
-        $this->imageService->createThumbnail('storage/' . $productImage['medium_path'], null, 600);
+        $this->imageService->createThumbnail( Storage::path('storage/' . $productImage['thumbnail_path']), null, 350);
+        // $this->imageService->createThumbnail('storage/' . $productImage['medium_path'], null, 600);
 
         $product->images()->save($productImage);
 
