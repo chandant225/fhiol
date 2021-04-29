@@ -33,6 +33,7 @@ Route::name('backend.')->group(function () {
     Route::get('stores/create', 'StoreController@create')->name('stores.create');
     Route::post('stores', 'StoreController@store')->name('stores.store');
     Route::get('stores/{store}/edit', 'StoreController@edit')->name('stores.edit');
+    Route::put('stores/{store}', 'StoreController@update')->name('stores.update');
     Route::delete('stores/{store}', 'StoreController@destroy')->name('stores.destroy');
 
     Route::group(['namespace' => 'Setting'], function () {

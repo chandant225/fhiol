@@ -23,15 +23,15 @@
             </div>
             <div class="col-md-6 form-group">
                 <label for="">Phone</label>
-                <input type="text" name="phone" class="form-control {{ invalid_class('phone') }}" value="{{ old('phone', $store->address) }}">
+                <input type="text" name="phone" class="form-control {{ invalid_class('phone') }}" value="{{ old('phone', $store->phone) }}">
             </div>
             <div class="col-md-6 form-group">
                 <label for="">E-mail</label>
-                <input type="text" name="email" class="form-control {{ invalid_class('email') }}" value="{{ old('email', $store->address) }}">
+                <input type="text" name="email" class="form-control {{ invalid_class('email') }}" value="{{ old('email', $store->email) }}">
             </div>
             <div class="col-md-6 form-group">
                 <label for="">Website</label>
-                <input type="text" name="website" class="form-control {{ invalid_class('website') }}" value="{{ old('website', $store->address) }}">
+                <input type="text" name="website" class="form-control {{ invalid_class('website') }}" value="{{ old('website', $store->website) }}">
             </div>
 
             <div class="col-md-12 form-group">
