@@ -28,6 +28,12 @@ Route::name('backend.')->group(function () {
 
     Route::get('contact-us', 'ContactUsController@index')->name('contact-us.index');
     Route::get('subscribers', 'SubscriberController@index')->name('subscribers.index');
+    
+    Route::get('stores', 'StoreController@index')->name('stores.index');
+    Route::get('stores/create', 'StoreController@create')->name('stores.create');
+    Route::post('stores', 'StoreController@store')->name('stores.store');
+    Route::get('stores/{store}/edit', 'StoreController@edit')->name('stores.edit');
+    Route::delete('stores/{store}', 'StoreController@destroy')->name('stores.destroy');
 
     Route::group(['namespace' => 'Setting'], function () {
         Route::get('settings/general', 'GeneralSettingController@index')->name('settings.general.index');

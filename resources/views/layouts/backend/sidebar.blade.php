@@ -89,6 +89,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('backend.stores.index') }}" class="nav-link">
+                        <i class="nav-icon fa fa-store"></i>
+                        <p>
+                            Stores
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('backend.contact-us.index') }}" class="nav-link">
                         <i class="nav-icon far fa-user"></i>
                         <p>
