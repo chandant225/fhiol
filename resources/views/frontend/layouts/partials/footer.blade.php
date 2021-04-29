@@ -3,10 +3,9 @@
         color: #424242;
         font-size: 14px;
         background-color: #fcfcfc;
-
-        -webkit-box-shadow: 2px 6px 5px 10px rgba(237, 237, 237, 1);
-        -moz-box-shadow: 2px 6px 5px 10px rgba(237, 237, 237, 1);
-        box-shadow: 2px 6px 5px 10px rgba(237, 237, 237, 1);
+        -webkit-box-shadow: 2px 6px 15px 10px rgba(237, 237, 237, 1);
+        -moz-box-shadow: 2px 6px 15px 10px rgba(237, 237, 237, 1);
+        box-shadow: 2px 6px 15px 10px rgba(237, 237, 237, 1);
     }
 
     .footer-action-wrapper {
@@ -90,7 +89,7 @@
                         </div>
                         <div class="label">Email Us</div>
                     </a>
-                    <a href="{{ appSettings('address') }}" class="footer-action-button">
+                    <a href="{{ route('stores.index') }}" class="footer-action-button">
                         <div class="icon">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
@@ -106,7 +105,7 @@
                     <li><a href="{{ route('products.index') }}">Products</a></li>
                     <li><a href="/pages/faqs">Recipies</a></li>
                     <li><a href="/pages/shipping-details">What's New?</a></li>
-                    <li><a href="/pages/shipping-details">Find a Store</a></li>
+                    <li><a href="{{ route('stores.index') }}">Find a Store</a></li>
                 </ul>
             </div>
             <div class="col-md-2">
