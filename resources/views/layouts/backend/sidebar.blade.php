@@ -99,7 +99,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                        <i class="nav-icon fas fa-cog"></i>
                         <p>
                             Settings
                             <i class="fas fa-angle-left right"></i>
@@ -124,30 +124,12 @@
                                 <p>Page Settings</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="../layout/fixed-topnav.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Fixed Navbar</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/fixed-footer.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Fixed Footer</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/collapsed-sidebar.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Collapsed Sidebar</p>
-                            </a>
-                        </li>
                     </ul>
                 </li>
                 <li class="nav-header">CMS</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-book"></i>
+                        <i class="nav-icon fa fa-file"></i>
                         <p>
                             Pages
                             <i class="fas fa-angle-left right"></i>
@@ -156,7 +138,7 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('backend.pages.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-file-image nav-icon"></i>
                                 <p>List All</p>
                             </a>
                         </li>
@@ -171,7 +153,7 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-book"></i>
+                        <i class="nav-icon fa fa-file-image"></i>
                         <p>
                             Image Sliders
                             <i class="fas fa-angle-left right"></i>

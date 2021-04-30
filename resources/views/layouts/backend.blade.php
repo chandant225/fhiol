@@ -22,40 +22,15 @@
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
-        <!-- Navbar -->
         @include('layouts.backend.navbar')
-        <!-- /.navbar -->
 
-        <!-- Main Sidebar Container -->
         @include('layouts.backend.sidebar')
-
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            {{-- <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Blank Page</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section> --}}
-
-            <!-- Main content -->
             <section class="content">
-
                 @yield('content')
-
             </section>
-            <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
 
@@ -63,7 +38,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 1.0.0
             </div>
-            <strong>Copyright &copy; {{ date('Y') }} <a href="{{ url('/') }}">{{ config('app.name') }}</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; {{ date('Y') }} <a href="{{ url('/') }}">{{ appSettings('site_name') }}</a>.</strong> All rights reserved.
         </footer>
 
         <!-- Control Sidebar -->
@@ -81,13 +56,12 @@
     <!-- AdminLTE App -->
     <script src="{{ asset('adminlte/js/adminlte.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{ asset('adminlte/js/demo.js') }}"></script>
+    {{-- <script src="{{ asset('adminlte/js/demo.js') }}"></script> --}}
     <script src="{{ asset('assets/summernote/summernote-bs4.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/dropzone/dist/dropzone.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     @livewireScripts
     <x-livewire-alert::scripts />
-    {{-- @stack('scripts') --}}
     @stack('scripts')
 </body>
 </html>
