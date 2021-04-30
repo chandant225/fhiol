@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="siteTitle">
-        Find a Store | {{ appSettings('site_name') }}
+        Find a Store | {{ siteName() }}
     </x-slot>
 
     <style>

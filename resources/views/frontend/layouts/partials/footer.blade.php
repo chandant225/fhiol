@@ -69,7 +69,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div>
-                    <img src="{{ __('http://betterkitchen.test/theme/images/logo.png') }}" alt="{{ config('app.name') }}" style="max-height: 70px;">
+                    <img src="{{ siteLogoUrl() }}" alt="{{ siteName() }}" style="max-height: 70px;">
                 </div>
                 <div class="my-3"></div>
                 <div class="footer-action-wrapper">

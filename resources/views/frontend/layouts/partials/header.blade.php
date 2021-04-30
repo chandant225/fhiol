@@ -26,7 +26,9 @@
 <header style="border-bottom: 2px dotted #e5e5e5;">
     <nav class="navbar  navbar-expand-lg navbar-light top-navbar menu_top">
         <div class="container" x-data="{ show: false }">
-            <a class="navbar-brand logo" href="{{ url('/') }}"><img style="height: 64px;" src="{{ asset('theme') }}/images/logo.png"></a>
+            <a class="navbar-brand logo" href="{{ url('/') }}">
+                <img style="height: 64px;" src="{{ siteLogoUrl() }}" alt="{{ siteName() }}">
+            </a>
             <button class="navbar-toggler" type="button" @click="show = !show">
                 <span class="navbar-toggler-icon"></span>
             </button>

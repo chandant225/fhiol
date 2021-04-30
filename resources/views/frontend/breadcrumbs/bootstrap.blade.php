@@ -1,6 +1,6 @@
 @unless ($breadcrumbs->isEmpty())
 
-    <ol class="breadcrumb bg-transparent pl-0">
+    <ol class="breadcrumb bg-transparent pl-0 mb-0 mb-sm-2">
         @foreach ($breadcrumbs as $breadcrumb)
 
             @if ($breadcrumb->url && !$loop->last)

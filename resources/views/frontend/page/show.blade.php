@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="siteTitle">
-        {{ $page->title }} | {{ config('app.name') }}
+        {{ $page->title }} | {{ siteName() }}
     </x-slot>
 
     <x-frontend.partials.page-title>

@@ -17,7 +17,7 @@ class CategoryList extends Component
     public function trash(Category $category)
     {
         if ($category->products()->exists()) {
-            $this->alert('error', 'Sorry this category have products and cannot be deleteds');
+            $this->alert('error', 'Sorry this category have products and cannot be deleted');
             return;
         }
         $category->delete();

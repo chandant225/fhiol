@@ -51,7 +51,6 @@ if (!function_exists('setActive')) {
 if (!function_exists('siteName')) {
     function siteName()
     {
-        return 'ok';
         return appSettings('site_name', config('app.name'));
     }
 }
@@ -63,15 +62,15 @@ if (!function_exists('siteName')) {
 //     }
 // }
 
-// if (!function_exists('siteLogoUrl')) {
-//     function siteLogoUrl()
-//     {
-//         if (settings()->get('site_logo')) {
-//             return asset('storage/' . settings()->get('site_logo'));
-//         }
-//         return asset(config('constants.site_logo'));
-//     }
-// }
+if (!function_exists('siteLogoUrl')) {
+    function siteLogoUrl()
+    {
+        if (appSettings()->get('site_logo')) {
+            return asset('storage/' . appSettings()->get('site_logo'));
+        }
+        return asset('assets/images/logo.png');
+    }
+}
 
 if (!function_exists('priceUnit')) {
     function priceUnit()

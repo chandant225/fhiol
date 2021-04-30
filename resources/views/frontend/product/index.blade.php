@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="siteTitle">
-        Products | {{ appSettings('site_name') }}
+        Products | {{ siteName() }}
     </x-slot>
 
     <x-frontend.partials.page-title>
@@ -8,7 +8,6 @@
             Products
         </x-slot>
         <x-slot name="breadcrumbs">
-            {{-- Home / Mixer & Grinder /Products --}}
             {{ Breadcrumbs::render('products') }}
         </x-slot>
     </x-frontend.partials.page-title>
@@ -16,8 +15,6 @@
     <div class="container py-4">
         <div class="row">
             <div class="col-md-3">
-                {{-- <h4 class="text-dark-gray">Filters</h4> --}}
-
                 <x-frontend.partials.category-filter-list></x-frontend.partials.category-filter-list>
                 <div class="my-4"></div>
 
@@ -37,7 +34,7 @@
             <div class="col-md-9">
                 <div class="d-flex mb-2">
                     <div class="align-self-center">
-                        32 items found
+                        {{ $products->total() }} {{ $products->total() < 2 ? 'item' : 'items' }} found
                     </div>
                     <div class="ml-auto">
                         <select name="" class="custom-select">
