@@ -29,7 +29,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         return view('frontend.product.show', [
-            'pageTitle' => $product->name,
+            'siteTitle' => $product->name,
             'product' => $product,
             'specifications' => $product->specifications()
         ]);        

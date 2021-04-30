@@ -1,27 +1,5 @@
 <x-app-layout>
-    <x-slot name="pageTitle">{{ $pageTitle }}</x-slot>
-
-    <style>
-        #product-wrapper .category-name {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: #f8f9fa;
-            color: #6e6e6e;
-            font-size: .9rem;
-            font-weight: normal;
-            border-radius: 2.5rem;
-        }
-
-        #product-wrapper .product-name {
-            font-size: 1.5rem;
-        }
-
-        #product-wrapper .old-price {
-            text-decoration: line-through;
-            color: #e60d2e;
-        }
-
-    </style>
+    <x-slot name="siteTitle">{{ $siteTitle }}</x-slot>
 
     <div id="product-wrapper" class="container single-product py-3">
         <div class="row">
@@ -136,4 +114,27 @@
 
         <div class="my-3"></div>
     </div>
+    @push('styles')
+    <style>
+        #product-wrapper .category-name {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #f8f9fa;
+            color: #6e6e6e;
+            font-size: .9rem;
+            font-weight: normal;
+            border-radius: 2.5rem;
+        }
+
+        #product-wrapper .product-name {
+            font-size: 1.5rem;
+        }
+
+        #product-wrapper .old-price {
+            text-decoration: line-through;
+            color: #e60d2e;
+        }
+
+    </style>
+    @endpush
 </x-app-layout>
