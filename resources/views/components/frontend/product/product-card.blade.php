@@ -1,5 +1,5 @@
 <div class="product__wrapper mb-4">
-    <div class="product__image__wrapper">
+    <a class="product__image__wrapper d-block" href="{{ route('products.show', $product) }}">
         {{-- <img class="" src="{{ asset('theme') }}/images/baltra_iron.jpg" alt="{{ __('Product one') }}"> --}}
         <img class="" src="{{ $product->featuredImage->imageUrl('thumb') }}" alt="{{ __('Product one') }}">
         @if($product->isOnSale())
@@ -8,10 +8,10 @@
         @if($product->isMarkedNew())
         <span class="product__badge new__badge">New</span>
         @endif
-    </div>
+    </a>
     <div class="product__info__wrapper">
         <h1 class="line-clamp-2"><a href="{{ route('products.show', $product) }}" class="product__name text-dark-gray" title="{{ $product->name }}">{{ $product->name }}</a></h1>
-        <h6 class="product__subtitle ">Adjustable Temperature Control</h6>
+        {{-- <h6 class="product__subtitle ">Adjustable Temperature Control</h6> --}}
         <h4>
             <span class="product__price text-dark-gray">{{ priceUnit() }} {{ $product->currentPrice() }}</span>
             @if ($product->hasDiscount())
