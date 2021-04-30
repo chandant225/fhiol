@@ -19,6 +19,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('starter.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/frontend.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/line-clamp.css') }}">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     @livewireStyles
     @stack('styles')
     {{ $styles ?? '' }}
@@ -26,65 +28,14 @@
 </head>
 
 <body>
-    <div class="topbar-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <ul class="contact_info mb-0">
-                        <li>
-                            <a href="mailto{{ appSettings('email') }}"> <i class="fa fa-envelope-o" aria-hidden="true"></i>{{ appSettings('email') }}</a>
-                        </li>
-                        <li><a href="#">
-                                <i class="fa fa-phone" aria-hidden="true"></i> Call support free: {{ appSettings('mobile') }}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-6">
-                    <ul class="social mb-0">
-                        <li><a href="{{ appSettings('facebook_url') }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="{{ appSettings('twitter_url') }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="{{ appSettings('youtube_url') }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <header style="border-bottom: 2px dotted #e5e5e5;">
-        <nav class="navbar  navbar-expand-lg navbar-light top-navbar menu_top">
-            <div class="container">
-                <a class="navbar-brand logo" href="{{ url('/') }}"><img style="height: 64px;" src="{{ asset('theme') }}/images/logo.png"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav sub-menu">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url(appSettings('about_us_page_url', '/')) }}">About us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('products.index') }}">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contact-us.index') }}">Contact us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        {{-- <div style="height: 2px; background-color: #e5e5e5;"></div> --}}
-    </header>
+    @include('frontend.layouts.partials.header')
 
     <x-frontend.partials.category-navbar />
 
     {{ $slot }}
 
     @include('frontend.layouts.partials.footer')
-    
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {{-- <script src="js/bootstrap.bundle.js"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

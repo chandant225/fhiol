@@ -1,5 +1,5 @@
 <div style="border-bottom: 2px dotted #e5e5e5;">
-    <nav class="category-nav navbar navbar-expand-sm navbar-light">
+    <nav class="category-nav navbar navbar-expand-sm navbar-light flex-row">
         <div class="container">
             <style>
                 .category-nav .nav-item .nav-link {
@@ -36,7 +36,7 @@
                 }
 
             </style>
-            <ul class="navbar-nav overflow-auto no-scrollbar">
+            <ul class="navbar-nav overflow-auto no-scrollbar flex-row">
                 @foreach ($categories as $category)
                 <li class="nav-item flex-shrink-0 @if($category->id == $activeCategoryId) active @endif">
                     <a class="nav-link" href="{{ route('products.index', ['category_id' => $category->id]) }}">{{ $category->name }}</a>
