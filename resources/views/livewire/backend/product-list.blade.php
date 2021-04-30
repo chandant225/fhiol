@@ -63,32 +63,29 @@
                     <th>Name</th>
                     <th>Price</th>
                     <th>Category</th>
-                    <th>Stock</th>
                     <th>Status</th>
+                    <th></th>
                 </tr>
                 <tbody>
                     @forelse($products as $product)
                     <tr>
                         <td>
-                            <img src="{{ $product->featuredImage->imageUrl() }}" style="width: 70px; height: 40px;">
+                            <img src="{{ $product->featuredImage->imageUrl() }}" alt="{{ $product->name }}" style="height: 40px; width: auto;">
                         </td>
                         <td>
-                            {{-- <a class="btn-link" href="{{ route('frontend.products.show', $product) }}" target="_blank">{{ $product->name }}</a> --}}
-                            {{ $product->name }}
+                            <a class="font-weight-bolder" href="{{ route('products.show', $product) }}" target="_blank">{{ $product->name }}</a>
                         </td>
                         <td>
-                            {{ priceUnit() }} {{ number_format($product->price) }}
+                            <div>
+                                {{ priceUnit() }} {{ number_format($product->currentPrice()) }}
+                            </div>
+                            <div style="text-decoration: line-through; font-size: .9rem;">
+                                @if ($product->hasDiscount())
+                                {{ priceUnit() }} {{ number_format($product->price) }}
+                                @endif
+                            </div>
                         </td>
                         <td>{{ $product->category->name }}</td>
-                        <td class="font-weight-bolder">
-                            @if($product->manage_stock)
-                            <span class="{{ $product->stock_quantity ? 'text-success' : 'text-danger' }}">
-                                {{ $product->stock_quantity ? 'In stock' : 'Out of stock' }}
-                            </span>
-                            @else
-                            --
-                            @endif
-                        </td>
                         <td>
                             {{-- <livewire:product-status-switch :product="$product" :key="$product->id" /> --}}
                         </td>
@@ -100,6 +97,7 @@
                                     </span>
                                 </a>
                                 <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ route('products.show', $product) }}" target="_blank">View</a>
                                     <a class="dropdown-item" href="{{ route('backend.products.edit', $product) }}">Edit</a>
                                     <form action="{{ route('backend.products.destroy', $product) }}" onsubmit="return confirm('Are you sure to delete?')" method="POST" class="form-inline d-inline">
                                         @csrf
