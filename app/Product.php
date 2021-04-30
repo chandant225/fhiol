@@ -45,6 +45,11 @@ class Product extends Model
         return $query->whereStatus(true);
     }
 
+    public function isActive()
+    {
+        return $this->status;
+    }
+
     public function currentPrice()
     {
         return $this->hasDiscount()

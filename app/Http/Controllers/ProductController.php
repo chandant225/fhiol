@@ -28,6 +28,8 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
+        abort_unless($product->isActive(), 404);
+
         return view('frontend.product.show', [
             'siteTitle' => $product->name,
             'product' => $product,
