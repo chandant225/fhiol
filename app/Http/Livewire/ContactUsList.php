@@ -34,6 +34,8 @@ class ContactUsList extends Component
         if (!$contactUs->viewed()) {
             $contactUs->markViewed();
         }
+        $this->skipRender();
+        die();
     }
 
     public function render()

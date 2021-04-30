@@ -13,7 +13,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($contactMessages as $contactMessage)
+                    @forelse ($contactMessages as $contactMessage)
                     <tr class="@if(!$contactMessage->viewed()) table-success @endif">
                         <td>
                             <input type="checkbox">
@@ -23,10 +23,10 @@
                         <td>
                             <div class="d-flex">
                                 @if($deleteId != $contactMessage->id)
-                                <button type="button" class="btn btn-sm btn-primary mr-3" data-toggle="modal" data-target="#contactUsModal_{{ $contactMessage->id }}">
+                                <button type="button" wire:click="markViewed('{{ $contactMessage->id }}')" class="btn btn-sm btn-primary mr-3" data-toggle="modal" data-target="#contactUsModal_{{ $contactMessage->id }}" title="View">
                                     <span><i class="fa fa-eye"></i></span>
                                 </button>
-                                <button class="btn btn-sm btn-danger mr-3" wire:click.prevent="confirmDelete('{{ $contactMessage->id }}')"><span><i class="fa fa-trash-alt"></i></span></button>
+                                <button class="btn btn-sm btn-danger mr-3" wire:click.prevent="confirmDelete('{{ $contactMessage->id }}')" title="Delete"><span><i class="fa fa-trash-alt"></i></span></button>
                                 @endif
                                 @if($deleteId == $contactMessage->id)
                                 <button class="btn btn-sm btn-danger mr-3" wire:click.prevent="delete()">Confirm</button>
@@ -35,7 +35,11 @@
                             </div>
                         </td>
                     </tr>
-                    @endforeach
+                    @empty
+                    <tr>
+                        <td colspan="42" class="text-center font-italic"> No items found !!</td>
+                    </tr>
+                    @endforelse
                 </tbody>
             </table>
             <div class="my-3">
