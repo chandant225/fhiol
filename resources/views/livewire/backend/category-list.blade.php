@@ -14,14 +14,11 @@
                 <td>{{ $category->name }}</td>
                 <td>{{ $category->slug }}</td>
                 <td>
-                    <livewire:backend.category-switch :category="$category" />
+                    <livewire:backend.category-switch :category="$category" :key="$category->id">
                 </td>
                 <td>
-                    <a href="#" class="btn btn-success  btn-sm">Edit</a>
-                    <form action="#">
-                        @csrf
-                        <button class="btn btn-danger btn-sm">Delete</button>
-                    </form>
+                    <button type="button" wire:click="$emit('editCategory', {{ $category->id }})" class="btn btn-success btn-sm">Edit</button>
+                    <button type="button" class="btn btn-danger btn-sm" wire:click="trash('{{ $category->id }}')" onclick="confirm('Are you sure to delete category?') || event.stopImmediatePropagation()">Delete</button>
                 </td>
             </tr>
             @endforeach

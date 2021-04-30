@@ -14,6 +14,16 @@ class CategoryList extends Component
         // 
     }
 
+    public function trash(Category $category)
+    {
+        if ($category->products()->exists()) {
+            $this->alert('error', 'Sorry this category have products and cannot be deleteds');
+            return;
+        }
+        $category->delete();
+        $this->alert('success', 'Category Deleted Successfully');
+    }
+
     public function render()
     {
         return view('livewire.backend.category-list', [

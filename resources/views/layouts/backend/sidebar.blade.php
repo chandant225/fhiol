@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="{{ url('/') }}" class="brand-link" target="_blank">
         <img src="{{ asset('adminlte') }}/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-1" style="opacity: .8">
-        <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
+        <span class="brand-text font-weight-light">{{ appSettings('site_name') }}</span>
     </a>
 
     <!-- Sidebar -->
