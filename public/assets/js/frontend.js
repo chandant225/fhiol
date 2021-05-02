@@ -34,19 +34,20 @@ $('#myCarousel').on('slide.bs.carousel', function(e) {
     $('[id^=carousel-selector-]').removeClass('selected');
     $('[id=carousel-selector-' + id + ']').addClass('selected');
 });
+
 // when user swipes, go next or previous
-$('#myCarousel').swipe({
-    fallbackToMouseEvents: true
-    , swipeLeft: function(e) {
-        $('#myCarousel').carousel('next');
-    }
-    , swipeRight: function(e) {
-        $('#myCarousel').carousel('prev');
-    }
-    , allowPageScroll: 'vertical'
-    , preventDefaultEvents: false
-    , threshold: 75
-});
+// $('#myCarousel').swipe({
+//     fallbackToMouseEvents: true
+//     , swipeLeft: function(e) {
+//         $('#myCarousel').carousel('next');
+//     }
+//     , swipeRight: function(e) {
+//         $('#myCarousel').carousel('prev');
+//     }
+//     , allowPageScroll: 'vertical'
+//     , preventDefaultEvents: false
+//     , threshold: 75
+// });
 /*
 $(document).on('click', '[data-toggle="lightbox"]', function(event) {
   event.preventDefault();
