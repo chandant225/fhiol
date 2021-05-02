@@ -33,9 +33,9 @@ class SettingsSeeder extends Seeder
 
         // Page Settings
         appSettings()->set([
-            'about_us_page_url' => '/page/about-us',
-            'privacy_policy_page_url' => '/page/privacy-policy',
-            'terms_and_conditions_page_url' => '/page/terms-conditions',
+            'about_us_page_url' => '',
+            'privacy_policy_page_url' => '',
+            'terms_and_conditions_page_url' => '',
 
             'contact_us_section_title' => 'GET IN TOUCH',
             'contact_us_section_description' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic officiis doloribus soluta? Animi incidunt laboriosam iusto, blanditiis aut ipsa voluptatem?',
