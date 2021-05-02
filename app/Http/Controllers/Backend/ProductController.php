@@ -49,6 +49,7 @@ class ProductController extends Controller
             return redirect()->back()->withInput();
         }
 
+        Alert::success()->message('Product added successfully')->send();
         return redirect()->route('backend.products.index');
     }
 
