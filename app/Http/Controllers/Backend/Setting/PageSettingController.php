@@ -5,13 +5,17 @@ namespace App\Http\Controllers\Backend\Setting;
 use App\Http\Controllers\Controller;
 use App\Alert\Facades\Alert;
 use App\Http\Requests\Setting\PageSettingRequest;
+use App\Page;
 
 class PageSettingController extends Controller
 {
     public function index()
     {
+        $pages = Page::select(['id', 'title', 'slug'])->orderBy('title')->get();
+
         return view('setting.page', [
-            'title' => 'Page Settings'
+            'title' => 'Page Settings',
+            'pages' => $pages
         ]);
     }
 

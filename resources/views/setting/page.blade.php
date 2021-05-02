@@ -11,17 +11,17 @@
             <div class="card-body">
                 <div class="form-group">
                     <x-form.label>About Us Page Url</x-form.label>
-                    <x-fields.input name="about_us_page_url" :value="old('about_us_page_url', appSettings('about_us_page_url'))" />
+                    @include('setting.fields.page-selector', ['settingKey' => 'about_us_page_url'])
                 </div>
 
                 <div class="form-group">
                     <x-form.label>Privacy Policy Page Url</x-form.label>
-                    <x-fields.input name="privacy_policy_page_url" :value="old('privacy_policy_page_url', appSettings('privacy_policy_page_url'))" />
+                    @include('setting.fields.page-selector', ['settingKey' => 'privacy_policy_page_url'])
                 </div>
 
                 <div class="form-group">
                     <x-form.label>Terms & Conditions Page Url</x-form.label>
-                    <x-fields.input name="terms_and_conditions_page_url" :value="old('terms_and_conditions_page_url', appSettings('terms_and_conditions_page_url'))" />
+                    @include('setting.fields.page-selector', ['settingKey' => 'terms_and_conditions_page_url'])
                 </div>
 
                 <div class="form-group">

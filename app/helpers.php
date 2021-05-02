@@ -94,12 +94,13 @@ if (!function_exists('priceUnit')) {
 // }
 
 
-// // Sync the current price for the items in cart
-// if (!function_exists('synCartPrice')) {
-//     function synCartPrice()
-//     {
-//         foreach (Cart::content() as $cartItem) {
-//             $cartItem->price = $cartItem->model->current_price;
-//         }
-//     }
-// }
+// Get the page Url By Slug
+if (!function_exists('getPageUrlBySlug')) {
+    function getPageUrlBySlug($slug)
+    {
+        if (!$slug) {
+            return url('/');
+        }
+        return route('frontend.pages.show', $slug);
+    }
+}

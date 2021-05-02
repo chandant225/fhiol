@@ -42,7 +42,7 @@
                         <a class="nav-link" href="{{ route('products.index') }}">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url(appSettings('about_us_page_url', '/')) }}">About us</a>
+                        <a class="nav-link" href="{{ getPageUrlBySlug(appSettings('about_us_page_url')) }}">About us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact-us.index') }}">Contact us</a>

@@ -110,9 +110,9 @@
             </div>
             <div class="col-md-2">
                 <ul class="footer-links">
-                    <li><a href="{{ appSettings('about_us_page_url') }}">About Us</a></li>
-                    <li><a href="{{ appSettings('privacy_policy_page_url') }}">Privacy Policy</a></li>
-                    <li><a href="{{ appSettings('terms_and_conditions_page_url') }}">Terms & Conditions</a></li>
+                    <li><a href="{{ getPageUrlBySlug(appSettings('about_us_page_url')) }}">About Us</a></li>
+                    <li><a href="{{ getPageUrlBySlug(appSettings('privacy_policy_page_url')) }}">Privacy Policy</a></li>
+                    <li><a href="{{ getPageUrlBySlug(appSettings('terms_and_conditions_page_url')) }}">Terms & Conditions</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
