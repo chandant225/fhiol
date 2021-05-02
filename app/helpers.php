@@ -72,6 +72,16 @@ if (!function_exists('siteLogoUrl')) {
     }
 }
 
+if (!function_exists('faviconUrl')) {
+    function faviconUrl()
+    {
+        if (appSettings()->get('favicon')) {
+            return asset('storage/' . appSettings()->get('favicon'));
+        }
+        return;
+    }
+}
+
 if (!function_exists('priceUnit')) {
     function priceUnit()
     {

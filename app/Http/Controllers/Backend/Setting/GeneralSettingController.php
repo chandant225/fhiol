@@ -5,9 +5,17 @@ namespace App\Http\Controllers\Backend\Setting;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Setting\GeneralSettingRequest;
 use App\Alert\Facades\Alert;
+use App\Service\ImageService;
 
 class GeneralSettingController extends Controller
 {
+    private $imageService;
+
+    public function __construct(ImageService $imageService)
+    {
+        $this->imageService= $imageService;
+    }
+    
     public function index()
     {
         return view('setting.general', [
