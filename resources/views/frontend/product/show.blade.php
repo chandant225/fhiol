@@ -5,13 +5,18 @@
         <div class="row">
             <div class="col-md-5">
                 <div style="position: sticky; top: 15px;">
-                    <div class="bg-light w-100">
-                        <img src="{{ $product->featuredImage->imageUrl() }}" alt="{{ $product->name }}">
+                    <!-- Main image, on which xzoom will be applied -->
+                    <div class="product-main-image-wrapper">
+                        <img class="xzoom main-image" id="main_image" src="{{ $product->featuredImage->imageUrl('thumb') }}" xoriginal="{{ $product->featuredImage->imageUrl() }}">
                     </div>
-                    <div class="my-3"></div>
-                    <div class="bg-light w-100 p-2 d-flex overflow-x-scroll">
+                    <!-- Thumbnails -->
+                    <div class="image-thumbnail-gallery-wrapper p-2 d-flex mt-2">
                         @foreach($product->images as $image)
-                        <img class="mr-2 border" src="{{ $image->imageUrl() }}" alt="{{ $product->name }}" style="height: 80px;">
+                        <div class="flex-shrink-0">
+                            <a href="{{ $image->imageUrl() }}">
+                                <img class="xzoom-gallery" height="60" src="{{ $image->imageUrl('thumb') }}" xpreview="{{ $image->imageUrl('medium') }}">
+                            </a>
+                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -108,33 +113,25 @@
                     </div>
                 </div>
                 @endif
-
             </div>
         </div>
 
         <div class="my-3"></div>
     </div>
-    @push('styles')
-    <style>
-        #product-wrapper .category-name {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: #f8f9fa;
-            color: #6e6e6e;
-            font-size: .9rem;
-            font-weight: normal;
-            border-radius: 2.5rem;
-        }
+    @push('scripts')
+    <link rel="stylesheet" href="{{ asset('assets/xzoom/xzoom.css') }}">
+    <script src="https://unpkg.com/xzoom/dist/xzoom.min.js"></script>
+    <script>
+        $("#main_image, .xzoom-gallery").xzoom({
+            position: 'right'
+            , Xoffset: 20
+            , defaultScale: -1
+            , tint: false
+            , lens: '#8adaff'
+            , lensOpacity: 0.25
+            , lensShape: 'circle'
+        , });
 
-        #product-wrapper .product-name {
-            font-size: 1.5rem;
-        }
-
-        #product-wrapper .old-price {
-            text-decoration: line-through;
-            color: #e60d2e;
-        }
-
-    </style>
+    </script>
     @endpush
 </x-app-layout>
