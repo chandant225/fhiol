@@ -23,7 +23,7 @@
             <x-box>
                 <button type="submit" class="btn btn-primary rounded-0 w-100 mx-0">{{ $this->updateMode ? 'Update' : 'Save' }}</button>
                 @if($this->updateMode)
-                <a href="{{ route('pages.show', $page) }}" class="btn btn-outline-primary btn-sm rounded-0 w-100 z-depth-0 mx-0 mt-4" target="_blank">View</a>
+                <a href="{{ route('frontend.pages.show', $page) }}" class="btn btn-outline-primary btn-sm rounded-0 w-100 z-depth-0 mx-0 mt-4" target="_blank">View</a>
                 @endif
                 <div class="text-muted">
                     Status: <span class="font-weight-bolder">Active</span>

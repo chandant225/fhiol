@@ -27,7 +27,7 @@ class PageForm extends Component
             'page.show_breadcrumbs' => 'nullable',
             'page.show_title' => 'nullable',
             'page.excerpt' => 'nullable',
-            'featuredImage' => $this->updateMode ? 'nullable' : 'required' . '|mimes:jpeg,jpg,png,gif,bmp,webp',
+            'featuredImage' => $this->updateMode ? 'nullable' : 'nullable' . '|mimes:jpeg,jpg,png,gif,bmp,webp',
         ];
     }
 
