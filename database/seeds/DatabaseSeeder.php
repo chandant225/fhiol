@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class);
         // check if environment is local
         // $this->call(ProductSeeder::class);
+        $this->call(SettingsSeeder::class);
     }
 }
