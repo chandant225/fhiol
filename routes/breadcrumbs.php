@@ -32,3 +32,8 @@ Breadcrumbs::for('stores', function ($trail) {
     $trail->parent('home');
     $trail->push('Stores', route('stores.index'));
 });
+
+Breadcrumbs::for('page', function ($trail, $title) {
+    $trail->parent('home');
+    $trail->push($title);
+});

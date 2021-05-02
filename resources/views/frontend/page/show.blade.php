@@ -11,8 +11,7 @@
         @endif
         @if($page->show_breadcrumbs)
         <x-slot name="breadcrumbs">
-            Home / Mixer & Grinder /Products
-            {{-- @section('breadcrumbs', Breadcrumbs::render('page', $page->title ?? null)) --}}
+            {{ Breadcrumbs::render('page', $page->title ?? null) }}
         </x-slot>
         @endif
     </x-frontend.partials.page-title>
