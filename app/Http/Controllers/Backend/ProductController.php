@@ -37,6 +37,8 @@ class ProductController extends Controller
         try {
             $product = Product::create($request->validated());
 
+            $product->syncSpecifications($request->specifications);
+
             $this->productImageService->create($product, $request->file('image'), $featured = true);
             DB::commit();
         } catch (\Exception $ex) {
