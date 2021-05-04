@@ -43,4 +43,6 @@ Route::name('backend.')->group(function () {
         Route::get('settings/page', 'PageSettingController@index')->name('settings.page.index');
         Route::post('settings/page', 'PageSettingController@store')->name('settings.page.store');
     });
+
+    Route::get('change-password', 'ChangePasswordController@index')->name('change-password');
 });
