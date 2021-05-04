@@ -37,11 +37,19 @@
                         {{ $products->total() }} {{ $products->total() < 2 ? 'item' : 'items' }} found
                     </div>
                     <div class="ml-auto">
-                        <select name="" class="custom-select">
-                            <option value="">Recommended</option>
-                            <option value="">High to Low</option>
-                            <option value="">Low to High</option>
-                        </select>
+                        @php
+                        $currentQueryString = request()->query();
+                        @endphp
+                        <div class="dropdown">
+                            <button class="btn btn-white border dropdown-toggle" type="button" id="sortByDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ $sortedBy }}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="sortByDropdown">
+                                <a class="dropdown-item" href="{{ route('products.index', array_merge($currentQueryString, ['sort_by' => 'Recommended'])) }}">Recommended</a>
+                                <a class="dropdown-item" href="{{ route('products.index', array_merge($currentQueryString, ['sort_by' => 'high-to-low'])) }}">High to Low</a>
+                                <a class="dropdown-item" href="{{ route('products.index', array_merge($currentQueryString, ['sort_by' => 'low-to-high'])) }}">Low to High</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div>
