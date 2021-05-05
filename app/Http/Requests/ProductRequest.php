@@ -37,6 +37,7 @@ class ProductRequest extends FormRequest
             'image' => $updateMode
                 ? 'required'
                 : 'nullable',
+            'features' => 'nullable',
             'specifications' => 'nullable',
             'is_new' => 'nullable',
             'featured' => 'nullable',

@@ -59,28 +59,23 @@
                     </a>
                 </div>
 
-                <div>
-                    <div>Key Features</div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <ul>
-                                <li>Ultra Large Capacity 4.5 cu.ft. Washer and 7.4 cu.ft. Dryer</li>
-                                <li>Single Unit WashTower™ Design</li>
-                                <li>Built-In Intelligence - AI Fabric Sensors/Smart Learner/Smart Pairing™</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>Advanced Washing & Drying - TurboWash™ 360°/Allergiene™ wash cycle/ TurboSteam™</li>
-                                <li>ThinQ® Technology / Proactive Customer Care</li>
-                                <li>Tempered Glass Doors</li>
-                            </ul>
-                        </div>
+                @if($product->features)
+                <div class="card rounded-0 border-0 shadow-sm my-3">
+                    <div class="card-header bg-transparent">
+                        <h5 class="mb-0">Key Features</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="features-list">
+                            @foreach ($product->features as $feature)
+                            <li>{{ $feature }}</li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
+                @endif
 
                 @if($product->description)
-                <div class="card rounded-0 border-0 shadow-sm">
+                <div class="card rounded-0 border-0 shadow-sm my-3">
                     <div class="card-header bg-transparent">
                         <h5 class="mb-0">Product Description</h5>
                     </div>
@@ -92,10 +87,8 @@
                 </div>
                 @endif
 
-                <div class="my-3"></div>
-
                 @if(count($specifications))
-                <div class="card rounded-0 border-0 shadow-sm">
+                <div class="card rounded-0 border-0 shadow-sm my-3">
                     <div class="card-header bg-transparent">
                         <h5 class="mb-0">Specifications</h5>
                     </div>

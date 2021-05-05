@@ -15,9 +15,10 @@ class Product extends Model
 
     protected $casts = [
         'status' => 'boolean',
-        'specifications' => 'array',
+        'specifications' => 'array', // not used
         'is_new' => 'boolean',
         'featured' => 'boolean',
+        'features' => 'array',
     ];
 
     /**

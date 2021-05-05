@@ -32,6 +32,11 @@ class ProductForm extends Component
         $categories = Category::all();
         $specifications = $this->product->specifications();
 
+        if (!$this->product->features) 
+        {
+            $this->product->features = [];
+        }
+
         if (!count($specifications)) {
             $specifications->push(
                 new ProductMeta([

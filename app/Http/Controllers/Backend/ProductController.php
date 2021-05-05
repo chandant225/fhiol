@@ -66,9 +66,11 @@ class ProductController extends Controller
 
     public function update(ProductRequest $request, Product $product)
     {
+        // return $request;
         $product->update($request->validated() + [
             'is_new' => $request->has('is_new'),
             'featured' => $request->has('featured'),
+            'features' => $request->has('features') ? $request->features : null
         ]);
 
         if ($request->hasFile('image')) {

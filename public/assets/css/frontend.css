@@ -257,4 +257,17 @@ body {
     text-decoration: line-through;
     color: #e60d2e;
 }
+
+.features-list {
+    list-style-type: square;
+    /* padding-left: 0; */
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    color: #2c2c39;
+}
+.features-list li {
+    padding: 4px;
+    margin: 5px 2px;
+}
 /* End of single Product */
