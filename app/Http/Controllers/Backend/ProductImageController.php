@@ -52,6 +52,8 @@ class ProductImageController extends Controller
     {
         try {
             $this->imageService->unlinkImage($productImage->path);
+            $this->imageService->unlinkImage($productImage->thumbnail_path);
+            $this->imageService->unlinkImage($productImage->medium_path);
             $productImage->delete();
 
             return response()->json(null, 204);

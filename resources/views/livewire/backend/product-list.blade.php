@@ -40,6 +40,13 @@
                             <option value="0">Unfeatured</option>
                         </select>
                     </div>
+                    <div class="col-auto form-group ">
+                        <label for="">Trashed</label>
+                        <select wire:model.defer="filter.trashed" class="custom-select">
+                            <option value="">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-primary">Filter</button>
                     </div>
@@ -74,6 +81,11 @@
                         </td>
                         <td>
                             <a class="font-weight-bolder" href="{{ route('products.show', $product) }}" target="_blank">{{ $product->name }}</a>
+                            @if ($product->trashed())
+                            <div class="badge badge-danger">
+                                Trashed
+                            </div>
+                            @endif
                         </td>
                         <td>
                             <div>
@@ -99,11 +111,24 @@
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{{ route('products.show', $product) }}" target="_blank">View</a>
                                     <a class="dropdown-item" href="{{ route('backend.products.edit', $product) }}">Edit</a>
-                                    <form action="{{ route('backend.products.destroy', $product) }}" onsubmit="return confirm('Are you sure to delete?')" method="POST" class="form-inline d-inline">
+                                    @if($product->trashed())
+                                    <form action="{{ route('backend.products.restore', $product) }}" method="POST" class="form-inline d-inline">
+                                        @csrf
+                                        @method('patch')
+                                        <button class="dropdown-item" type="submit">Restore</button>
+                                    </form>
+                                    <form action="{{ route('backend.products.forceDelete', $product) }}" onsubmit="return confirm('This will permanantly delete product. Are you sure to delete?')" method="POST" class="form-inline d-inline">
                                         @csrf
                                         @method('delete')
                                         <button class="dropdown-item" type="submit">Delete</button>
                                     </form>
+                                    @else
+                                    <form action="{{ route('backend.products.destroy', $product) }}" onsubmit="return confirm('Are you sure to delete?')" method="POST" class="form-inline d-inline">
+                                        @csrf
+                                        @method('delete')
+                                        <button class="dropdown-item" type="submit">Trash</button>
+                                    </form>
+                                    @endif
                                 </div>
                             </div>
                         </td>

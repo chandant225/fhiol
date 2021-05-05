@@ -7,7 +7,7 @@
                 <div style="position: sticky; top: 15px;">
                     <!-- Main image, on which xzoom will be applied -->
                     <div class="product-main-image-wrapper">
-                        <img class="xzoom main-image" id="main_image" src="{{ $product->featuredImage->imageUrl('thumb') }}" xoriginal="{{ $product->featuredImage->imageUrl() }}">
+                        <img class="xzoom main-image" id="main_image" src="{{ $product->featuredImage->imageUrl('medium') }}" xoriginal="{{ $product->featuredImage->imageUrl() }}">
                     </div>
                     <!-- Thumbnails -->
                     <div class="image-thumbnail-gallery-wrapper p-2 d-flex mt-2">

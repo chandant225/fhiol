@@ -5,10 +5,11 @@ namespace App;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use HasSlug;
+    use SoftDeletes, HasSlug;
 
     protected $guarded = ['id'];
 

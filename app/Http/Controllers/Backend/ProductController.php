@@ -72,6 +72,10 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
+            $featuredImage = $product->featuredImage;
+            $this->imageService->unlinkImage($featuredImage->path);
+            $this->imageService->unlinkImage($featuredImage->thumbnail_path);
+            $this->imageService->unlinkImage($featuredImage->medium_path);
             $product->featuredImage()->delete();
             $this->productImageService->create($product, $request->file('image'), $featured = true);
         }
@@ -82,6 +86,31 @@ class ProductController extends Controller
             Alert::message('Product Updated')->send();
         }
 
+        return redirect()->back();
+    }
+
+    public function destroy(Product $product)
+    {
+        $product->delete();
+        Alert::message('Product moved to trash')->send();
+        return redirect()->route('backend.products.index');
+    }
+
+    public function restore($slug)
+    {
+        $product = Product::where('slug', $slug)->withTrashed()->firstOrFail();
+        $product->restore();
+        Alert::message('Product has been restored.')->send();
+        return redirect()->back();
+    }
+
+    public function forceDelete($slug)
+    {
+        $product = Product::where('slug', $slug)->withTrashed()->firstOrFail();
+        $this->productImageService->delete($product);
+        $product->forceDelete();
+
+        Alert::message('Product has been permanently deleted.')->send();
         return redirect()->back();
     }
 }

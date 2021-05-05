@@ -22,6 +22,7 @@ class ProductList extends Component
         'status' => true,
         'is_new' => null,
         'featured' => null,
+        'trashed' => null,
     ];
 
     public $categories;
@@ -73,6 +74,10 @@ class ProductList extends Component
 
         if ($this->filter['featured'] != null) {
             $products = $products->where('featured', $this->filter['featured']);
+        }
+
+        if ($this->filter['trashed'] != null) {
+            $products = $products->onlyTrashed();
         }
 
         return $products;

@@ -32,4 +32,16 @@ class ProductImageService
 
         return $productImage;
     }
+
+    public function delete(Product $product)
+    {
+        foreach($product->images as $productImage) {
+            $this->imageService->unlinkImage($productImage->path);
+            $this->imageService->unlinkImage($productImage->thumbnail_path);
+            $this->imageService->unlinkImage($productImage->medium_path);
+            $productImage->delete();
+        }
+        
+        return true;
+    }
 }

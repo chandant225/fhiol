@@ -11,7 +11,9 @@ Route::name('backend.')->group(function () {
     Route::post('products', 'ProductController@store')->name('products.store');
     Route::get('products/{product}/edit', 'ProductController@edit')->name('products.edit');
     Route::put('products/{product}', 'ProductController@update')->name('products.update');
-    Route::delete('products/{product}/destroy', 'ProductController@destroy')->name('products.destroy');
+    Route::delete('products/{product}', 'ProductController@destroy')->name('products.destroy');
+    Route::patch('products/{product}/restore', 'ProductController@restore')->name('products.restore');
+    Route::delete('products/{product}/forceDelete', 'ProductController@forceDelete')->name('products.forceDelete');
 
     // pages
     Route::get('pages', 'PageController@index')->name('pages.index');
