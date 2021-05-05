@@ -19,6 +19,22 @@ class ProductController extends Controller
             });
         });
 
+         // filter for minimun price
+         if (request()->has('min_price') && !is_null(request()->get('min_price'))) {
+            $filter['min_price'] = request()->get('min_price');
+            $products = $products->where(function ($query) {
+                return $query->addSelect(\DB::raw('COALESCE(`sale_price`, `price`)'));
+            }, '>=', request()->get('min_price'));
+        }
+
+         // filter for maximun price
+         if (request()->has('max_price') && !is_null(request()->get('max_price'))) {
+            $filter['max_price'] = request()->get('max_price');
+            $products = $products->where(function ($query) {
+                return $query->addSelect(\DB::raw('COALESCE(`sale_price`, `price`)'));
+            }, '<=', request()->get('max_price'));
+        }
+
         if ($sortBy != 'recommended') {
             if ($sortBy == 'high-to-low') {
                 $products = $products->orderByRaw('ifnull(sale_price, price) DESC');
