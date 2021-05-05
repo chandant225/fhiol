@@ -24,9 +24,6 @@
         <img src="{{ $slide->image_url }}" alt="{{ $slide->title }}">
     </div>
     @endforeach
-    <div class="primary-image-slide">
-        <img src="{{ __('http://betterkitchen.test/theme/images/4.jpg') }}" alt="{{ __('') }}">
-    </div>
 </div>
 @push('scripts')
 <script>
