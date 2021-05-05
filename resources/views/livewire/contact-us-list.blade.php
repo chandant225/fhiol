@@ -3,13 +3,13 @@
         <div class="card-body">
             <table class="table table-hover">
                 <thead>
-                    <tr>
-                        <th>
+                    <tr class="bg-light">
+                        <td>
                             <input type="checkbox">
-                        </th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Action</th>
+                        </td>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,8 +20,8 @@
                         </td>
                         <td>{{ $contactMessage->name }}</td>
                         <td>{{ $contactMessage->email }}</td>
-                        <td>
-                            <div class="d-flex">
+                        <td class="text-right">
+                            <div class="d-flex justify-content-end">
                                 @if($deleteId != $contactMessage->id)
                                 <button type="button" wire:click="markViewed('{{ $contactMessage->id }}')" class="btn btn-sm btn-primary mr-3" data-toggle="modal" data-target="#contactUsModal_{{ $contactMessage->id }}" title="View">
                                     <span><i class="fa fa-eye"></i></span>

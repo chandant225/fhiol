@@ -41,7 +41,7 @@
                         </select>
                     </div>
                     <div class="col-auto form-group ">
-                        <label for="">Trashed</label>
+                        <label>Trashed</label>
                         <select wire:model.defer="filter.trashed" class="custom-select">
                             <option value="">No</option>
                             <option value="1">Yes</option>
@@ -65,14 +65,14 @@
                 </select> records per page
             </div>
             <table class="table">
-                <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                    <th class="text-center">Views</th>
-                    <th>Status</th>
-                    <th></th>
+                <tr class="bg-light">
+                    <td>Image</td>
+                    <td>Name</td>
+                    <td class="text-center">Price</td>
+                    <td>Category</td>
+                    <td class="text-center">Views</td>
+                    <td>Active</td>
+                    <td></td>
                 </tr>
                 <tbody>
                     @forelse($products as $product)
@@ -81,14 +81,22 @@
                             <img src="{{ $product->featuredImage->imageUrl() }}" alt="{{ $product->name }}" style="height: 40px; width: auto;">
                         </td>
                         <td>
-                            <a class="font-weight-bolder" href="{{ route('products.show', $product) }}" target="_blank">{{ $product->name }}</a>
-                            @if ($product->trashed())
-                            <div class="badge badge-danger">
-                                Trashed
+                            <a class="" href="{{ route('products.show', $product) }}" target="_blank">{{ $product->name }}</a>
+                            <div>
+                                @if($product->isFeatured())
+                                <div class="badge badge-light font-weight-light">Featured</div>
+                                @endif
+                                @if($product->isMarkedNew())
+                                <div class="badge badge-light font-weight-lighter">New</div>
+                                @endif
+                                @if ($product->trashed())
+                                <div class="badge badge-danger">
+                                    Trashed
+                                </div>
+                                @endif
                             </div>
-                            @endif
                         </td>
-                        <td>
+                        <td class="text-center">
                             <div>
                                 {{ priceUnit() }} {{ number_format($product->currentPrice()) }}
                             </div>
@@ -98,10 +106,10 @@
                                 @endif
                             </div>
                         </td>
-                        <td>{{ $product->category->name }}</td>
+                        <td><span class="badge badge-light font-weight-light">{{ $product->category->name }}</span></td>
                         <td class="text-center">{{ $product->views }}</td>
                         <td>
-                            {{-- <livewire:product-status-switch :product="$product" :key="$product->id" /> --}}
+                            <livewire:product-status-switch :product="$product" />
                         </td>
                         <td class="text-right">
                             <div>

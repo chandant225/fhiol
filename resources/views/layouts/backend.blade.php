@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ siteName() }}</title>
 
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="{{ faviconUrl() }}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('adminlte/fontawesome-free/css/all.min.css') }}">
@@ -19,6 +19,11 @@
 
     @livewireStyles
     @stack('styles')
+    <style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+        }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->

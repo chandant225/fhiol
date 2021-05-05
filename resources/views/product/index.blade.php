@@ -20,7 +20,7 @@
     </div><!-- /.container-fluid -->
 </section>
 
-<div class="container-fluid">
+<div class="container-fluid pb-5">
     <livewire:backend.product-list>
 </div>
 @endsection

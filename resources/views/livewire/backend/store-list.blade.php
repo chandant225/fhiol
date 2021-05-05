@@ -8,11 +8,11 @@
         </select> records per page
     </div>
     <table class="table">
-        <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Phone</th>
-            <th></th>
+        <tr class="bg-light">
+            <td>Name</td>
+            <td>City</td>
+            <td>Phone</td>
+            <td></td>
         </tr>
         <tbody>
             @forelse($stores as $store)
