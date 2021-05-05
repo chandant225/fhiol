@@ -41,6 +41,8 @@ class ProductController extends Controller
     {
         abort_unless($product->isActive(), 404);
 
+        $product->increment('views');
+
         return view('frontend.product.show', [
             'siteTitle' => $product->name,
             'product' => $product,

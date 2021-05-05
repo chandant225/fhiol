@@ -70,6 +70,7 @@
                     <th>Name</th>
                     <th>Price</th>
                     <th>Category</th>
+                    <th class="text-center">Views</th>
                     <th>Status</th>
                     <th></th>
                 </tr>
@@ -98,6 +99,7 @@
                             </div>
                         </td>
                         <td>{{ $product->category->name }}</td>
+                        <td class="text-center">{{ $product->views }}</td>
                         <td>
                             {{-- <livewire:product-status-switch :product="$product" :key="$product->id" /> --}}
                         </td>
