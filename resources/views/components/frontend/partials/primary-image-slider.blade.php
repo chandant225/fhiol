@@ -52,7 +52,7 @@
         }
 
     </style>
-    <div class="owl-carousel">
+    <div class="primary-image-slider owl-carousel">
         @foreach ($slides as $slide)
         <div class="primary-image-slide">
             <div class="row">
@@ -82,7 +82,7 @@
     @push('scripts')
     <script>
         $(document).ready(function() {
-            $(".owl-carousel").owlCarousel({
+            $(".primary-image-slider").owlCarousel({
                 items: 1
                 , loop: true
                 , autoplay: true
