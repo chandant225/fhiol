@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-use Illuminate\Http\Request;
+use Artesaos\SEOTools\Traits\SEOTools as SEOToolsTrait;
 
 class ProductController extends Controller
 {
+    use SEOToolsTrait;
+
     public function index()
     {
-        $title = 'Products';
+      $title = 'Products';
         $sortBy = request()->query('sort_by', 'recommended');
         $products = Product::with(['featuredImage'])->active();
 
@@ -40,6 +42,10 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         abort_unless($product->isActive(), 404);
+
+        $this->seo()->setTitle($product->seoTitle());
+        $this->seo()->setDescription($product->seoDescription());
+        $this->seo()->opengraph()->addImage($product->seoImage());
 
         $product->increment('views');
 

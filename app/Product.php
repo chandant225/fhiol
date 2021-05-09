@@ -6,6 +6,7 @@ use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Product extends Model
 {
@@ -87,6 +88,21 @@ class Product extends Model
     public function isFeatured()
     {
         return $this->featured;
+    }
+
+    public function seoTitle()
+    {
+        return $this->title;
+    }
+
+    public function seoDescription()
+    {
+        return $this->description ? Str::substr(strip_tags($this->description), 0, 200) : null;
+    }
+
+    public function seoImage()
+    {
+        return $this->featuredImage->imageUrl();
     }
 
     public function category()

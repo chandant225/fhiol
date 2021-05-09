@@ -170,6 +170,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         JamesBhatta\AppSettings\AppSettingServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
 
         /*
          * Application Service Providers...
