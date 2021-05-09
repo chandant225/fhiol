@@ -1,7 +1,7 @@
 <x-box>
     <form wire:submit.prevent="save">
         <x-form.form-group>
-            <div class="grey lighten-4 border position-relative overflow-hidden" style="height:400px; 
+            <div class="grey lighten-4 border position-relative overflow-hidden" style="height:500px; 
             background: url('{{ $imageUrl }}'); background-repeat: no-repeat; background-size: 100% 100%;">
 
                 <div class="position-absolute d-grid h-100 w-100 bg-transparent" style="display: grid;">
@@ -54,12 +54,29 @@
             @enderror
         </x-form.form-group>
 
+        <x-form.form-group>
+            <x-form.label>Description</x-form.label>
+            <textarea wire:model.defer="imageSlider.description" class="form-control {{ invalid_class('imageSlider.description') }}" cols="30" rows="5"></textarea>
+            @error('imageSlider.description')
+            <p class="text-red">{{ $message }}</p>
+            @enderror
+        </x-form.form-group>
+
         <div class="row">
             <div class="col-md-6">
                 <x-form.form-group>
                     <x-form.label>Action Link</x-form.label>
                     <input wire:model.defer="imageSlider.action_link" class="form-control {{ invalid_class('imageSlider.action_link') }}" />
                     @error('imageSlider.action_link')
+                    <p class="text-red">{{ $message }}</p>
+                    @enderror
+                </x-form.form-group>
+            </div>
+            <div class="col-md-6">
+                <x-form.form-group>
+                    <x-form.label>Action Button Text</x-form.label>
+                    <input wire:model.defer="imageSlider.action_button_text" class="form-control {{ invalid_class('imageSlider.action_button_text') }}" />
+                    @error('imageSlider.action_button_text')
                     <p class="text-red">{{ $message }}</p>
                     @enderror
                 </x-form.form-group>

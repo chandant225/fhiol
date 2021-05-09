@@ -26,7 +26,9 @@ class ImageSliderForm extends Component
         'imageSlider.group' => 'required',
         'imageSlider.active' => 'nullable|boolean',
         'imageSlider.position' => 'required|integer',
+        'imageSlider.description' => 'nullable',
         'imageSlider.action_link' => 'nullable',
+        'imageSlider.action_button_text' => 'nullable',
         'imageSlider.open_in_new_tab' => 'nullable',
     ];
 

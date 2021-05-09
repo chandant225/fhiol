@@ -24,7 +24,7 @@ class PrimaryImageSlider extends Component
      */
     public function render()
     {
-        $slides = ImageSlider::select(['group', 'image_path', 'title', 'position', 'action_link', 'open_in_new_tab'])
+        $slides = ImageSlider::select(['group', 'image_path', 'title', 'description', 'position', 'action_link', 'action_button_text', 'open_in_new_tab'])
             ->where('group', 'primary')
             ->active()->get();
 

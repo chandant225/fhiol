@@ -40,7 +40,7 @@
                         @forelse($imageSliders as $imageSlider)
                         <tr>
                             <td>
-                                <img src="{{ $imageSlider->image_url }}" style="height: 4em; width: 10em;">
+                                <img src="{{ $imageSlider->image_url }}" style="width: 10em; height: 6em;">
                             </td>
                             <td>{{ ucfirst($imageSlider->group) }}</td>
                             <td>{{ $imageSlider->position }}</td>

@@ -4,7 +4,7 @@
     </section>
 
     {{-- Badges --}}
-    <section style="background-color: #051528; color: #ececec;">
+    <section style="background-color: #000; color: #ececec;">
         <div class="container py-5">
             <div class="row">
                 <div class="col-md-3 text-center">
