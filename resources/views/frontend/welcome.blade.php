@@ -40,7 +40,7 @@
             </div>
             <div class="row">
                 @foreach ($featuredProducts as $product)
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <x-frontend.product.product-card :product="$product"></x-frontend.product.product-card>
                 </div>
                 @endforeach
@@ -58,7 +58,7 @@
             </div>
             <div class="row">
                 @foreach ($newProducts as $product)
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <x-frontend.product.product-card :product="$product"></x-frontend.product.product-card>
                 </div>
                 @endforeach
