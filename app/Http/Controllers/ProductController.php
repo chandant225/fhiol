@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Artesaos\SEOTools\Traits\SEOTools as SEOToolsTrait;
 
@@ -11,27 +12,32 @@ class ProductController extends Controller
 
     public function index()
     {
-      $title = 'Products';
+        $filters = collect();
+        $title = 'Products';
         $sortBy = request()->query('sort_by', 'recommended');
         $products = Product::with(['featuredImage'])->active();
 
-        $products->when(request()->filled('category_id'), function ($query) {
+        $products->when(request()->filled('category_id'), function ($query) use ($filters) {
+            $category = Category::select('name')->where('id', request()->query('category_id'))->first();
+            if ($category) {
+                $filters->push('Category: ' . $category->name);
+            }
             return $query->whereHas('category', function ($query) {
                 return $query->whereId(request()->query('category_id'));
             });
         });
 
-         // filter for minimun price
-         if (request()->has('min_price') && !is_null(request()->get('min_price'))) {
-            $filter['min_price'] = request()->get('min_price');
+        // filter for minimun price
+        if (request()->has('min_price') && !is_null(request()->get('min_price'))) {
+            $filters->push('Minimun Price ' . priceUnit() . ' ' . request()->get('min_price'));
             $products = $products->where(function ($query) {
                 return $query->addSelect(\DB::raw('COALESCE(`sale_price`, `price`)'));
             }, '>=', request()->get('min_price'));
         }
 
-         // filter for maximun price
-         if (request()->has('max_price') && !is_null(request()->get('max_price'))) {
-            $filter['max_price'] = request()->get('max_price');
+        // filter for maximun price
+        if (request()->has('max_price') && !is_null(request()->get('max_price'))) {
+            $filters->push('Maximum Price ' . priceUnit() . ' ' . request()->get('max_price'));
             $products = $products->where(function ($query) {
                 return $query->addSelect(\DB::raw('COALESCE(`sale_price`, `price`)'));
             }, '<=', request()->get('max_price'));
@@ -51,7 +57,8 @@ class ProductController extends Controller
         return view('frontend.product.index', [
             'title' => $title,
             'sortedBy' => ucfirst(str_replace('-', ' ', $sortBy)),
-            'products' => $products
+            'products' => $products,
+            'filters' => $filters
         ]);
     }
 

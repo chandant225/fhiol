@@ -53,12 +53,16 @@
                         </div>
                     </div>
                 </div>
+
+                @if ($filters->count())
                 <div class="my-4">
-                    <span class="bg-primary text-white py-1 px-2 rounded-lg" style="font-size: .9rem;">Category: Mixer & Grinder</span>
-                    <span class="bg-primary text-white py-1 px-2 rounded-lg" style="font-size: .9rem;">Category: Mixer & Grinder</span>
-                    <span class="bg-primary text-white py-1 px-2 rounded-lg" style="font-size: .9rem;">Category: Mixer & Grinder</span>
-                    <span class="bg-danger text-white py-1 px-2 rounded-lg" style="font-size: .9rem;">Clear All</span>
+                    @foreach ($filters as $filter)
+                    <span class="bg-primary text-white py-1 px-2 rounded-lg" style="font-size: .9rem;">{{ $filter }}</span>
+                    @endforeach
+                    <a class="bg-danger text-white py-1 px-2 rounded-lg" style="font-size: .9rem;" href="{{ route('products.index') }}">Clear All</a>
                 </div>
+                @endif
+                
                 <section class="">
                     <div class="row">
                         @foreach ($products as $product)
