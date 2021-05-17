@@ -66,7 +66,11 @@
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td>{{ $contactMessage->email }}</td>
+                            <td>
+                                <input type="text" id="email-of-{{ $contactMessage->id }}" value="{{ $contactMessage->email }}" style="position: fixed; top: -1000px; left: -10000px;">
+                                <span>{{ $contactMessage->email }}</span>
+                                <button class="btn btn-link" type="button" role="button" onclick="copyValueToClipboard('email-of-{{ $contactMessage->id }}')"><i class="far fa-clone"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>Phone</td>
@@ -81,10 +85,34 @@
                     </table>
                 </div>
                 <div class="modal-footer">
+                    <a class="mr-auto btn btn-primary" href="mailto:{{ $contactMessage->email }}">Reply</a>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" wire:click="markViewed('{{ $contactMessage->id }}')">Close</button>
                 </div>
             </div>
         </div>
     </div>
     @endforeach
+
+    @push('styles')
+    <script>
+        function copyValueToClipboard(id) {
+            var copyText = document.getElementById(id);
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+            document.execCommand("copy");
+
+            Swal.fire({
+                title: 'Copied to clipboard'
+                , icon: null
+                , position: "bottom"
+                , timer: 3000
+                , toast: true
+                , showCancelButton: false
+                , showConfirmButton: false
+            })
+        }
+
+    </script>
+
+    @endpush
 </div>
