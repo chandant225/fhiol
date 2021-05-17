@@ -1,14 +1,11 @@
 <?php
 
+// Home
 Breadcrumbs::for('home', function ($trail) {
     $trail->push('Home', route('home'));
 });
 
-Breadcrumbs::for('contact-us', function ($trail) {
-    $trail->parent('home');
-    $trail->push('Contact Us', route('contact-us.index'));
-});
-
+// Products
 Breadcrumbs::for('products', function ($trail) {
     $trail->parent('home');
     $trail->push('Products', route('products.index'));
@@ -28,12 +25,36 @@ Breadcrumbs::for('product', function ($trail, $product) {
     $trail->push($product->name);
 });
 
+// Posts
+Breadcrumbs::for('posts', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Posts', route('posts.index'));
+});
+
+Breadcrumbs::for('post-category', function ($trail, $category) {
+    $trail->parent('posts');
+    $trail->push($category->name, route('posts.index'));
+});
+
+Breadcrumbs::for('post', function ($trail, $post) {
+    $trail->parent('post-category', $post->category);
+    $trail->push($post->title);
+});
+
+// Stores
 Breadcrumbs::for('stores', function ($trail) {
     $trail->parent('home');
     $trail->push('Stores', route('stores.index'));
 });
 
+// Page
 Breadcrumbs::for('page', function ($trail, $title) {
     $trail->parent('home');
     $trail->push($title);
+});
+
+// Contact Us
+Breadcrumbs::for('contact-us', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Contact Us', route('contact-us.index'));
 });

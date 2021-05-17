@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2.5|^8.0",
         "artesaos/seotools": "^0.20.1",
+        "cviebrock/eloquent-taggable": "^7.0",
         "diglactic/laravel-breadcrumbs": "^6.1",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",

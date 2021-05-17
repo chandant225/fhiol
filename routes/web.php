@@ -25,6 +25,9 @@ Route::get('backend/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@in
 Route::get('products', 'ProductController@index')->name('products.index');
 Route::get('products/{product}', 'ProductController@show')->name('products.show');
 
+Route::get('blogs', 'PostController@index')->name('posts.index');
+Route::get('blogs/{post}', 'PostController@show')->name('posts.show');
+
 Route::get('find-a-store', 'StoreController@index')->name('stores.index');
 
 Route::get('contact-us', 'ContactUsController@index')->name('contact-us.index');

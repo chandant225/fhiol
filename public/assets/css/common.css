@@ -77,7 +77,7 @@ input:checked + .slider:before {
 .svg-icon svg {
     height: 1em;
     width: 1em;
-    fill: currentColor;
+    /* fill: currentColor; */
 }
 
 .svg-icon.svg-baseline svg {

@@ -7,6 +7,7 @@ body {
     --theme-accent-color: #ff5353;
     --dark-gray: #313445;
     --product-image-aspect-ratio: 4/4;
+    --post-image-aspect-ratio: 6/4;
 }
 
 .text-theme-color {
@@ -83,7 +84,7 @@ body {
 }
 
 .product__category__list li a::before {
-    color: / rgb(153, 153, 153);
+    color: /rgb(153, 153, 153);
     content: "❖";
     margin-right: 10px;
 }
@@ -271,3 +272,98 @@ body {
     margin: 5px 2px;
 }
 /* End of single Product */
+
+/*
+**************
+*  Post Card 
+***************
+*/
+.post-card {
+    background-color: #fff;
+    transition: all 0.5s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-10px);
+}
+
+.post-card .image-wrapper {
+    text-align: center;
+    position: relative;
+    height: 0;
+    padding-bottom: calc(100% / (var(--post-image-aspect-ratio)));
+}
+
+.post-card .image-wrapper > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post__title {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.post__title a {
+    color: #2a3847;
+}
+
+.post-card .icon {
+    color: blue;
+}
+
+/*
+**************
+*  Tag Label 
+***************
+*/
+.tag-label {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 2.5rem;
+    background-color: #fee2e2;
+    color: #ef4444;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.5s ease;
+}
+
+.tag-label:hover {
+    background-color: #ef4444;
+    color: #fff;
+}
+
+.tag-label .dot {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background-color: #ef4444;
+    transition: all 0.5s ease;
+}
+
+.tag-label:hover .dot {
+    background-color: #fff;
+}
+
+.tag-label > * {
+    margin-left: 8px;
+}
+
+.tag-label > *:first-child {
+    margin-left: 0;
+}
+
+
+/*
+**************
+*  Single Post 
+***************
+*/
+.single-post {
+    color: #2a3847;
+}
