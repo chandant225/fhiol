@@ -9,7 +9,7 @@
                 <x-box>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <input type="text" name="title" class="form-control form-control-lg rounded-0 {{ invalid_class('title') }}" value="{{ old('title', $post->title) }}" placeholder="Add title">
+                            <input type="text" name="title" class="form-control form-control-lg bg-light rounded-0 {{ invalid_class('title') }}" value="{{ old('title', $post->title) }}" placeholder="Add title">
                             <x-invalid-feedback field="title"></x-invalid-feedback>
                         </div>
 
@@ -91,11 +91,11 @@
                         if ( $post->exists ) {
                         $imageUrl = $post->imageUrl();
                         } else {
-                        $imageUrl = 'https://dummyimage.com/600x600/f4f6f9/0011ff';
+                        $imageUrl = 'https://dummyimage.com/1280x720/f9f9f9/0011ff';
                         }
                         @endphp
                         <div class="position-relative">
-                            <img id="postImagePreview" class="img-fluid" src="{{ $imageUrl }}" alt="" style="max-height: 300px;">
+                            <img id="postImagePreview" class="img-fluid rounded" src="{{ $imageUrl }}" alt="" style="max-height: 300px;">
                             <input type="file" name="cover_image" id="postImage" value="{{ old('image') }}" accept="image/*" hidden>
                             <label for="postImage" class="position-absolute" style="bottom: 0;
                                         left: 10px;
@@ -158,6 +158,11 @@
 </div>
 
 @push('scripts')
+<style>
+    .note-editing-area {
+        background-color: #f9f9f9;
+    }
+</style>
 <script type="text/javascript" id="feature-input-template">
     <div class="bg-light d-flex justify-content-between white p-3">
         <div class="align-self-center flex-grow-1">
