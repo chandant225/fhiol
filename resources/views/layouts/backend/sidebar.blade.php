@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-light-indigo elevation-1">
+<aside class="main-sidebar sidebar-light-indigo">
     <!-- Brand Logo -->
     <a href="{{ url('/') }}" class="brand-link text-center" target="_blank">
         {{-- <span class="brand-text font-weight-light">{{ siteName() }}</span> --}}
@@ -10,7 +10,7 @@
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ auth()->user()->avatar() }}" class="img-circle elevation-1" alt="{{ auth()->user()->name }}">
+                <img src="{{ auth()->user()->avatar() }}" class="img-circle" alt="{{ auth()->user()->name }}">
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{ auth()->user()->name }}</a>
@@ -92,7 +92,6 @@
                         <i class="nav-icon far fa-comments"></i>
                         <p>
                             Contact Messages
-                            <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
                 </li>
