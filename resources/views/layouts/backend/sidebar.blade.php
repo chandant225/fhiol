@@ -80,8 +80,16 @@
                     </ul>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('backend.product-inquiry.index') }}" class="nav-link {{ setActive('backend.product-inquiry.*') }}">
+                        <i class="nav-icon far fa-question-circle"></i>
+                        <p>
+                            Product Inquiries
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('backend.contact-us.index') }}" class="nav-link {{ setActive('backend.contact-us.*') }}">
-                        <i class="nav-icon fa fa-comments"></i>
+                        <i class="nav-icon far fa-comments"></i>
                         <p>
                             Contact Messages
                             <span class="right badge badge-danger">New</span>

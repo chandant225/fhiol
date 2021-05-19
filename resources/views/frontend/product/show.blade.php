@@ -47,6 +47,10 @@
                 <div class="font-italic">You save {{ priceUnit() }} {{ $product->price - $product->currentPrice() }} <span class="text-theme-color">({{ $product->discountPercentage($withPercent = true) }} off)</span></div>
                 @endif
 
+                <div class="my-4">
+                    <button class="btn btn-theme px-5" type="button" role="button" onclick="window.dispatchEvent(new CustomEvent('show-inquiry-modal'))">Inquiry</button>
+                </div>
+
                 <div class="bg-light p-3 my-3">
                     <a class="btn btn-primary mr-2" href="https://www.facebook.com/sharer/sharer.php?u={{ request()->url() }}" target="_blank">
                         <span><i class="fa fa-facebook"></i></span>
@@ -110,6 +114,50 @@
         </div>
 
         <div class="my-3"></div>
+
+        <style>
+            #inquiry-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                z-index: 100;
+                color: #232343;
+            }
+
+            #inquiry-modal .content-wrapper {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(0, 0, 00, 0.1)
+            }
+
+        </style>
+        <script>
+            window.addEventListener('show-inquiry-modal', function() {
+                console.log('listened by script');
+            })
+        </script>
+        <div id="inquiry-modal" class="animate__animated animate__faster" x-data="{ show: false }" x-show="show" x-transition:enter="animate__fadeIn" x-transition:leave="animate__fadeOut" x-cloak>
+            <div class="content-wrapper" x-on:show-inquiry-modal.window="show = true" x-on:close-inquiry-modal.window="show = false">
+                <div class="content bg-white rounded shadow overflow-hidden" style="width: 800px;" @away="show = false">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-5 text-white p-5" style="background-color: #8e24aa;">
+                                <img class="img-fluid" src="{{ $product->featuredImage->imageUrl('medium') }}" alt="{{ $product->name }}">
+                                <h5 class="h5-responsive text-center mt-3">{{ $product->name }}</h5>
+                            </div>
+                            <div class="col-md-7 p-5">
+                                <h3 class="h3-responsive mb-4 font-weight-bold">Product Inquiry</h3>
+                                <livewire:frontend.product-inquiry-form :product="$product"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     @push('scripts')
     <link rel="stylesheet" href="{{ asset('assets/xzoom/xzoom.css') }}">

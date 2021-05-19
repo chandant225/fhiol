@@ -40,12 +40,17 @@ Route::name('backend.')->group(function () {
     Route::get('contact-us', 'ContactUsController@index')->name('contact-us.index');
     Route::get('subscribers', 'SubscriberController@index')->name('subscribers.index');
     
+    // Stores
     Route::get('stores', 'StoreController@index')->name('stores.index');
     Route::get('stores/create', 'StoreController@create')->name('stores.create');
     Route::post('stores', 'StoreController@store')->name('stores.store');
     Route::get('stores/{store}/edit', 'StoreController@edit')->name('stores.edit');
     Route::put('stores/{store}', 'StoreController@update')->name('stores.update');
     Route::delete('stores/{store}', 'StoreController@destroy')->name('stores.destroy');
+
+    // Product Inquiries
+    Route::get('inquiries', 'ProductInquiryController@index')->name('product-inquiry.index');
+    Route::patch('inquiries/mark-read', 'ProductInquiryController@markRead')->name('product-inquiry.mark-read');
 
     Route::group(['namespace' => 'Setting'], function () {
         Route::get('settings/general', 'GeneralSettingController@index')->name('settings.general.index');
