@@ -22,6 +22,7 @@
 <div class="container-fluid pb-5">
     <div class="card shadow-sm">
         <div class="card-body p-0">
+            @if(count($productInquiries))
             <table class="table">
                 <tr class="bg-light" style="font-size: .9rem;">
                     <td>Customer Name</td>
@@ -29,7 +30,7 @@
                     <td></td>
                     <td></td>
                 </tr>
-                @forelse ($productInquiries as $inquiry)
+                @foreach ($productInquiries as $inquiry)
                 <tr>
                     <td>{{ $inquiry->customer_name }}
                         @if(!$inquiry->viewed())
@@ -43,28 +44,29 @@
                             <button type="button" class="btn btn-sm btn-primary mr-3" data-toggle="modal" data-target="#inquiry-modal-{{ $inquiry->id }}" title="View">
                                 <span><i class="fa fa-eye"></i></span>
                             </button>
-                            <button type="submit" class="btn btn-sm btn-danger mr-3" title="Delete"><span><i class="fa fa-trash-alt"></i></span></button>
+                            <form action="{{ route('backend.product-inquiry.destroy', $inquiry) }}" onsubmit="return confirm('Are you sure to delete? This action in irreversible.')" method="POST" class="form-inline">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-sm btn-danger mr-3" title="Delete"><span><i class="fa fa-trash-alt"></i></span></button>
+                            </form>
                         </div>
                     </td>
                 </tr>
-                @empty
-                <tr>
-                    <td colspan="42">
-                        @include('partials.no-content')
-                    </td>
-                </tr>
-                @endforelse
+                @endforeach
             </table>
-
+            @else
+            @include('partials.no-content')
+            @endif
+            
             @if($productInquiries->hasPages())
-                <div class="d-flex py-2 px-4">
-                    <div>
-                        Showing results from {{ $productInquiries->firstItem() }} to {{ $productInquiries->lastItem() }} of {{ $productInquiries->total() }}
-                    </div>
-                    <div class="ml-auto">
-                        {{ $productInquiries->links() }}
-                    </div>
+            <div class="d-flex py-2 px-4">
+                <div>
+                    Showing results from {{ $productInquiries->firstItem() }} to {{ $productInquiries->lastItem() }} of {{ $productInquiries->total() }}
                 </div>
+                <div class="ml-auto">
+                    {{ $productInquiries->links() }}
+                </div>
+            </div>
             @endif
         </div>
     </div>
@@ -132,9 +134,9 @@
                 type: "post"
                 , url: apiUrl
                 , data: {
-                        '_method': 'PATCH'
-                        , '_token': "{{ csrf_token() }}"
-                        , 'id': productInquiryId
+                    '_method': 'PATCH'
+                    , '_token': "{{ csrf_token() }}"
+                    , 'id': productInquiryId
                 }
                 , dataType: "dataType"
                 , success: function(response) {

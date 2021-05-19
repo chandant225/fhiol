@@ -1,4 +1,4 @@
-<div style="text-align: center; padding: 20px 100px;">
+<div style="text-align: center; padding: 50px 100px;">
     <svg xmlns="http://www.w3.org/2000/svg" width="255" height="158">
         <g fill="none">
             <rect width="116" height="135" x="115" y="15" fill="#F9F9F9" rx="10" />

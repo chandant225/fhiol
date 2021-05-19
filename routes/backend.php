@@ -50,6 +50,7 @@ Route::name('backend.')->group(function () {
 
     // Product Inquiries
     Route::get('inquiries', 'ProductInquiryController@index')->name('product-inquiry.index');
+    Route::delete('inquiries/{productInquiry}', 'ProductInquiryController@destroy')->name('product-inquiry.destroy');
     Route::patch('inquiries/mark-read', 'ProductInquiryController@markRead')->name('product-inquiry.mark-read');
 
     Route::group(['namespace' => 'Setting'], function () {
