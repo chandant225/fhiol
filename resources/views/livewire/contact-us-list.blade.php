@@ -14,11 +14,16 @@
                 </thead>
                 <tbody>
                     @forelse ($contactMessages as $contactMessage)
-                    <tr class="@if(!$contactMessage->viewed()) table-success @endif">
+                    <tr>
                         <td>
                             <input type="checkbox">
                         </td>
-                        <td>{{ $contactMessage->name }}</td>
+                        <td>
+                            <span>{{ $contactMessage->name }}</span>
+                            @if(!$contactMessage->viewed())
+                            <div class="badge badge-light font-weight-light">New</div>
+                            @endif
+                        </td>
                         <td>{{ $contactMessage->email }}</td>
                         <td class="text-right">
                             <div class="d-flex justify-content-end">
