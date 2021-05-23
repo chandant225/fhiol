@@ -1,4 +1,5 @@
 <x-box class="border-0 rounded shadow-sm">
+    @if(count($subscribers))
     <div class="mb-3">
         <select wire:model="paginate" class="custom-select w-auto">
             <option value="15">15</option>
@@ -32,5 +33,9 @@
     <div class="d-flex justify-content-center">
         {{ $subscribers->links() }}
     </div>
+    @endif
+
+    @else
+    @include('partials.no-content')
     @endif
 </x-box>
