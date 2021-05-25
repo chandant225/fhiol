@@ -53,6 +53,12 @@ Route::name('backend.')->group(function () {
     Route::delete('inquiries/{productInquiry}', 'ProductInquiryController@destroy')->name('product-inquiry.destroy');
     Route::patch('inquiries/mark-read', 'ProductInquiryController@markRead')->name('product-inquiry.mark-read');
 
+    // Catalogue
+    Route::get('catalogues', 'CatalogueController@index')->name('catalogues.index');
+    Route::get('catalogues/create', 'CatalogueController@create')->name('catalogues.create');
+    Route::get('catalogues/{catalogue}/edit', 'CatalogueController@edit')->name('catalogues.edit');
+    Route::delete('catalogues/{catalogue}', 'CatalogueController@destroy')->name('catalogues.destroy');
+
     Route::group(['namespace' => 'Setting'], function () {
         Route::get('settings/general', 'GeneralSettingController@index')->name('settings.general.index');
         Route::post('settings/general', 'GeneralSettingController@store')->name('settings.general.store');

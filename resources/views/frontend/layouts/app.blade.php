@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/line-clamp.css') }}">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     @livewireStyles
     @stack('styles')
     {{ $styles ?? '' }}
@@ -46,6 +47,8 @@
     <script src="{{ asset('assets/owl-carousel/js/owl.carousel.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="{{ asset('assets/js/frontend.js') }}"></script>
+    <script src="{{ asset('assets/datatables-bs4/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
     @livewireScripts
     <x-livewire-alert::scripts />
     @stack('scripts')

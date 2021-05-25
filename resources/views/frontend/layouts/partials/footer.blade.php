@@ -104,8 +104,8 @@
                 <ul class="footer-links">
                     <li><a href="{{ route('products.index') }}">Products</a></li>
                     <li><a href="{{ route('posts.index') }}">Blogs</a></li>
-                    <li><a href="/pages/shipping-details">What's New?</a></li>
-                    <li><a href="{{ route('stores.index') }}">Find a Store</a></li>
+                    <li><a href="{{ route('catalogues.index') }}">Catalogues</a></li>
+                    {{-- <li><a href="{{ route('stores.index') }}">Find a Store</a></li> --}}
                 </ul>
             </div>
             <div class="col-md-2">

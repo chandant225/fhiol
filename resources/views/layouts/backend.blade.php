@@ -16,7 +16,7 @@
     <link href="{{ asset('assets/dropzone/dist/dropzone.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/common.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/backend.css') }}">
-
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
     @livewireStyles
     @stack('styles')
     <style>
@@ -40,11 +40,11 @@
         </div>
         <!-- /.content-wrapper -->
 
-        <footer class="main-footer">
+        <footer class="main-footer text-sm">
             <div class="float-right d-none d-sm-block">
-                <b>Version</b> 1.0.0
+                <span>Version</span> 1.0.0
             </div>
-            <strong>Copyright &copy; {{ date('Y') }} <a href="{{ url('/') }}">{{ siteName() }}</a>.</strong> All rights reserved.
+            <span>Copyright &copy; {{ date('Y') }} <a href="{{ url('/') }}">{{ siteName() }}</a>.</span> All rights reserved.
         </footer>
 
         <!-- Control Sidebar -->

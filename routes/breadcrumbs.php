@@ -1,6 +1,9 @@
 <?php
 
 // Home
+
+use function Ramsey\Uuid\v1;
+
 Breadcrumbs::for('home', function ($trail) {
     $trail->push('Home', route('home'));
 });
@@ -39,6 +42,12 @@ Breadcrumbs::for('post-category', function ($trail, $category) {
 Breadcrumbs::for('post', function ($trail, $post) {
     $trail->parent('post-category', $post->category);
     $trail->push($post->title);
+});
+
+// Catalogues
+Breadcrumbs::for('catalogues', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Catalogues');
 });
 
 // Stores

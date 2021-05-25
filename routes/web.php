@@ -28,6 +28,8 @@ Route::get('products/{product}', 'ProductController@show')->name('products.show'
 Route::get('blogs', 'PostController@index')->name('posts.index');
 Route::get('blogs/{post}', 'PostController@show')->name('posts.show');
 
+Route::get('catalogues', 'CatalogueController@index')->name('catalogues.index');
+
 Route::get('find-a-store', 'StoreController@index')->name('stores.index');
 
 Route::get('contact-us', 'ContactUsController@index')->name('contact-us.index');
