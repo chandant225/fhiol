@@ -38,7 +38,7 @@ class CatalogueController extends Controller
     public function showForm(Catalogue $catalogue = null)
     {
         $updateMode = false;
-        if (!$catalogue->exists) {
+        if (!$catalogue) {
             $catalogue = new Catalogue();
             $updateMode = true;
         }
