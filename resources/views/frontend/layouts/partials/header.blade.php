@@ -32,20 +32,21 @@
             <button class="navbar-toggler" type="button" @click="show = !show">
                 <span class="navbar-toggler-icon"></span>
             </button>
-                @include('frontend.layouts.partials.mobile-menu')
-            <div class="collapse navbar-collapse justify-content-end">
+            @include('frontend.layouts.partials.mobile-menu')
+            <div id="navbar" class="collapse navbar-collapse justify-content-end">
+                <div id="navbar-overlay"></div>
                 <ul class="navbar-nav sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url('/') }}">Home</a>
+                        <a class="nav-link {{ setActive('home') }}" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('products.index') }}">Products</a>
+                        <a class="nav-link {{ setActive('products.*') }}" href="{{ route('products.index') }}">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ getPageUrlBySlug(appSettings('about_us_page_url')) }}">About us</a>
+                        <a class="nav-link @if(request()->is('page/' . appSettings('about_us_page_url'))) active @endif" href="{{ getPageUrlBySlug(appSettings('about_us_page_url')) }}">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('contact-us.index') }}">Contact us</a>
+                        <a class="nav-link {{ setActive('contact-us.*') }}" href="{{ route('contact-us.index') }}">Contact us</a>
                     </li>
                 </ul>
             </div>
@@ -53,3 +54,41 @@
     </nav>
     {{-- <div style="height: 2px; background-color: #e5e5e5;"></div> --}}
 </header>
+@push('scripts')
+<style>
+    #navbar #navbar-overlay {
+        position: fixed;
+        background-color: lightgoldenrodyellow;
+        z-index: -1;
+        transition: .3s ease left, width, opacity;
+        opacity: 0;
+        border-radius: 2.5rem;
+        top: 50px;
+    }
+
+    #navbar #navbar-overlay.active {
+        opacity: 1;
+    }
+
+</style>
+<script>
+    const navbarOverlay = document.getElementById('navbar-overlay');
+    const navList = document.querySelectorAll('#navbar .navbar-nav .nav-item');
+
+    navList.forEach(navItem => {
+        navItem.addEventListener('mouseover', () => {
+            navbarOverlay.classList.add('active');
+            let position = navItem.getBoundingClientRect();
+            navbarOverlay.style.left = position.x + 'px';
+            navbarOverlay.style.top = position.top + 'px';
+            navbarOverlay.style.width = position.width + 'px';
+            navbarOverlay.style.height = position.height + 'px';
+        });
+
+        navItem.addEventListener('mouseout', () => {
+            navbarOverlay.classList.remove('active');
+        });
+    });
+
+</script>
+@endpush
