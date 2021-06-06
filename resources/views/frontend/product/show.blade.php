@@ -7,7 +7,7 @@
                 <div style="position: sticky; top: 15px;">
                     <!-- Main image, on which xzoom will be applied -->
                     <div class="product-main-image-wrapper">
-                        <img class="xzoom main-image" id="main_image" src="{{ $product->featuredImage->imageUrl('medium') }}" xoriginal="{{ $product->featuredImage->imageUrl() }}">
+                        <img class="xzoom main-image" id="main_image" src="{{ $product->featuredImage->imageUrl() }}" xoriginal="{{ $product->featuredImage->imageUrl() }}">
                     </div>
                     <!-- Thumbnails -->
                     <div class="image-thumbnail-gallery-wrapper p-2 d-flex mt-2">
@@ -164,11 +164,11 @@
     <script src="https://unpkg.com/xzoom/dist/xzoom.min.js"></script>
     <script>
         $("#main_image, .xzoom-gallery").xzoom({
-            position: 'right'
+            position: 'lens'
             , Xoffset: 20
-            , defaultScale: -1
+            , defaultScale: 0
             , tint: false
-            , lens: '#8adaff'
+            // , lens: '#8adaff'
             , lensOpacity: 0.25
             , lensShape: 'circle'
         , });
