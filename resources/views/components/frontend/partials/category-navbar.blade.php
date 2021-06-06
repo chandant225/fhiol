@@ -5,6 +5,7 @@
                 .category-nav .nav-item .nav-link {
                     padding: 10px 20px;
                     font-weight: 500;
+                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                 }
 
                 .category-nav .nav-item .nav-link:hover,

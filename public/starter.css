@@ -58,10 +58,11 @@ body {
     /* padding-right: .5rem; */
     /* padding-left: .5rem; */
     padding: 0 20px !important;
-    font-weight: 500;
-    text-transform: uppercase;
     font-size: 17px;
-    letter-spacing: .025em;
+    text-transform: uppercase;
+    /* font-weight: 600; */
+    font-family: monospace;
+    letter-spacing: 0.025em;
     color: #555659;
 }
 nav .nav-link.show,
@@ -261,10 +262,11 @@ nav .nav-link.show,
 }
 .section-header__title {
     font-size: 26px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
     border-bottom: 2px solid var(--theme-color);
     /* width: 100%; */
     margin-bottom: 45px;
-    font-family: "Source Sans Pro", sans-serif;
     background: var(--theme-color);
     display: inline;
     padding: 8px 12px;

@@ -29,6 +29,7 @@
         padding: 10px 15px !important;
         box-shadow: 1px 1px 5px rgb(0 0 0 / 20%)
     }
+
     .owl-theme .owl-nav button.owl-prev:hover,
     .owl-theme .owl-nav button.owl-next:hover {
         background-color: #ffffff;
@@ -62,8 +63,9 @@
  background-position: bottom;">
     <div class="container py-5">
         <h2 class="text-center" style="font-size: 1.8rem; font-weight: 600; color: #000;">About Better</h2>
-        <div class="text-center" style="color: #808080;">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <div class="text-center" style="color: #808080; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            Better provides the varieties of best quality home appliances in Nepal that truly enhance your cooking experience and make your life easier & better.
+            we are WhatsApp away +977 9801872000
         </div>
 
         <div class="my-5" style="max-width: 700px; margin-left: auto; margin-right: auto; box-shadow: 1px 0px 10px 2px rgba(211,211,211,0.66);">

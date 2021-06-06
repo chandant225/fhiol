@@ -100,7 +100,7 @@
                         @foreach($specifications as $specification)
                         <div class="row py-2">
                             <div class="col-md-4">
-                                <span class="key" style="color: #878787;">{{ $specification->key }}</span>
+                                <span class="key" style="color: #878787; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{ $specification->key }}</span>
                             </div>
                             <div class="col-md-8">
                                 <span class="value">{{ $specification->value }}</span>

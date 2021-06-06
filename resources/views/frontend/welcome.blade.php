@@ -3,6 +3,8 @@
  
     @include('frontend.welcome.badges')
 
+    @include('frontend.welcome.message-from-chairperson')
+
     @include('frontend.welcome.featured-products')
 
     @include('frontend.welcome.just-launched-products')
