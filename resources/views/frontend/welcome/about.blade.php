@@ -64,8 +64,7 @@
     <div class="container py-5">
         <h2 class="text-center" style="font-size: 1.8rem; font-weight: 600; color: #000;">About Better</h2>
         <div class="text-center" style="color: #808080; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-            Better provides the varieties of best quality home appliances in Nepal that truly enhance your cooking experience and make your life easier & better.
-            we are WhatsApp away +977 9801872000
+           The foundation of countless memories, home, really holds a special place in the heart of everyone. Better home appliances have always been a preacher of cherishing home and the value it adds to countless peoples’ lives. More than providing a space for living, a home stands out for individuals for carrying the spirit of life and growth. However, a pile of household tasks that come with it is something that everyone is not a fan of. Better Home Appliance saw the daylight to be the innovator in home appliances to fill this gap and in constant pursuit of quality and convenience for household tasks.
         </div>
 
         <div class="my-5" style="max-width: 700px; margin-left: auto; margin-right: auto; box-shadow: 1px 0px 10px 2px rgba(211,211,211,0.66);">

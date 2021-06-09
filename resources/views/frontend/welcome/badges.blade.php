@@ -5,22 +5,22 @@
             <div class="col-md-3 text-center">
                 <div style="font-size: 3rem; color: #f4a328;"><i class="fa fa-truck"></i></div>
                 <div>Free Shipping</div>
-                <small>Free shipping all over Nepal</small>
+                <small>Fast and Free Delivery all over Nepal.</small>
             </div>
             <div class="col-md-3 text-center">
                 <div style="font-size: 3rem; color: #f4a328;"><i class="fa fa-headphones"></i></div>
                 <div>24/7 Support</div>
-                <small>Lorem ipsum dolor sit amet</small>
+                <small>Customer Care Support round the Clock.</small>
             </div>
             <div class="col-md-3 text-center">
                 <div style="font-size: 3rem; color: #f4a328;"><i class="fa fa-handshake-o"></i></div>
                 <div>Warranty & Services Shipping</div>
-                <small>Lorem ipsum dolor sit amet</small>
+                <small>Genuine Products with Warranty and Service shipping as well.</small>
             </div>
             <div class="col-md-3 text-center">
                 <div style="font-size: 3rem; color: #f4a328;"><i class="fa fa-star-o"></i></div>
                 <div>Official Brand Store</div>
-                <small>Free shipping all over Nepal</small>
+                <small>Official brand Store everywhere in Nepal for Quality service.</small>
             </div>
         </div>
     </div>

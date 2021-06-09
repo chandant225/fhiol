@@ -1,7 +1,7 @@
 <div class="contact-form shadow p-4">
     <div class="mb-3">
         <h4 class="block-title">Reach out to us for any inquiry</h4>
-        <p class="block-description">Fill out the form below and we will get back to you shortly</p>
+        <p class="block-description">Feel free to get in touch with us by adding names, email, and a brief message. We acknowledge your problem like nobody else. We will get back to you ASAP.</p>
     </div>
     <form wire:submit.prevent="send()" method="POST">
         <div class="form-group">
