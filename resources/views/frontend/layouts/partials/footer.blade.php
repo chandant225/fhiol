@@ -203,110 +203,14 @@
     <div class="bg-white">
         <div class="container text-center py-4">
             <div class="d-flex justify-content-center">
-                <div class="align-self-center">Find the entire Better product range at:</div>
-                <a class="align-self-center d-flex  mx-2" href="">
-                    <img src="{{ asset('assets/images/daraz-logo.jpg') }}" alt="Daraz" style="max-height: 30px;">
+                <div class="align-self-end" style="font-size: 1.1rem;">Find the entire Better product range at:</div>
+                <a class="align-self-end d-flex  mx-2" href="#">
+                    <img src="{{ asset('assets/images/daraz-logo.jpg') }}" alt="Daraz" style="max-height: 28px;">
                 </a>
-                <a class="align-self-center d-flex  mx-2" href="">
-                    <img src="{{ asset('assets/images/sastodeal-logo.jpg') }}" alt="Daraz" style="max-height: 30px;">
+                <a class="align-self-end d-flex  mx-2" href="https://www.sastodeal.com/lp/better-home-appliances" target="_blank">
+                    <img src="{{ asset('assets/images/sastodeal-logo.jpg') }}" alt="Daraz" style="max-height: 32px;">
                 </a>
             </div>
         </div>
     </div>
 </footer>
-
-
-
-
-<section class="felona-footer-area d-none">
-    <div class="footer-top-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="footer-block">
-                        <h4>Contact</h4>
-                        <div class="address">
-                            <p> No: Add 1, <br>Address-2, MD, country</p>
-                            <p class="contact_num"> <i class="fa fa-phone"></i>+977 12345678</p>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer-item">
-                        <h4>Contact</h4>
-                        <ul>
-                            <ul class="site-footer__links">
-
-                                <li><a href="/search">Search</a></li>
-
-                                <li><a href="/pages/faqs">Help</a></li>
-
-                                <li><a href="/pages/shipping-details">Information</a></li>
-
-                                <li><a href="/pages/contact-us">Privacy Policy</a></li>
-
-                                <li><a href="/pages/shipping-details">Shipping Delails</a></li>
-
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer-item">
-                        <h4>Contact</h4>
-                        <ul>
-                            <ul class="site-footer__links">
-
-                                <li><a href="/search">Search</a></li>
-
-                                <li><a href="/pages/faqs">Help</a></li>
-
-                                <li><a href="/pages/shipping-details">Information</a></li>
-
-                                <li><a href="/pages/contact-us">Privacy Policy</a></li>
-
-                                <li><a href="/pages/shipping-details">Shipping Delails</a></li>
-
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer-item">
-                        <h4>Contact</h4>
-                        <ul>
-                            <ul class="site-footer__links">
-
-                                <li><a href="/search">Search</a></li>
-
-                                <li><a href="/pages/faqs">Help</a></li>
-
-                                <li><a href="/pages/shipping-details">Information</a></li>
-
-                                <li><a href="/pages/contact-us">Privacy Policy</a></li>
-
-                                <li><a href="/pages/shipping-details">Shipping Delails</a></li>
-
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="copyright-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="copyright-left">
-                        <p>Copyright © 2021. All rights reserved.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
