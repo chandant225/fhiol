@@ -58,7 +58,7 @@
 <style>
     #navbar #navbar-overlay {
         position: fixed;
-        background-color: lightgoldenrodyellow;
+        background-color: var(--theme-color);
         z-index: -1;
         transition: .3s ease left, width, opacity;
         opacity: 0;

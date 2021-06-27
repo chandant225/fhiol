@@ -3,8 +3,10 @@ body {
 }
 
 :root {
-    --theme-color: #e60d2e;
-    --theme-accent-color: #ff5353;
+    /* --theme-color: #e60d2e; */
+    /* --theme-accent-color: #ff5353; */
+    --theme-color: #80393d;
+    --theme-accent-color: #5c1d21;
     --dark-gray: #313445;
     --product-image-aspect-ratio: 4/4;
     --post-image-aspect-ratio: 6/4;
@@ -357,7 +359,6 @@ body {
 .tag-label > *:first-child {
     margin-left: 0;
 }
-
 
 /*
 **************

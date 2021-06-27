@@ -64,14 +64,19 @@ body {
     font-family: monospace;
     letter-spacing: 0.025em;
     color: #555659;
+    transition: all .3s;
 }
 nav .nav-link.show,
 .navbar-light .navbar-nav .show > .nav-link {
     color: rgb(230 13 46) !important;
 }
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+}
 .navbar-light .navbar-nav .nav-link.active {
-    background-color: #f4f4f4;
-    background-color: paleturquoise;
+    /* background-color: #f4f4f4; */
+    background-color: var(--theme-color);
+    color: #fefefe;
     border-radius: 2.5rem;
 }
 /* Remove active menu effect while showing overlay effect */
@@ -79,7 +84,9 @@ nav .nav-link.show,
     background-color: transparent;
     color: inherit;
 }
-
+#navbar #navbar-overlay.active ~ .navbar-nav .nav-link.active:hover {
+    color: #fff;
+}
 .banner {
     position: relative;
 }

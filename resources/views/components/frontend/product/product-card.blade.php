@@ -19,7 +19,7 @@
             @endif
         </h4>
         <div class="d-flex mt-3">
-            <a href="{{ route('products.show', $product) }}" class="btn btn-danger btn-block text-uppercase product__button view__more__info__btn rounded-0 px-3">View Detail</a>
+            <a href="{{ route('products.show', $product) }}" class="btn btn-theme btn-block text-uppercase product__button view__more__info__btn rounded-0 px-3">View Detail</a>
             {{-- <a href="{{ route('products.show', $product) }}" class="btn btn-success text-uppercase product__button rounded-0 w-full px-3">More</a> --}}
         </div>
         <div class="my-1"></div>
