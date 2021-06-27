@@ -173,6 +173,7 @@ body {
 
 .product__name:hover {
     text-decoration: none;
+    color: var(--theme-color);
 }
 
 .product__subtitle {
@@ -367,4 +368,10 @@ body {
 */
 .single-post {
     color: #2a3847;
+}
+
+
+/* Breadcrumbs */
+.breadcrumb a {
+    color: var(--theme-color);
 }

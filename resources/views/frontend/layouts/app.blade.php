@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/owl-carousel/css/owl.theme.default.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('starter.css') }}?v=1.0.1" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/frontend.css') }}?v=1.0.0">
+    <link rel="stylesheet" href="{{ asset('assets/css/frontend.css') }}?v=1.1.1">
     <link rel="stylesheet" href="{{ asset('assets/css/line-clamp.css') }}">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
