@@ -7,6 +7,7 @@ use App\Observers\CategoryObserver;
 use App\Observers\ProductImageObserver;
 use App\ProductImage;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -28,6 +29,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Force https
+        if (env('APP_ENV') === 'production') {
+            URL::forceSchema('https');
+        }
+
         ProductImage::observe(ProductImageObserver::class);
         Category::observe(CategoryObserver::class);
 

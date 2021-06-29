@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/owl-carousel/css/owl.carousel.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/owl-carousel/css/owl.theme.default.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('starter.css') }}?v=1.0.1" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('starter.css') }}?v=1.0.2" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/frontend.css') }}?v=1.1.1">
     <link rel="stylesheet" href="{{ asset('assets/css/line-clamp.css') }}">

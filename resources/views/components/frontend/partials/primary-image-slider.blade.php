@@ -1,6 +1,6 @@
     <style>
         .primary-image-slide {
-            background-color: #000;
+            background-color: #80393d;
             color: #fff;
         }
 
@@ -15,14 +15,14 @@
         }
 
         .primary-image-slide .slide-left .description {
-            color: #808080;
+            color: #fae7e7;
         }
 
         .primary-image-slide .slide-left .action-button {
             display: inline-block;
             margin-top: 40px;
             text-decoration: none;
-            border: 1px solid var(--theme-color);
+            border: 1px solid #fff;;
             padding: 5px 10px;
             color: #fff;
             background-color: transparent;
@@ -30,8 +30,8 @@
         }
 
         .primary-image-slide .slide-left .action-button:hover {
-            color: #fff;
-            background-color: var(--theme-color);
+            color: var(--theme-color);
+            background-color: #fff;
         }
 
         .primary-image-slide .image-wrapper {
@@ -60,7 +60,7 @@
                     <div class="h-100 d-flex" style="align-items: center; padding: 20px;">
                         <div class="slide-left">
                             <h1 class="title">{{ $slide->title }}</h1>
-                            <div class="my-3" style="width: 30%; height: 3px; background-color: var(--theme-color);"></div>
+                            <div class="my-3" style="width: 30%; height: 3px; background-color: #fff;"></div>
                             @if($slide->description)
                             <p class="description">{{ $slide->description }}</p>
                             @endif
