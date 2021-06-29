@@ -195,6 +195,12 @@
                     <a href="{{ appSettings('youtube_url') }}">
                         <span><i class="fa fa-youtube"></i></span>
                     </a>
+                    <a href="{{ appSettings('linkedin_url') }}">
+                        <span><i class="fa fa-linkedin"></i></span>
+                    </a>
+                    <a href="{{ appSettings('instagram_url') }}">
+                        <span><i class="fa fa-instagram"></i></span>
+                    </a>
                 </div>
             </div>
         </div>
