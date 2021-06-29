@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Force https
         if (env('APP_ENV') === 'production') {
-            URL::forceSchema('https');
+            URL::forceScheme('https');
         }
 
         ProductImage::observe(ProductImageObserver::class);
