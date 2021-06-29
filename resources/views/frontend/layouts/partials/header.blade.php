@@ -16,7 +16,9 @@
                 <ul class="social mb-0">
                     <li><a href="{{ appSettings('facebook_url') }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                     <li><a href="{{ appSettings('twitter_url') }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="{{ appSettings('youtube_url') }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="{{ appSettings('youtube_url') }}"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                    <li><a href="{{ appSettings('linkedin_url') }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="{{ appSettings('instagram_url') }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>

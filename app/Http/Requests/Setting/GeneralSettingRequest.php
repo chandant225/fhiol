@@ -40,7 +40,7 @@ class GeneralSettingRequest extends FormRequest
             'twitter_url' => 'nullable',
             'youtube_url' => 'nullable',
             'linkedin_url' => 'nullable',
-            
+            'instagram_url' => 'nullable',
         ];
     }
 }

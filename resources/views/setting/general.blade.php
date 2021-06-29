@@ -97,6 +97,10 @@
                     <x-form.label>LinedIn Url</x-form.label>
                     <x-fields.input name="linkedin_url" :value="old('linkedin_url', appSettings('linkedin_url'))" />
                 </div>
+                <div class="form-group">
+                    <x-form.label>Instagram Url</x-form.label>
+                    <x-fields.input name="instagram_url" :value="old('instagram_url', appSettings('instagram_url'))" />
+                </div>
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary px-4">Save</button>
