@@ -11,7 +11,7 @@ return [
         'defaults'       => [
             'title'        => env('APP_NAME', 'Better Home Appliances'), // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-            'description'  => 'Make Life Better', // set false to total remove
+            'description'  => 'The Ideal Kitchen Partner', // set false to total remove
             'separator'    => ' - ',
             'keywords'     => [],
             'canonical'    => null, // Set null for using Url::current(), set false to total remove
@@ -37,7 +37,7 @@ return [
          */
         'defaults' => [
             'title'       => env('APP_NAME', 'Better Home Appliances'), // set false to total remove
-            'description' => 'Make Life Better', // set false to total remove
+            'description' => 'The Ideal Kitchen Partner', // set false to total remove
             'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => false,
             'site_name'   => false,
@@ -59,7 +59,7 @@ return [
          */
         'defaults' => [
             'title'       => env('APP_NAME', 'Better Home Appliances'), // set false to total remove
-            'description' => 'Make Life Better', // set false to total remove
+            'description' => 'The Ideal Kitchen Partner', // set false to total remove
             'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => 'WebPage',
             'images'      => [],
