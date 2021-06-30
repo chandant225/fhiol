@@ -109,7 +109,7 @@
                         <td><span class="badge badge-light font-weight-light">{{ $product->category->name }}</span></td>
                         <td class="text-center">{{ $product->views }}</td>
                         <td>
-                            <livewire:product-status-switch :product="$product" />
+                            <livewire:product-status-switch :product="$product" wire:key="{{ $product->id }}" />
                         </td>
                         <td class="text-right">
                             <div>

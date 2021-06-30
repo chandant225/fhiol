@@ -12,7 +12,7 @@ class ProductList extends Component
 {
     use WithPagination;
 
-    public $paginate = 15;
+    public $paginate = 1;
     protected $paginationTheme = 'bootstrap';
 
     public $filter = [
