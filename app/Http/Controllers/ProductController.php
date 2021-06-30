@@ -52,7 +52,7 @@ class ProductController extends Controller
             }
         }
 
-        $products = $products->latest()->paginate(request()->query('per_page') ?? 15);
+        $products = $products->latest()->paginate(request()->query('per_page') ?? 15)->withQueryString();
 
         return view('frontend.product.index', [
             'title' => $title,

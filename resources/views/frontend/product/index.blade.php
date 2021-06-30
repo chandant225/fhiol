@@ -62,7 +62,7 @@
                     <a class="bg-danger text-white py-1 px-2 rounded-lg" style="font-size: .9rem;" href="{{ route('products.index') }}">Clear All</a>
                 </div>
                 @endif
-                
+
                 <section class="">
                     <div class="row">
                         @foreach ($products as $product)
@@ -71,6 +71,11 @@
                         </div>
                         @endforeach
                     </div>
+                    @if($products->hasPages())
+                    <div class="d-flex justify-content-end">
+                        {{ $products->links() }}
+                    </div>
+                    @endif
                 </section>
             </div>
         </div>
