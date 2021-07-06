@@ -89,7 +89,7 @@
                         </div>
                         <div class="label">Email Us</div>
                     </a>
-                    <a href="{{ route('stores.index') }}" class="footer-action-button">
+                    {{-- <a href="{{ route('stores.index') }}" class="footer-action-button">
                         <div class="icon">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
@@ -97,7 +97,7 @@
                             </svg>
                         </div>
                         <div class="label">Find Us</div>
-                    </a>
+                    </a> --}}
                 </div>
             </div>
             <div class="col-md-2">

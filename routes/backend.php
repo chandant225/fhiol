@@ -41,12 +41,12 @@ Route::name('backend.')->group(function () {
     Route::get('subscribers', 'SubscriberController@index')->name('subscribers.index');
     
     // Stores
-    Route::get('stores', 'StoreController@index')->name('stores.index');
-    Route::get('stores/create', 'StoreController@create')->name('stores.create');
-    Route::post('stores', 'StoreController@store')->name('stores.store');
-    Route::get('stores/{store}/edit', 'StoreController@edit')->name('stores.edit');
-    Route::put('stores/{store}', 'StoreController@update')->name('stores.update');
-    Route::delete('stores/{store}', 'StoreController@destroy')->name('stores.destroy');
+    // Route::get('stores', 'StoreController@index')->name('stores.index');
+    // Route::get('stores/create', 'StoreController@create')->name('stores.create');
+    // Route::post('stores', 'StoreController@store')->name('stores.store');
+    // Route::get('stores/{store}/edit', 'StoreController@edit')->name('stores.edit');
+    // Route::put('stores/{store}', 'StoreController@update')->name('stores.update');
+    // Route::delete('stores/{store}', 'StoreController@destroy')->name('stores.destroy');
 
     // Product Inquiries
     Route::get('inquiries', 'ProductInquiryController@index')->name('product-inquiry.index');
