@@ -49,7 +49,7 @@
     <div class="mobile-menu-content overflow-auto text-center border-success">
         <a class="menu-link" href="{{ url('/') }}">Home</a>
         <a class="menu-link" href="{{ route('products.index') }}">Products</a>
-        <a class="menu-link" href="{{ route('stores.index') }}">Find a Store</a>
+        {{-- <a class="menu-link" href="{{ route('stores.index') }}">Find a Store</a> --}}
         <a class="menu-link" href={{ url(appSettings('about_us_page_url', '/')) }}"">About Us</a>
         <a class="menu-link" href="{{ route('contact-us.index') }}">Contact Us</a>
         <div class="text-center mt-4">
