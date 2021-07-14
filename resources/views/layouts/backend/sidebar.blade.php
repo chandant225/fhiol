@@ -251,6 +251,20 @@
                 </ul>
             </li>
 
+            <li class="nav-item">
+                <a href="{{ route('backend.videos.index') }}" class="nav-link {{ setActive('backend.videos.*') }}">
+                    {{-- <i class="nav-icon fas fa-exclamation-circle"></i> --}}
+                    <span class="nav-icon svg-icon svg-baseline">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-camera-video" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"/>
+                          </svg>
+                    </span>
+                    <p>
+                        Videos
+                    </p>
+                </a>
+            </li>
+
             <li class="nav-item @if(request()->routeIs('backend.image-sliders.*')) menu-open @endif">
                 <a href="#" class="nav-link {{ setActive('backend.image-sliders.*') }}">
                     {{-- <i class="nav-icon fa fa-file-image"></i> --}}
