@@ -3,6 +3,7 @@
         @csrf
         @if($product->exists)
         @method('put')
+        <input type="hidden" name="product_id" value="{{ $product->id }}">
         @endif
         <div class="row">
             <div class="col-md-9">

@@ -23,7 +23,7 @@ class ProductRequest extends FormRequest
      */
     public function rules()
     {
-        $updateMode = false;
+        $updateMode = $this->product_id ? true : false;
 
         return [
             'name' => 'required',
@@ -35,8 +35,8 @@ class ProductRequest extends FormRequest
             'description' => 'nullable',
             'category_id' => 'required',
             'image' => $updateMode
-                ? 'required'
-                : 'nullable',
+                ? 'nullable'
+                : 'required',
             'features' => 'nullable',
             'specifications' => 'nullable',
             'is_new' => 'nullable',
