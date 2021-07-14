@@ -59,6 +59,15 @@ Route::name('backend.')->group(function () {
     Route::get('catalogues/{catalogue}/edit', 'CatalogueController@edit')->name('catalogues.edit');
     Route::delete('catalogues/{catalogue}', 'CatalogueController@destroy')->name('catalogues.destroy');
 
+    // Videos
+    Route::get('videos', 'VideoController@index')->name('videos.index');
+    Route::get('videos/create', 'VideoController@create')->name('videos.create');
+    Route::post('videos', 'VideoController@store')->name('videos.store');
+    Route::get('videos/{video}/edit', 'VideoController@edit')->name('videos.edit'); 
+    Route::put('videos/{video}', 'VideoController@update')->name('videos.update');
+    Route::delete('videos/{video}', 'VideoController@destroy')->name('videos.destroy');
+    
+
     Route::group(['namespace' => 'Setting'], function () {
         Route::get('settings/general', 'GeneralSettingController@index')->name('settings.general.index');
         Route::post('settings/general', 'GeneralSettingController@store')->name('settings.general.store');

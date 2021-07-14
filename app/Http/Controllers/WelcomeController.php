@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Video;
 
 class WelcomeController extends Controller
 {
@@ -13,7 +14,8 @@ class WelcomeController extends Controller
 
         return view('frontend.welcome', [
             'newProducts' => $newProducts,
-            'featuredProducts' => $featuredProducts
+            'featuredProducts' => $featuredProducts,
+            'videos' => Video::positioned()->get()
         ]);
     }
 }

@@ -69,8 +69,9 @@
 
         <div class="my-5" style="max-width: 700px; margin-left: auto; margin-right: auto; box-shadow: 1px 0px 10px 2px rgba(211,211,211,0.66);">
             <div class="video-carousel owl-carousel owl-theme">
-                <div class="item-video" data-merge="1"><a class="owl-video" href="https://www.youtube.com/watch?v=lGi_yArSZPQ"></a></div>
-                <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=RfazNSpjKkM"></a></div>
+                @foreach ($videos as $video)
+                <div class="item-video" data-merge="{{ $loop->iteration }}"><a class="owl-video" href="{{ $video->url }}"></a></div>
+                @endforeach
             </div>
         </div>
     </div>
