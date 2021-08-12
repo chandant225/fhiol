@@ -15,6 +15,8 @@ Route::name('backend.')->group(function () {
     Route::patch('products/{product}/restore', 'ProductController@restore')->name('products.restore');
     Route::delete('products/{product}/forceDelete', 'ProductController@forceDelete')->name('products.forceDelete');
 
+    Route::get('post-categories', 'PostCategoryController@index')->name('post-categories.index');
+
     Route::get('posts', 'PostController@index')->name('posts.index');
     Route::get('posts/create', 'PostController@create')->name('posts.create');
     Route::post('posts', 'PostController@store')->name('posts.store');
@@ -66,7 +68,9 @@ Route::name('backend.')->group(function () {
     Route::get('videos/{video}/edit', 'VideoController@edit')->name('videos.edit'); 
     Route::put('videos/{video}', 'VideoController@update')->name('videos.update');
     Route::delete('videos/{video}', 'VideoController@destroy')->name('videos.destroy');
-    
+
+    // Testimonials
+    Route::get('testimonials', 'TestimonialController@index')->name('testimonials.index');
 
     Route::group(['namespace' => 'Setting'], function () {
         Route::get('settings/general', 'GeneralSettingController@index')->name('settings.general.index');
