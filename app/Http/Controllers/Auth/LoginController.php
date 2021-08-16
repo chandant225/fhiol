@@ -37,4 +37,11 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function redirectTo()
+    {
+        return auth()->user()->hasRole('admin')
+            ? RouteServiceProvider::HOME
+            : '/home';
+    }
 }
