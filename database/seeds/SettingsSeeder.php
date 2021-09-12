@@ -13,19 +13,19 @@ class SettingsSeeder extends Seeder
     {
         // General Settings
         appSettings()->set([
-            'site_name' => 'Better Kitchen',
-            'tagline' => 'The Ideal Kitchen Partner',
+            'site_name' => 'The Fred Hollows Intraocular lens Laboratory (FH IOL Lab)',
+            'tagline' => 'An Integral Part of Tilganga Eye Center',
             'site_logo' => null,
             'favicon' => null,
 
             'show_top_bar' => 'yes',
-            'mobile' => '123 456 789',
-            'email' => 'info@better.com.np',
-            'address' => 'Koteshwor-12, Kathmandu, Nepal',
+            'mobile' => '+977 1 4493775',
+            'email' => 'tilganga@tilganga.org',
+            'address' => 'GPO Box 561, Kathmandu, Nepal',
 
             'price_unit' => 'Rs.',
 
-            'facebook_url' => 'https://facebook.com',
+            'facebook_url' => 'https://www.facebook.com/thefhiol',
             'twitter_url' => 'https://twitter.com',
             'youtube_url' => 'https://youtube.com',
             'linkedin_url' => 'https://linkedin.com',

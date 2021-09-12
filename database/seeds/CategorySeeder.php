@@ -12,56 +12,28 @@ class CategorySeeder extends Seeder
     public function run()
     {
         \App\Category::firstOrCreate([
-            'name' => 'Mixer & Grinder'
+            'name' => 'Foldable'
         ], [
             'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci suscipit officia vero culpa dolores quia!',
             'status' => true
         ]);
 
         \App\Category::firstOrCreate([
-            'name' => 'Rice Cooker',
-        ], [
-            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci suscipit officia vero culpa dolores quia!',
-            'status' => true
-        ]);
-        
-        \App\Category::firstOrCreate([
-            'name' => 'Washing Machine',
-        ], [
-            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci suscipit officia vero culpa dolores quia!',
-            'status' => true
-        ]);
-        
-        \App\Category::firstOrCreate([
-            'name' => 'Refrigerator',
-        ], [
-            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci suscipit officia vero culpa dolores quia!',
-            'status' => true
-        ]);
-        
-        \App\Category::firstOrCreate([
-            'name' => 'Irons',
-        ], [
-            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci suscipit officia vero culpa dolores quia!',
-            'status' => true
-        ]);
-        
-        \App\Category::firstOrCreate([
-            'name' => 'Hari Dryer',
+            'name' => 'PMMA',
         ], [
             'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci suscipit officia vero culpa dolores quia!',
             'status' => true
         ]);
 
         \App\Category::firstOrCreate([
-            'name' => 'Hand Belnder',
+            'name' => 'CTR',
         ], [
             'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci suscipit officia vero culpa dolores quia!',
             'status' => true
         ]);
 
         \App\Category::firstOrCreate([
-            'name' => 'Trimmer',
+            'name' => 'Lens Injection System',
         ], [
             'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci suscipit officia vero culpa dolores quia!',
             'status' => true
