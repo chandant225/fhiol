@@ -120,7 +120,8 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                
+                {{-- <li class="nav-item">
                     <a href="{{ route('backend.catalogues.index') }}" class="nav-link {{ setActive('backend.catalogues.*') }}">
                         <span class="nav-icon svg-icon svg-baseline">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 16">
@@ -131,7 +132,8 @@
                             Catalogues
                         </p>
                     </a>
-                </li>
+                </li> --}}
+
                 {{-- <li class="nav-item">
                     <a href="{{ route('backend.stores.index') }}" class="nav-link {{ setActive('backend.stores.*') }}">
                         <span class="nav-icon svg-icon svg-baseline">

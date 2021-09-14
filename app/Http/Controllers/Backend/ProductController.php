@@ -37,11 +37,14 @@ class ProductController extends Controller
         try {
             $product = Product::create($request->validated());
 
-            if ($request->has('specifications')) {
-                $product->syncSpecifications($request->specifications);
-            }
+            // if ($request->has('specifications')) {
+            //     $product->syncSpecifications($request->specifications);
+            // }
 
-            $this->productImageService->create($product, $request->file('image'), $featured = true);
+            if ($request->hasFile('image')) {
+                $this->productImageService->create($product, $request->file('image'), $featured = true);
+            }
+            
             DB::commit();
         } catch (\Exception $ex) {
             info('Error while saving product, Ex: ' . $ex->getMessage());
@@ -76,15 +79,17 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $featuredImage = $product->featuredImage;
-            $this->imageService->unlinkImage($featuredImage->path);
-            $this->imageService->unlinkImage($featuredImage->thumbnail_path);
-            $this->imageService->unlinkImage($featuredImage->medium_path);
-            $product->featuredImage()->delete();
+            if($product->featuredImage) {
+                $featuredImage = $product->featuredImage;
+                $this->imageService->unlinkImage($featuredImage->path);
+                $this->imageService->unlinkImage($featuredImage->thumbnail_path);
+                $this->imageService->unlinkImage($featuredImage->medium_path);
+                $product->featuredImage()->delete();
+            }
             $this->productImageService->create($product, $request->file('image'), $featured = true);
         }
 
-        $product->syncSpecifications($request->specifications);
+        // $product->syncSpecifications($request->specifications);
 
         if ($product->wasChanged()) {
             Alert::message('Product Updated')->send();

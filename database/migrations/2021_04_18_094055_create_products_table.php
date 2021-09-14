@@ -19,6 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('slug');
             $table->integer('price');
             $table->integer('sale_price')->nullable();
+            $table->text('overview')->nullable();
+            $table->text('detail')->nullable();
             $table->text('description')->nullable();
             $table->boolean('status')->default(true);
             $table->foreignId('category_id')->nullable()->constrained('categories')->onDelete('set null');

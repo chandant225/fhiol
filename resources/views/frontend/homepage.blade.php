@@ -14,28 +14,28 @@
                         <div class="carousel-item active">
                             <img src="/theme/img/banner/banner01.jpg" class="d-block w-100 " alt="...">
                             <div class="overlay">
-                                <div class="carousel-caption d-none d-md-block">
+                                <!-- <div class="carousel-caption d-none d-md-block">
                                     <h5>First slide label</h5>
                                     <p>Some representative placeholder content for the first slide.</p>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="/theme/img/banner/banner02.jpg" class="d-block w-100" alt="...">
                             <div class="overlay">
-                                <div class="carousel-caption d-none d-md-block">
+                                <!-- <div class="carousel-caption d-none d-md-block">
                                     <h5>Second slide label</h5>
                                     <p>Some representative placeholder content for the second slide.</p>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="/theme/img/banner/banner03.jpg" class="d-block w-100" alt="...">
                             <div class="overlay">
-                                <div class="carousel-caption d-none d-md-block">
+                                <!-- <div class="carousel-caption d-none d-md-block">
                                     <h5>Third slide label</h5>
                                     <p>Some representative placeholder content for the third slide.</p>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -50,9 +50,9 @@
                 </div>
             </div>
         </div>
-        <div data-aos="fade-up" data-aos-duration="3000">
+        <div data-aos="fade-up" data-aos-duration="1000">
             <div class="banner-slogon">
-                <div class="container">
+                <div class="container pt-4">
                     <div class="row">
                         <div class="col-md-11 m-auto">
                             <p class="text-center">The Fred Hollows Intraocular lens Laboratory (FH IOL Lab), has been
@@ -68,14 +68,15 @@
                 </div>
             </div>
         </div>
-
     </div>
     <!-- Hero-end -->
 
-    <!-- About Hollows -->
+    {{-- About section --}}
     <section class="about-hollows">
         <div class="container">
-            <div class="title-left">About Fred Hollows</div>
+            <div class="title-left">
+                <h4>About Fred Hollows</h4>
+            </div>
             <div class="row align-items-center">
                 <div class="col-md-5">
                     <div data-aos="zoom-in-right">
@@ -119,10 +120,12 @@
     <div class="service">
 
         <div class="container">
-            <div class="title-right">Our Services</div>
+            <div class="title-right">
+                <h4>OUR EXCELLENCE</h4>
+            </div>
             <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div data-aos="fade-up" data-aos-duration="3000">
+                <div class="col-md-3">
+                    <div data-aos="fade-up" data-aos-duration="1000">
                         <div class="service-box">
                             <div class="service-box-inner">
                                 <span class="material-icons orange600">precision_manufacturing</span>
@@ -135,8 +138,8 @@
                     </div>
 
                 </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div data-aos="fade-up" data-aos-duration="2500">
+                <div class="col-md-3">
+                    <div data-aos="fade-up" data-aos-duration="1100">
                         <div class="service-box">
                             <div class="service-box-inner">
                                 <span class="material-icons orange600">biotech</span>
@@ -150,8 +153,8 @@
 
 
                 </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div data-aos="fade-up" data-aos-duration="2000">
+                <div class="col-md-3">
+                    <div data-aos="fade-up" data-aos-duration="1200">
                         <div class="service-box">
                             <div class="service-box-inner">
 
@@ -164,9 +167,9 @@
                     </div>
 
                 </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
+                <div class="col-md-3">
                     <div class="service-box">
-                        <div data-aos="fade-up" data-aos-duration="1500">
+                        <div data-aos="fade-up" data-aos-duration="1300">
                             <div class="service-box-inner">
                                 <span class="material-icons orange600">flight_takeoff</span>
                                 <h5>Over 30 countries</h5>
@@ -188,7 +191,9 @@
     <div class="testimonial">
         <section class="testimonial-section d-flex align-items-center">
             <div class="container">
-                <div class="title-left">Testimonial</div>
+                <div class="title-left">
+                    <h4>Testimonial</h4>
+                </div>
                 <div class="row align-items-center col-12">
                     <div class="col-md-6 testi-img">
                         <div class="img-box">
@@ -201,19 +206,19 @@
                     <div class="col-md-6">
                         <div id="myCarousel" class="carousel slide" data-bs-interval="5000" data-bs-ride="carousel">
                             <div class="carousel-inner">
-                                <div class="carousel-item testi-item active" data-color="#fb9c9a" data-img="/theme/img/testimonial/1.png">
+                                <div class="carousel-item testi-item active" data-color="#fb9c9a" data-img="theme/img/testimonial/1.png">
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nobis ratione, harum
                                         doloremque aspernatur aliquid quaerat dolores voluptates recusandae qui repellat
                                         illum, amet ipsa debitis fugiat commodi nemo suscipit ad!</p>
                                     <h3> Prof. M. Edward Wilson - <span>MD, USA</span></h3>
                                 </div>
-                                <div class="carousel-item testi-item" data-color="#fbd39a" data-img="/theme/img/testimonial/2.png">
+                                <div class="carousel-item testi-item" data-color="#fbd39a" data-img="theme/img/testimonial/2.png">
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nobis ratione, harum
                                         doloremque aspernatur aliquid quaerat dolores voluptates recusandae qui repellat
                                         illum, amet ipsa debitis fugiat commodi nemo suscipit ad!</p>
                                     <h3>Prof. David J. Apple <span> MD, USA</span></h3>
                                 </div>
-                                <div class="carousel-item testi-item" data-color="#9ab0fb" data-img="/theme/img/testimonial/3.png">
+                                <div class="carousel-item testi-item" data-color="#9ab0fb" data-img="theme/img/testimonial/3.png">
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nobis ratione, harum
                                         doloremque aspernatur aliquid quaerat dolores voluptates recusandae qui repellat
                                         illum, amet ipsa debitis fugiat commodi nemo suscipit ad!</p>
@@ -236,119 +241,137 @@
     </div>
     <!-- testimonial-end -->
 
+    <!-- <div class="date">
+        <div class="day">27</div>
+        <div class="month">Mar</div>
+    </div> -->
+
     <!-- News and Events -->
     <section class="newsAndletter">
         <div class="container">
-            <div class="title-right">Recent News And Events</div>
+            <div class="title-right">
+                <h4>Recent News And Events</h4>
+            </div>
             <div class="row">
                 <!-- Post-->
-                <div class="col-md-3">
+                <div class="col-xl-3 col-md-6 col-12 ">
                     <div data-aos="fade-up" data-aos-duration="1500">
-                        <div class=" post-module">
-                            <!-- Thumbnail-->
-                            <div class="thumbnail">
-                                <div class="date">
-                                    <div class="day">27</div>
-                                    <div class="month">Mar</div>
+                        <a href="publicationdetails.html" class=" text-decoration-none">
+                            <div class=" post-module">
+                                <div class="category">10 FEB. 2021</div>
+                                <!-- Thumbnail-->
+                                <div class="thumbnail">
+
+                                    <img src="/theme/img/news-1.jpg" />
                                 </div>
-                                <img src="/theme/img/news-1.jpg" />
+                                <!-- Post Content-->
+                                <div class="post-content">
+
+                                    <h1 class="title">City Lights in New York</h1>
+                                    <h2 class="sub_title">The city that never sleeps.</h2>
+                                    <p class="description">New York, the largest city in the U.S., is an
+                                        architectural
+                                        marvel
+                                        with
+                                        plenty of historic monuments, magnificent buildings and countless
+                                        dazzling
+                                        skyscrapers.
+                                    </p>
+                                </div>
                             </div>
-                            <!-- Post Content-->
-                            <div class="post-content">
-                                <div class="category">Photos</div>
-                                <h1 class="title">City Lights in New York</h1>
-                                <h2 class="sub_title">The city that never sleeps.</h2>
-                                <p class="description">New York, the largest city in the U.S., is an architectural
-                                    marvel
-                                    with
-                                    plenty of historic monuments, magnificent buildings and countless dazzling
-                                    skyscrapers.
-                                </p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
 
 
                 </div>
-                <div class="col-md-3 news-respon">
-                    <div data-aos="fade-up" data-aos-duration="2000">
-                        <div class="post-module">
-                            <!-- Thumbnail-->
-                            <div class="thumbnail">
-                                <div class="date">
-                                    <div class="day">10</div>
-                                    <div class="month">April</div>
+                <div class="col-xl-3 col-md-6 col-12 news-respon">
+                    <div data-aos="fade-up" data-aos-duration="1500">
+                        <a href="publicationdetails.html" class=" text-decoration-none">
+                            <div class=" post-module">
+                                <div class="category">10 FEB. 2021</div>
+                                <!-- Thumbnail-->
+                                <div class="thumbnail">
+
+                                    <img src="/theme/img/news-1.jpg" />
                                 </div>
-                                <img src="/theme/img/news-3.jpg" />
+                                <!-- Post Content-->
+                                <div class="post-content">
+
+                                    <h1 class="title">City Lights in New York</h1>
+                                    <h2 class="sub_title">The city that never sleeps.</h2>
+                                    <p class="description">New York, the largest city in the U.S., is an
+                                        architectural
+                                        marvel
+                                        with
+                                        plenty of historic monuments, magnificent buildings and countless
+                                        dazzling
+                                        skyscrapers.
+                                    </p>
+                                </div>
                             </div>
-                            <!-- Post Content-->
-                            <div class="post-content">
-                                <div class="category">Photos</div>
-                                <h1 class="title">City Lights in New York</h1>
-                                <h2 class="sub_title">The city that never sleeps.</h2>
-                                <p class="description">New York, the largest city in the U.S., is an architectural
-                                    marvel
-                                    with
-                                    plenty of historic monuments, magnificent buildings and countless dazzling
-                                    skyscrapers.
-                                </p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
 
-                </div>
-                <div class="col-md-3  news-respon">
-                    <div data-aos="fade-up" data-aos-duration="2500">
-                        <div class="post-module">
-                            <!-- Thumbnail-->
-                            <div class="thumbnail">
-                                <div class="date">
-                                    <div class="day">28</div>
-                                    <div class="month">jun</div>
-                                </div>
-                                <img src="/theme/img/news-2.jpg" />
-                            </div>
-                            <!-- Post Content-->
-                            <div class="post-content">
-                                <div class="category">Photos</div>
-                                <h1 class="title">City Lights in New York</h1>
-                                <h2 class="sub_title">The city that never sleeps.</h2>
-                                <p class="description">New York, the largest city in the U.S., is an architectural
-                                    marvel
-                                    with
-                                    plenty of historic monuments, magnificent buildings and countless dazzling
-                                    skyscrapers.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
-                <div class="col-md-3  news-respon">
-                    <div data-aos="fade-up" data-aos-duration="3000">
-                        <div class="post-module">
-                            <!-- Thumbnail-->
-                            <div class="thumbnail">
-                                <div class="date">
-                                    <div class="day">10</div>
-                                    <div class="month">sep</div>
+                <div class="col-xl-3 col-md-6 col-12 news-respon">
+                    <div data-aos="fade-up" data-aos-duration="1500">
+                        <a href="publicationdetails.html" class=" text-decoration-none">
+                            <div class=" post-module">
+                                <div class="category">10 FEB. 2021</div>
+                                <!-- Thumbnail-->
+                                <div class="thumbnail">
+
+                                    <img src="/theme/img/news-1.jpg" />
                                 </div>
-                                <img src="/theme/img/news-4.jpg" />
+                                <!-- Post Content-->
+                                <div class="post-content">
+
+                                    <h1 class="title">City Lights in New York</h1>
+                                    <h2 class="sub_title">The city that never sleeps.</h2>
+                                    <p class="description">New York, the largest city in the U.S., is an
+                                        architectural
+                                        marvel
+                                        with
+                                        plenty of historic monuments, magnificent buildings and countless
+                                        dazzling
+                                        skyscrapers.
+                                    </p>
+                                </div>
                             </div>
-                            <!-- Post Content-->
-                            <div class="post-content">
-                                <div class="category">Photos</div>
-                                <h1 class="title">City Lights in New York</h1>
-                                <h2 class="sub_title">The city that never sleeps.</h2>
-                                <p class="description">New York, the largest city in the U.S., is an architectural
-                                    marvel
-                                    with
-                                    plenty of historic monuments, magnificent buildings and countless dazzling
-                                    skyscrapers.
-                                </p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
+
+
+                </div>
+                <div class="col-xl-3 col-md-6 col-12 news-respon">
+                    <div data-aos="fade-up" data-aos-duration="1500">
+                        <a href="publicationdetails.html" class=" text-decoration-none">
+                            <div class=" post-module">
+                                <div class="category">10 FEB. 2021</div>
+                                <!-- Thumbnail-->
+                                <div class="thumbnail">
+
+                                    <img src="/theme/img/news-1.jpg" />
+                                </div>
+                                <!-- Post Content-->
+                                <div class="post-content">
+
+                                    <h1 class="title">City Lights in New York</h1>
+                                    <h2 class="sub_title">The city that never sleeps.</h2>
+                                    <p class="description">New York, the largest city in the U.S., is an
+                                        architectural
+                                        marvel
+                                        with
+                                        plenty of historic monuments, magnificent buildings and countless
+                                        dazzling
+                                        skyscrapers.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
 
                 </div>
             </div>
@@ -358,4 +381,5 @@
         </div>
     </section>
     <!-- News and Events-end -->
+
 </x-app-layout>

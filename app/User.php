@@ -42,4 +42,9 @@ class User extends Authenticatable
     {
         return 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($this->email))) . '?s=400&d=https://ui-avatars.com/api/' . urlencode($this->full_name) . '/400/EBF4FF/7F9CF5';
     }
+
+    public function getFullNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
 }

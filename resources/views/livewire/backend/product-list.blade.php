@@ -78,7 +78,11 @@
                     @forelse($products as $product)
                     <tr>
                         <td>
+                            @if($product->featuredImage)
                             <img src="{{ $product->featuredImage->imageUrl() }}" alt="{{ $product->name }}" style="height: 40px; width: auto;">
+                            @else
+                            <img src="/assets/images/image-placeholder.png" alt="{{ $product->name }}" style="height: 40px; width: auto;">
+                            @endif
                         </td>
                         <td>
                             <a class="" href="{{ route('products.show', $product) }}" target="_blank">{{ $product->name }}</a>

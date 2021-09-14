@@ -32,13 +32,15 @@ class ProductRequest extends FormRequest
                 : 'nullable',
             'price' => 'required|integer',
             'sale_price' => 'nullable|integer',
+            'overview' => 'nullable',
+            'detail' => 'nullable',
             'description' => 'nullable',
             'category_id' => 'required',
             'image' => $updateMode
                 ? 'nullable'
-                : 'required',
+                : 'nullable',
             'features' => 'nullable',
-            'specifications' => 'nullable',
+            // 'specifications' => 'nullable',
             'is_new' => 'nullable',
             'featured' => 'nullable',
         ];

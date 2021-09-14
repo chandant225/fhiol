@@ -114,3 +114,10 @@ if (!function_exists('getPageUrlBySlug')) {
         return route('frontend.pages.show', $slug);
     }
 }
+
+if (!function_exists('image_placeholder_url')) {
+    function image_placeholder_url()
+    {
+        return '/assets/images/image-placeholder.png';
+    }
+}

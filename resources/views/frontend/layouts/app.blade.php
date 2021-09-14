@@ -22,10 +22,32 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/assets/css/style.css">
 
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/line-clamp.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/line-clamp.css') }}">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> --}}
     @livewireStyles
+    <style>
+        [x-cloak] {
+            display: none;
+        }
+        .btn-theme-primary {
+            text-align: center;
+            /* width: 100%; */
+            background-color: #fffafa;
+            font-weight: 500;
+            border: none;
+            color: #dd6310;
+            border: 1px solid #dd6310;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-theme-primary:hover {
+            background-color: #f57a20 !important;
+            border-color: #f57a20 !important;
+            color: #ffffff !important;
+        }
+
+    </style>
     @stack('styles')
     {{ $styles ?? '' }}
 
@@ -43,6 +65,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="/assets/js/main.js"></script>
     @livewireScripts
     <x-livewire-alert::scripts />

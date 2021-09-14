@@ -9,12 +9,16 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return view('frontend.category.index');
+        $categories = Category::get();
+
+        return view('frontend.category.index', compact('categories'));
     }
 
     public function show(Category $category)
     {
         $category->load('products');
+
+        return view('frontend.category.show', compact('category'));
         return $category->products;
     }
 }

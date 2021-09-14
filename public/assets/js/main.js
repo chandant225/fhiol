@@ -53,19 +53,19 @@ myCarousel.addEventListener("slid.bs.carousel", function () {
 });
 
 //aos
-AOS.init(
-  {
-    once: true
-  }
-);
+AOS.init({
+  once: true,
+});
 
 //fixed navbar
 $(window).scroll(function () {
   if ($(this).scrollTop() > 170) {
     $(".top-bar").hide();
-    $('.main-menu').addClass("nav-bg")
+    $(".main-menu").addClass("nav-bg");
   } else {
     $(".top-bar").show();
-    $('.main-menu').removeClass("nav-bg")
+    $(".main-menu").removeClass("nav-bg");
   }
 });
+
+

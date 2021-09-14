@@ -31,6 +31,21 @@ class UserSeeder extends Seeder
 
         $user->assignRole($adminRole);
 
+        // Tilganga user
+        User::firstOrCreate([
+            'email' => 'fhiol@tilganga.org',
+        ], [
+            'first_name' => 'FHIOL',
+            'last_name' => 'Tilganga',
+            'password' => bcrypt('password'),
+            'email_verified_at' => now(),
+            'mobile' => '+9779865720910'
+        ]);
+
+        $user = User::where('email', 'fhiol@tilganga.org')->first();
+
+        $user->assignRole($adminRole);
+
         // User
         User::firstOrCreate([
             'email' => 'john@example.com'

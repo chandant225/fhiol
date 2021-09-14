@@ -10,6 +10,7 @@ class ContactForm extends Component
     public $name;
     public $email;
     public $mobile;
+    public $subject;
     public $message;
     public $sent;
 
@@ -17,6 +18,7 @@ class ContactForm extends Component
         'name' => 'required',
         'email' => 'required|email',
         'mobile' => 'required',
+        'subject' => 'required',
         'message' => 'required'
     ];
 
@@ -33,6 +35,7 @@ class ContactForm extends Component
             'name' => $this->name,
             'email' => $this->email,
             'mobile' => $this->mobile,
+            'subject' => $this->subject,
             'message' => $this->message
         ]);
 
@@ -40,7 +43,7 @@ class ContactForm extends Component
 
         $this->alert('success', 'Message Sent');
 
-        $this->reset(['name', 'email', 'mobile', 'message']);
+        $this->reset(['name', 'email', 'mobile', 'subject', 'message']);
     }
 
     public function render()

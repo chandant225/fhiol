@@ -60,7 +60,27 @@
 
                 <div class="my-3"></div>
 
+                {{-- Product Overview --}}
                 <x-box>
+                    <label for="">Product Overview</label>
+                    <textarea name="overview" id="overview" class="form-control {{ invalid_class('overview') }}" cols="30" rows="10">{{ old('overview', $product->overview) }}</textarea>
+                    <x-invalid-feedback field="overview"></x-invalid-feedback>
+                </x-box>
+
+                <div class="my-3"></div>
+
+                {{-- Product Detail --}}
+                <x-box>
+                    <label for="">Product Detail</label>
+                    <textarea name="detail" id="detail" class="form-control {{ invalid_class('detail') }}" cols="30" rows="10">{{ old('detail', $product->detail) }}</textarea>
+                    <x-invalid-feedback field="detail"></x-invalid-feedback>
+                </x-box>
+
+                <div class="my-3"></div>
+
+                {{-- Product Specification|description --}}
+                <x-box>
+                    <label for="">Product Specification</label>
                     <textarea name="description" id="description" class="form-control {{ invalid_class('description') }}" cols="30" rows="10">{{ old('description', $product->description) }}</textarea>
                     <x-invalid-feedback field="description"></x-invalid-feedback>
                 </x-box>
@@ -83,7 +103,7 @@
                     </div>
                 </x-box>
 
-                <x-box>
+                {{-- <x-box>
                     <label for="">Specifications</label>
                     <div>
                         @foreach ($specifications as $specification)
@@ -100,7 +120,7 @@
                         <div id="specification-wrapper" class="mb-3"></div>
                         <button type="button" id="specification-plus-btn" class="btn btn-success btn-md z-depth-0"><span class="mr-1"><i class="fa fa-plus"></i></span> Add Item</button>
                     </div>
-                </x-box>
+                </x-box> --}}
             </div>
             {{-- End of col-md-8 --}}
             <div class="col-md-3">
@@ -150,7 +170,7 @@
                 <x-box>
                     <div class="text-center">
                         @php
-                        if ( $product->exists ) {
+                        if ( $product->exists && $product->featuredImage ) {
                         $imageUrl = $product->featuredImage->imageUrl();
                         } else {
                         $imageUrl = 'https://dummyimage.com/600x600/f4f6f9/0011ff';
@@ -196,11 +216,11 @@
                 </x-box>
             </div>
 
-            <div class="col-md-12">
+            {{-- <div class="col-md-12">
                 <div class="form-group mt-3">
                     <button type="submit" class="btn btn-primary text-md ml-0 px-5">{{ $product->exists ? 'Update' : 'Save' }}</button>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </form>
@@ -236,6 +256,38 @@
 @push('scripts')
 <script>
     $(function() {
+        $('#overview').summernote({
+            placeholder: 'Product overview goes here...'
+            , tabsize: 2
+            , height: 250
+            , toolbar: [
+                ['style', ['style']]
+                , ['font', ['bold', 'underline', 'clear']]
+                , ['fontname', ['fontname']]
+                , ['color', ['color']]
+                , ['para', ['ul', 'ol', 'paragraph']]
+                , ['table', ['table']]
+                , ['insert', ['link', 'picture']]
+                , ['view', ['fullscreen', 'codeview', 'help']]
+            , ]
+        , });
+
+        $('#detail').summernote({
+            placeholder: 'Product detail goes here...'
+            , tabsize: 2
+            , height: 250
+            , toolbar: [
+                ['style', ['style']]
+                , ['font', ['bold', 'underline', 'clear']]
+                , ['fontname', ['fontname']]
+                , ['color', ['color']]
+                , ['para', ['ul', 'ol', 'paragraph']]
+                , ['table', ['table']]
+                , ['insert', ['link', 'picture']]
+                , ['view', ['fullscreen', 'codeview', 'help']]
+            , ]
+        , });
+
         $('#description').summernote({
             placeholder: 'Product description goes here...'
             , tabsize: 2
@@ -245,17 +297,17 @@
 
     var specificationTemplate = $('#specification-input-template');
 
-    function addSpecificationInput() {
-        $('#specification-wrapper').append(specificationTemplate.html());
-    }
+    // function addSpecificationInput() {
+    //     $('#specification-wrapper').append(specificationTemplate.html());
+    // }
 
-    $('#specification-plus-btn').click(function() {
-        addSpecificationInput();
-    });
+    // $('#specification-plus-btn').click(function() {
+    //     addSpecificationInput();
+    // });
 
-    $(document).on('click', '.specfication-remove-btn', function() {
-        $(this).parent().remove();
-    });
+    // $(document).on('click', '.specfication-remove-btn', function() {
+    //     $(this).parent().remove();
+    // });
 
     // Feature input
     var featureTemplate = $('#feature-input-template');

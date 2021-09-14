@@ -33,7 +33,7 @@
                             </span>
                         </span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Inquiries</span>
+                            <span class="info-box-text">New Inquiries</span>
                             <span class="info-box-number"><span class="font-weight-normal">Total:</span> {{ $productInquiriesCount }}</span>
                         </div>
                     </div>

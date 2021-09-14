@@ -16,7 +16,7 @@ class Product extends Model
 
     protected $casts = [
         'status' => 'boolean',
-        'specifications' => 'array', // not used
+        // 'specifications' => 'array', // not used
         'is_new' => 'boolean',
         'featured' => 'boolean',
         'features' => 'array',
@@ -102,6 +102,10 @@ class Product extends Model
 
     public function seoImage()
     {
+        if (!$this->featuredImage) {
+            return null;
+        }
+
         return $this->featuredImage->imageUrl();
     }
 
