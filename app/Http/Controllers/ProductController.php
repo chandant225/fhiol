@@ -15,7 +15,7 @@ class ProductController extends Controller
         $filters = collect();
         $title = 'Products';
         $sortBy = request()->query('sort_by', 'recommended');
-        $products = Product::with(['featuredImage'])->active();
+        $products = Product::with(['featuredImage', 'category'])->active();
 
         $products->when(request()->filled('category_id'), function ($query) use ($filters) {
             $category = Category::select('name')->where('id', request()->query('category_id'))->first();
@@ -65,6 +65,8 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         abort_unless($product->isActive(), 404);
+
+        $product->load(['featuredImage', 'category']);
 
         $this->seo()->setTitle($product->seoTitle());
         $this->seo()->setDescription($product->seoDescription());
