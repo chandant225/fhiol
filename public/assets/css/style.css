@@ -156,9 +156,6 @@ margin-top: 72px; */
   }
 }
 
-.marbot20 {
-  margin-bottom: 20px;
-}
 
 .nav-bg {
   -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -1052,7 +1049,7 @@ html {
 }
 
 .newsAndletter {
-  margin: 80px 0 0 0;
+  margin: 80px 0;
 }
 
 .newsAndletter .post-module {
@@ -1358,6 +1355,7 @@ html {
   margin-top: 40px;
 }
 
+
 .top-strip .media-left,
 .top-strip .media-right {
   white-space: nowrap;
@@ -1483,6 +1481,9 @@ html {
   color: #b0c3d2;
   font-size: 14px;
 }
+#footer .footer .list-type1 li a:hover{
+  color: #dd6310;
+}
 
 #footer .footer p {
   color: #b0c3d2;
@@ -1490,57 +1491,42 @@ html {
   font-size: 14px;
 }
 
-#footer .footer .table-min {
-  width: 100%;
-}
-
-#footer .footer .table-min .dl-horizontal {
-  display: table;
-  color: #b0c3d2;
+.footer-call li{
+  list-style: none;
   display: table;
   text-align: left;
+  margin-bottom: 15px;
   border-bottom: 1px solid rgba(201, 201, 201, 0.2);
+  line-height: 28px;
+  font-weight: 400;
+  font-size: inherit;
   width: 100%;
-  font-weight: 400;
+  
+  
 }
-
-#footer .footer .table-min .dl-horizontal dd {
-  margin-left: 120px;
-  letter-spacing: -0.5px;
-  font-size: 14px;
-  text-align: left;
-}
-
-#footer .footer .table-min .dl-horizontal dt {
-  text-align: left;
-  font-weight: 500;
-  letter-spacing: -0.5px;
-  float: left;
-  white-space: normal;
-  font-size: 14px;
-}
-
-#footer .footer .f-type2-address .footer-call .media {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-weight: 400;
-  font-size: 14px;
-}
-
-#footer .footer .f-type2-address .footer-call .media i {
-  color: #dd6310;
-  font-size: 24px;
-}
-
-#footer .footer .f-type2-address .footer-call .media a {
+.footer-call li a{
   text-decoration: none;
   color: #b0c3d2;
+  font-weight: 400;
+  font-size: 14px;
+}
+.footer-call li span{
+  color: #b0c3d2;
+  font-weight: 400;
+  font-size: 14px;
+}
+  
+.footer-call li a:hover{
+  color: #dd6310 !important;
+  
+  
 }
 
-#footer .footer .f-type2-address .footer-call .media a:hover {
+.footer-call  li i {
   color: #dd6310;
+  font-size: inherit;
 }
+
 
 #footer .footer .border-seperator {
   border-bottom: 1px solid rgba(201, 201, 201, 0.3);

@@ -241,11 +241,6 @@
     </div>
     <!-- testimonial-end -->
 
-    <!-- <div class="date">
-        <div class="day">27</div>
-        <div class="month">Mar</div>
-    </div> -->
-
     <!-- News and Events -->
     <section class="newsAndletter">
         <div class="container">
@@ -254,7 +249,7 @@
             </div>
             <div class="row">
                 <!-- Post-->
-                <div class="col-xl-3 col-md-6 col-12 ">
+                <div class="col-xl-4 col-md-6 col-12 ">
                     <div data-aos="fade-up" data-aos-duration="1500">
                         <a href="publicationdetails.html" class=" text-decoration-none">
                             <div class=" post-module">
@@ -284,7 +279,7 @@
 
 
                 </div>
-                <div class="col-xl-3 col-md-6 col-12 news-respon">
+                <div class="col-xl-4 col-md-6 col-12 news-respon">
                     <div data-aos="fade-up" data-aos-duration="1500">
                         <a href="publicationdetails.html" class=" text-decoration-none">
                             <div class=" post-module">
@@ -314,37 +309,7 @@
 
 
                 </div>
-                <div class="col-xl-3 col-md-6 col-12 news-respon">
-                    <div data-aos="fade-up" data-aos-duration="1500">
-                        <a href="publicationdetails.html" class=" text-decoration-none">
-                            <div class=" post-module">
-                                <div class="category">10 FEB. 2021</div>
-                                <!-- Thumbnail-->
-                                <div class="thumbnail">
-
-                                    <img src="/theme/img/news-1.jpg" />
-                                </div>
-                                <!-- Post Content-->
-                                <div class="post-content">
-
-                                    <h1 class="title">City Lights in New York</h1>
-                                    <h2 class="sub_title">The city that never sleeps.</h2>
-                                    <p class="description">New York, the largest city in the U.S., is an
-                                        architectural
-                                        marvel
-                                        with
-                                        plenty of historic monuments, magnificent buildings and countless
-                                        dazzling
-                                        skyscrapers.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                </div>
-                <div class="col-xl-3 col-md-6 col-12 news-respon">
+                <div class="col-xl-4 col-md-6 col-12 news-respon">
                     <div data-aos="fade-up" data-aos-duration="1500">
                         <a href="publicationdetails.html" class=" text-decoration-none">
                             <div class=" post-module">
