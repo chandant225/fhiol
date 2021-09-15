@@ -11,6 +11,11 @@
             <x-invalid-feedback field="customerPhone"></x-invalid-feedback>
         </div>
         <div class="col-md-12 mb-3">
+            <label class="form-label">E-mail Address</label>
+            <input type="text" wire:model.defer="customerEmail" class="form-control @error('customerEmail') is-invalid @enderror" placeholder="Your E-mail Address" onkeyup="localStorage.setItem('customer-phone', this.value)">
+            <x-invalid-feedback field="customerEmail"></x-invalid-feedback>
+        </div>
+        <div class="col-md-12 mb-3">
             <label class="form-label">Message</label>
             <textarea wire:model.defer="message" class="form-control @error('message') is-invalid @enderror" cols="30" rows="5" placeholder="Anything you wanna say?"></textarea>
             <x-invalid-feedback field="message"></x-invalid-feedback>

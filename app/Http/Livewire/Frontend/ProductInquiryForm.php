@@ -12,6 +12,7 @@ class ProductInquiryForm extends Component
 
     public $customerName;
     public $customerPhone;
+    public $customerEmail;
     public $message;
 
     protected function rules()
@@ -19,6 +20,7 @@ class ProductInquiryForm extends Component
         return [
             'customerName' => 'required',
             'customerPhone' => 'required',
+            'customerEmail' => 'required',
             'message' => 'nullable',
         ];
     }
@@ -30,6 +32,7 @@ class ProductInquiryForm extends Component
         ProductInquiry::create([
             'customer_name' => $this->customerName,
             'customer_phone' => $this->customerPhone,
+            // 'customer_email' => $this->customerEmail,
             'message' => $this->message,
             'product_id' => $this->product->id
         ]);
