@@ -44,18 +44,18 @@
 
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item mb-2" href="aboutUs.html">Fred Hellows</a></li>
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.about-FH')}}">Fred Hellows</a></li>
 
-                                    <li><a class="dropdown-item mb-2" href="introduction.html">ED Message/
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.intro')}}">ED Message/
                                             Introduction</a></li>
-                                    <li><a class="dropdown-item mb-2" href="Team.html">Our Team</a></li>
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.team')}}">Our Team</a></li>
 
-                                    <li><a class="dropdown-item mb-2" href="visionmission.html">Mission & Vision</a>
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.visionmisson')}}">Mission & Vision</a>
                                     </li>
 
-                                    <li><a class="dropdown-item mb-2" href="qualityassurance.html">Quality
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.qa')}}">Quality
                                             Assurance</a></li>
-                                    <li><a class="dropdown-item mb-2" href="Certification.html">Certification</a>
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.certificate')}}">Certification</a>
                                     </li>
                                 </ul>
                             </li>
