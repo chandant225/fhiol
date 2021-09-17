@@ -13,6 +13,9 @@ h5 {
   font-family: Raleway, sans-serif;
   text-transform: uppercase;
 }
+img{
+  border-radius: 3px;
+}
 
 /*--------------------------------------------------------------
 # Breadcrumbs
@@ -528,14 +531,14 @@ html {
 } 
 .about-hollows .MiVi{
   background-color:#F3F3F3;
-  padding: 50px;
-  margin-top: 40px;
+  padding: 80px 0 80px 0;
+  margin-top: 80px;
 
 
 
 }
 .about-hollows .MiVi h4{
-  color: #a1c4bc;
+  color: rgba(0, 0,0, 0.8);
   font-weight: 800;
 
 
@@ -721,7 +724,7 @@ box-sizing: border-box;
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
-  color: #37517e;
+  color: rgba(0, 0,0, 0.8);
 }
 
 .team .member span {
@@ -2277,21 +2280,19 @@ box-sizing: border-box;
 .visionAndmission .vm-content {
  border-radius: 3px;
  padding: 20px;
+box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 .visionAndmission .row {
   padding: 15px;
   overflow: hidden;
 }
 
-.visionAndmission h1 {
-  margin-top: 120px;
-  font-size: 38px;
-  line-height: 1.1;
-  position: relative;
+.visionAndmission h4 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 24px;
   font-weight: 600;
-  margin-bottom: 20px;
-  color: #a1c4bc;
-  text-transform: uppercase;
 }
 
 .visionAndmission p {

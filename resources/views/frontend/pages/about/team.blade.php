@@ -31,7 +31,7 @@
                                 <div class="member align-items-center" >
                                     <div class="row ">
                                         <div class="pic col-md-3"><img
-                                                src="http://www.omnilens.in/wp-content/uploads/2017/09/ravisrivastava.jpg"
+                                                src="https://www.webfulcreations.com/themes/eyecare/wp-content/uploads/sites/8/2017/01/doctor1-1.jpg"
                                                 class="img-fluid" alt="">
                                         </div>
                                         <div class="member-info ">
@@ -53,7 +53,7 @@
                                 <div class="member align-items-center" >
                                     <div class="row ">
                                         <div class="pic col-md-3"><img
-                                                src="http://www.omnilens.in/wp-content/uploads/2017/09/ravisrivastava.jpg"
+                                                src="https://www.webfulcreations.com/themes/eyecare/wp-content/uploads/sites/8/2017/01/doctor4.jpg"
                                                 class="img-fluid" alt="">
                                         </div>
                                         <div class="member-info ">
@@ -75,7 +75,7 @@
                                 <div class="member align-items-center" >
                                     <div class="row ">
                                         <div class="pic col-md-3"><img
-                                                src="http://www.omnilens.in/wp-content/uploads/2017/09/ravisrivastava.jpg"
+                                                src="https://www.webfulcreations.com/themes/eyecare/wp-content/uploads/sites/8/2017/01/doctor2.jpg"
                                                 class="img-fluid" alt="">
                                         </div>
                                         <div class="member-info ">
@@ -97,7 +97,7 @@
                                 <div class="member align-items-center" >
                                     <div class="row ">
                                         <div class="pic col-md-3"><img
-                                                src="http://www.omnilens.in/wp-content/uploads/2017/09/ravisrivastava.jpg"
+                                                src="https://www.webfulcreations.com/themes/eyecare/wp-content/uploads/sites/8/2017/01/doctor4.jpg"
                                                 class="img-fluid" alt="">
                                         </div>
                                         <div class="member-info ">

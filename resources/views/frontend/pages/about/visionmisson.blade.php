@@ -16,7 +16,79 @@
         </section><!-- End Breadcrumbs -->
 
         <section class="visionAndmission">
+
             <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Our Vision</h4>
+                        <p>To become the most respected web application development & solutions company in the world
+                            through world-class quality result oriented products and services with a focus on emerging
+                            technologies where the best in the industry want to work for the job-satisfaction and
+                            professional growth it provides.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://www.sahirwebsolutions.com/wp-content/uploads/2015/12/vision1-1500x513.jpg"
+                            width="100%" height="100%" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="mission">
+                <div class="container">
+                    <div class="row">
+                        <div class="title-right">
+                            <h4>OUR Mission</h4>
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="mission-box">
+                                <div class="mission-box-inner">
+                                    <img src="	https://www.sahirwebsolutions.com/wp-content/uploads/2018/06/create-icon.png"
+                                        alt="">
+                                    <h5>Create and deliver world-class web and mobile solutions</h5>
+                                    <p>To create and provide world-class high-quality web applications and online
+                                        solutions services with a special focus on emerging technologies.</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-4">
+
+                            <div class="mission-box">
+                                <div class="mission-box-inner">
+                                    <img src="	https://www.sahirwebsolutions.com/wp-content/uploads/2018/06/ethic-icon.png"
+                                        alt="">
+                                    <h5>Create and deliver world-class web and mobile solutions</h5>
+                                    <p>To create and provide world-class high-quality web applications and online
+                                        solutions services with a special focus on emerging technologies.</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-4">
+
+                            <div class="mission-box">
+                                <div class="mission-box-inner">
+                                    <img src="https://www.sahirwebsolutions.com/wp-content/uploads/2018/06/employee-icon.png"
+                                        alt="">
+                                    <h5>Create and deliver world-class web and mobile solutions</h5>
+                                    <p>To create and provide world-class high-quality web applications and online
+                                        solutions services with a special focus on emerging technologies.</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            {{-- <div class="container">
                 <div class="row">
                     <div class="title-left">
                         <h4>Vision and Mission</h4>
@@ -28,101 +100,133 @@
                                 av_timer
                             </i>
                             <h2>Vision</h2>
-                            <p class="text-secondary">To be the Regions leading Coal and Energy provider, creating
-                                superior customer through
-                                innovation and cost efficiency, with responsible focus on health, safety and
-                                environmental
-                                considerations.</p>
+                            <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+                                corporis id, eligendi labore a mollitia enim soluta sint tempora ab nisi consequatur
+                                quis omnis aliquam et laborum recusandae doloremque. Cumque.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, quae. Commodi ullam
+                                inventore possimus, eaque molestias veniam quisquam eligendi itaque eius ea recusandae,
+                                velit est. Obcaecati autem excepturi pariatur qui?
+                            </p>
                         </div>
-                       
-                        
+
+
 
                     </div>
                     <div class="col-md-6">
-                        <div class="vm-content" ><i class="material-icons">
+                        <div class="vm-content"><i class="material-icons">
                                 track_changes
                             </i>
                             <h2>Mission</h2>
-                            <p class="text-secondary">Our corporate mission is to support our customers, employees and
-                                local communities in
-                                their
-                                endeavours to achieve economic and social prosperity, realising their goals through our
-                                sound business activities, a sound management style which places emphasis on integrity
-                                is
-                                the essence of the group's business philosophy.</p>
+                            <p class="text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
+                                dolores, accusantium dolore dolorum corporis non at, natus cum voluptas sed laboriosam
+                                aliquam aliquid in dicta! Reiciendis commodi quos esse nemo!
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic esse veniam voluptas
+                                labore reprehenderit corrupti ullam quia nemo officia blanditiis. A, nulla ad. Ratione
+                                neque modi consequuntur earum dolores quia.
+                            </p>
                         </div>
 
                     </div>
                 </div>
-                <div class="row mt-4">
+                <div class="row ">
                     <div class="col-md-6">
                         <div class="vm-content">
                             <i class="material-icons">
                                 verified_user
                             </i>
                             <h2>Integrity</h2>
-                            <p class="text-secondary">A tradition of ethical and honest business conduct is the
-                                cornerstone of EnerPower's
-                                business
-                                philosophy and the foundation of the entire group . We believe that professional
-                                integrity
-                                and ethical business behaviour are indispensable to the long term success of any
-                                business.
+                            <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
+                                cupiditate eveniet quis, amet esse pariatur voluptas veniam impedit debitis ut, tenetur
+                                harum dolores? Asperiores culpa ipsam ullam ipsum consequatur nisi.
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi assumenda
+                                dignissimos magnam ad blanditiis sed! Qui aliquid dolor iure, repellat quisquam
+                                obcaecati repellendus voluptatibus magnam illo incidunt a rerum culpa.
                             </p>
                         </div>
 
                     </div>
                     <div class="col-md-6">
-                        <div class="vm-content" > <i class="material-icons">
+                        <div class="vm-content"> <i class="material-icons">
                                 groups
                             </i>
                             <h2>People</h2>
-                            <p class="text-secondary">The quality of our team forms the cornerstone of our ability to
-                                serve our customers and
-                                sustain continued business growth. For this reason, we invest significant resources in
-                                identifying exceptional talents, developing their skills and creating an environment
-                                that
-                                fosters their growth as leaders. To make our company truly international we also
-                                incorporate
-                                english speaking and effective communicators which become our strengths in Indonesia to
-                                expand into the export possibilities across the globe.
-                                This service focused approach may be a hindrance for a lot of our competitors and we
-                                excel
-                                in this relationship management.</p>
+                            <p class="text-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro
+                                distinctio at consectetur quae voluptates quod veritatis nisi minus harum debitis
+                                perferendis eos blanditiis facere veniam voluptas, enim vitae aliquam earum?
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem assumenda dolorum
+                                incidunt culpa eum, ullam similique repudiandae quis ea, quas aspernatur, provident amet
+                                corporis dolores necessitatibus laudantium consequuntur neque eius?
+                            </p>
                         </div>
 
                     </div>
                 </div>
-                <div class="row mt-4">
+                <div class="row ">
                     <div class="col-md-6">
                         <div class="vm-content"> <i class="material-icons">
                                 security
                             </i>
                             <h2>Safety</h2>
-                            <p class="text-secondary">At EnerPower, we are focused on safely delivering the energy
-                                needed to power economic
-                                progress. The group builds systems that support a culture of safety and environmental
-                                stewardship and strives to achieve unparalleled incident free performances. We are fully
-                                committed to abiding with the requirements and procedures necessary for meeting
-                                standardized
-                                safety, health and environmental objectives.</p>
+                            <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
+                                quaerat excepturi impedit doloremque cum soluta unde corporis facere amet saepe quia
+                                quod eum. Aliquid rem atque esse modi fugiat nulla.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium placeat eius, atque
+                                earum asperiores nesciunt assumenda esse. Magnam, fuga aliquam eos porro, cumque
+                                distinctio ad atque rerum et optio corrupti?
+                            </p>
                         </div>
 
                     </div>
                     <div class="col-md-6"></div>
                 </div>
 
-            </div>
+            </div> --}}
         </section>
 
     </main><!-- End #main -->
-<!-- News and Events -->
+    <!-- News and Events -->
 
- 
-        
-            @push('scripts')
-        <style></style>
-        @endpush
-            
-        </x-app-layout>
-        
+
+
+    @push('scripts')
+        <style>
+            .mission {
+                margin-top: 80px;
+                background-color: #F3F3F3;
+                padding: 60px 0 60px 0;
+
+            }
+
+            .mission .mission-box {
+
+                background-color: white;
+                padding: 15px;
+                text-align: center;
+                border-radius: 3px
+
+
+
+            }
+
+            .mission .mission-box img {
+
+                padding: 20px;                
+                font-size: 1rem;
+
+
+
+            }
+
+            .mission .mission-box h5 {
+                color: rgba(0, 0, 0, 0.8);
+                font-weight: bold;
+                text-transform: capitalize;
+                font-size: 1rem;
+            }
+
+            @media only screen and (max-width: 768px) {}
+
+        </style>
+    @endpush
+
+</x-app-layout>

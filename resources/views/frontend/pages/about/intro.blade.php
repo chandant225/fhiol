@@ -23,7 +23,7 @@
         </div>
         <div class="row ">
             <div class="col-md-6  ">
-                <img src="/theme/img/banner/banner01.jpg" alt="" width="100%" height="80%" alt="about img">
+                <img src="/theme/img/banner/banner01.jpg" alt="" width="100%" height="90%" alt="about img">
             </div>
             <div class="col-md-6">
                 <p>
