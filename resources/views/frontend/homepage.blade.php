@@ -127,13 +127,15 @@
                 <div class="col-md-3">
                     <div data-aos="fade-up" data-aos-duration="1000">
                         <div class="service-box">
-                            <div class="service-box-inner">
-                                <span class="material-icons orange600">precision_manufacturing</span>
-                                <h5>LATEST MACHINES</h5>
-                                <br>
-                                <p>Equipped with the latest innovation in computer controlled lens production equipment
-                                    with...</p>
-                            </div>
+                            <a href="{{route('latestmachine')}}">
+                                <div class="service-box-inner">
+                                    <span class="material-icons orange600">precision_manufacturing</span>
+                                    <h5>LATEST MACHINES</h5>
+                                    <br>
+                                    <p>Equipped with the latest innovation in computer controlled lens production equipment
+                                        with...</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
@@ -141,13 +143,17 @@
                 <div class="col-md-3">
                     <div data-aos="fade-up" data-aos-duration="1100">
                         <div class="service-box">
-                            <div class="service-box-inner">
-                                <span class="material-icons orange600">biotech</span>
-                                <h5>BEST IOL DESIGNS</h5>
-                                <br>
-                                <p>Having alliance with leading IOL design experts and medical research teams, the
-                                    laboratory is in...</p>
-                            </div>
+                            <a href="{{route('iol')}}">
+
+                                <div class="service-box-inner">
+                                    <span class="material-icons orange600">biotech</span>
+                                    <h5>BEST IOL DESIGNS</h5>
+                                    <br>
+                                    <p>Having alliance with leading IOL design experts and medical research teams, the
+                                        laboratory is in...</p>
+                                </div>
+                            </a>
+                            
                         </div>
                     </div>
 
@@ -156,29 +162,37 @@
                 <div class="col-md-3">
                     <div data-aos="fade-up" data-aos-duration="1200">
                         <div class="service-box">
-                            <div class="service-box-inner">
 
-                                <span class="material-icons orange600">approval</span>
-                                <h5>QUALITY CERTIFICATION</h5>
-                                <br>
-                                <p>Adherence to the Highest Quality Standards is a consistent feature...</p>
-                            </div>
+                            <a href="{{route('qualitycertificate')}}">
+
+                                <div class="service-box-inner">
+
+                                    <span class="material-icons orange600">approval</span>
+                                    <h5>QUALITY CERTIFICATION</h5>
+                                    <br>
+                                    <p>Adherence to the Highest Quality Standards is a consistent feature...</p>
+                                </div>
+                            </a>
+                            
                         </div>
                     </div>
 
                 </div>
                 <div class="col-md-3">
                     <div class="service-box">
-                        <div data-aos="fade-up" data-aos-duration="1300">
-                            <div class="service-box-inner">
-                                <span class="material-icons orange600">flight_takeoff</span>
-                                <h5>Over 30 countries</h5>
-                                <br>
-                                <p>FH IOL Lab has exported its products world-wide to over 30 countries in Asia,
-                                    Australia,
-                                    South...</p>
+                        <a href="{{route('country')}}">
+                            <div data-aos="fade-up" data-aos-duration="1300">
+                                <div class="service-box-inner">
+                                    <span class="material-icons orange600">flight_takeoff</span>
+                                    <h5>Over 30 countries</h5>
+                                    <br>
+                                    <p>FH IOL Lab has exported its products world-wide to over 30 countries in Asia,
+                                        Australia,
+                                        South...</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
+                        
 
                     </div>
                 </div>
