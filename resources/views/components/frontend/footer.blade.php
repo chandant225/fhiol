@@ -26,11 +26,11 @@
                              </li>
 
                              <li>
-                                <i class="material-icons me-2">phone</i> <a href="#">{{ appSettings('mobile') }}</a> <br>
+                                <i class="material-icons me-2">phone</i>{{ appSettings('mobile') }} <br>
                              </li>
 
                              <li>
-                                <i class="material-icons me-2">event_available</i> <a href="#">{{ appSettings('email') }}</a>
+                                <i class="material-icons me-2">event_available</i> {{ appSettings('email') }}
                              </li>
                          </ul>
                      </div>
@@ -39,7 +39,7 @@
                      <h4 class="footer-title"> quick links </h4>
                      <div class="clearfix">
                          <ul class="list-type1">
-                             <li><a href="services01.htm">Distribution</a></li>
+                             <li><a href="{{route('distribution')}}">Distribution</a></li>
                              <li><a href="/products">Products</a></li>
                              <li><a href="/publication">Published articles</a></li>
                              <li><a href="/new-and-events">News and events</a></li>

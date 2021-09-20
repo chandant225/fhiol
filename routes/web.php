@@ -25,6 +25,9 @@ Route::view('qualitycertificate', 'frontend.excellence.qualitycertificate')->nam
 Route::view('iol', 'frontend.excellence.iol')->name('iol');
 Route::view('country', 'frontend.excellence.country')->name('country');
 
+//contact details
+Route::view('distribution', 'frontend.distribution')->name('distribution');
+
 
 Route::get('categories', 'CategoryController@index')->name('categories.index');
 Route::get('categories/{category}', 'CategoryController@show')->name('categories.show');

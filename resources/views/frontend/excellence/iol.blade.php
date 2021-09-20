@@ -2,10 +2,17 @@
 
 
     <section class="iol">
-        <div class="title-right">
-            <h4>Best Iol design</h4>
-        </div>
+        <!-- ======= banner ======= -->
+        <section id="banner" class="banner">
+
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                alt="">
+        </section><!-- End banner -->
         <div class="container">
+
+            <div class="title-right">
+                <h4>Best Iol design</h4>
+            </div>
             <div class="row">
                 <div class="col-md-3 ">
                     <img src="https://fhiol.com/sites/default/files/styles/large/public/field/image/best%20iol%20design.jpg?itok=ONldWicR"
@@ -41,14 +48,14 @@
     @push('scripts')
         <style>
             .iol {
-                margin: 80px 0;
+                margin: 0 0 80px 0;
             }
 
             .iol p {
                 text-align: justify;
             }
 
-            .iol img {
+            .iol .row img {
                 width: 100%;
                 height: 100%;
             }
