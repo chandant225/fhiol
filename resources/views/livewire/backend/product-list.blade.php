@@ -25,22 +25,6 @@
                         </select>
                     </div>
                     <div class="col-auto form-group ">
-                        <label for="">Marked New</label>
-                        <select wire:model.defer="filter.is_new" class="custom-select">
-                            <option value="">All</option>
-                            <option value="1">Marked New</option>
-                            <option value="0">Not Marked New</option>
-                        </select>
-                    </div>
-                    <div class="col-auto form-group ">
-                        <label for="">Featured</label>
-                        <select wire:model.defer="filter.featured" class="custom-select">
-                            <option value="">All</option>
-                            <option value="1">Featured</option>
-                            <option value="0">Unfeatured</option>
-                        </select>
-                    </div>
-                    <div class="col-auto form-group ">
                         <label>Trashed</label>
                         <select wire:model.defer="filter.trashed" class="custom-select">
                             <option value="">No</option>
@@ -68,10 +52,10 @@
                 <tr class="bg-light">
                     <td>Image</td>
                     <td>Name</td>
-                    <td class="text-center">Price</td>
+                    <td class="text-center">Subtitle</td>
                     <td>Category</td>
                     <td class="text-center">Views</td>
-                    <td>Active</td>
+                    <td>Status</td>
                     <td></td>
                 </tr>
                 <tbody>
@@ -87,29 +71,12 @@
                         <td>
                             <a class="" href="{{ route('products.show', $product) }}" target="_blank">{{ $product->name }}</a>
                             <div>
-                                @if($product->isFeatured())
-                                <div class="badge badge-light font-weight-light">Featured</div>
-                                @endif
-                                @if($product->isMarkedNew())
-                                <div class="badge badge-light font-weight-lighter">New</div>
-                                @endif
                                 @if ($product->trashed())
-                                <div class="badge badge-danger">
-                                    Trashed
-                                </div>
+                                <div class="badge badge-danger">Trashed</div>
                                 @endif
                             </div>
                         </td>
-                        <td class="text-center">
-                            <div>
-                                {{ priceUnit() }} {{ number_format($product->currentPrice()) }}
-                            </div>
-                            <div style="text-decoration: line-through; font-size: .9rem;">
-                                @if ($product->hasDiscount())
-                                {{ priceUnit() }} {{ number_format($product->price) }}
-                                @endif
-                            </div>
-                        </td>
+                        <td class="text-center">{{ $product->sub_title }}</td>
                         <td><span class="badge badge-light font-weight-light">{{ $product->category->name }}</span></td>
                         <td class="text-center">{{ $product->views }}</td>
                         <td>

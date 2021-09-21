@@ -53,43 +53,6 @@ class Product extends Model
         return $this->status;
     }
 
-    public function currentPrice()
-    {
-        return $this->hasDiscount()
-            ? $this->sale_price
-            : $this->price;
-    }
-
-    public function hasDiscount()
-    {
-        return $this->sale_price ? true : false;
-    }
-
-    public function discountPercentage($withSign = true)
-    {
-        $discountAmount = (int)$this->price - (int)$this->sale_price;
-        $discountPercent = round(($discountAmount / $this->price) * 100);
-        if ($withSign) {
-            $discountPercent = $discountPercent . '%';
-        }
-        return $this->hasDiscount() ? $discountPercent : null;
-    }
-
-    public function isOnSale()
-    {
-        return $this->hasDiscount();
-    }
-
-    public function isMarkedNew()
-    {
-        return $this->is_new;
-    }
-
-    public function isFeatured()
-    {
-        return $this->featured;
-    }
-
     public function seoTitle()
     {
         return $this->title;

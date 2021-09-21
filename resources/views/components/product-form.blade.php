@@ -33,28 +33,19 @@
                             <x-invalid-feedback field="slug"></x-invalid-feedback>
                         </div>
                         @endif
-
-                    </div>
-                </x-box>
-
-                <div class="my-3"></div>
-
-                <x-box>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <x-form.form-group for="price">
-                                    <x-form.label class="required">Regular Price</x-form.label>
-                                    <x-fields.input type="number" name="price" :value="old('price', $product->price)" min="0" />
-                                </x-form.form-group>
-                            </div>
-                            <div class="col-md-6">
-                                <x-form.form-group for="sale_price">
-                                    <x-form.label>Sale Price</x-form.label>
-                                    <x-fields.input type="number" name="sale_price" :value="old('sale_price', $product->sale_price)" min="0" />
-                                </x-form.form-group>
-                            </div>
+                        
+                        <div class="col-md-12 form-group">
+                            <label for="category_id">Subtitle</label>
+                            <input type="text" name="sub_title" class="form-control {{ invalid_class('sub_title') }}" value="{{ old('sub_title', $product->sub_title) }}">
+                            <x-invalid-feedback field="sub_title"></x-invalid-feedback>
                         </div>
+
+                        <div class="col-md-12 form-group">
+                            <label for="category_id">Video Url</label>
+                            <input type="text" name="video_url" class="form-control {{ invalid_class('video_url') }}" value="{{ old('video_url', $product->video_url) }}">
+                            <x-invalid-feedback field="video_url"></x-invalid-feedback>
+                        </div>
+
                     </div>
                 </x-box>
 
@@ -148,21 +139,6 @@
                         <x-invalid-feedback field="category_id"></x-invalid-feedback>
                     </div>
 
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="is_new" class="custom-control-input {{ invalid_class('is_new') }}" id="is_new" value="1" @if($product->isMarkedNew()) checked @endif>
-                            <label class="custom-control-label" for="is_new">Mark as New Product</label>
-                            <x-invalid-feedback field="is_new"></x-invalid-feedback>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="featured" class="custom-control-input {{ invalid_class('featured') }}" id="featured" value="1" @if($product->isFeatured()) checked @endif>
-                            <label class="custom-control-label" for="featured">Mark as Featured</label>
-                            <x-invalid-feedback field="featured"></x-invalid-feedback>
-                        </div>
-                    </div>
                 </x-box>
 
                 <div class="my-3"></div>
