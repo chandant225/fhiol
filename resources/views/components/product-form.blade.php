@@ -33,7 +33,7 @@
                             <x-invalid-feedback field="slug"></x-invalid-feedback>
                         </div>
                         @endif
-                        
+
                         <div class="col-md-12 form-group">
                             <label for="category_id">Subtitle</label>
                             <input type="text" name="sub_title" class="form-control {{ invalid_class('sub_title') }}" value="{{ old('sub_title', $product->sub_title) }}">
@@ -79,39 +79,38 @@
                 <div class="my-3"></div>
 
                 <x-box class="my-3">
-                    <label for="">Features</label>
-                    <div>
-                        @foreach ($product->features as $feature)
-                        <div class="bg-light d-flex justify-content-between white p-3">
-                            <div class="align-self-center flex-grow-1">
-                                <input type="text" name="features[]" class="form-control" value="{{ $feature }}">
+                    <label for="">Downloads</label>
+                    @foreach($product->downloads as $download)
+                    <div class="col-md-12 download-preview-container">
+                        <div class="d-flex my-3 bg-light rounded p-2">
+                            @if($download->isImage())
+                            <img src="{{ $download->downloadUrl() }}" alt="{{ $download->nicename }}" style="width: 150px; height: 100px;">
+                            @else
+                            <div style="width: 100px;">
+                                @include('svg.file-icon')
                             </div>
-                            <button type="button" class="specfication-remove-btn btn btn-danger btn-md my-0 font-roboto ml-3"><span class="mr-2"><i class="fa fa-times"></i></span>Remove</button>
+                            @endif
+                            <div class="p-2 pl-3">
+                                <div>{{ $download->title }}</div>
+                                <div class="my-2"></div>
+                                @if($download->isImage())
+                                <a class="btn btn-primary btn-sm" href="{{ $download->url }}" target="_blank"><span class="mr-2"><i class="fa fa-eye fa-lg"></i></span>View</a>
+                                @endif
+                                <a class="btn btn-secondary btn-sm" href="{{ $download->url }}" target="_blank" download><span class="mr-2"><i class="fa fa-download fa-lg"></i></span>Download</a>
+                                <a class="delete-download-btn btn btn-danger btn-sm" data-download-id="{{ $download->id }}" href="#"><span class="mr-2"><i class="far fa-trash-alt fa-lg"></i></span>Delete Permanently</a>
+                            </div>
                         </div>
-                        @endforeach
-                        <div id="feature-wrapper" class="mb-3"></div>
-                        <button type="button" id="feature-plus-btn" class="btn btn-success btn-md z-depth-0"><span class="mr-1"><i class="fa fa-plus"></i></span> Add Item</button>
+                    </div>
+                    @endforeach
+
+                    <div class="grey lighten-5 p-3" style="border: 2px dashed #286099;">
+
+                        <div id="download-wrapper"></div>
+
+                        <button type="button" id="download-field-plus-btn" class="btn btn-success btn-md z-depth-0"><span><i class="fa fa-plus"></i></span></button>
                     </div>
                 </x-box>
 
-                {{-- <x-box>
-                    <label for="">Specifications</label>
-                    <div>
-                        @foreach ($specifications as $specification)
-                        <div class="document-input-container bg-light d-flex justify-content-between white p-3">
-                            <div class="align-self-center">
-                                <input type="text" name="specifications[key][]" class="form-control" placeholder="Specification" value="{{ $specification->key }}">
-                            </div>
-                            <div>
-                                <input type="text" name="specifications[value][]" class="form-control" placeholder="Value" value="{{ $specification->value }}">
-                            </div>
-                            <button type="button" class="specfication-remove-btn btn btn-danger btn-md my-0 font-roboto"><span class="mr-2"><i class="fa fa-times"></i></span>Remove</button>
-                        </div>
-                        @endforeach
-                        <div id="specification-wrapper" class="mb-3"></div>
-                        <button type="button" id="specification-plus-btn" class="btn btn-success btn-md z-depth-0"><span class="mr-1"><i class="fa fa-plus"></i></span> Add Item</button>
-                    </div>
-                </x-box> --}}
             </div>
             {{-- End of col-md-8 --}}
             <div class="col-md-3">
@@ -191,38 +190,8 @@
                     </div>
                 </x-box>
             </div>
-
-            {{-- <div class="col-md-12">
-                <div class="form-group mt-3">
-                    <button type="submit" class="btn btn-primary text-md ml-0 px-5">{{ $product->exists ? 'Update' : 'Save' }}</button>
-                </div>
-            </div> --}}
-
         </div>
     </form>
-
-    <script type="text/javascript" id="feature-input-template">
-        <div class="bg-light d-flex justify-content-between white p-3">
-        <div class="align-self-center flex-grow-1">
-            <input type="text" name="features[]" class="form-control">
-        </div>
-        <button type="button" class="specfication-remove-btn btn btn-danger btn-md my-0 font-roboto ml-3"><span class="mr-2"><i class="fa fa-times"></i></span>Remove</button>
-    </div>
-
-    </script>
-
-    <script type="text/javascript" id="specification-input-template">
-        <div class="document-input-container bg-light d-flex justify-content-between white p-3">
-        <div class="align-self-center">
-            <input type="text" name="specifications[key][]" class="form-control" placeholder="Specification">
-        </div>
-        <div>
-            <input type="text" name="specifications[value][]" class="form-control" placeholder="Value">
-        </div>
-        <button type="button" class="specfication-remove-btn btn btn-danger btn-md my-0 font-roboto"><span class="mr-2"><i class="fa fa-times"></i></span>Remove</button>
-    </div>
-
-    </script>
 
     @if($product->exists)
     <x-backend.product-images-uploader :product="$product" />
@@ -269,36 +238,55 @@
             , tabsize: 2
             , height: 400
         });
+
+        var downloadsInput = `<div class="download-input-container border my-3 d-flex justify-content-between bg-light p-3">
+                                <div>
+                                    <input type="text" name="downloads[][title]" class="form-control rounded-0 d-inline" placeholder="Download Title">
+                                </div>
+                                <div class="align-self-center">
+                                    <input type="file" name="downloads[][file]">
+                                </div>
+                                <button type="button" class="remove-download-btn btn btn-dark btn-md my-0"><span class="mr-2"><i class="fa fa-times fa-lg"></i></span>Remove</button>
+                            </div>`;
+
+        // Add Download
+        $('#download-field-plus-btn').click(function() {
+            $('#download-wrapper').append(downloadsInput);
+        });
+
+        // Remove Download
+        $(document).on('click', '.remove-download-btn', function() {
+            $(this).parent().remove();
+        });
+
+        // Delete Download file
+        $('.delete-download-btn').click(function(e) {
+            e.preventDefault();
+            var id = $(this).data('download-id');
+            var parent = $(this).parents('.download-preview-container');
+            console.log('Download ID: ' + id);
+            if (confirm('Are you sure to delete?')) {
+                $.ajax({
+                    type: "DELETE"
+                    , url: "{{ route('backend.ajax.downloads.destroy') }}"
+                    , data: {
+                        id: id
+                        , "_token": "{{ csrf_token() }}"
+                    }
+                    , dataType: "JSON"
+                    , success: function(response) {
+                        console.log('File Deleted');
+                        parent.remove();
+                    }
+                });
+            } else {
+                return false;
+            }
+        });
+
     });
 
-    var specificationTemplate = $('#specification-input-template');
 
-    // function addSpecificationInput() {
-    //     $('#specification-wrapper').append(specificationTemplate.html());
-    // }
-
-    // $('#specification-plus-btn').click(function() {
-    //     addSpecificationInput();
-    // });
-
-    // $(document).on('click', '.specfication-remove-btn', function() {
-    //     $(this).parent().remove();
-    // });
-
-    // Feature input
-    var featureTemplate = $('#feature-input-template');
-
-    function addFeatureInput() {
-        $('#feature-wrapper').append(featureTemplate.html());
-    }
-
-    $('#feature-plus-btn').click(function() {
-        addFeatureInput();
-    });
-
-    $(document).on('click', '.feature-remove-btn', function() {
-        $(this).parent().remove();
-    });
 
 </script>
 @endpush

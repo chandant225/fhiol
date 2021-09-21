@@ -39,8 +39,8 @@ class ProductRequest extends FormRequest
                 ? 'nullable'
                 : 'nullable',
             'features' => 'nullable',
-            // 'specifications' => 'nullable',
             'video_url' => 'nullable',
+            'downloads' => 'nullable',
         ];
     }
 }

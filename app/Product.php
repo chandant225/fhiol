@@ -119,4 +119,9 @@ class Product extends Model
     {
         return $this->metas()->where('type', 'specification')->get();
     }
+
+    public function downloads()
+    {
+        return $this->morphMany(Download::class, 'downloadable');
+    }
 }
