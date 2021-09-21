@@ -1,14 +1,19 @@
-<div class="card mb-3">
-    <div class="row g-0">
-        <div class="col-md-4">
-            <img src="{{ $category->image ? $category->imageUrl() : image_placeholder_url() }}" alt="" style="max-height: 200px;">
+<div class="category__card">
+    <div class="row @if($reversed) flex-md-row-reverse @endif">
+        <div class="col-md-6">
+            <a href="{{ route('products.index', ['category_id' => $category->id]) }}">
+                <img class="img-fluid shadow" src="{{ $category->image ? $category->imageUrl() : '/assets/images/category-placeholder.png' }}" alt="{{ $category->name }}">
+                {{-- <img src="{{ $category->image ? $category->imageUrl() : image_placeholder_url() }}" alt="" style="max-height: 200px;"> --}}
+            </a>
         </div>
-        <div class="col-md-8">
-            <div class="card-body d-flex flex-column h-100">
-                <h5 class="card-title"><a href="{{ route('products.index', ['category_id' => $category->id]) }}" style="color: initial; text-decoration:none">{{ $category->name }}</a></h5>
-                <p class="card-text flex-grow-1">{{ $category->description }}</p>
+        <div class="col-md-6">
+            <div class="card-body py-3">
+                <h1 class="mt-md-4"><a class="category__title" href="{{ route('products.index', ['category_id' => $category->id]) }}">{{ $category->name }}</a></h1>
+                <p class="category__subtitle">SWISS MADE EDOF IOL</p>
+                <div class="divider"></div>
+                <p class="card-text font-poppins short__description">{{ $category->description }}</p>
                 <div>
-                    <a href="{{ route('products.index', ['category_id' => $category->id]) }}" class="btn btn-sm btn-theme-primary d-inline-block">View Products</a>
+                    <a href="{{ route('products.index', ['category_id' => $category->id]) }}" class="btn btn-sm btn-theme-primary d-inline-block py-3 px-4 font-poppins bg-white">View Products</a>
                 </div>
             </div>
         </div>

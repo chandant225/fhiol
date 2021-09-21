@@ -1,0 +1,104 @@
+[x-cloak] {
+    display: none;
+}
+/* Font */
+.font-poppins {
+    font-family: "Poppins", sans-serif;
+}
+/* Navlink */
+.main-menu .navbar-nav .nav-link {
+    font-size: 1.01rem !important;
+}
+
+/* Button */
+.btn-theme-primary {
+    text-align: center;
+    /* width: 100%; */
+    background-color: #fffafa;
+    font-weight: 500;
+    border: none;
+    color: #dd6310;
+    border: 1px solid #dd6310;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-theme-primary:hover {
+    background-color: #f57a20 !important;
+    border-color: #f57a20 !important;
+    color: #ffffff !important;
+}
+
+/*
+* ===============
+* Category Card
+* ===============
+**/
+.category__card {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+.category__card img {
+    box-shadow: 0 0.5rem 2rem rgba(0,0,0,.15);
+}
+.category__title {
+    font-size: calc(25px + 30 * (100vw - 375px) / 1545);
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #f47920;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.category__title:hover {
+    color: #3b4762;
+}
+
+.category__subtitle {
+    font-size: calc(18px + 8 * (100vw - 375px) / 1545);
+}
+.category__card .divider {
+    height: 4px;
+    background-color: #f47920;
+    width: 40px;
+    margin-bottom: 15px;
+}
+.category__card .short__description {
+    line-height: 1.7;
+}
+
+
+/*
+* ===============
+* Product Card
+* ===============
+**/
+.product__card {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+.product__title {
+    font-size: calc(25px + 15 * (100vw - 375px) / 1545);
+    line-height: 1.4;
+    letter-spacing: 0.025rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #f47920;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.product__title:hover {
+    color: #3b4762;
+}
+
+.product__subtitle {
+    font-size: calc(18px + 8 * (100vw - 375px) / 1545);
+}
+.product__card .divider {
+    height: 4px;
+    background-color: #f47920;
+    width: 40px;
+    margin-bottom: 15px;
+}
+.product__card .short__description {
+    line-height: 1.7;
+}

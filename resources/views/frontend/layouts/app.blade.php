@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Source+Sans+Pro:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     {!! SEO::generate() !!}
     <link rel="icon" href="{{ faviconUrl() }}">
@@ -21,32 +22,14 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/assets/css/style.css?v=1.0.0">
+    <link rel="stylesheet" href="/assets/css/unmerged.css?v=1.0.0">
 
     <link rel="stylesheet" href="{{ asset('assets/css/line-clamp.css') }}">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> --}}
     @livewireStyles
     <style>
-        [x-cloak] {
-            display: none;
-        }
-        .btn-theme-primary {
-            text-align: center;
-            /* width: 100%; */
-            background-color: #fffafa;
-            font-weight: 500;
-            border: none;
-            color: #dd6310;
-            border: 1px solid #dd6310;
-            -webkit-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
-        }
-        .btn-theme-primary:hover {
-            background-color: #f57a20 !important;
-            border-color: #f57a20 !important;
-            color: #ffffff !important;
-        }
-
+       
     </style>
     @stack('styles')
     {{ $styles ?? '' }}

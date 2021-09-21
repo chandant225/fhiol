@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             @foreach($products as $product)
-            <div class="col-md-3">
+            <div class="col-md-12">
                 <x-frontend.product.product-card :product="$product"></x-frontend.product.product-card>
             </div>
             @endforeach

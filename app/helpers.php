@@ -68,7 +68,7 @@ if (!function_exists('siteLogoUrl')) {
         if (appSettings()->get('site_logo')) {
             return asset('storage/' . appSettings()->get('site_logo'));
         }
-        return asset('assets/images/logo.png');
+        return asset('assets/images/fhiol-logo.png');
     }
 }
 
