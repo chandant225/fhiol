@@ -1,21 +1,4 @@
- <!-- Footer Top Strip -->
- <div class="top-strip ">
-     <div class="container">
-         <div class="row vertical-align col-12">
 
-             <div class="col-md-12 vertical-middle visible-block-sm-xs marbot30-sm-xs">
-                 <div class="text-center marbot0 media">
-                     <span class="media-left"><i class="fa fa-phone icon-bordered"></i></span>
-                     <span class="media-body text-left media-middle">
-                         If you Have Any Questions Call Us On <a href="#"><span class="bold">{{ appSettings('mobile') }}</span></a>
-                     </span>
-                 </div>
-             </div>
-
-         </div>
-     </div>
- </div>
- <!-- Footer Top Strip -->
 
  <!-- footer -->
  <footer id="footer">
@@ -34,44 +17,29 @@
                  <div class="col-md-3 col-sm-6 marbot50-md-xs ">
                      <div class="f-type2-address">
                          <h4 class="footer-title">Contact Details </h4>
-                         <div class="footer-call">
-                             <div class="media marbot20">
-                                 <div class="media-left">
-                                     <i class="material-icons me-3">add_location</i>
-                                 </div>
-                                 <div class="media-body">
-                                     <p class="fontresize marbot0">
-                                        {{ appSettings('address') }}
-                                     </p>
-                                 </div>
-                             </div>
+                         <ul class="footer-call">
+                             <li>
+                                <i class="material-icons me-2">add_location</i>
+                                <span class="fontresize ">
+                                    {{ appSettings('address') }}
+                                 </span>
+                             </li>
 
-                             <div class="media marbot20">
-                                 <div class="media-left">
-                                     <i class="material-icons me-3">phone</i>
-                                 </div>
-                                 <div class="media-body">
-                                     <a href="#">{{ appSettings('mobile') }}</a> <br>
-                                     {{-- <a href="#">(255)-567-1234</a> --}}
-                                 </div>
-                             </div>
+                             <li>
+                                <i class="material-icons me-2">phone</i>{{ appSettings('mobile') }} <br>
+                             </li>
 
-                             <div class="media">
-                                 <div class="media-left">
-                                     <i class="material-icons me-3">event_available</i>
-                                 </div>
-                                 <div class="media-body">
-                                     <a href="#">{{ appSettings('email') }}</a>
-                                 </div>
-                             </div>
-                         </div>
+                             <li>
+                                <i class="material-icons me-2">event_available</i> {{ appSettings('email') }}
+                             </li>
+                         </ul>
                      </div>
                  </div>
                  <div class="col-md-3 col-sm-6 marbot30-md-xs ">
                      <h4 class="footer-title"> quick links </h4>
                      <div class="clearfix">
                          <ul class="list-type1">
-                             <li><a href="services01.htm">Distribution</a></li>
+                             <li><a href="{{route('distribution')}}">Distribution</a></li>
                              <li><a href="/products">Products</a></li>
                              <li><a href="/publication">Published articles</a></li>
                              <li><a href="/new-and-events">News and events</a></li>

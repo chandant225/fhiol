@@ -11,6 +11,24 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('backend/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('backend.logs');
 
+//about dropdown
+Route::view('about/about-FH', 'frontend.pages.about.about-FH')->name('about.about-FH');
+Route::view('about/intro', 'frontend.pages.about.intro')->name('about.intro');
+Route::view('about/team', 'frontend.pages.about.team')->name('about.team');
+Route::view('about/visionmisson', 'frontend.pages.about.visionmisson')->name('about.visionmisson');
+Route::view('about/qa', 'frontend.pages.about.qa')->name('about.qa');
+Route::view('about/certificate', 'frontend.pages.about.certificate')->name('about.certificate');
+
+//our excellence
+Route::view('latestmachine', 'frontend.excellence.latestmachine')->name('latestmachine');
+Route::view('qualitycertificate', 'frontend.excellence.qualitycertificate')->name('qualitycertificate');
+Route::view('iol', 'frontend.excellence.iol')->name('iol');
+Route::view('country', 'frontend.excellence.country')->name('country');
+
+//contact details
+Route::view('distribution', 'frontend.distribution')->name('distribution');
+
+
 Route::get('categories', 'CategoryController@index')->name('categories.index');
 Route::get('categories/{category}', 'CategoryController@show')->name('categories.show');
 

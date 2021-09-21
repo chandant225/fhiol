@@ -42,8 +42,26 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ getPageUrlBySlug(appSettings('about_us_page_url')) }}">About Us</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link " href="{{ getPageUrlBySlug(appSettings('about_us_page_url')) }}" id="navbarDropdown" data-hover="dropdown">
+                                    About Us
+
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.about-FH')}}">Fred Hellows</a></li>
+
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.intro')}}">ED Message/
+                                            Introduction</a></li>
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.team')}}">Our Team</a></li>
+
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.visionmisson')}}">Mission & Vision</a>
+                                    </li>
+
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.qa')}}">Quality
+                                            Assurance</a></li>
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.certificate')}}">Certification</a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link " href="{{ route('categories.index') }}" id="navbarDropdown" role="button" data-hover="dropdown" aria-expanded="false">

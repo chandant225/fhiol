@@ -127,13 +127,15 @@
                 <div class="col-md-3">
                     <div data-aos="fade-up" data-aos-duration="1000">
                         <div class="service-box">
-                            <div class="service-box-inner">
-                                <span class="material-icons orange600">precision_manufacturing</span>
-                                <h5>LATEST MACHINES</h5>
-                                <br>
-                                <p>Equipped with the latest innovation in computer controlled lens production equipment
-                                    with...</p>
-                            </div>
+                            <a href="{{route('latestmachine')}}">
+                                <div class="service-box-inner">
+                                    <span class="material-icons orange600">precision_manufacturing</span>
+                                    <h5>LATEST MACHINES</h5>
+                                    <br>
+                                    <p>Equipped with the latest innovation in computer controlled lens production equipment
+                                        with...</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
@@ -141,13 +143,17 @@
                 <div class="col-md-3">
                     <div data-aos="fade-up" data-aos-duration="1100">
                         <div class="service-box">
-                            <div class="service-box-inner">
-                                <span class="material-icons orange600">biotech</span>
-                                <h5>BEST IOL DESIGNS</h5>
-                                <br>
-                                <p>Having alliance with leading IOL design experts and medical research teams, the
-                                    laboratory is in...</p>
-                            </div>
+                            <a href="{{route('iol')}}">
+
+                                <div class="service-box-inner">
+                                    <span class="material-icons orange600">biotech</span>
+                                    <h5>BEST IOL DESIGNS</h5>
+                                    <br>
+                                    <p>Having alliance with leading IOL design experts and medical research teams, the
+                                        laboratory is in...</p>
+                                </div>
+                            </a>
+                            
                         </div>
                     </div>
 
@@ -156,29 +162,37 @@
                 <div class="col-md-3">
                     <div data-aos="fade-up" data-aos-duration="1200">
                         <div class="service-box">
-                            <div class="service-box-inner">
 
-                                <span class="material-icons orange600">approval</span>
-                                <h5>QUALITY CERTIFICATION</h5>
-                                <br>
-                                <p>Adherence to the Highest Quality Standards is a consistent feature...</p>
-                            </div>
+                            <a href="{{route('qualitycertificate')}}">
+
+                                <div class="service-box-inner">
+
+                                    <span class="material-icons orange600">approval</span>
+                                    <h5>QUALITY CERTIFICATION</h5>
+                                    <br>
+                                    <p>Adherence to the Highest Quality Standards is a consistent feature...</p>
+                                </div>
+                            </a>
+                            
                         </div>
                     </div>
 
                 </div>
                 <div class="col-md-3">
                     <div class="service-box">
-                        <div data-aos="fade-up" data-aos-duration="1300">
-                            <div class="service-box-inner">
-                                <span class="material-icons orange600">flight_takeoff</span>
-                                <h5>Over 30 countries</h5>
-                                <br>
-                                <p>FH IOL Lab has exported its products world-wide to over 30 countries in Asia,
-                                    Australia,
-                                    South...</p>
+                        <a href="{{route('country')}}">
+                            <div data-aos="fade-up" data-aos-duration="1300">
+                                <div class="service-box-inner">
+                                    <span class="material-icons orange600">flight_takeoff</span>
+                                    <h5>Over 30 countries</h5>
+                                    <br>
+                                    <p>FH IOL Lab has exported its products world-wide to over 30 countries in Asia,
+                                        Australia,
+                                        South...</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
+                        
 
                     </div>
                 </div>
@@ -241,11 +255,6 @@
     </div>
     <!-- testimonial-end -->
 
-    <!-- <div class="date">
-        <div class="day">27</div>
-        <div class="month">Mar</div>
-    </div> -->
-
     <!-- News and Events -->
     <section class="newsAndletter">
         <div class="container">
@@ -254,7 +263,7 @@
             </div>
             <div class="row">
                 <!-- Post-->
-                <div class="col-xl-3 col-md-6 col-12 ">
+                <div class="col-xl-4 col-md-6 col-12 ">
                     <div data-aos="fade-up" data-aos-duration="1500">
                         <a href="publicationdetails.html" class=" text-decoration-none">
                             <div class=" post-module">
@@ -284,7 +293,7 @@
 
 
                 </div>
-                <div class="col-xl-3 col-md-6 col-12 news-respon">
+                <div class="col-xl-4 col-md-6 col-12 news-respon">
                     <div data-aos="fade-up" data-aos-duration="1500">
                         <a href="publicationdetails.html" class=" text-decoration-none">
                             <div class=" post-module">
@@ -314,37 +323,7 @@
 
 
                 </div>
-                <div class="col-xl-3 col-md-6 col-12 news-respon">
-                    <div data-aos="fade-up" data-aos-duration="1500">
-                        <a href="publicationdetails.html" class=" text-decoration-none">
-                            <div class=" post-module">
-                                <div class="category">10 FEB. 2021</div>
-                                <!-- Thumbnail-->
-                                <div class="thumbnail">
-
-                                    <img src="/theme/img/news-1.jpg" />
-                                </div>
-                                <!-- Post Content-->
-                                <div class="post-content">
-
-                                    <h1 class="title">City Lights in New York</h1>
-                                    <h2 class="sub_title">The city that never sleeps.</h2>
-                                    <p class="description">New York, the largest city in the U.S., is an
-                                        architectural
-                                        marvel
-                                        with
-                                        plenty of historic monuments, magnificent buildings and countless
-                                        dazzling
-                                        skyscrapers.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                </div>
-                <div class="col-xl-3 col-md-6 col-12 news-respon">
+                <div class="col-xl-4 col-md-6 col-12 news-respon">
                     <div data-aos="fade-up" data-aos-duration="1500">
                         <a href="publicationdetails.html" class=" text-decoration-none">
                             <div class=" post-module">
