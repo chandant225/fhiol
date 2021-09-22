@@ -13,10 +13,6 @@ h5 {
     font-family: Raleway, sans-serif;
 }
 
-img {
-    border-radius: 3px;
-}
-
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -1844,8 +1840,8 @@ html {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    /* align-items: center; */
+    /* justify-content: space-around; */
     flex-wrap: nowrap;
     overflow-x: auto;
 }

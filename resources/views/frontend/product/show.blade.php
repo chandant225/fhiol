@@ -15,13 +15,9 @@
                         </div>
 
                         <div class="img-select">
-                            <img src="/theme/img/news-1.jpg" width="100%" height="100%" alt="shoe image" />
-
-                            <img src="/theme/img/news-2.jpg" alt="shoe image" />
-
-                            <img src="/theme/img/news-3.jpg" width="100%" height="100%" alt="shoe image" />
-
-                            <img src="/theme/img/news-4.jpg" width="100%" height="100%" alt="shoe image" />
+                            @foreach($product->images as $productImage)
+                            <img src="{{ $productImage->imageUrl('original') }}" width="100%" height="100%" alt="{{ $product->name }}" />
+                            @endforeach
                         </div>
                     </div>
                 </div>
