@@ -166,6 +166,9 @@
                 @endif
             </div>
 
+        </div>
+    </section>
+
     {{--
     <div
         id="inquiry-modal"
@@ -225,20 +228,16 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="
-                                    col-md-5
-                                    d-none d-lg-block
-                                    text-white
-                                    p-2
-                                " style="background-color: #8e24aa">
-                                <img class="img-fluid" src="{{ $product->featuredImage ? $product->featuredImage->imageUrl('medium') : image_placeholder_url() }}" alt="{{ $product->name }}" />
-                                <h5 class="h5-responsive text-center mt-3">
-                                    {{ $product->name }}
-                                </h5>
+                            <div class="col-md-5 d-none d-lg-flex  p-2">
+                                <div class="align-self-center">
+                                    <img class="img-fluid" src="{{ $product->featuredImage ? $product->featuredImage->imageUrl('medium') : image_placeholder_url() }}" alt="{{ $product->name }}" />
+                                    <h5 class="h5-responsive text-center mt-3" style="font-weight: 700; letter-spacing: 1px;">
+                                        {{ $product->name }}
+                                    </h5>
+                                </div>
                             </div>
                             <div class="col-lg-7 col-xs-12 col-sm-12 p-5">
                                 <h3 class="h3-responsive mb-4 font-weight-bold">
