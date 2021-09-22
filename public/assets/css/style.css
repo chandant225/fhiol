@@ -1291,6 +1291,7 @@ html {
 
 .google-map .responsive-map {
     width: 100%;
+    height: 100%;
 }
 
 /* .google-map .responsive-map iframe {

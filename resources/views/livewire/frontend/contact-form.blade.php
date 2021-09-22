@@ -37,9 +37,9 @@
         </div>
         @if($sent == true)
         <div class="mb-3">
-            <div class="alert alert-success alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                Your message has been sent. We will get back to you as early as possible.</div>
+            <div class="alert alert-success">
+                Your message has been sent. Thanks for reaching us out. We will get back to you as early as possible.
+            </div>
         </div>
         <script>
             setTimeout(() => {
