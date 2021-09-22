@@ -82,4 +82,6 @@ Route::name('backend.')->group(function () {
     });
 
     Route::get('change-password', 'ChangePasswordController@index')->name('change-password');
+
+    Route::delete('downloads', 'DownloadController@destroy')->name('ajax.downloads.destroy');
 });

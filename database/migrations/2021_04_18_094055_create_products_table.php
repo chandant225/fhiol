@@ -17,16 +17,14 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->integer('price');
-            $table->integer('sale_price')->nullable();
+            $table->string('sub_title')->nullable();
             $table->text('overview')->nullable();
             $table->text('detail')->nullable();
             $table->text('description')->nullable();
             $table->boolean('status')->default(true);
             $table->foreignId('category_id')->nullable()->constrained('categories')->onDelete('set null');
             $table->text('specifications')->nullable();
-            $table->boolean('is_new')->nullable()->default(false);
-            $table->boolean('featured')->nullable()->default(false);
+            $table->string('video_url')->nullable();
             $table->timestamps();
         });
     }

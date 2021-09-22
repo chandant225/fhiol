@@ -18,10 +18,7 @@ class ProductList extends Component
     public $filter = [
         'name' => null,
         'category_id' => 'all',
-        'store_id' => 'all',
         'status' => true,
-        'is_new' => null,
-        'featured' => null,
         'trashed' => null,
     ];
 
@@ -54,10 +51,6 @@ class ProductList extends Component
             $products = $products->where('category_id', $this->filter['category_id']);
         }
 
-        // if ($this->filter['store_id'] && $this->filter['store_id'] != 'all') {
-        //     $products = $products->where('store_id', $this->filter['store_id']);
-        // }
-
         if ($this->filter['status'] != 'all') {
             if ($this->filter['status'] == 'active') {
                 $products = $products->active(true);
@@ -66,14 +59,6 @@ class ProductList extends Component
             if ($this->filter['status'] == 'inactive') {
                 $products = $products->active(false);
             }
-        }
-
-        if ($this->filter['is_new'] != null) {
-            $products = $products->where('is_new', $this->filter['is_new']);
-        }
-
-        if ($this->filter['featured'] != null) {
-            $products = $products->where('featured', $this->filter['featured']);
         }
 
         if ($this->filter['trashed'] != null) {
