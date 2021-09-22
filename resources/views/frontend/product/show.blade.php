@@ -158,33 +158,14 @@
                     </div>
                 </div>
                 @if($product->video_url)
-                <div class="col-md-12 mt-5">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8sPpL_9SaBk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe width="560" height="315" src="{{ $product->video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    {{-- <iframe width="100%" height="600" src="{{ $product->video_url }}"></iframe> --}}
+                <div class="col-md-12 my-5">
+                    <div class="product-video">
+                        <iframe width="100%" height="100%" src="{{ $product->youtubeUrl() }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                 </div>
                 @endif
             </div>
 
-            <!-- {{-- Product details --}}
-            @if($product->detail)
-            <div class="bg-white p-4 mt-4">
-                <h5 class="h5-responsive">Product Details</h5>
-                {!! $product->detail !!}
-            </div>
-            @endif
-
-            {{-- Product Specification --}}
-            @if($product->description)
-            <div class="bg-white p-4 mt-4">
-                <h5 class="h5-responsive">Product Specification</h5>
-                {!! $product->description !!}
-            </div>
-            @endif -->
-        </div>
-    </section>
-
-    {{-- Inquiry Modal --}}
     {{--
     <div
         id="inquiry-modal"

@@ -53,6 +53,20 @@ class Product extends Model
         return $this->status;
     }
 
+    public function youtubeUrl()
+    {
+        if ($this->video_url) {
+            try {
+                parse_str(parse_url($this->video_url, PHP_URL_QUERY), $arrayOfVars);
+                return 'https://youtube.com/embed/' . $arrayOfVars['v'];
+            } catch (\Exception $ex) {
+                logger('Video ID not found in URL.', ['video_url' => $this->video_url, 'model' => $this]);
+                return null;
+            }
+        }
+        return null;
+    }
+
     public function seoTitle()
     {
         return $this->title;
