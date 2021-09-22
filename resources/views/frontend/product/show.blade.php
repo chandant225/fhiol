@@ -1,19 +1,18 @@
 <x-app-layout>
     <x-slot name="siteTitle">{{ $siteTitle }}</x-slot>
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs mb-0">
-        <div class="container">
-            <h2 class="text-center">{{ $product->name }}</h2>
-        </div>
+    <section class="ribbon">
+        <img
+            src="https://via.placeholder.com/1350x240.png"
+            alt=""
+            class="ribbonImage"
+        />
     </section>
-    <!-- End Breadcrumbs -->
-
-    <Section
+    <section
         class="product-details py-5"
         style="background-color: #fffafa; margin-bottom: -40px"
     >
         <div class="container">
-            <div class="row product-grid-layout">
+            <div class="row">
                 <div class="col-md-5 col-sm-12 align-items-center bg-white">
                     <!-- card left -->
                     <div class="product-imgs">
@@ -55,7 +54,14 @@
                 <!-- card right -->
                 <div class="col-md-7 col-sm-12 flex-grow-1">
                     <div class="product-content bg-white p-4">
-                        <h2 class="product-title">{{ $product->name }}</h2>
+                        <div class="product-brand">
+                            <h2 class="product-title">{{ $product->name }}</h2>
+                            <img
+                                src="https://via.placeholder.com/100x100.png"
+                                alt="brand-logo"
+                                class="product-logo"
+                            />
+                        </div>
                         <p class="product-subtitle">lorem Ipsum</p>
                         @hasrole('admin')
 
@@ -157,6 +163,20 @@
                                     </button>
                                 </li>
                                 @endif
+                                <li class="nav-item" role="presentation">
+                                    <button
+                                        class="nav-link"
+                                        id="resources-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#resources"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="resources"
+                                        aria-selected="false"
+                                    >
+                                        Resources
+                                    </button>
+                                </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div
@@ -204,6 +224,57 @@
                                 >
                                     ...
                                 </div>
+                                <div
+                                    class="tab-pane fade"
+                                    id="resources"
+                                    role="tabpanel"
+                                    aria-labelledby="resources-tab"
+                                >
+                                    <ol class="resource-download-list">
+                                        <li>
+                                            <div class="flex">
+                                                <span>fileName 1</span>
+                                                <button
+                                                    class="btn-theme-primary"
+                                                >
+                                                    <svg
+                                                        class="w-6 h-6"
+                                                        fill="currentColor"
+                                                        viewBox="0 0 20 20"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
+                                                            clip-rule="evenodd"
+                                                        ></path></svg
+                                                    >&nbsp;Download
+                                                </button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <span>fileName 2</span>
+                                                <button
+                                                    class="btn-theme-primary"
+                                                >
+                                                    <svg
+                                                        class="w-6 h-6"
+                                                        fill="currentColor"
+                                                        viewBox="0 0 20 20"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
+                                                            clip-rule="evenodd"
+                                                        ></path></svg
+                                                    >&nbsp;Download
+                                                </button>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
                             </div>
                         </div>
                         <div class="product-detail d-md-none d-lg-none">
@@ -239,8 +310,59 @@
                                     expedita totam qui.
                                 </p>
                             </div>
+                            <div class="product-detail-sm">
+                                <h4>Resources</h4>
+                                <ol class="resource-download-list">
+                                    <li>
+                                        <div class="flex">
+                                            <span>FileName 1</span>
+                                            <button class="btn-theme-primary">
+                                                <svg
+                                                    class="w-6 h-6"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
+                                                        clip-rule="evenodd"
+                                                    ></path></svg
+                                                >&nbsp;Download
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <span>FileName 2</span>
+                                            <button class="btn-theme-primary">
+                                                <svg
+                                                    class="w-6 h-6"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
+                                                        clip-rule="evenodd"
+                                                    ></path></svg
+                                                >&nbsp;Download
+                                            </button>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-12 mt-5">
+                    <iframe
+                        width="100%"
+                        height="600"
+                        src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                    >
+                    </iframe>
                 </div>
             </div>
 
@@ -260,10 +382,11 @@
             </div>
             @endif -->
         </div>
-    </Section>
+    </section>
 
     {{-- Inquiry Modal --}}
-    {{-- <div
+    {{--
+    <div
         id="inquiry-modal"
         class="animate__animated animate__faster"
         x-data="{ show: false }"
@@ -316,45 +439,60 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
+    --}}
 
-    <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
+    <div
+        class="modal fade"
+        id="inquiryModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                ></button>
 
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
-      <div class="modal-body">
-        <div class="container-fluid">
-                    <div class="row">
-                        <div
-                            class="col-md-5 d-none d-lg-block text-white p-2"
-                            style="background-color: #8e24aa"
-                        >
-                            <img
-                                class="img-fluid"
-                                src="{{ $product->featuredImage ? $product->featuredImage->imageUrl('medium') : image_placeholder_url() }}"
-                                alt="{{ $product->name }}"
-                            />
-                            <h5 class="h5-responsive text-center mt-3">
-                                {{ $product->name }}
-                            </h5>
-                        </div>
-                        <div class="col-lg-7 col-xs-12 col-sm-12 p-5">
-                            <h3 class="h3-responsive mb-4 font-weight-bold">
-                                Product Inquiry
-                            </h3>
-                            <livewire:frontend.product-inquiry-form
-                                :product="$product"
-                            />
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div
+                                class="
+                                    col-md-5
+                                    d-none d-lg-block
+                                    text-white
+                                    p-2
+                                "
+                                style="background-color: #8e24aa"
+                            >
+                                <img
+                                    class="img-fluid"
+                                    src="{{ $product->featuredImage ? $product->featuredImage->imageUrl('medium') : image_placeholder_url() }}"
+                                    alt="{{ $product->name }}"
+                                />
+                                <h5 class="h5-responsive text-center mt-3">
+                                    {{ $product->name }}
+                                </h5>
+                            </div>
+                            <div class="col-lg-7 col-xs-12 col-sm-12 p-5">
+                                <h3 class="h3-responsive mb-4 font-weight-bold">
+                                    Product Inquiry
+                                </h3>
+                                <livewire:frontend.product-inquiry-form
+                                    :product="$product"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
-      </div>
-
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
     @push('scripts')
     <!-- <style>

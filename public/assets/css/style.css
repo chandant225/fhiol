@@ -1294,29 +1294,30 @@ html {
 }
 
 .google-map {
-    margin: 80px 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .google-map .responsive-map {
-    overflow: hidden;
-    padding-bottom: 35.25%;
-    position: relative;
-    height: 0;
+    width: 100%;
 }
 
-.google-map .responsive-map iframe {
+/* .google-map .responsive-map iframe {
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
     position: absolute;
-}
+} */
 
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
     .google-map .responsive-map {
         height: 300px;
     }
-}
+} */
 
 .contact-section {
     margin-top: 80px;
@@ -1825,7 +1826,6 @@ html {
 }
 
 .product-details img {
-    width: 100%;
     display: block;
     -o-object-fit: cover;
     object-fit: cover;
@@ -1856,6 +1856,38 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+.product-details .img-select::-webkit-scrollbar {
+    height: 5px;
+}
+.product-details .img-select::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.product-details .img-select::-webkit-scrollbar-thumb {
+    background: #dd6310;
+}
+.product-details .img-select::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.product-details .img-select::-webkit-scrollbar-thumb {
+    background: #dd6310;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.product-details .img-select img {
+    width: 100px;
+    height: auto;
 }
 
 .product-details img {
@@ -2081,6 +2113,7 @@ html {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
+        overflow: hidden;
     }
     .product-details .product-content {
         padding-top: 0;
@@ -2407,11 +2440,7 @@ html {
 .product-detail p {
     color: #444 !important;
 }
-.product-grid-layout {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 15px;
-}
+
 .product-detail .tab-content {
     min-height: 10rem;
 }
@@ -2471,9 +2500,6 @@ html {
 .img-showcase img {
     min-width: 100%;
 }
-.img-select {
-    display: flex;
-}
 .img-item {
     margin: 0.3rem;
 }
@@ -2487,23 +2513,9 @@ html {
 }
 
 @media (max-width: 600px) {
-    .product-grid-layout {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: min-content max-content;
-        gap: 15px;
-    }
     .product-detail .nav-item {
         border: 1px solid #fafafa;
         width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .product-grid-layout {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 15px;
     }
 }
 
@@ -2555,7 +2567,7 @@ body.search-open {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 100;
+    z-index: 1000;
     /* background: rgba(221, 99, 16, 0.45); */
     background: rgba(0, 0, 0, 0.65);
     transition: all 0.3s ease-in-out;
@@ -2663,6 +2675,7 @@ body.search-open {
 }
 .distribution-form input:focus {
     outline: none;
+    border: transparent;
 }
 
 /* LABEL ======================================= */
@@ -2767,4 +2780,57 @@ sup.required {
         width: 0;
         background: transparent;
     }
+}
+
+.product-detail .nav-link {
+    padding: 0.5rem !important;
+}
+
+.resource-download-list svg {
+    height: 20px;
+}
+.resource-download-list li {
+    display: list-item;
+}
+.resource-download-list li > div {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eaeaea;
+    align-items: center;
+    padding: 0.5rem;
+}
+.resource-download-list li::last-child {
+    border: none;
+}
+.resource-download-list button {
+    height: 2rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.ribbon {
+    width: 100vw;
+}
+.ribbonImage {
+    height: 240px;
+    display: inline-block;
+    position: relative;
+    left: 50vw;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    object-fit: contain;
+}
+
+@media (max-width: 1200px) {
+    .ribbon {
+        height: auto;
+    }
+}
+.product-brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
