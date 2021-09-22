@@ -2645,13 +2645,15 @@ body.search-open {
     cursor: pointer;
     z-index: 101;
 }
+
 .distribution-form {
+    margin-top: 2rem;
 }
-.distribution-form .col {
+.distribution-form .group {
     position: relative;
     margin-bottom: 45px;
 }
-..distribution-form input {
+.distribution-form input {
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
@@ -2682,7 +2684,13 @@ body.search-open {
 .distribution-form input:valid ~ label {
     top: -20px;
     font-size: 14px;
-    color: #5264ae;
+    color: #dd6310;
+}
+.distribution-form input:focus ~ label sup,
+.distribution-form input:valid ~ label sup,
+sup.required {
+    font-size: 14px;
+    color: red;
 }
 
 /* BOTTOM BARS ================================= */
@@ -2691,29 +2699,27 @@ body.search-open {
     display: block;
     width: 300px;
 }
-.distribution-form .bar:before,
+
 .distribution-form .bar:after {
     content: "";
     height: 2px;
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: #5264ae;
+    background: #dd6310;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
 }
-.distribution-form .bar:before {
-    left: 50%;
-}
-.distribution-form{
+
+.distribution-form {
     right: 50%;
 }
 
 /* active state */
-.distribution-form input:focus ~ .bar:before,
+
 .distribution-form input:focus ~ .bar:after {
-    width: 50%;
+    width: 100%;
 }
 
 /* HIGHLIGHTER ================================== */
@@ -2737,7 +2743,7 @@ body.search-open {
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
     from {
-        background: #5264ae;
+        background: #dd6310;
     }
     to {
         width: 0;
@@ -2746,7 +2752,7 @@ body.search-open {
 }
 @-moz-keyframes inputHighlighter {
     from {
-        background: #5264ae;
+        background: #dd6310;
     }
     to {
         width: 0;
@@ -2755,7 +2761,7 @@ body.search-open {
 }
 @keyframes inputHighlighter {
     from {
-        background: #5264ae;
+        background: #dd6310;
     }
     to {
         width: 0;

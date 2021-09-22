@@ -13,8 +13,8 @@
         style="background-color: #fffafa; margin-bottom: -40px"
     >
         <div class="container">
-            <div class="product-grid-layout">
-                <div class="align-items-center bg-white">
+            <div class="row product-grid-layout">
+                <div class="col-md-5 col-sm-12 align-items-center bg-white">
                     <!-- card left -->
                     <div class="product-imgs">
                         <div class="img-showcase">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <!-- card right -->
-                <div class="flex-grow-1">
+                <div class="col-md-7 col-sm-12 flex-grow-1">
                     <div class="product-content bg-white p-4">
                         <h2 class="product-title">{{ $product->name }}</h2>
                         <p class="product-subtitle">lorem Ipsum</p>

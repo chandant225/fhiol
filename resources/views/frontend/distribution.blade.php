@@ -24,65 +24,86 @@
                 <div class="col-md-8">
                     <div class="title-right">
                         <h4>Distributor Enquiry Form</h4>
+
                     </div>
+                    <small><em>Required fields are marked with<sup class="required">*</sup></em></small>
                     <form class="distribution-form">
+
                     <div class="row">
                         <div class="col">
                             <div class="group">
       <input type="text" required>
       <span class="highlight"></span>
       <span class="bar"></span>
-      <label>Name</label>
+      <label>Name<sup>*</sup></label>
     </div>
                         </div>
                         <div class="col">
-                            <label for="exampleFormControlInput1" class="form-label">Email address*</label>
-                            <input type="text" class="form-control" placeholder="Enter your email"
-                                aria-label="Last name">
+                            <div class="group">
+      <input type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Email Address<sup>*</sup></label>
+    </div>
                         </div>
                     </div>
-                    <div class="row mt-4">
+                    <div class="row">
                         <div class="col">
-                            <label for="exampleFormControlInput1" class="form-label">Company*</label>
-                            <input type="text" class="form-control" placeholder="Enter your company name"
-                                aria-label="First name">
+                            <div class="group">
+      <input type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Company<sup>*</sup></label>
+    </div>
                         </div>
-                        <div class="col">
-                            <label for="exampleFormControlInput1" class="form-label">Phone*</label>
-                            <input type="text" class="form-control" placeholder="Enter your phone number"
-                                aria-label="Last name">
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col">
-                            <label for="exampleFormControlInput1" class="form-label">Stress Address*</label>
-                            <input type="text" class="form-control" placeholder="Enter your address"
-                                aria-label="First name">
-                        </div>
-                        <div class="col">
-                            <label for="exampleFormControlInput1" class="form-label">City*</label>
-                            <input type="text" class="form-control" placeholder="Enter your city"
-                                aria-label="Last name">
+                        <div class="col ">
+                            <div class="group">
+      <input type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Phone<sup>*</sup></label>
+    </div>
                         </div>
                     </div>
-                    <div class="row mt-4">
+                    <div class="row">
                         <div class="col">
-                            <label for="exampleFormControlInput1" class="form-label">Postal Code*</label>
-                            <input type="text" class="form-control" placeholder="Enter your postal code"
-                                aria-label="First name">
+                            <div class="group">
+      <input type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Street Address<sup>*</sup></label>
+    </div>
                         </div>
                         <div class="col">
-                            <label for="exampleFormControlInput1" class="form-label">State*</label>
-                            <input type="text" class="form-control" placeholder="Enter your state"
-                                aria-label="Last name">
+                           <div class="group">
+      <input type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>City<sup>*</sup></label>
+    </div>
                         </div>
                     </div>
-                    <div class="row mt-4">
+                    <div class="row">
                         <div class="col">
-                            <label for="exampleFormControlInput1" class="form-label">Which products are you
-                                intrested in
-                                representing>*</label>
-                            <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+                            <div class="group">
+      <input type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Postal Code<sup>*</sup></label>
+    </div>
+                        </div>
+                        <div class="col">
+                            <div class="group">
+      <input type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>State<sup>*</sup></label>
+    </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col ">
+                            <textarea class="form-control" rows="4" placeholder="Which products are you interested in representing?*"></textarea>
                         </div>
                     </div>
                     <div class="row mt-4 d-flex justify-content-center">
@@ -103,15 +124,16 @@
             }
 
             .distribution label {
-                color: rgba(0, 0, 0, 0.8)
+                color: rgba(0, 0, 0, 0.5)
             }
 
             .distribution input:focus {
                 box-shadow: none !important
             }
 
-            .distribution textarea:focus {
-                box-shadow: none !important
+            .distribution textarea:focus,.distribution textarea:active   {
+                box-shadow: none !important;
+                border: 1px solid #ced4da;
             }
 
             .distribution button {
@@ -124,6 +146,7 @@
 
             .distribution button:hover {
                 opacity: 0.9 !important;
+                color:#fff
             }
 
         </style>
