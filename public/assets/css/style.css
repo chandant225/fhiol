@@ -1891,7 +1891,7 @@ html {
 }
 
 .product-details img {
-    margin: 0.3rem;
+    margin: 0.3rem 0;
     cursor: pointer;
     transition: transform 0.5s ease-in-out;
     -webkit-transition: transform 0.5s ease-in-out;
@@ -2809,13 +2809,12 @@ sup.required {
     align-items: center;
 }
 .ribbon {
-    width: 100vw;
+    max-width: 100vw;
 }
 .ribbonImage {
-    height: 240px;
-    display: inline-block;
+    max-height: 240px;
     position: relative;
-    left: 50vw;
+    left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
