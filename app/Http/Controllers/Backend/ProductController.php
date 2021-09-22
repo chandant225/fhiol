@@ -44,6 +44,16 @@ class ProductController extends Controller
                 $this->productImageService->create($product, $request->file('image'), $featured = true);
             }
 
+            if ($request->hasFile('brand_logo')) {
+                $product->brand_logo = $this->imageService->storeImage($request->file('brand_logo'));
+                $product->save();
+            }
+
+            if ($request->hasFile('banner_image')) {
+                $product->banner_image = $this->imageService->storeImage($request->file('banner_image'));
+                $product->save();
+            }
+
             if ($request->has('downloads')) {
                 foreach ($request->downloads as $download) {
                     $product->downloads()->save(new Download([
@@ -96,6 +106,16 @@ class ProductController extends Controller
                 $product->featuredImage()->delete();
             }
             $this->productImageService->create($product, $request->file('image'), $featured = true);
+        }
+
+        if ($request->hasFile('brand_logo')) {
+            $product->brand_logo = $this->imageService->swapImage($product->getOriginal('brand_logo'), $request->file('brand_logo'));
+            $product->save();
+        }
+
+        if ($request->hasFile('banner_image')) {
+            $product->banner_image = $this->imageService->swapImage($product->getOriginal('brand_logo'), $request->file('banner_image'));
+            $product->save();
         }
 
         if ($request->has('downloads')) {

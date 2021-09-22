@@ -41,6 +41,8 @@ class ProductRequest extends FormRequest
             'features' => 'nullable',
             'video_url' => 'nullable',
             'downloads' => 'nullable',
+            'brand_logo' => 'nullable',
+            'banner_image' => 'nullable',
         ];
     }
 }
