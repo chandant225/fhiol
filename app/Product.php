@@ -53,41 +53,18 @@ class Product extends Model
         return $this->status;
     }
 
-    public function currentPrice()
+    public function youtubeUrl()
     {
-        return $this->hasDiscount()
-            ? $this->sale_price
-            : $this->price;
-    }
-
-    public function hasDiscount()
-    {
-        return $this->sale_price ? true : false;
-    }
-
-    public function discountPercentage($withSign = true)
-    {
-        $discountAmount = (int)$this->price - (int)$this->sale_price;
-        $discountPercent = round(($discountAmount / $this->price) * 100);
-        if ($withSign) {
-            $discountPercent = $discountPercent . '%';
+        if ($this->video_url) {
+            try {
+                parse_str(parse_url($this->video_url, PHP_URL_QUERY), $arrayOfVars);
+                return 'https://youtube.com/embed/' . $arrayOfVars['v'];
+            } catch (\Exception $ex) {
+                logger('Video ID not found in URL.', ['video_url' => $this->video_url, 'model' => $this]);
+                return null;
+            }
         }
-        return $this->hasDiscount() ? $discountPercent : null;
-    }
-
-    public function isOnSale()
-    {
-        return $this->hasDiscount();
-    }
-
-    public function isMarkedNew()
-    {
-        return $this->is_new;
-    }
-
-    public function isFeatured()
-    {
-        return $this->featured;
+        return null;
     }
 
     public function seoTitle()
@@ -155,5 +132,10 @@ class Product extends Model
     public function specifications()
     {
         return $this->metas()->where('type', 'specification')->get();
+    }
+
+    public function downloads()
+    {
+        return $this->morphMany(Download::class, 'downloadable');
     }
 }

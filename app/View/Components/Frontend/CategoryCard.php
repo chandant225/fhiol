@@ -8,10 +8,13 @@ use Illuminate\View\Component;
 class CategoryCard extends Component
 {
     public Category $category;
+    public $reversed;
 
-    public function __construct(Category $category)
+    public function __construct(Category $category, $reversed = null)
     {
         $this->category = $category;
+        $this->reversed = $reversed;
+        // dd($reversed);
     }
 
     /**

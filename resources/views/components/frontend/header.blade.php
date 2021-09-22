@@ -25,11 +25,15 @@
             <span class="fa fa-chevron-down"></span>
         </div>
     </div>
+
+
     <div class="main-menu">
         <div class="container-fluid p-0 m-0">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid align-items-center">
-                    <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ siteLogoUrl() }}" alt="{{ siteName() }}"></a>
+            <nav class="navbar navbar-expand-lg navbar-light font-poppins" style="letter-spacing: 0.025rem;">
+                <div class="container align-items-center">
+                    <a class="navbar-brand mx-0" href="{{ url('/') }}">
+                        <img class="mx-0" src="{{ siteLogoUrl() }}" alt="{{ siteName() }}" style="max-height: 60px;">
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -95,12 +99,12 @@
 
                         </ul>
                         <form class="d-flex ms-4">
-                            <div class="  rounded rounded-pill search-btn  ">
+                            <div class="rounded-pill search-btn ">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <button id="button-addon2" type="submit" class="btn btn-link "><i class="fa fa-search"></i></button>
                                     </div>
-                                    <input type="search" placeholder="search" aria-describedby="button-addon2" class="form-control border-0 ">
+                                    {{-- <input type="search" placeholder="search" aria-describedby="button-addon2" class="form-control border-0 "> --}}
                                 </div>
                             </div>
                         </form>
@@ -110,3 +114,12 @@
         </div>
     </div>
 </div>
+<div class="search-box search-elem">
+  <button class="close">x</button>
+  <div class="inner row">
+    <div class="small-12 columns">
+      <input type="text" id="search-field" placeholder="Search">
+      <button class="submit" type="submit">Search</button>
+    </div>
+  </div>
+ </div>

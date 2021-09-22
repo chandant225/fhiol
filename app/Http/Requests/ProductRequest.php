@@ -30,8 +30,7 @@ class ProductRequest extends FormRequest
             'slug' => $updateMode
                 ? 'required'
                 : 'nullable',
-            'price' => 'required|integer',
-            'sale_price' => 'nullable|integer',
+            'sub_title' => 'nullable',
             'overview' => 'nullable',
             'detail' => 'nullable',
             'description' => 'nullable',
@@ -40,9 +39,10 @@ class ProductRequest extends FormRequest
                 ? 'nullable'
                 : 'nullable',
             'features' => 'nullable',
-            // 'specifications' => 'nullable',
-            'is_new' => 'nullable',
-            'featured' => 'nullable',
+            'video_url' => 'nullable',
+            'downloads' => 'nullable',
+            'brand_logo' => 'nullable',
+            'banner_image' => 'nullable',
         ];
     }
 }

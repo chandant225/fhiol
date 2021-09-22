@@ -34,27 +34,18 @@
                         </div>
                         @endif
 
-                    </div>
-                </x-box>
-
-                <div class="my-3"></div>
-
-                <x-box>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <x-form.form-group for="price">
-                                    <x-form.label class="required">Regular Price</x-form.label>
-                                    <x-fields.input type="number" name="price" :value="old('price', $product->price)" min="0" />
-                                </x-form.form-group>
-                            </div>
-                            <div class="col-md-6">
-                                <x-form.form-group for="sale_price">
-                                    <x-form.label>Sale Price</x-form.label>
-                                    <x-fields.input type="number" name="sale_price" :value="old('sale_price', $product->sale_price)" min="0" />
-                                </x-form.form-group>
-                            </div>
+                        <div class="col-md-12 form-group">
+                            <label for="category_id">Subtitle</label>
+                            <input type="text" name="sub_title" class="form-control {{ invalid_class('sub_title') }}" value="{{ old('sub_title', $product->sub_title) }}">
+                            <x-invalid-feedback field="sub_title"></x-invalid-feedback>
                         </div>
+
+                        <div class="col-md-12 form-group">
+                            <label for="category_id">Video Url</label>
+                            <input type="text" name="video_url" class="form-control {{ invalid_class('video_url') }}" value="{{ old('video_url', $product->video_url) }}">
+                            <x-invalid-feedback field="video_url"></x-invalid-feedback>
+                        </div>
+
                     </div>
                 </x-box>
 
@@ -88,39 +79,38 @@
                 <div class="my-3"></div>
 
                 <x-box class="my-3">
-                    <label for="">Features</label>
-                    <div>
-                        @foreach ($product->features as $feature)
-                        <div class="bg-light d-flex justify-content-between white p-3">
-                            <div class="align-self-center flex-grow-1">
-                                <input type="text" name="features[]" class="form-control" value="{{ $feature }}">
+                    <label for="">Downloads</label>
+                    @foreach($product->downloads as $download)
+                    <div class="col-md-12 download-preview-container">
+                        <div class="d-flex my-3 bg-light rounded p-2">
+                            @if($download->isImage())
+                            <img src="{{ $download->downloadUrl() }}" alt="{{ $download->nicename }}" style="width: 150px; height: 100px;">
+                            @else
+                            <div style="width: 100px;">
+                                @include('svg.file-icon')
                             </div>
-                            <button type="button" class="specfication-remove-btn btn btn-danger btn-md my-0 font-roboto ml-3"><span class="mr-2"><i class="fa fa-times"></i></span>Remove</button>
+                            @endif
+                            <div class="p-2 pl-3">
+                                <div>{{ $download->title }}</div>
+                                <div class="my-2"></div>
+                                @if($download->isImage())
+                                <a class="btn btn-primary btn-sm" href="{{ $download->url }}" target="_blank"><span class="mr-2"><i class="fa fa-eye fa-lg"></i></span>View</a>
+                                @endif
+                                <a class="btn btn-secondary btn-sm" href="{{ $download->url }}" target="_blank" download><span class="mr-2"><i class="fa fa-download fa-lg"></i></span>Download</a>
+                                <a class="delete-download-btn btn btn-danger btn-sm" data-download-id="{{ $download->id }}" href="#"><span class="mr-2"><i class="far fa-trash-alt fa-lg"></i></span>Delete Permanently</a>
+                            </div>
                         </div>
-                        @endforeach
-                        <div id="feature-wrapper" class="mb-3"></div>
-                        <button type="button" id="feature-plus-btn" class="btn btn-success btn-md z-depth-0"><span class="mr-1"><i class="fa fa-plus"></i></span> Add Item</button>
+                    </div>
+                    @endforeach
+
+                    <div class="grey lighten-5 p-3" style="border: 2px dashed #286099;">
+
+                        <div id="download-wrapper"></div>
+
+                        <button type="button" id="download-field-plus-btn" class="btn btn-success btn-md z-depth-0"><span><i class="fa fa-plus"></i></span></button>
                     </div>
                 </x-box>
 
-                {{-- <x-box>
-                    <label for="">Specifications</label>
-                    <div>
-                        @foreach ($specifications as $specification)
-                        <div class="document-input-container bg-light d-flex justify-content-between white p-3">
-                            <div class="align-self-center">
-                                <input type="text" name="specifications[key][]" class="form-control" placeholder="Specification" value="{{ $specification->key }}">
-                            </div>
-                            <div>
-                                <input type="text" name="specifications[value][]" class="form-control" placeholder="Value" value="{{ $specification->value }}">
-                            </div>
-                            <button type="button" class="specfication-remove-btn btn btn-danger btn-md my-0 font-roboto"><span class="mr-2"><i class="fa fa-times"></i></span>Remove</button>
-                        </div>
-                        @endforeach
-                        <div id="specification-wrapper" class="mb-3"></div>
-                        <button type="button" id="specification-plus-btn" class="btn btn-success btn-md z-depth-0"><span class="mr-1"><i class="fa fa-plus"></i></span> Add Item</button>
-                    </div>
-                </x-box> --}}
             </div>
             {{-- End of col-md-8 --}}
             <div class="col-md-3">
@@ -148,21 +138,6 @@
                         <x-invalid-feedback field="category_id"></x-invalid-feedback>
                     </div>
 
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="is_new" class="custom-control-input {{ invalid_class('is_new') }}" id="is_new" value="1" @if($product->isMarkedNew()) checked @endif>
-                            <label class="custom-control-label" for="is_new">Mark as New Product</label>
-                            <x-invalid-feedback field="is_new"></x-invalid-feedback>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="featured" class="custom-control-input {{ invalid_class('featured') }}" id="featured" value="1" @if($product->isFeatured()) checked @endif>
-                            <label class="custom-control-label" for="featured">Mark as Featured</label>
-                            <x-invalid-feedback field="featured"></x-invalid-feedback>
-                        </div>
-                    </div>
                 </x-box>
 
                 <div class="my-3"></div>
@@ -179,74 +154,44 @@
                         <div class="position-relative">
                             <img id="productImagePreview" class="img-fluid" src="{{ $imageUrl }}" alt="" style="max-height: 300px;">
                             <input type="file" name="image" id="productImage" value="{{ old('image') }}" accept="image/*" hidden>
-                            {{-- <label for="logoImage" class="position-absolute btn btn-primary" for="" >Select Product Image</label> --}}
-                            <label for="productImage" class="position-absolute" style="bottom: 0;
-                                        left: 10px;
-                                        padding: 5px 10px;
-                                        border-radius: 5px;
-                                        background-color: #24292e;
-                                        color: #fff;
-                                        font-size: 0.8em;
-                                        cursor: pointer;">
+                            <label for="productImage" class="position-absolute" style="bottom: 0; left: 10px;padding: 5px 10px; border-radius: 5px; background-color: #24292e; color: #fff; font-size: 0.8em; cursor: pointer;">
                                 <i class="fa fa-camera mr-2"></i> {{ $product->exists ? 'Change' : 'Choose' }} Product Image
                             </label>
                         </div>
                         @error('image')
                         <div class="text-left text-danger text-sm mt-2">{{ $message }}</div>
                         @enderror
-                        <script>
-                            let productImage = document.getElementById('productImage');
-                            let productImagePreview = document.getElementById('productImagePreview');
+                    </div>
+                </x-box>
 
-                            function reloadProductImageUrl(input) {
-                                if (input.files && input.files[0]) {
-                                    var reader = new FileReader();
-                                    reader.onload = function(e) {
-                                        productImagePreview.setAttribute('src', e.target.result);
-                                    }
-                                    reader.readAsDataURL(input.files[0]);
-                                }
-                            }
-                            productImage.addEventListener("change", function() {
-                                reloadProductImageUrl(this);
-                            });
+                <x-box class="mt-3">
+                    <div class="text-center">
+                        <img id="productBrandLogoPreview" class="img-fluid" src="{{ get_uploads_url($product->brand_logo) ?? image_placeholder_url() }}" alt="" style="max-height: 200px;">
+                        <input type="file" name="brand_logo" id="productBrandLogo" accept="image/*" hidden>
+                        <label for="productBrandLogo" class="mt-2" style="padding: 5px 10px; border-radius: 5px; background-color: #24292e; color: #fff; font-size: 0.8em; cursor: pointer;">
+                            <i class="fa fa-camera mr-2"></i> {{ $product->exists ? 'Change' : 'Choose' }} Product Brand Logo
+                        </label>
+                        @error('brand_logo')
+                        <div class="text-left text-danger text-sm mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </x-box>
 
-                        </script>
+                <x-box class="mt-3">
+                    <div class="text-center">
+                        <img id="productBannerImagePreview" class="img-fluid" src="{{ get_uploads_url($product->banner_image) ?? image_placeholder_url() }}" alt="" style="max-height: 200px;">
+                        <input type="file" name="banner_image" id="productBannerImage" accept="image/*" hidden>
+                        <label for="productBannerImage" class="mt-2" style="padding: 5px 10px; border-radius: 5px; background-color: #24292e; color: #fff; font-size: 0.8em; cursor: pointer;">
+                            <i class="fa fa-camera mr-2"></i> {{ $product->exists ? 'Change' : 'Choose' }} Product Banner Image
+                        </label>
+                        @error('banner_image')
+                        <div class="text-left text-danger text-sm mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
                 </x-box>
             </div>
-
-            {{-- <div class="col-md-12">
-                <div class="form-group mt-3">
-                    <button type="submit" class="btn btn-primary text-md ml-0 px-5">{{ $product->exists ? 'Update' : 'Save' }}</button>
-                </div>
-            </div> --}}
-
         </div>
     </form>
-
-    <script type="text/javascript" id="feature-input-template">
-        <div class="bg-light d-flex justify-content-between white p-3">
-        <div class="align-self-center flex-grow-1">
-            <input type="text" name="features[]" class="form-control">
-        </div>
-        <button type="button" class="specfication-remove-btn btn btn-danger btn-md my-0 font-roboto ml-3"><span class="mr-2"><i class="fa fa-times"></i></span>Remove</button>
-    </div>
-
-    </script>
-
-    <script type="text/javascript" id="specification-input-template">
-        <div class="document-input-container bg-light d-flex justify-content-between white p-3">
-        <div class="align-self-center">
-            <input type="text" name="specifications[key][]" class="form-control" placeholder="Specification">
-        </div>
-        <div>
-            <input type="text" name="specifications[value][]" class="form-control" placeholder="Value">
-        </div>
-        <button type="button" class="specfication-remove-btn btn btn-danger btn-md my-0 font-roboto"><span class="mr-2"><i class="fa fa-times"></i></span>Remove</button>
-    </div>
-
-    </script>
 
     @if($product->exists)
     <x-backend.product-images-uploader :product="$product" />
@@ -293,35 +238,104 @@
             , tabsize: 2
             , height: 400
         });
+
+        var downloadsInput = `<div class="download-input-container border my-3 d-flex justify-content-between bg-light p-3">
+                                <div>
+                                    <input type="text" name="downloads[][title]" class="form-control rounded-0 d-inline" placeholder="Download Title">
+                                </div>
+                                <div class="align-self-center">
+                                    <input type="file" name="downloads[][file]">
+                                </div>
+                                <button type="button" class="remove-download-btn btn btn-dark btn-md my-0"><span class="mr-2"><i class="fa fa-times fa-lg"></i></span>Remove</button>
+                            </div>`;
+
+        // Add Download
+        $('#download-field-plus-btn').click(function() {
+            $('#download-wrapper').append(downloadsInput);
+        });
+
+        // Remove Download
+        $(document).on('click', '.remove-download-btn', function() {
+            $(this).parent().remove();
+        });
+
+        // Delete Download file
+        $('.delete-download-btn').click(function(e) {
+            e.preventDefault();
+            var id = $(this).data('download-id');
+            var parent = $(this).parents('.download-preview-container');
+            console.log('Download ID: ' + id);
+            if (confirm('Are you sure to delete?')) {
+                $.ajax({
+                    type: "DELETE"
+                    , url: "{{ route('backend.ajax.downloads.destroy') }}"
+                    , data: {
+                        id: id
+                        , "_token": "{{ csrf_token() }}"
+                    }
+                    , dataType: "JSON"
+                    , success: function(response) {
+                        console.log('File Deleted');
+                        parent.remove();
+                    }
+                });
+            } else {
+                return false;
+            }
+        });
+
     });
 
-    var specificationTemplate = $('#specification-input-template');
 
-    // function addSpecificationInput() {
-    //     $('#specification-wrapper').append(specificationTemplate.html());
-    // }
+    // Featured Image Preview
+    let productImage = document.getElementById('productImage');
+    let productImagePreview = document.getElementById('productImagePreview');
 
-    // $('#specification-plus-btn').click(function() {
-    //     addSpecificationInput();
-    // });
-
-    // $(document).on('click', '.specfication-remove-btn', function() {
-    //     $(this).parent().remove();
-    // });
-
-    // Feature input
-    var featureTemplate = $('#feature-input-template');
-
-    function addFeatureInput() {
-        $('#feature-wrapper').append(featureTemplate.html());
+    function reloadProductImageUrl(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                productImagePreview.setAttribute('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
     }
-
-    $('#feature-plus-btn').click(function() {
-        addFeatureInput();
+    productImage.addEventListener("change", function() {
+        reloadProductImageUrl(this);
     });
 
-    $(document).on('click', '.feature-remove-btn', function() {
-        $(this).parent().remove();
+    // Brand Logo Preview
+    let productBrandLogo = document.getElementById('productBrandLogo');
+    let productBrandLogoPreview = document.getElementById('productBrandLogoPreview');
+
+    function productBrandLogoUrl(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                productBrandLogoPreview.setAttribute('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    productBrandLogo.addEventListener("change", function() {
+        productBrandLogoUrl(this);
+    });
+
+    // Brand Banner Image Preview
+    let productBannerImage = document.getElementById('productBannerImage');
+    let productBannerImagePreview = document.getElementById('productBannerImagePreview');
+
+    function productBannerImageUrl(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                productBannerImagePreview.setAttribute('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    productBannerImage.addEventListener("change", function() {
+        productBannerImageUrl(this);
     });
 
 </script>

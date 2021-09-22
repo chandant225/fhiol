@@ -14,8 +14,8 @@
     <div class="container">
         <div class="row">
             @foreach($categories as $category)
-            <div class="col-md-6">
-                <x-frontend.category-card :category="$category"></x-frontend.category-card>
+            <div class="col-md-12">
+                <x-frontend.category-card :category="$category" reversed="{{ ($loop->iteration % 2) == 0 ? true : false }}"></x-frontend.category-card>
             </div>
             @endforeach
         </div>

@@ -1,6 +1,7 @@
 <?php
 
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Storage;
 
 if (!function_exists('invalid_class')) {
     /**
@@ -68,7 +69,7 @@ if (!function_exists('siteLogoUrl')) {
         if (appSettings()->get('site_logo')) {
             return asset('storage/' . appSettings()->get('site_logo'));
         }
-        return asset('assets/images/logo.png');
+        return asset('assets/images/fhiol-logo.png');
     }
 }
 
@@ -89,21 +90,6 @@ if (!function_exists('priceUnit')) {
     }
 }
 
-// if (!function_exists('limitedStockThreshold')) {
-//     function limitedStockThreshold()
-//     {
-//         return (int)settings()->get('limited_stock_threshold', 10);
-//     }
-// }
-
-// if (!function_exists('shippingCharge')) {
-//     function shippingCharge()
-//     {
-//         return (int)settings()->get('shipping_charge', 100);
-//     }
-// }
-
-
 // Get the page Url By Slug
 if (!function_exists('getPageUrlBySlug')) {
     function getPageUrlBySlug($slug)
@@ -119,5 +105,15 @@ if (!function_exists('image_placeholder_url')) {
     function image_placeholder_url()
     {
         return '/assets/images/image-placeholder.png';
+    }
+}
+
+if (!function_exists('get_uploads_url')) {
+    function get_uploads_url($path = null)
+    {
+        if (!$path) {
+            return null;
+        }
+        return Storage::url($path);
     }
 }

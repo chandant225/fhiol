@@ -8,7 +8,9 @@ use App\Product;
 use App\Service\ImageService;
 use App\Service\ProductImageService;
 use App\Alert\Facades\Alert;
+use App\Download;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -33,18 +35,35 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
+        // return $request;
         DB::beginTransaction();
         try {
             $product = Product::create($request->validated());
 
-            // if ($request->has('specifications')) {
-            //     $product->syncSpecifications($request->specifications);
-            // }
-
             if ($request->hasFile('image')) {
                 $this->productImageService->create($product, $request->file('image'), $featured = true);
             }
-            
+
+            if ($request->hasFile('brand_logo')) {
+                $product->brand_logo = $this->imageService->storeImage($request->file('brand_logo'));
+                $product->save();
+            }
+
+            if ($request->hasFile('banner_image')) {
+                $product->banner_image = $this->imageService->storeImage($request->file('banner_image'));
+                $product->save();
+            }
+
+            if ($request->has('downloads')) {
+                foreach ($request->downloads as $download) {
+                    $product->downloads()->save(new Download([
+                        'title' => $download['title'],
+                        'type' => null,
+                        'path' => Storage::disk('public')->putFile('downloads', $download['file']),
+                    ]));
+                }
+            }
+
             DB::commit();
         } catch (\Exception $ex) {
             info('Error while saving product, Ex: ' . $ex->getMessage());
@@ -63,7 +82,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $product->load('featuredImage');
-
+        // dd($product->images);
         return view('product.create-edit', compact([
             'product',
         ]));
@@ -79,7 +98,7 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            if($product->featuredImage) {
+            if ($product->featuredImage) {
                 $featuredImage = $product->featuredImage;
                 $this->imageService->unlinkImage($featuredImage->path);
                 $this->imageService->unlinkImage($featuredImage->thumbnail_path);
@@ -89,11 +108,27 @@ class ProductController extends Controller
             $this->productImageService->create($product, $request->file('image'), $featured = true);
         }
 
-        // $product->syncSpecifications($request->specifications);
-
-        if ($product->wasChanged()) {
-            Alert::message('Product Updated')->send();
+        if ($request->hasFile('brand_logo')) {
+            $product->brand_logo = $this->imageService->swapImage($product->getOriginal('brand_logo'), $request->file('brand_logo'));
+            $product->save();
         }
+
+        if ($request->hasFile('banner_image')) {
+            $product->banner_image = $this->imageService->swapImage($product->getOriginal('brand_logo'), $request->file('banner_image'));
+            $product->save();
+        }
+
+        if ($request->has('downloads')) {
+            foreach ($request->downloads as $download) {
+                $product->downloads()->save(new Download([
+                    'title' => $download['title'],
+                    'type' => null,
+                    'path' => Storage::disk('public')->putFile('downloads', $download['file']),
+                ]));
+            }
+        }
+
+        Alert::message('Product Updated')->send();
 
         return redirect()->back();
     }
