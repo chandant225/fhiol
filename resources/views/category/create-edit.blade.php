@@ -76,7 +76,7 @@
                                     @endforeach
                                 </select>
                                 <small class="form-text">Select parent category if it falls under another category otherwise leave it empty.</small>
-                                <x-invalid-feedback field="name"></x-invalid-feedback>
+                                <x-invalid-feedback field="parent_id"></x-invalid-feedback>
                             </div>
 
                             <div class="form-group">

@@ -31,6 +31,7 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         $category = new Category($request->validated());
+
         if ($request->hasFile('image')) {
             $category->image = $this->imageService->storeImage($request->file('image'));
         }
@@ -48,9 +49,11 @@ class CategoryController extends Controller
     public function update(CategoryRequest $request, Category $category)
     {
         $category->fill($request->validated());
+        
         if ($request->hasFile('image')) {
             $this->imageService->unlinkImage($category->getOriginal('image'));
             $category->image = $this->imageService->storeImage($request->file('image'));
+            // return $request;
         }
         $category->update();
 

@@ -26,7 +26,7 @@ class CategoryRequest extends FormRequest
         return [
             'name' => 'required',
             'slug' => 'nullable',
-            'parent_id' => 'required',
+            'parent_id' => 'nullable',
             'description' => 'nullable',
             'image' => 'nullable',
         ];
