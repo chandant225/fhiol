@@ -154,39 +154,39 @@
                         <div class="position-relative">
                             <img id="productImagePreview" class="img-fluid" src="{{ $imageUrl }}" alt="" style="max-height: 300px;">
                             <input type="file" name="image" id="productImage" value="{{ old('image') }}" accept="image/*" hidden>
-                            {{-- <label for="logoImage" class="position-absolute btn btn-primary" for="" >Select Product Image</label> --}}
-                            <label for="productImage" class="position-absolute" style="bottom: 0;
-                                        left: 10px;
-                                        padding: 5px 10px;
-                                        border-radius: 5px;
-                                        background-color: #24292e;
-                                        color: #fff;
-                                        font-size: 0.8em;
-                                        cursor: pointer;">
+                            <label for="productImage" class="position-absolute" style="bottom: 0; left: 10px;padding: 5px 10px; border-radius: 5px; background-color: #24292e; color: #fff; font-size: 0.8em; cursor: pointer;">
                                 <i class="fa fa-camera mr-2"></i> {{ $product->exists ? 'Change' : 'Choose' }} Product Image
                             </label>
                         </div>
                         @error('image')
                         <div class="text-left text-danger text-sm mt-2">{{ $message }}</div>
                         @enderror
-                        <script>
-                            let productImage = document.getElementById('productImage');
-                            let productImagePreview = document.getElementById('productImagePreview');
+                    </div>
+                </x-box>
 
-                            function reloadProductImageUrl(input) {
-                                if (input.files && input.files[0]) {
-                                    var reader = new FileReader();
-                                    reader.onload = function(e) {
-                                        productImagePreview.setAttribute('src', e.target.result);
-                                    }
-                                    reader.readAsDataURL(input.files[0]);
-                                }
-                            }
-                            productImage.addEventListener("change", function() {
-                                reloadProductImageUrl(this);
-                            });
+                <x-box class="mt-3">
+                    <div class="text-center">
+                        <img id="productBrandLogoPreview" class="img-fluid" src="{{ get_uploads_url($product->brand_logo) ?? image_placeholder_url() }}" alt="" style="max-height: 200px;">
+                        <input type="file" name="brand_logo" id="productBrandLogo" accept="image/*" hidden>
+                        <label for="productBrandLogo" class="mt-2" style="padding: 5px 10px; border-radius: 5px; background-color: #24292e; color: #fff; font-size: 0.8em; cursor: pointer;">
+                            <i class="fa fa-camera mr-2"></i> {{ $product->exists ? 'Change' : 'Choose' }} Product Brand Logo
+                        </label>
+                        @error('brand_logo')
+                        <div class="text-left text-danger text-sm mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </x-box>
 
-                        </script>
+                <x-box class="mt-3">
+                    <div class="text-center">
+                        <img id="productBannerImagePreview" class="img-fluid" src="{{ get_uploads_url($product->banner_image) ?? image_placeholder_url() }}" alt="" style="max-height: 200px;">
+                        <input type="file" name="banner_image" id="productBannerImage" accept="image/*" hidden>
+                        <label for="productBannerImage" class="mt-2" style="padding: 5px 10px; border-radius: 5px; background-color: #24292e; color: #fff; font-size: 0.8em; cursor: pointer;">
+                            <i class="fa fa-camera mr-2"></i> {{ $product->exists ? 'Change' : 'Choose' }} Product Banner Image
+                        </label>
+                        @error('banner_image')
+                        <div class="text-left text-danger text-sm mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
                 </x-box>
             </div>
@@ -287,6 +287,56 @@
     });
 
 
+    // Featured Image Preview
+    let productImage = document.getElementById('productImage');
+    let productImagePreview = document.getElementById('productImagePreview');
+
+    function reloadProductImageUrl(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                productImagePreview.setAttribute('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    productImage.addEventListener("change", function() {
+        reloadProductImageUrl(this);
+    });
+
+    // Brand Logo Preview
+    let productBrandLogo = document.getElementById('productBrandLogo');
+    let productBrandLogoPreview = document.getElementById('productBrandLogoPreview');
+
+    function productBrandLogoUrl(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                productBrandLogoPreview.setAttribute('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    productBrandLogo.addEventListener("change", function() {
+        productBrandLogoUrl(this);
+    });
+
+    // Brand Banner Image Preview
+    let productBannerImage = document.getElementById('productBannerImage');
+    let productBannerImagePreview = document.getElementById('productBannerImagePreview');
+
+    function productBannerImageUrl(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                productBannerImagePreview.setAttribute('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    productBannerImage.addEventListener("change", function() {
+        productBannerImageUrl(this);
+    });
 
 </script>
 @endpush
