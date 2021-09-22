@@ -25,10 +25,15 @@
                     <div class="title-right">
                         <h4>Distributor Enquiry Form</h4>
                     </div>
+                    <form class="distribution-form">
                     <div class="row">
                         <div class="col">
-                            <label for="exampleFormControlInput1" class="form-label">Name*</label>
-                            <input type="text" class="form-control" placeholder="Enter your name" aria-label="">
+                            <div class="group">
+      <input type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Name</label>
+    </div>
                         </div>
                         <div class="col">
                             <label for="exampleFormControlInput1" class="form-label">Email address*</label>
@@ -83,6 +88,7 @@
                     <div class="row mt-4 d-flex justify-content-center">
                         <button type="submit" class="btn  btn-block mb-3">Send</button>
                     </div>
+            </form>
                 </div>
             </div>
 

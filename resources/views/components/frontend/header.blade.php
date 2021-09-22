@@ -115,3 +115,12 @@
         </div>
     </div>
 </div>
+<div class="search-box search-elem">
+  <button class="close">x</button>
+  <div class="inner row">
+    <div class="small-12 columns">
+      <input type="text" id="search-field" placeholder="Search">
+      <button class="submit" type="submit">Search</button>
+    </div>
+  </div>
+ </div>

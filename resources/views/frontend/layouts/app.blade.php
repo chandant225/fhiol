@@ -25,14 +25,14 @@
     <link rel="stylesheet" href="/assets/css/unmerged.css?v=1.0.0">
 
     <link rel="stylesheet" href="{{ asset('assets/css/line-clamp.css') }}">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
-   
+
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> --}}
     @livewireStyles
     <style>
-       
+
     </style>
     @stack('styles')
     {{ $styles ?? '' }}
@@ -48,12 +48,62 @@
 
     <x-frontend.footer></x-frontend.footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ asset('assets/js/zoomsl.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+
     <script src="/assets/js/main.js"></script>
+    <script>
+        (function ($) {
+
+	$.fn.searchBox = function(ev) {
+
+		var $searchEl = $('.search-elem');
+		var $placeHolder = $('.placeholder');
+		var $sField = $('#search-field');
+
+		if ( ev === "open") {
+			$searchEl.addClass('search-open')
+		};
+
+		if ( ev === 'close') {
+			$searchEl.removeClass('search-open'),
+			$sField.val('');
+		};
+
+		var moveText = function() {
+			$placeHolder.addClass('move-up');
+		}
+
+		$sField.focus(moveText);
+		$placeHolder.on('click', moveText);
+
+		$('.submit').prop('disabled', true);
+		$('#search-field').keyup(function() {
+	        if($(this).val() != '') {
+	           $('.submit').prop('disabled', false);
+	        } else {
+                $('.submit').prop('disabled',true);
+            }
+	    });
+	}
+
+}(jQuery));
+
+$('.search-btn').on('click', function(e) {
+	$(this).searchBox('open');
+	e.preventDefault();
+});
+
+$('.close').on('click', function() {
+	$(this).searchBox('close');
+});
+
+        </script>
+
     @livewireScripts
     <x-livewire-alert::scripts />
     @stack('scripts')
