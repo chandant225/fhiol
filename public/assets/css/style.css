@@ -2706,7 +2706,7 @@ body.search-open {
 .distribution-form .bar:before {
     left: 50%;
 }
-.distribution-form
+.distribution-form{
     right: 50%;
 }
 
