@@ -36,7 +36,7 @@ Route::view('country', 'frontend.excellence.country')->name('country');
 
 //contact details
 Route::view('distribution', 'frontend.distribution')->name('distribution');
-
+Route::post('distribution', 'DistributionController@store')->name('distribution.apply');
 
 
 

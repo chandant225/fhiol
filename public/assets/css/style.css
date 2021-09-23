@@ -2696,23 +2696,39 @@ body.search-open {
 
 /* active state */
 .distribution-form input:focus ~ label,
-.distribution-form input:valid ~ label {
+.distribution-form input:not(:placeholder-shown) ~ label {
     top: -20px;
     font-size: 14px;
     color: #dd6310;
 }
 .distribution-form input:focus ~ label sup,
-.distribution-form input:valid ~ label sup,
+.distribution-form input[value=""] ~ label sup,
 sup.required {
     font-size: 14px;
     color: red;
 }
 
 /* BOTTOM BARS ================================= */
+.distribution-form .row {
+    gap: 3rem;
+}
+
+.distribution-form input {
+    width: 100%;
+}
+
+.distribution-form textarea {
+    border-color: #757575;
+}
+.distribution-form textarea:focus {
+    border-color: #dd6310;
+    box-shadow: 0 0 0 0.25rem rgba(241, 134, 62, 0.25);
+}
+
 .distribution-form .bar {
     position: relative;
     display: block;
-    width: 300px;
+    width: 100%;
 }
 
 .distribution-form .bar:after {
