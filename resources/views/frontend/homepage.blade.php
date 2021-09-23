@@ -393,7 +393,7 @@
 </script>
 <script>
     $(document).ready(function() {
-        let delay= 2000;
+        let delay = 2000;
     if(sessionStorage.getItem('popState') != 'shown'){
         $("#popUp").delay(delay).modal('show');
         sessionStorage.setItem('popState','shown')
