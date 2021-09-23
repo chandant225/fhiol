@@ -74,12 +74,12 @@
 			$sField.val('');
 		};
 
-		var moveText = function() {
-			$placeHolder.addClass('move-up');
-		}
+		// var moveText = function() {
+		// 	$placeHolder.addClass('move-up');
+		// }
 
-		$sField.focus(moveText);
-		$placeHolder.on('click', moveText);
+		// $sField.focus(moveText);
+		// $placeHolder.on('click', moveText);
 
 		$('.submit').prop('disabled', true);
 		$('#search-field').keyup(function() {
@@ -103,6 +103,8 @@ $('.close').on('click', function() {
 });
 
         </script>
+
+
 
     @livewireScripts
     <x-livewire-alert::scripts />

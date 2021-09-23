@@ -153,7 +153,7 @@
                                         laboratory is in...</p>
                                 </div>
                             </a>
-                            
+
                         </div>
                     </div>
 
@@ -173,7 +173,7 @@
                                     <p>Adherence to the Highest Quality Standards is a consistent feature...</p>
                                 </div>
                             </a>
-                            
+
                         </div>
                     </div>
 
@@ -192,7 +192,7 @@
                                 </div>
                             </div>
                         </a>
-                        
+
 
                     </div>
                 </div>
@@ -361,6 +361,23 @@
     </section>
     <!-- News and Events-end -->
 
+<!-- Modal -->
+<div class="modal fade" id="popUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Pop Up Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        pop up content here
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
     @push('scripts')
 <script>
 
@@ -374,5 +391,14 @@
         activeItem.getAttribute("data-color");
     });
 </script>
+<script>
+    $(document).ready(function() {
+        let delay= 2000;
+    if(sessionStorage.getItem('popState') != 'shown'){
+        $("#popUp").delay(delay).modal('show');
+        sessionStorage.setItem('popState','shown')
+    }
+});
+    </script>
     @endpush
 </x-app-layout>

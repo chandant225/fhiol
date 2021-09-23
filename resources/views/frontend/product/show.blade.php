@@ -357,12 +357,14 @@
                     </div>
                 </div>
                 <div class="col-md-12 mt-5">
-                    <iframe
-                        width="100%"
-                        height="600"
-                        src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                    >
-                    </iframe>
+                    <div class="video-responsive">
+                        <iframe
+                            width="100%"
+                            height="315"
+                            src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                        >
+                        </iframe>
+                    </div>
                 </div>
             </div>
 
