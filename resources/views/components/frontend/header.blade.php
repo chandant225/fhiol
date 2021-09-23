@@ -43,7 +43,7 @@
                                 <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link " href="{{ getPageUrlBySlug(appSettings('about_us_page_url')) }}" id="navbarDropdown" data-hover="dropdown">
+                                <a class="nav-link " href="{{route('about.about-FH')}}" id="navbarDropdown" data-hover="dropdown">
                                     About Us
 
                                 </a>
@@ -83,14 +83,13 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link " href="{{route('publication.news')}}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Publication
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">News</a></li>
-                                    <li><a class="dropdown-item" href="#">Events</a></li>
-                                    <li><a class="dropdown-item" href="#">Articles</a></li>
-                                    <li><a class="dropdown-item" href="#">Downloads</a></li>
+                                    <li><a class="dropdown-item" href="{{route('publication.news')}}">News & Events</a></li>
+                                    <li><a class="dropdown-item" href="{{route('publication.article')}}">Articles</a></li>
+                                    <li><a class="dropdown-item" href="{{route('publication.download')}}">Downloads</a></li>
                                 </ul>
                             </li>
 

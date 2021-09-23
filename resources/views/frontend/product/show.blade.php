@@ -2,11 +2,12 @@
     <x-slot name="siteTitle">{{ $siteTitle }}</x-slot>
     <section class="ribbon">
         <img
-            src="https://via.placeholder.com/1350x240.png"
-            alt=""
+            src="{{ get_uploads_url($product->banner_image) }}"
+            alt="{{ $product->name }}"
             class="ribbonImage"
         />
     </section>
+
     <section
         class="product-details py-5"
         style="background-color: #fffafa; margin-bottom: -40px"
@@ -26,28 +27,14 @@
                         </div>
 
                         <div class="img-select">
+                            @foreach($product->images as $productImage)
                             <img
-                                src="/theme/img/news-1.jpg"
+                                src="{{ $productImage->imageUrl('original') }}"
                                 width="100%"
                                 height="100%"
-                                alt="shoe image"
+                                alt="{{ $product->name }}"
                             />
-
-                            <img src="/theme/img/news-2.jpg" alt="shoe image" />
-
-                            <img
-                                src="/theme/img/news-3.jpg"
-                                width="100%"
-                                height="100%"
-                                alt="shoe image"
-                            />
-
-                            <img
-                                src="/theme/img/news-4.jpg"
-                                width="100%"
-                                height="100%"
-                                alt="shoe image"
-                            />
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -56,13 +43,17 @@
                     <div class="product-content bg-white p-4">
                         <div class="product-brand">
                             <h2 class="product-title">{{ $product->name }}</h2>
+                            @if($product->brand_logo)
                             <img
-                                src="https://via.placeholder.com/100x100.png"
+                                src="{{ get_uploads_url($product->brand_logo) }}"
                                 alt="brand-logo"
-                                class="product-logo"
+                                class="{{ $product->name }}"
                             />
+                            @endif
                         </div>
-                        <p class="product-subtitle">lorem Ipsum</p>
+                        <p class="product-subtitle">
+                            {{ $product->sub_title }}
+                        </p>
                         @hasrole('admin')
 
                         <div>
@@ -185,28 +176,7 @@
                                     role="tabpanel"
                                     aria-labelledby="overview-tab"
                                 >
-                                    <p>{!! $product->overview !!}</p>
-                                    <p>
-                                        Checking Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Sint esse
-                                        ad magni enim fugit eos natus id!
-                                        Voluptas minus laboriosam officiis
-                                        tempore ea, harum suscipit est,
-                                        assumenda, cupiditate necessitatibus
-                                        delectus. lorem Lorem ipsum dolor sit
-                                        amet consectetur adipisicing elit. Quos
-                                        libero cupiditate ipsam odio ex incidunt
-                                        nihil, hic tenetur ducimus modi cum
-                                        laudantium architecto adipisci quibusdam
-                                        quam fuga magnam cumque! Nesciunt?Lorem
-                                        ipsum dolor sit amet consectetur
-                                        adipisicing elit. Magnam molestias
-                                        maxime neque consequuntur illum sequi
-                                        dicta? Accusamus fugit fugiat illo
-                                        labore provident eum inventore
-                                        explicabo, unde iure incidunt, esse
-                                        nulla?lorem
-                                    </p>
+                                    {!! $product->overview !!}
                                 </div>
                                 <div
                                     class="tab-pane fade"
@@ -214,7 +184,7 @@
                                     role="tabpanel"
                                     aria-labelledby="specification-tab"
                                 >
-                                    whu
+                                    {!! $product->description !!}
                                 </div>
                                 <div
                                     class="tab-pane fade"
@@ -222,7 +192,7 @@
                                     role="tabpanel"
                                     aria-labelledby="detail-tab"
                                 >
-                                    ...
+                                    {!! $product->detail !!}
                                 </div>
                                 <div
                                     class="tab-pane fade"
@@ -231,11 +201,18 @@
                                     aria-labelledby="resources-tab"
                                 >
                                     <ol class="resource-download-list">
+                                        @foreach ($product->downloads as
+                                        $download)
                                         <li>
                                             <div class="flex">
-                                                <span>fileName 1</span>
-                                                <button
-                                                    class="btn-theme-primary"
+                                                <span
+                                                    >{{ $download->title }}</span
+                                                >
+                                                <a
+                                                    href="{{ $download->downloadUrl() }}"
+                                                    class="
+                                                        btn btn-theme-primary
+                                                    "
                                                 >
                                                     <svg
                                                         class="w-6 h-6"
@@ -249,30 +226,10 @@
                                                             clip-rule="evenodd"
                                                         ></path></svg
                                                     >&nbsp;Download
-                                                </button>
+                                                </a>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div>
-                                                <span>fileName 2</span>
-                                                <button
-                                                    class="btn-theme-primary"
-                                                >
-                                                    <svg
-                                                        class="w-6 h-6"
-                                                        fill="currentColor"
-                                                        viewBox="0 0 20 20"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            fill-rule="evenodd"
-                                                            d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
-                                                            clip-rule="evenodd"
-                                                        ></path></svg
-                                                    >&nbsp;Download
-                                                </button>
-                                            </div>
-                                        </li>
+                                        @endforeach
                                     </ol>
                                 </div>
                             </div>
@@ -280,43 +237,27 @@
                         <div class="product-detail d-md-none d-lg-none">
                             <div class="product-detail-sm">
                                 <h4>Product Overview</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Accusamus error illum quia
-                                    alias molestias cumque asperiores, nemo,
-                                    ipsam dolor soluta eum fugit consequuntur
-                                    nobis? Nobis at tenetur quam eaque corporis.
-                                </p>
+                                <p>{!! $product->overview !!}</p>
                             </div>
                             <div class="product-detail-sm">
                                 <h4>Product Specification</h4>
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Quo suscipit delectus
-                                    voluptatem. Autem qui quae, quisquam id
-                                    doloremque ex tenetur libero ipsa fugiat
-                                    maxime! Unde possimus placeat repellat odio
-                                    rerum.
-                                </p>
+                                <p>{!! $product->description !!}</p>
                             </div>
                             <div class="product-detail-sm">
                                 <h4>Product Detail</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Aut tenetur fugiat, veniam
-                                    commodi tempora hic distinctio reiciendis
-                                    iure obcaecati maiores eius consequatur
-                                    voluptatum ducimus atque quos corrupti
-                                    expedita totam qui.
-                                </p>
+                                <p>{!! $product->detail !!}</p>
                             </div>
                             <div class="product-detail-sm">
                                 <h4>Resources</h4>
                                 <ol class="resource-download-list">
+                                    @foreach ($product->downloads as $download)
                                     <li>
                                         <div class="flex">
-                                            <span>FileName 1</span>
-                                            <button class="btn-theme-primary">
+                                            <span>{{ $download->title }}</span>
+                                            <a
+                                                href="{{ $download->downloadUrl() }}"
+                                                class="btn btn-theme-primary"
+                                            >
                                                 <svg
                                                     class="w-6 h-6"
                                                     fill="currentColor"
@@ -329,64 +270,34 @@
                                                         clip-rule="evenodd"
                                                     ></path></svg
                                                 >&nbsp;Download
-                                            </button>
+                                            </a>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div>
-                                            <span>FileName 2</span>
-                                            <button class="btn-theme-primary">
-                                                <svg
-                                                    class="w-6 h-6"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
-                                                        clip-rule="evenodd"
-                                                    ></path></svg
-                                                >&nbsp;Download
-                                            </button>
-                                        </div>
-                                    </li>
+                                    @endforeach
                                 </ol>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 mt-5">
-                    <div class="video-responsive">
+                @if($product->video_url)
+                <div class="col-md-12 my-5">
+                    <div class="product-video">
                         <iframe
                             width="100%"
-                            height="315"
-                            src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                        >
-                        </iframe>
+                            height="100%"
+                            src="{{ $product->youtubeUrl() }}"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
                     </div>
                 </div>
+                @endif
             </div>
-
-            <!-- {{-- Product details --}}
-            @if($product->detail)
-            <div class="bg-white p-4 mt-4">
-                <h5 class="h5-responsive">Product Details</h5>
-                {!! $product->detail !!}
-            </div>
-            @endif
-
-            {{-- Product Specification --}}
-            @if($product->description)
-            <div class="bg-white p-4 mt-4">
-                <h5 class="h5-responsive">Product Specification</h5>
-                {!! $product->description !!}
-            </div>
-            @endif -->
         </div>
     </section>
 
-    {{-- Inquiry Modal --}}
     {{--
     <div
         id="inquiry-modal"
@@ -459,27 +370,26 @@
                     data-bs-dismiss="modal"
                     aria-label="Close"
                 ></button>
-
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
-                            <div
-                                class="
-                                    col-md-5
-                                    d-none d-lg-block
-                                    text-white
-                                    p-2
-                                "
-                                style="background-color: #8e24aa"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="{{ $product->featuredImage ? $product->featuredImage->imageUrl('medium') : image_placeholder_url() }}"
-                                    alt="{{ $product->name }}"
-                                />
-                                <h5 class="h5-responsive text-center mt-3">
-                                    {{ $product->name }}
-                                </h5>
+                            <div class="col-md-5 d-none d-lg-flex p-2">
+                                <div class="align-self-center">
+                                    <img
+                                        class="img-fluid"
+                                        src="{{ $product->featuredImage ? $product->featuredImage->imageUrl('medium') : image_placeholder_url() }}"
+                                        alt="{{ $product->name }}"
+                                    />
+                                    <h5
+                                        class="h5-responsive text-center mt-3"
+                                        style="
+                                            font-weight: 700;
+                                            letter-spacing: 1px;
+                                        "
+                                    >
+                                        {{ $product->name }}
+                                    </h5>
+                                </div>
                             </div>
                             <div class="col-lg-7 col-xs-12 col-sm-12 p-5">
                                 <h3 class="h3-responsive mb-4 font-weight-bold">

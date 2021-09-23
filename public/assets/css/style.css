@@ -11,23 +11,13 @@ h4,
 h5 {
     margin-top: 0;
     font-family: Raleway, sans-serif;
-    text-transform: uppercase;
-}
-img {
-    border-radius: 3px;
 }
 
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
 .breadcrumbs {
-    background: -webkit-gradient(
-            linear,
-            left top,
-            left bottom,
-            from(rgba(0, 0, 0, 0.6)),
-            to(rgba(40, 58, 90, 0.6))
-        ),
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(40, 58, 90, 0.6))),
         url("/theme/img/banner/banner03.jpg") fixed center center;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(40, 58, 90, 0.6)),
         url("/theme/img/banner/banner03.jpg") fixed center center;
@@ -680,10 +670,8 @@ html {
 
 .certificate a img {
     width: 80%;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
 }
@@ -1303,6 +1291,7 @@ html {
 
 .google-map .responsive-map {
     width: 100%;
+    height: 100%;
 }
 
 /* .google-map .responsive-map iframe {
@@ -1322,10 +1311,8 @@ html {
 .contact-section {
     margin-top: 80px;
     background: #fff;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-        rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-        rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     overflow: hidden;
 }
 
@@ -1854,8 +1841,8 @@ html {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    /* align-items: center; */
+    /* justify-content: space-around; */
     flex-wrap: nowrap;
     overflow-x: auto;
 }
@@ -2080,6 +2067,22 @@ html {
 
 .product-details .social-links a:hover {
     color: #dd6310;
+}
+
+.product-video {
+    text-align: center;
+    position: relative;
+    height: 0;
+    padding-bottom: calc(100% / (16 / 9));
+}
+
+.product-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @media screen and (min-width: 992px) {
@@ -2342,8 +2345,7 @@ html {
 .visionAndmission .vm-content {
     border-radius: 3px;
     padding: 20px;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-        rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 .visionAndmission .row {
     padding: 15px;

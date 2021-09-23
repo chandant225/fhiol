@@ -19,6 +19,15 @@ Route::view('about/visionmisson', 'frontend.pages.about.visionmisson')->name('ab
 Route::view('about/qa', 'frontend.pages.about.qa')->name('about.qa');
 Route::view('about/certificate', 'frontend.pages.about.certificate')->name('about.certificate');
 
+
+//publication dropdown
+Route::view('publication/news', 'frontend.pages.publication.news')->name('publication.news');
+Route::view('publication/events', 'frontend.pages.publication.events')->name('publication.events');
+Route::view('publication/article', 'frontend.pages.publication.article')->name('publication.article');
+Route::view('publication/download', 'frontend.pages.publication.download')->name('publication.download');
+Route::view('publication/publicationdetails', 'frontend.pages.publication.publicationdetails')->name('publication.publicationdetails');
+
+
 //our excellence
 Route::view('latestmachine', 'frontend.excellence.latestmachine')->name('latestmachine');
 Route::view('qualitycertificate', 'frontend.excellence.qualitycertificate')->name('qualitycertificate');
@@ -27,6 +36,9 @@ Route::view('country', 'frontend.excellence.country')->name('country');
 
 //contact details
 Route::view('distribution', 'frontend.distribution')->name('distribution');
+
+
+
 
 
 Route::get('categories', 'CategoryController@index')->name('categories.index');

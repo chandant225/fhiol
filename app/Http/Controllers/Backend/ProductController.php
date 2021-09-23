@@ -82,7 +82,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $product->load('featuredImage');
-
+        // dd($product->images);
         return view('product.create-edit', compact([
             'product',
         ]));
