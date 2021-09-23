@@ -1,95 +1,39 @@
-    <style>
-        .primary-image-slide {
-            background-color: #80393d;
-            color: #fff;
-        }
-
-        .primary-image-slide .slide-left {
-            padding: 25px 20%;
-        }
-
-        .primary-image-slide .slide-left .title {
-            font-size: 2.5rem;
-            font-weight: 500;
-            line-height: 1.5;
-        }
-
-        .primary-image-slide .slide-left .description {
-            color: #fae7e7;
-        }
-
-        .primary-image-slide .slide-left .action-button {
-            display: inline-block;
-            margin-top: 40px;
-            text-decoration: none;
-            border: 1px solid #fff;;
-            padding: 5px 10px;
-            color: #fff;
-            background-color: transparent;
-            transition: 250ms all;
-        }
-
-        .primary-image-slide .slide-left .action-button:hover {
-            color: var(--theme-color);
-            background-color: #fff;
-        }
-
-        .primary-image-slide .image-wrapper {
-            --primary-image-slide-aspect-ratio: 4/3;
-            text-align: center;
-            position: relative;
-            height: 0;
-            padding-bottom: calc(100% / (var(--primary-image-slide-aspect-ratio)));
-        }
-
-        .primary-image-slide .image-wrapper>img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-    </style>
-    <div class="primary-image-slider owl-carousel">
-        @foreach ($slides as $slide)
-        <div class="primary-image-slide">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="h-100 d-flex" style="align-items: center; padding: 20px;">
-                        <div class="slide-left">
-                            <h1 class="title">{{ $slide->title }}</h1>
-                            <div class="my-3" style="width: 30%; height: 3px; background-color: #fff;"></div>
-                            @if($slide->description)
+<div class="hero-slider">
+    @if(count($slides))
+    <div class="row col-12 p-0 m-0">
+        <div id="carouselExampleCaptions" class="carousel slide p-0" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                @foreach ($slides as $slide)
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ $loop->index }}" class="@if($loop->iteration == 1) active @endif" aria-current="true"></button>
+                @endforeach
+            </div>
+            <div class="carousel-inner">
+                @foreach ($slides as $slide)
+                <div class="carousel-item @if($loop->iteration == 1) active @endif">
+                    <img src="{{ $slide->image_url }}" class="d-block w-100 " alt="{{ $slide->title }}">
+                    <div class="overlay">
+                        {{-- <div class="carousel-caption d-none d-md-block">
+                            <h5>{{ $slide->title }}</h5>
+                             @if($slide->description)
                             <p class="description">{{ $slide->description }}</p>
                             @endif
                             @if ($slide->action_link)
                             <a class="action-button" href="{{ $slide->action_link }}" @if($slide->open_in_new_tab) target="_blank" @endif>{{ $slide->action_button_text ?? 'Shop Now' }}</a>
                             @endif
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
-                <div class="col-md-6 bg-white pl-3 pb-3">
-                    <div class="image-wrapper">
-                        <img src="{{ $slide->image_url }}" alt="{{ $slide->title }}">
-                    </div>
-                </div>
+                @endforeach
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        @endforeach
     </div>
-    @push('scripts')
-    <script>
-        $(document).ready(function() {
-            $(".primary-image-slider").owlCarousel({
-                items: 1
-                , loop: true
-                , autoplay: true
-                , dots: false
-            });
-        });
-
-    </script>
-
-    @endpush
+    @endif
+</div>
