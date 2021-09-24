@@ -3,8 +3,7 @@
     <!-- Hero -->
     <div class="hero-bg">
         <x-frontend.partials.primary-image-slider></x-frontend.partials.primary-image-slider>
-     
-        
+
         <div data-aos="fade-up" data-aos-duration="1000">
             <div class="banner-slogon">
                 <div class="container pt-4">
@@ -216,144 +215,71 @@
             <div class="title-right">
                 <h4>Recent News And Events</h4>
             </div>
+
             <div class="row">
-                <!-- Post-->
-                <div class="col-xl-4 col-md-6 col-12 ">
-                    <div data-aos="fade-up" data-aos-duration="1500">
-                        <a href="publicationdetails.html" class=" text-decoration-none">
-                            <div class=" post-module">
-                                <div class="category">10 FEB. 2021</div>
-                                <!-- Thumbnail-->
-                                <div class="thumbnail">
-
-                                    <img src="/theme/img/news-1.jpg" />
-                                </div>
-                                <!-- Post Content-->
-                                <div class="post-content">
-
-                                    <h1 class="title">City Lights in New York</h1>
-                                    <h2 class="sub_title">The city that never sleeps.</h2>
-                                    <p class="description">New York, the largest city in the U.S., is an
-                                        architectural
-                                        marvel
-                                        with
-                                        plenty of historic monuments, magnificent buildings and countless
-                                        dazzling
-                                        skyscrapers.
-                                    </p>
-                                </div>
+                @foreach ($newsAndUpdates as $post)
+                <div class="col-md-4">
+                    <div class="h-100 shadow rounded overflow-hidden">
+                        <div class="post-card card mb-3 border-0">
+                            <a class="image-wrapper" href="{{ route('posts.show', $post) }}">
+                                <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}">
+                            </a>
+                            <div class="card-body px-md-4 px-lg-5">
+                                <h5 class="card-title post__title"><a class=" line-clamp-2" href="{{ route('posts.show', $post) }}">{{ $post->title }}</a></h5>
+                                <p class="card-text"><small class="text-muted">Published at {{ $post->created_at->format('d, M Y') }}</small></p>
+                                <p class="card-text line-clamp-3">{{ $post->seo_description }}</p>
+                                <a href="#" class="btn btn-theme-primary btn-sm stretched-link">View More</a>
                             </div>
-                        </a>
+                        </div>
                     </div>
 
-
                 </div>
-                <div class="col-xl-4 col-md-6 col-12 news-respon">
-                    <div data-aos="fade-up" data-aos-duration="1500">
-                        <a href="publicationdetails.html" class=" text-decoration-none">
-                            <div class=" post-module">
-                                <div class="category">10 FEB. 2021</div>
-                                <!-- Thumbnail-->
-                                <div class="thumbnail">
-
-                                    <img src="/theme/img/news-1.jpg" />
-                                </div>
-                                <!-- Post Content-->
-                                <div class="post-content">
-
-                                    <h1 class="title">City Lights in New York</h1>
-                                    <h2 class="sub_title">The city that never sleeps.</h2>
-                                    <p class="description">New York, the largest city in the U.S., is an
-                                        architectural
-                                        marvel
-                                        with
-                                        plenty of historic monuments, magnificent buildings and countless
-                                        dazzling
-                                        skyscrapers.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                </div>
-                <div class="col-xl-4 col-md-6 col-12 news-respon">
-                    <div data-aos="fade-up" data-aos-duration="1500">
-                        <a href="publicationdetails.html" class=" text-decoration-none">
-                            <div class=" post-module">
-                                <div class="category">10 FEB. 2021</div>
-                                <!-- Thumbnail-->
-                                <div class="thumbnail">
-
-                                    <img src="/theme/img/news-1.jpg" />
-                                </div>
-                                <!-- Post Content-->
-                                <div class="post-content">
-
-                                    <h1 class="title">City Lights in New York</h1>
-                                    <h2 class="sub_title">The city that never sleeps.</h2>
-                                    <p class="description">New York, the largest city in the U.S., is an
-                                        architectural
-                                        marvel
-                                        with
-                                        plenty of historic monuments, magnificent buildings and countless
-                                        dazzling
-                                        skyscrapers.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                </div>
+                @endforeach
             </div>
-            <!-- Hover Demo-->
-
 
         </div>
     </section>
     <!-- News and Events-end -->
 
-<!-- Modal -->
-<div class="modal fade" id="popUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Pop Up Title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        pop up content here
-      </div>
+    <!-- Modal -->
+    <div class="modal fade" id="popUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Pop Up Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    pop up content here
+                </div>
 
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
     @push('scripts')
-<script>
+    <script>
+        // testimonials
+        const myCarousel = document.getElementById("myCarousel");
+        myCarousel.addEventListener("slid.bs.carousel", function() {
+            const activeItem = this.querySelector(".active");
+            document.querySelector(".testi-img img").src =
+                activeItem.getAttribute("data-img");
+            document.querySelector(".testi-img .circle").style.backgroundColor =
+                activeItem.getAttribute("data-color");
+        });
 
-    // testimonials
-    const myCarousel = document.getElementById("myCarousel");
-    myCarousel.addEventListener("slid.bs.carousel", function () {
-      const activeItem = this.querySelector(".active");
-      document.querySelector(".testi-img img").src =
-        activeItem.getAttribute("data-img");
-      document.querySelector(".testi-img .circle").style.backgroundColor =
-        activeItem.getAttribute("data-color");
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        let delay = 2000;
-    if(sessionStorage.getItem('popState') != 'shown'){
-        $("#popUp").delay(delay).modal('show');
-        sessionStorage.setItem('popState','shown')
-    }
-});
+    </script>
+    <script>
+        $(document).ready(function() {
+            let delay = 2000;
+            if (sessionStorage.getItem('popState') != 'shown') {
+                $("#popUp").delay(delay).modal('show');
+                sessionStorage.setItem('popState', 'shown')
+            }
+        });
+
     </script>
     @endpush
 </x-app-layout>

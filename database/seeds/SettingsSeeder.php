@@ -19,6 +19,7 @@ class SettingsSeeder extends Seeder
             'favicon' => null,
 
             'show_top_bar' => 'yes',
+            'office_time' => 'Sun - Fri : 09:00 - 18:30',
             'mobile' => '+977-1-4493775',
             'email' => 'tilganga@tilganga.org',
             'address' => 'GPO Box 561, Kathmandu, Nepal',

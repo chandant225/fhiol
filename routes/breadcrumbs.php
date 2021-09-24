@@ -31,7 +31,7 @@ Breadcrumbs::for('product', function ($trail, $product) {
 // Posts
 Breadcrumbs::for('posts', function ($trail) {
     $trail->parent('home');
-    $trail->push('Posts', route('posts.index'));
+    $trail->push('Publications', route('posts.index'));
 });
 
 Breadcrumbs::for('post-category', function ($trail, $category) {

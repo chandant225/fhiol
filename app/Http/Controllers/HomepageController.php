@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use App\Product;
 use App\Video;
 
@@ -15,7 +16,8 @@ class HomepageController extends Controller
         return view('frontend.homepage', [
             // 'newProducts' => $newProducts,
             // 'featuredProducts' => $featuredProducts,
-            'videos' => Video::positioned()->get()
+            'videos' => Video::positioned()->get(),
+            'newsAndUpdates' => Post::published()->latest()->get()
         ]);
     }
 }

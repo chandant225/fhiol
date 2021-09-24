@@ -15,8 +15,10 @@
                 </div>
                 <div class="col-md-8">
                     <ul class="right-top  justify-content-end">
-                        <li><a href="#"><i class="fa fa-clock-o"></i>Sun - Fri : 09:00 - 18:30</a></li>
-                        <li><a href="http://www.tel.com"><i class="fa fa-phone"></i> {{ appSettings('mobile') }}</a></li>
+                        @if(appSettings('office_time'))
+                        <li><a href="#"><i class="fa fa-clock-o"></i>{{ appSettings('office_time') }}</a></li>
+                        @endif
+                        <li><a href="tel:{{ appSettings('mobile') }}"><i class="fa fa-phone"></i>{{ appSettings('mobile') }}</a></li>
                     </ul>
                 </div>
             </div>
@@ -83,13 +85,13 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link " href="{{route('publication.news')}}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link " href="{{ route('publication.news') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Publication
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{{route('publication.news')}}">News & Events</a></li>
-                                    <li><a class="dropdown-item" href="{{route('publication.article')}}">Articles</a></li>
-                                    <li><a class="dropdown-item" href="{{route('publication.download')}}">Downloads</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('posts.index', ['category' => 'news-and-notices']) }}">News & Events</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('posts.index', ['category' => 'articles']) }}">Articles</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('publication.download') }}">Downloads</a></li>
                                 </ul>
                             </li>
 
