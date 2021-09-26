@@ -9,18 +9,18 @@
             </div>
             <div class="carousel-inner">
                 @foreach ($slides as $slide)
-                <div class="carousel-item @if($loop->iteration == 1) active @endif">
-                    <img src="{{ $slide->image_url }}" class="d-block w-100 " alt="{{ $slide->title }}">
+                <div class="carousel-item @if($loop->iteration == 1) active @endif" style="background-image: url({{ $slide->image_url }})">
+                    {{-- <img src="{{ $slide->image_url }}" class="d-block w-100 " alt="{{ $slide->title }}"/> --}}
                     <div class="overlay">
-                        {{-- <div class="carousel-caption d-none d-md-block">
+                         <div class="carousel-caption d-none d-md-block">
                             <h5>{{ $slide->title }}</h5>
                              @if($slide->description)
                             <p class="description">{{ $slide->description }}</p>
                             @endif
                             @if ($slide->action_link)
-                            <a class="action-button" href="{{ $slide->action_link }}" @if($slide->open_in_new_tab) target="_blank" @endif>{{ $slide->action_button_text ?? 'Shop Now' }}</a>
+                            <a class="action-button btn btn-theme-primary" href="{{ $slide->action_link }}" @if($slide->open_in_new_tab) target="_blank" @endif>{{ $slide->action_button_text ?? 'Shop Now' }}</a>
                             @endif
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
                 @endforeach
@@ -37,3 +37,4 @@
     </div>
     @endif
 </div>
+

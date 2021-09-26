@@ -35,7 +35,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="group">
-                                    <input type="text" required />
+                                    <input type="text"/>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label>Name<sup>*</sup></label>

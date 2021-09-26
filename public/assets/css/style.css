@@ -17,7 +17,13 @@ h5 {
 # Breadcrumbs
 --------------------------------------------------------------*/
 .breadcrumbs {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(40, 58, 90, 0.6))),
+    background: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            from(rgba(0, 0, 0, 0.6)),
+            to(rgba(40, 58, 90, 0.6))
+        ),
         url("/theme/img/banner/banner03.jpg") fixed center center;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(40, 58, 90, 0.6)),
         url("/theme/img/banner/banner03.jpg") fixed center center;
@@ -670,8 +676,10 @@ html {
 
 .certificate a img {
     width: 80%;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
 }
@@ -860,10 +868,9 @@ html {
     margin-top: 15px !important;
 }
 
-.testimonial {
+/* .testimonial {
     margin: 80px 0;
     overflow: hidden;
-    /* Responsive */
 }
 
 .testimonial .testimonial-section {
@@ -935,9 +942,9 @@ html {
     font-size: 16px !important;
     font-weight: 600;
     color: #082c46;
-}
+} */
 
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
     .testimonial .testi-img .img-box {
         max-width: 300px;
     }
@@ -957,7 +964,7 @@ html {
     .testimonial .testi-img {
         margin-bottom: 25px;
     }
-}
+} */
 
 .productMain .product-category h6 {
     font-size: 1.3rem;
@@ -1311,8 +1318,10 @@ html {
 .contact-section {
     margin-top: 80px;
     background: #fff;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+        rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+        rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     overflow: hidden;
 }
 
@@ -2345,7 +2354,8 @@ html {
 .visionAndmission .vm-content {
     border-radius: 3px;
     padding: 20px;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+        rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 .visionAndmission .row {
     padding: 15px;
@@ -2652,10 +2662,10 @@ body.search-open {
     }
 }
 
-#inquiryModal .modal-content .btn-close {
+.modal-content .btn-close {
     position: absolute;
-    right: 2%;
-    top: 2%;
+    right: 5px;
+    top: 5px;
     cursor: pointer;
     z-index: 101;
 }
@@ -2836,17 +2846,80 @@ sup.required {
     justify-content: space-between;
     align-items: center;
 }
-.video-responsive {
+/* .video-responsive {
     overflow: hidden;
     padding-bottom: 56.25%;
     position: relative;
     height: 0;
 }
+
 .video-responsive iframe {
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
     position: absolute;
+} */
+carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
-/*  */
+/*=============september 22 end============  */
+
+/* ==================september 23 ================ */
+
+.hero-slider .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.hero-slider .overlay h5 {
+    font-size: 4.5rem;
+    font-weight: bolder;
+    font-family: "Titillium Web", sans-serif;
+}
+.hero-slider .overlay p.description {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.25rem;
+}
+.carousel-item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.testimonial span {
+    color: #fefefe;
+}
+
+.testimonial .about {
+    background-color: #dd6310;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 0;
+    text-align: center;
+}
+.testimonial .about img {
+    margin-top: -68px;
+    border: 5px solid white;
+    width: 6rem;
+    height: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.testimonial .card {
+    border-radius: 10px;
+}
+.testimonial-slider .owl-next i,
+.testimonial-slider .owl-prev i {
+    font-size: 25px;
+    color: #dd6310;
+}
+
+.testimonial-slider.owl-theme .owl-nav [class*="owl-"]:hover {
+    background: unset !important;
+}
