@@ -1893,6 +1893,7 @@ html {
     -moz-transition: transform 0.5s ease-in-out;
     -ms-transition: transform 0.5s ease-in-out;
     -o-transition: transform 0.5s ease-in-out;
+    height: 5rem;
 }
 
 .product-details .img-item:nth-child(1),
@@ -2835,26 +2836,25 @@ sup.required {
     align-items: center;
 }
 .ribbon {
-    max-width: 100vw;
+    min-height: 240px;
+    height: 240px;
+    max-height: 250px;
 }
 .ribbonImage {
-    max-height: 240px;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    object-fit: contain;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
     width: 100%;
+    height: 100%;
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
     .ribbon {
         height: auto;
     }
-}
+} */
 .product-brand {
     display: flex;
     justify-content: space-between;
