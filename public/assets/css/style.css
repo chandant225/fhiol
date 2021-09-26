@@ -2836,33 +2836,25 @@ sup.required {
     align-items: center;
 }
 .ribbon {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 56.25%;
+    min-height: 240px;
+    height: 240px;
+    max-height: 250px;
 }
 .ribbonImage {
-    max-height: 240px;
     position: relative;
     background-size: cover;
-    background-position: center center;
     background-attachment: fixed;
+    background-position: center center;
     background-repeat: no-repeat;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
     width: 100%;
     height: 100%;
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
     .ribbon {
         height: auto;
     }
-}
+} */
 .product-brand {
     display: flex;
     justify-content: space-between;
