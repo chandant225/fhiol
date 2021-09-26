@@ -36,10 +36,7 @@
             <div class="row align-items-center">
                 <div class="col-md-5">
                     <div data-aos="zoom-in-right">
-                        <img
-                            src="https://fhiol.com/sites/default/files/fred.jpg"
-                            alt=""
-                        />
+                        <img src="https://fhiol.com/sites/default/files/fred.jpg" alt="" />
                     </div>
                 </div>
                 <div class="col-md-7">
@@ -89,9 +86,7 @@
                         <div class="service-box">
                             <a href="{{ route('latestmachine') }}">
                                 <div class="service-box-inner">
-                                    <span class="material-icons orange600"
-                                        >precision_manufacturing</span
-                                    >
+                                    <span class="material-icons orange600">precision_manufacturing</span>
                                     <h5>LATEST MACHINES</h5>
                                     <br />
                                     <p>
@@ -109,9 +104,7 @@
                         <div class="service-box">
                             <a href="{{ route('iol') }}">
                                 <div class="service-box-inner">
-                                    <span class="material-icons orange600"
-                                        >biotech</span
-                                    >
+                                    <span class="material-icons orange600">biotech</span>
                                     <h5>BEST IOL DESIGNS</h5>
                                     <br />
                                     <p>
@@ -129,9 +122,7 @@
                         <div class="service-box">
                             <a href="{{ route('qualitycertificate') }}">
                                 <div class="service-box-inner">
-                                    <span class="material-icons orange600"
-                                        >approval</span
-                                    >
+                                    <span class="material-icons orange600">approval</span>
                                     <h5>QUALITY CERTIFICATION</h5>
                                     <br />
                                     <p>
@@ -148,9 +139,7 @@
                         <a href="{{ route('country') }}">
                             <div data-aos="fade-up" data-aos-duration="1300">
                                 <div class="service-box-inner">
-                                    <span class="material-icons orange600"
-                                        >flight_takeoff</span
-                                    >
+                                    <span class="material-icons orange600">flight_takeoff</span>
                                     <h5>Over 30 countries</h5>
                                     <br />
                                     <p>
@@ -173,140 +162,25 @@
         <section class="testimonial-section d-flex align-items-center">
             <div class="container">
                 <div class="title-left">
-                    <h4>Testimonial</h4>
+                    <h4>{{ appSettings('homepage_testimonials_title', 'Testimonial') }}</h4>
                 </div>
-                {{--
-                <!-- <div class="row align-items-center col-12">
-                    <div class="col-md-6 testi-img">
-                        <div class="img-box">
-                            <div class="circle"></div>
-                            <div class="img-box-inner">
-                                <img src="/theme/img/testimonial/1.png" alt="testi img">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div id="myCarousel" class="carousel slide" data-bs-interval="5000" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item testi-item active" data-color="#fb9c9a" data-img="theme/img/testimonial/1.png">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nobis ratione, harum
-                                        doloremque aspernatur aliquid quaerat dolores voluptates recusandae qui repellat
-                                        illum, amet ipsa debitis fugiat commodi nemo suscipit ad!</p>
-                                    <h3> Prof. M. Edward Wilson - <span>MD, USA</span></h3>
-                                </div>
-                                <div class="carousel-item testi-item" data-color="#fbd39a" data-img="theme/img/testimonial/2.png">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nobis ratione, harum
-                                        doloremque aspernatur aliquid quaerat dolores voluptates recusandae qui repellat
-                                        illum, amet ipsa debitis fugiat commodi nemo suscipit ad!</p>
-                                    <h3>Prof. David J. Apple <span> MD, USA</span></h3>
-                                </div>
-                                <div class="carousel-item testi-item" data-color="#9ab0fb" data-img="theme/img/testimonial/3.png">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nobis ratione, harum
-                                        doloremque aspernatur aliquid quaerat dolores voluptates recusandae qui repellat
-                                        illum, amet ipsa debitis fugiat commodi nemo suscipit ad!</p>
-                                    <h3> Prof. M. Edward Wilson - <span>MD, USA</span></h3>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                                <img src="/theme/img/icons/left-arrow.png" alt="prev">
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                                <img src="/theme/img/icons/right-arrow.png" alt="prev">
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                </div> -->
-                --}}
                 <div class="container mt-5">
                     <div class="owl-carousel owl-theme testimonial-slider">
-                            <div class="card">
-                                <div class="content py-4 px-3 text-center">
-                                    <p>
-                                        I made bacck the purchase price in just
-                                        48 hours! Thank you for making it pain
-                                        less, pleasant. The service was
-                                        execellent. I will refer everyone I know
-                                    </p>
-                                </div>
-                                <div class="about text-center p-4 text-white">
-                                    <img
-                                        alt="Image placeholder"
-                                        class="rounded-circle"
-                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
-                                        width="60"
-                                    />
-                                    <h4 class="mb-0 mt-3">Daxton Robby</h4>
-                                    <span>Android Developer</span>
-                                </div>
+                        @foreach($testimonials as $testimonial)
+                        <div class="card">
+                            <div class="content py-5 px-3 text-center mb-4">
+                                <p>
+                                    {!! $testimonial->content !!}
+                                </p>
                             </div>
-<div class="card">
-                                <div class="content py-4 px-3 text-center">
-                                    <p>
-                                        I made bacck the purchase price in just
-                                        48 hours! Thank you for making it pain
-                                        less, pleasant. The service was
-                                        execellent. I will refer everyone I know
-                                    </p>
-                                </div>
-                                <div class="about text-center p-4 text-white">
-                                    <img
-                                        alt="Image placeholder"
-                                        class="rounded-circle"
-                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
-                                        width="60"
-                                    />
-                                    <h4 class="mb-0 mt-3">Daxton Robby</h4>
-                                    <span>Android Developer</span>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="content py-4 px-3 text-center">
-                                    <p>
-                                        "Really good, you have saved our
-                                        business! I made bacck the purchase
-                                        price in just 48 hours! man, this thing
-                                        is getting better and better as I learn
-                                        more about it."
-                                    </p>
-                                </div>
-                                <div class="about text-center p-4 text-white">
-                                    <img
-                                        alt="Image placeholder"
-                                        class="rounded-circle"
-                                        src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-4.jpg"
-                                        width="60"
-                                    />
-                                    <h4 class="mb-0 mt-3">Karson Darvin</h4>
-                                    <span>Finance Director</span>
-                                </div>
-                            </div>
-
-
-                            <div class="card">
-                                <div class="content py-4 px-3 text-center">
-                                    <p>
-                                        "Account keeper is the most valuable
-                                        business research we have EVER
-                                        purchased. Without electrician, we would
-                                        ahave gone bankrupt by now."
-                                    </p>
-                                </div>
-                                <div class="about text-center p-4 text-white">
-                                    <img
-                                        alt="Image placeholder"
-                                        class="rounded-circle"
-                                        src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-4.jpg"
-                                        width="60"
-                                    />
-                                    <h4 class="mb-0 mt-3">Willa Derrickson</h4>
-                                    <span>Stock Broker</span>
-                                </div>
+                            <div class="about text-center p-4 text-white">
+                                <img alt="{{ $testimonial->client_name }}" class="rounded-circle" src="{{ $testimonial->clientPhotoUrl() }}" width="60" />
+                                <h4 class="mb-0 mt-3">{{ $testimonial->client_name }}</h4>
+                                <span>{{ $testimonial->client_title }}</span>
                             </div>
                         </div>
-
+                        @endforeach
+                    </div>
 
                 </div>
             </div>
