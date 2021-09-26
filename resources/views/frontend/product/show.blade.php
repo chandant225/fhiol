@@ -1,11 +1,8 @@
 <x-app-layout>
     <x-slot name="siteTitle">{{ $siteTitle }}</x-slot>
     <section class="ribbon">
-        <img
-            src="{{ get_uploads_url($product->banner_image) }}"
-            alt="{{ $product->name }}"
-            class="ribbonImage"
-        />
+        <div class="ribbonImage" style="background-image: url('{{ get_uploads_url($product->banner_image) }}')">
+        </div>
     </section>
 
     <section
