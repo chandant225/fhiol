@@ -3,6 +3,9 @@
 .grey-bg {
     background: #fff !important;
 }
+.text-theme-color {
+    color: #dd6310;
+}
 
 h1,
 h2,
@@ -1817,10 +1820,6 @@ html {
     }
 }
 
-.product-details {
-    /*===pic-Zoom===*/
-}
-
 .product-details img {
     display: block;
     -o-object-fit: cover;
@@ -2098,7 +2097,6 @@ html {
     .product-details .card {
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: (1fr) [2];
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1.5rem;
     }
@@ -2706,23 +2704,39 @@ body.search-open {
 
 /* active state */
 .distribution-form input:focus ~ label,
-.distribution-form input:valid ~ label {
+.distribution-form input:not(:placeholder-shown) ~ label {
     top: -20px;
     font-size: 14px;
     color: #dd6310;
 }
 .distribution-form input:focus ~ label sup,
-.distribution-form input:valid ~ label sup,
+.distribution-form input[value=""] ~ label sup,
 sup.required {
     font-size: 14px;
     color: red;
 }
 
 /* BOTTOM BARS ================================= */
+.distribution-form .row {
+    gap: 3rem;
+}
+
+.distribution-form input {
+    width: 100%;
+}
+
+.distribution-form textarea {
+    border-color: #757575;
+}
+.distribution-form textarea:focus {
+    border-color: #dd6310;
+    box-shadow: 0 0 0 0.25rem rgba(241, 134, 62, 0.25);
+}
+
 .distribution-form .bar {
     position: relative;
     display: block;
-    width: 300px;
+    width: 100%;
 }
 
 .distribution-form .bar:after {
@@ -2922,4 +2936,62 @@ carousel-inner > .item > img,
 
 .testimonial-slider.owl-theme .owl-nav [class*="owl-"]:hover {
     background: unset !important;
+}
+/*  */
+
+/*
+**************
+*  Post Card
+***************
+*/
+.post-card {
+    background-color: #fff;
+    transition: all 0.5s ease;
+}
+
+/* .post-card:hover {
+    transform: translateY(-10px);
+} */
+
+.post-card:hover img {
+    transform: scale(1.1);
+}
+
+.post-card .image-wrapper {
+    text-align: center;
+    position: relative;
+    height: 0;
+    padding-bottom: calc(100% / (16 / 9));
+    overflow: hidden;
+}
+
+.post-card .image-wrapper > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.8s ease;
+}
+
+.post__title {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.post__title a {
+    color: #dd6310;
+    text-decoration: none;
+}
+.post__title a:hover {
+    text-decoration: underline;
+}
+
+/* Unstyled link */
+a.link-unstyled {
+    text-decoration: none;
+}
+a.link-unstyled:hover {
+    text-decoration: underline;
 }

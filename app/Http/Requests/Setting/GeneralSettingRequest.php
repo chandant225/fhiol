@@ -30,6 +30,7 @@ class GeneralSettingRequest extends FormRequest
             'favicon' => 'nullable',
 
             'show_top_bar' => 'nullable',
+            'office_time' => 'nullable',
             'email' => 'nullable',
             'mobile' => 'nullable',
             'address' => 'nullable',

@@ -36,7 +36,7 @@ Route::view('country', 'frontend.excellence.country')->name('country');
 
 //contact details
 Route::view('distribution', 'frontend.distribution')->name('distribution');
-
+Route::post('distribution', 'DistributionController@store')->name('distribution.apply');
 
 
 
@@ -47,8 +47,8 @@ Route::get('categories/{category}', 'CategoryController@show')->name('categories
 Route::get('products', 'ProductController@index')->name('products.index');
 Route::get('products/{product}', 'ProductController@show')->name('products.show');
 
-Route::get('blogs', 'PostController@index')->name('posts.index');
-Route::get('blogs/{post}', 'PostController@show')->name('posts.show');
+Route::get('publications/{category?}', 'PostController@index')->name('posts.index');
+Route::get('publication/{post}', 'PostController@show')->name('posts.show');
 
 Route::get('catalogues', 'CatalogueController@index')->name('catalogues.index');
 

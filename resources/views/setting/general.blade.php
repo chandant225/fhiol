@@ -62,6 +62,11 @@
                 </div>
 
                 <div class="form-group">
+                    <x-form.label>Opening Hour</x-form.label>
+                    <x-fields.input name="office_time" :value="old('office_time', appSettings('office_time'))" />
+                </div>
+
+                <div class="form-group">
                     <x-form.label>Mobile</x-form.label>
                     <x-fields.input name="mobile" :value="old('mobile', appSettings('mobile'))" />
                 </div>

@@ -56,6 +56,11 @@ Route::name('backend.')->group(function () {
     Route::delete('inquiries/{productInquiry}', 'ProductInquiryController@destroy')->name('product-inquiry.destroy');
     Route::patch('inquiries/mark-read', 'ProductInquiryController@markRead')->name('product-inquiry.mark-read');
 
+    // Distribution Inquiries
+    Route::get('distribution-inquiries', 'DistributionInquiryController@index')->name('distribution-inquiry.index');
+    Route::delete('distribution-inquiries/{distribution}', 'DistributionInquiryController@destroy')->name('distribution-inquiry.destroy');
+    Route::patch('distribution-inquiries/mark-read', 'DistributionInquiryController@markRead')->name('distribution-inquiry.mark-read');
+
     // Catalogue
     Route::get('catalogues', 'CatalogueController@index')->name('catalogues.index');
     Route::get('catalogues/create', 'CatalogueController@create')->name('catalogues.create');
