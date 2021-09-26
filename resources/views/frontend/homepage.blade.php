@@ -80,78 +80,28 @@
             <div class="title-right">
                 <h4>OUR EXCELLENCE</h4>
             </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div data-aos="fade-up" data-aos-duration="1000">
-                        <div class="service-box">
+            <div class="row align-items-stretch">
+                @php
+                $programKeys = ['hp_our_excellence_one_', 'hp_our_excellence_two_', 'hp_our_excellence_three_', 'hp_our_excellence_four_']
+                @endphp
+                @foreach ($programKeys as $key)
+                <div class="col-md-3 mb-3">
+                    <div class="h-100" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="service-box h-100">
                             <a href="{{ route('latestmachine') }}">
                                 <div class="service-box-inner">
-                                    <span class="material-icons orange600">precision_manufacturing</span>
-                                    <h5>LATEST MACHINES</h5>
+                                    <i>{!! appSettings($key . 'icon') !!}</i>
+                                    <h5>{{ appSettings($key . 'title') }}</h5>
                                     <br />
                                     <p>
-                                        Equipped with the latest innovation in
-                                        computer controlled lens production
-                                        equipment with...
+                                        {{ appSettings($key . 'desc') }}
                                     </p>
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div data-aos="fade-up" data-aos-duration="1100">
-                        <div class="service-box">
-                            <a href="{{ route('iol') }}">
-                                <div class="service-box-inner">
-                                    <span class="material-icons orange600">biotech</span>
-                                    <h5>BEST IOL DESIGNS</h5>
-                                    <br />
-                                    <p>
-                                        Having alliance with leading IOL design
-                                        experts and medical research teams, the
-                                        laboratory is in...
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div data-aos="fade-up" data-aos-duration="1200">
-                        <div class="service-box">
-                            <a href="{{ route('qualitycertificate') }}">
-                                <div class="service-box-inner">
-                                    <span class="material-icons orange600">approval</span>
-                                    <h5>QUALITY CERTIFICATION</h5>
-                                    <br />
-                                    <p>
-                                        Adherence to the Highest Quality
-                                        Standards is a consistent feature...
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-box">
-                        <a href="{{ route('country') }}">
-                            <div data-aos="fade-up" data-aos-duration="1300">
-                                <div class="service-box-inner">
-                                    <span class="material-icons orange600">flight_takeoff</span>
-                                    <h5>Over 30 countries</h5>
-                                    <br />
-                                    <p>
-                                        FH IOL Lab has exported its products
-                                        world-wide to over 30 countries in Asia,
-                                        Australia, South...
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
