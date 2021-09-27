@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend\Setting;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Setting\HomePageSettingRequest;
+use App\Http\Requests\Setting\HomepageSettingRequest;
 use App\Alert\Facades\Alert;
 use App\Page;
 
@@ -19,7 +19,7 @@ class HomepageSettingController extends Controller
         ]);
     }
 
-    public function store(HomePageSettingRequest $request)
+    public function store(HomepageSettingRequest $request)
     {
         $validatedSettings = $request->validated();
 
