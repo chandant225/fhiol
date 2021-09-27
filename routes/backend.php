@@ -78,6 +78,10 @@ Route::name('backend.')->group(function () {
     // Testimonials
     Route::get('testimonials', 'TestimonialController@index')->name('testimonials.index');
 
+    // Popup
+    Route::get('popups', 'PopupController@index')->name('popups.index');
+    Route::post('popups', 'PopupController@store')->name('popups.store');
+
     Route::group(['namespace' => 'Setting'], function () {
         Route::get('settings/general', 'GeneralSettingController@index')->name('settings.general.index');
         Route::post('settings/general', 'GeneralSettingController@store')->name('settings.general.store');

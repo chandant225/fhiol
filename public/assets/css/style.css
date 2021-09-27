@@ -2661,14 +2661,6 @@ body.search-open {
     }
 }
 
-.modal-content .btn-close {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    cursor: pointer;
-    z-index: 101;
-}
-
 .distribution-form {
     margin-top: 2rem;
 }

@@ -33,7 +33,7 @@
                         <p>{{ __('Dashboard') }}</p>
                     </a>
                 </li>
-            
+
                 {{-- Products --}}
                 <li class="nav-item @if(request()->routeIs('backend.products.*') OR request()->routeIs('backend.categories.*')) menu-open @endif">
                     <a href=" #" class="nav-link @if(request()->routeIs('backend.products*') OR request()->routeIs('backend.categories.*')) active @endif">
@@ -57,7 +57,7 @@
                                     </svg>
                                 </span>
                                 <p>
-                                   All Products
+                                    All Products
                                 </p>
                             </a>
                         </li>
@@ -65,12 +65,12 @@
                             <a href="{{ route('backend.products.create') }}" class="nav-link">
                                 <span class="nav-icon svg-icon svg-baseline">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                      </svg>
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                    </svg>
                                 </span>
                                 <p>
-                                   Add New
+                                    Add New
                                 </p>
                             </a>
                         </li>
@@ -214,95 +214,9 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('backend.logs') }}" class="nav-link" target="_blank">
-                        {{-- <i class="nav-icon fas fa-exclamation-circle"></i> --}}
-                        <span class="nav-icon svg-icon svg-baseline">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bug" viewBox="0 0 16 16">
-                                <path d="M4.355.522a.5.5 0 0 1 .623.333l.291.956A4.979 4.979 0 0 1 8 1c1.007 0 1.946.298 2.731.811l.29-.956a.5.5 0 1 1 .957.29l-.41 1.352A4.985 4.985 0 0 1 13 6h.5a.5.5 0 0 0 .5-.5V5a.5.5 0 0 1 1 0v.5A1.5 1.5 0 0 1 13.5 7H13v1h1.5a.5.5 0 0 1 0 1H13v1h.5a1.5 1.5 0 0 1 1.5 1.5v.5a.5.5 0 1 1-1 0v-.5a.5.5 0 0 0-.5-.5H13a5 5 0 0 1-10 0h-.5a.5.5 0 0 0-.5.5v.5a.5.5 0 1 1-1 0v-.5A1.5 1.5 0 0 1 2.5 10H3V9H1.5a.5.5 0 0 1 0-1H3V7h-.5A1.5 1.5 0 0 1 1 5.5V5a.5.5 0 0 1 1 0v.5a.5.5 0 0 0 .5.5H3c0-1.364.547-2.601 1.432-3.503l-.41-1.352a.5.5 0 0 1 .333-.623zM4 7v4a4 4 0 0 0 3.5 3.97V7H4zm4.5 0v7.97A4 4 0 0 0 12 11V7H8.5zM12 6a3.989 3.989 0 0 0-1.334-2.982A3.983 3.983 0 0 0 8 2a3.983 3.983 0 0 0-2.667 1.018A3.989 3.989 0 0 0 4 6h8z" />
-                            </svg>
-                        </span>
-                        <p>
-                            System Logs
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item @if(request()->routeIs('backend.settings.*')) menu-open @endif">
-                    <a href="#" class="nav-link {{ setActive('backend.settings.*') }}">
-                        {{-- <i class="nav-icon fas fa-cog"></i> --}}
-                        <span class="nav-icon svg-icon svg-baseline">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
-                                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
-                                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
-                            </svg>
-                        </span>
-                        <p>
-                            Settings
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('backend.settings.general.index') }}" class="nav-link {{ setActive('backend.settings.general.index') }}">
-                                <i class="far fa-circle nav-icon text-info"></i>
-                                <p>General</p>
-                            </a>
-                        </li>
-                        {{-- <li class="nav-item">
-                            <a href="{{ route('backend.settings.page.index') }}" class="nav-link {{ setActive('backend.settings.page.index') }}">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>API & Keys</p>
-                        </a>
-                </li> --}}
-                <li class="nav-item">
-                    <a href="{{ route('backend.settings.page.index') }}" class="nav-link {{ setActive('backend.settings.page.index') }}">
-                        <i class="far fa-circle nav-icon text-success"></i>
-                        <p>Page Settings</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('backend.settings.homepage.index') }}" class="nav-link {{ setActive('backend.settings.homepage.index') }}">
-                        <i class="far fa-circle nav-icon text-warning"></i>
-                        <p>Homepage Settings</p>
-                    </a>
-                </li>
-            </ul>
-            </li>
-            {{-- <li class="nav-header">CMS</li> --}}
-            <li class="nav-item @if(request()->routeIs('backend.pages.*')) menu-open @endif">
-                <a href="#" class="nav-link {{ setActive('backend.pages.*') }}">
-                    {{-- <i class="nav-icon fa fa-file"></i> --}}
-                    <span class="nav-icon svg-icon svg-baseline">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-journal-check" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                            <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
-                            <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
-                        </svg>
-                    </span>
-                    <p>
-                        Pages
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('backend.pages.index') }}" class="nav-link {{ setActive('backend.pages.index') }}">
-                            <i class="far fa-circle nav-icon text-info"></i>
-                            <p>List All</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('backend.pages.create-or-edit') }}" class="nav-link {{ setActive('backend.pages.create-or-edit') }}">
-                            <i class="far fa-circle nav-icon text-success"></i>
-                            <p>Add Page</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="{{ route('backend.videos.index') }}" class="nav-link {{ setActive('backend.videos.*') }}">
-                    {{-- <i class="nav-icon fas fa-exclamation-circle"></i> --}}
                     <span class="nav-icon svg-icon svg-baseline">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-camera-video" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z" />
@@ -312,11 +226,25 @@
                         Videos
                     </p>
                 </a>
+            </li> --}}
+
+            <li class="nav-item">
+                <a href="{{ route('backend.popups.index') }}" class="nav-link {{ setActive('backend.popups.*') }}">
+                    <span class="nav-icon svg-icon svg-baseline">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-aspect-ratio" viewBox="0 0 16 16">
+                            <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
+                            <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"/>
+                          </svg>
+                    </span>
+                    <p>
+                        Popup Banner
+                    </p>
+                </a>
             </li>
 
+            {{-- Image Sliders --}}
             <li class="nav-item @if(request()->routeIs('backend.image-sliders.*')) menu-open @endif">
                 <a href="#" class="nav-link {{ setActive('backend.image-sliders.*') }}">
-                    {{-- <i class="nav-icon fa fa-file-image"></i> --}}
                     <span class="nav-icon svg-icon svg-baseline">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
                             <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
@@ -354,6 +282,94 @@
                     </span>
                     <p>
                         Testimonials
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-header text-muted">Admin Tools</li>
+            <li class="nav-item @if(request()->routeIs('backend.settings.*')) menu-open @endif">
+                <a href="#" class="nav-link {{ setActive('backend.settings.*') }}">
+                    {{-- <i class="nav-icon fas fa-cog"></i> --}}
+                    <span class="nav-icon svg-icon svg-baseline">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                            <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+                            <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+                        </svg>
+                    </span>
+                    <p>
+                        Settings
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('backend.settings.general.index') }}" class="nav-link {{ setActive('backend.settings.general.index') }}">
+                            <i class="far fa-circle nav-icon text-info"></i>
+                            <p>General</p>
+                        </a>
+                    </li>
+                    {{-- <li class="nav-item">
+                        <a href="{{ route('backend.settings.page.index') }}" class="nav-link {{ setActive('backend.settings.page.index') }}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>API & Keys</p>
+                    </a>
+            </li> --}}
+            <li class="nav-item">
+                <a href="{{ route('backend.settings.page.index') }}" class="nav-link {{ setActive('backend.settings.page.index') }}">
+                    <i class="far fa-circle nav-icon text-success"></i>
+                    <p>Page Settings</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('backend.settings.homepage.index') }}" class="nav-link {{ setActive('backend.settings.homepage.index') }}">
+                    <i class="far fa-circle nav-icon text-warning"></i>
+                    <p>Homepage Settings</p>
+                </a>
+            </li>
+        </ul>
+        </li>
+
+        <li class="nav-item @if(request()->routeIs('backend.pages.*')) menu-open @endif">
+            <a href="#" class="nav-link {{ setActive('backend.pages.*') }}">
+                {{-- <i class="nav-icon fa fa-file"></i> --}}
+                <span class="nav-icon svg-icon svg-baseline">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-journal-check" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                    </svg>
+                </span>
+                <p>
+                    Pages
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('backend.pages.index') }}" class="nav-link {{ setActive('backend.pages.index') }}">
+                        <i class="far fa-circle nav-icon text-info"></i>
+                        <p>List All</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('backend.pages.create-or-edit') }}" class="nav-link {{ setActive('backend.pages.create-or-edit') }}">
+                        <i class="far fa-circle nav-icon text-success"></i>
+                        <p>Add Page</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+            <li class="nav-item">
+                <a href="{{ route('backend.logs') }}" class="nav-link" target="_blank">
+                    {{-- <i class="nav-icon fas fa-exclamation-circle"></i> --}}
+                    <span class="nav-icon svg-icon svg-baseline">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bug" viewBox="0 0 16 16">
+                            <path d="M4.355.522a.5.5 0 0 1 .623.333l.291.956A4.979 4.979 0 0 1 8 1c1.007 0 1.946.298 2.731.811l.29-.956a.5.5 0 1 1 .957.29l-.41 1.352A4.985 4.985 0 0 1 13 6h.5a.5.5 0 0 0 .5-.5V5a.5.5 0 0 1 1 0v.5A1.5 1.5 0 0 1 13.5 7H13v1h1.5a.5.5 0 0 1 0 1H13v1h.5a1.5 1.5 0 0 1 1.5 1.5v.5a.5.5 0 1 1-1 0v-.5a.5.5 0 0 0-.5-.5H13a5 5 0 0 1-10 0h-.5a.5.5 0 0 0-.5.5v.5a.5.5 0 1 1-1 0v-.5A1.5 1.5 0 0 1 2.5 10H3V9H1.5a.5.5 0 0 1 0-1H3V7h-.5A1.5 1.5 0 0 1 1 5.5V5a.5.5 0 0 1 1 0v.5a.5.5 0 0 0 .5.5H3c0-1.364.547-2.601 1.432-3.503l-.41-1.352a.5.5 0 0 1 .333-.623zM4 7v4a4 4 0 0 0 3.5 3.97V7H4zm4.5 0v7.97A4 4 0 0 0 12 11V7H8.5zM12 6a3.989 3.989 0 0 0-1.334-2.982A3.983 3.983 0 0 0 8 2a3.983 3.983 0 0 0-2.667 1.018A3.989 3.989 0 0 0 4 6h8z" />
+                        </svg>
+                    </span>
+                    <p>
+                        System Logs
                     </p>
                 </a>
             </li>
