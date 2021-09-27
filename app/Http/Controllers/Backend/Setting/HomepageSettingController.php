@@ -21,7 +21,6 @@ class HomepageSettingController extends Controller
 
     public function store(HomePageSettingRequest $request)
     {
-        return $request;
         $validatedSettings = $request->validated();
 
         appSettings()->set($validatedSettings);

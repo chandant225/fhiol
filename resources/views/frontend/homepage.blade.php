@@ -88,7 +88,7 @@
                 <div class="col-md-3 mb-3">
                     <div class="h-100" data-aos="fade-up" data-aos-duration="1000">
                         <div class="service-box h-100">
-                            <a href="{{ route('latestmachine') }}">
+                            <a href="{{ appSettings($key . 'link', '#') }}">
                                 <div class="service-box-inner">
                                     <i>{!! appSettings($key . 'icon') !!}</i>
                                     <h5>{{ appSettings($key . 'title') }}</h5>

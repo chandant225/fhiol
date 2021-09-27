@@ -227,6 +227,12 @@
                         <p>Page Settings</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('backend.settings.homepage.index') }}" class="nav-link {{ setActive('backend.settings.homepage.index') }}">
+                        <i class="far fa-circle nav-icon text-warning"></i>
+                        <p>Homepage Settings</p>
+                    </a>
+                </li>
             </ul>
             </li>
             {{-- <li class="nav-header">CMS</li> --}}
