@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Frontend;
 
 use App\Product;
 use App\ProductInquiry;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class ProductInquiryForm extends Component
@@ -29,13 +30,15 @@ class ProductInquiryForm extends Component
     {
         $this->validate();
 
-        ProductInquiry::create([
+        $productInquiry = ProductInquiry::create([
             'customer_name' => $this->customerName,
             'customer_phone' => $this->customerPhone,
-            // 'customer_email' => $this->customerEmail,
+            'email' => $this->customerEmail,
             'message' => $this->message,
             'product_id' => $this->product->id
         ]);
+
+        Mail::to(notification_email_receiver())->send(new \App\Mail\InquiryMail($productInquiry));
 
         $this->alert('success', 'Your inquiry has been registered', [
             'text' => 'We will reach back to you as very soon.'

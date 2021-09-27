@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Distribution;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class DistributionController extends Controller
 {
@@ -31,7 +32,7 @@ class DistributionController extends Controller
             'message' => $request->message,
         ]);
 
-        // TODO:send an email
+        Mail::to(notification_email_receiver())->send(new \App\Mail\DistributionMail($distribution));
 
         // redirect to the home page
         return redirect('/thankyou')->with('success', 'Your request has been sent!');

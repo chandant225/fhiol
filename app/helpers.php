@@ -117,3 +117,10 @@ if (!function_exists('get_uploads_url')) {
         return Storage::url($path);
     }
 }
+
+if (!function_exists('notification_email_receiver')) {
+    function notification_email_receiver()
+    {
+        return 'jmsbhatta@gmail.com';
+    }
+}

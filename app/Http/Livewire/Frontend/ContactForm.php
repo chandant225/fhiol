@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Frontend;
 
 use App\ContactUs;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class ContactForm extends Component
@@ -31,13 +32,15 @@ class ContactForm extends Component
     {
         $this->validate();
 
-        ContactUs::create([
+        $contactUs = ContactUs::create([
             'name' => $this->name,
             'email' => $this->email,
             'mobile' => $this->mobile,
             'subject' => $this->subject,
             'message' => $this->message
         ]);
+
+        Mail::to(notification_email_receiver())->send(new \App\Mail\ContactMail($contactUs));
 
         $this->sent = true;
 

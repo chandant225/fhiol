@@ -12,7 +12,7 @@
         </div>
         <div class="col-md-12 mb-3">
             <label class="form-label">E-mail Address</label>
-            <input type="text" wire:model.defer="customerEmail" class="form-control @error('customerEmail') is-invalid @enderror" placeholder="Your E-mail Address" onkeyup="localStorage.setItem('customer-phone', this.value)">
+            <input type="email" wire:model.defer="customerEmail" class="form-control @error('customerEmail') is-invalid @enderror" placeholder="Your E-mail Address" onkeyup="localStorage.setItem('customer-phone', this.value)">
             <x-invalid-feedback field="customerEmail"></x-invalid-feedback>
         </div>
         <div class="col-md-12 mb-3">

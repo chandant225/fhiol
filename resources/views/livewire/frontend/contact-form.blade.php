@@ -8,7 +8,7 @@
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="" class="required">Full Name</label>
-                    <input type="text" wire:model="name" class="form-control bg-light rounded-0 @error('name') is-invalid  @enderror">
+                    <input type="text" wire:model.defer="name" class="form-control bg-light rounded-0 @error('name') is-invalid  @enderror">
                     <x-invalid-feedback field="name"></x-invalid-feedback>
                 </div>
             </div>
@@ -49,7 +49,7 @@
         </script>
         @endif
         <div class="mb-3">
-            <button type="submit" class="btn btn-lg btn-theme-primary w-100 rounded-0">
+            <button type="submit" class="btn btn-lg btn-theme-primary w-100 rounded-0" wire:target="send">
                 <span wire:loading.remove>Send Now</span>
                 <span wire:loading>Sending...</span>
             </button>
