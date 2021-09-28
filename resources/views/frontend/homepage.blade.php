@@ -3,7 +3,7 @@
     <div class="hero-bg">
         <x-frontend.partials.primary-image-slider></x-frontend.partials.primary-image-slider>
 
-        <div data-aos="fade-up" data-aos-duration="1000">
+        {{-- <div data-aos="fade-up" data-aos-duration="1000">
             <div class="banner-slogon">
                 <div class="container pt-4">
                     <div class="row">
@@ -23,9 +23,27 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     <!-- Hero-end -->
+
+    <div data-aos="fade-up" data-aos-duration="1000">
+        <div class="container py-4">
+            <blockquote class="slogan">
+                <p class="text-center">
+                    The Fred Hollows Intraocular lens Laboratory (FH
+                    IOL Lab), has been striving for excellence in
+                    intraocular lenses (IOLs) manufacturing and has
+                    been producing innovative and superior
+                    intraocular lens designs and supporting products
+                    since its inception in 1995. Initiated by The
+                    Fred Hollows Foundation in Australia, its
+                    products are sold to almost 30 countries around
+                    the world.
+                </p>
+            </blockquote>
+        </div>
+    </div>
 
     {{-- About section --}}
     <section class="about-hollows">
