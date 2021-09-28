@@ -2,19 +2,20 @@
     @if(count($slides))
     <div class="row col-12 p-0 m-0">
         <div id="carouselExampleCaptions" class="carousel slide p-0" data-bs-ride="carousel">
+            @if(count($slides) > 1)
             <div class="carousel-indicators">
                 @foreach ($slides as $slide)
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ $loop->index }}" class="@if($loop->iteration == 1) active @endif" aria-current="true"></button>
                 @endforeach
             </div>
+            @endif
             <div class="carousel-inner">
                 @foreach ($slides as $slide)
                 <div class="carousel-item @if($loop->iteration == 1) active @endif" style="background-image: url({{ $slide->image_url }})">
-                    {{-- <img src="{{ $slide->image_url }}" class="d-block w-100 " alt="{{ $slide->title }}"/> --}}
                     <div class="overlay">
-                         <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-none d-md-block">
                             <h5>{{ $slide->title }}</h5>
-                             @if($slide->description)
+                            @if($slide->description)
                             <p class="description">{{ $slide->description }}</p>
                             @endif
                             @if ($slide->action_link)
@@ -25,6 +26,7 @@
                 </div>
                 @endforeach
             </div>
+            @if(count($slides) > 1)
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -33,8 +35,8 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+            @endif
         </div>
     </div>
     @endif
 </div>
-
