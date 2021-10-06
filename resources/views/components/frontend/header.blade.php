@@ -28,13 +28,12 @@
         </div>
     </div>
 
-
     <div class="main-menu">
         <div class="container-fluid p-0 m-0">
             <nav class="navbar navbar-expand-lg navbar-light font-poppins" style="letter-spacing: 0.025rem;">
                 <div class="container align-items-center">
                     <a class="navbar-brand mx-0" href="{{ url('/') }}">
-                        <img class="mx-0" src="{{ siteLogoUrl() }}" alt="{{ siteName() }}" style="max-height: 60px;">
+                        <img class="mx-0" src="{{ siteLogoUrl() }}" alt="{{ siteName() }}" style="max-height: 70px;">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -45,24 +44,16 @@
                                 <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link " href="{{route('about.about-FH')}}" id="navbarDropdown" data-hover="dropdown">
+                                <a class="nav-link " href="#" id="navbarDropdown" data-hover="dropdown">
                                     About Us
-
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item mb-2" href="{{route('about.about-FH')}}">Fred Hellows</a></li>
-
-                                    <li><a class="dropdown-item mb-2" href="{{route('about.intro')}}">ED Message/
-                                            Introduction</a></li>
+                                    <li><a class="dropdown-item mb-2" href="{{route('about-fred')}}">Fred Hellows</a></li>
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.intro')}}">ED Message/Introduction</a></li>
                                     <li><a class="dropdown-item mb-2" href="{{route('about.team')}}">Our Team</a></li>
-
-                                    <li><a class="dropdown-item mb-2" href="{{route('about.visionmisson')}}">Mission & Vision</a>
-                                    </li>
-
-                                    <li><a class="dropdown-item mb-2" href="{{route('about.qa')}}">Quality
-                                            Assurance</a></li>
-                                    <li><a class="dropdown-item mb-2" href="{{route('about.certificate')}}">Certification</a>
-                                    </li>
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.visionmisson')}}">Mission & Vision</a></li>
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.qa')}}">Quality Assurance</a></li>
+                                    <li><a class="dropdown-item mb-2" href="{{route('about.certificate')}}">Certification</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -94,11 +85,9 @@
                                     <li><a class="dropdown-item" href="{{ route('publication.download') }}">Downloads</a></li>
                                 </ul>
                             </li>
-
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{ route('contact-us.index') }}">Contact Us</a>
                             </li>
-
                         </ul>
                         <form class="d-flex ms-4">
                             <div class="rounded-pill search-btn ">
@@ -106,7 +95,6 @@
                                     <div class="input-group-prepend">
                                         <button id="button-addon2" type="submit" class="btn btn-link "><i class="fa fa-search"></i></button>
                                     </div>
-                                    {{-- <input type="search" placeholder="search" aria-describedby="button-addon2" class="form-control border-0 "> --}}
                                 </div>
                             </div>
                         </form>
@@ -117,11 +105,11 @@
     </div>
 </div>
 <div class="search-box search-elem">
-  <button class="close">x</button>
-  <div class="inner row">
-    <div class="small-12 columns">
-      <input type="text" id="search-field" placeholder="Search">
-      <button class="submit" type="submit">Search</button>
+    <button class="close">x</button>
+    <div class="inner row">
+        <div class="small-12 columns">
+            <input type="text" id="search-field" placeholder="Search">
+            <button class="submit" type="submit">Search</button>
+        </div>
     </div>
-  </div>
- </div>
+</div>

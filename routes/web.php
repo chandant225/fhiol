@@ -9,7 +9,7 @@ Auth::routes(['register' => false]);
 Route::get('backend/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('backend.logs');
 
 //about dropdown
-Route::view('about/about-FH', 'frontend.pages.about.about-FH')->name('about.about-FH');
+Route::view('about-fred', 'frontend.pages.about.about-fred')->name('about-fred');
 Route::view('about/intro', 'frontend.pages.about.intro')->name('about.intro');
 Route::view('about/team', 'frontend.pages.about.team')->name('about.team');
 Route::view('about/visionmisson', 'frontend.pages.about.visionmisson')->name('about.visionmisson');
