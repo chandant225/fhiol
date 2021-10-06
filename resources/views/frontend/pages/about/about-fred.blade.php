@@ -5,9 +5,9 @@
             <div class="container">
                 <ol>
                     <li><a href="index.html">Home</a></li>
-                    <li>About Us</li>
+                    <li>About Fred</li>
                 </ol>
-                <h2>Fred Hollows</h2>
+                <h2>About Fred</h2>
             </div>
         </section><!-- End Breadcrumbs -->
 

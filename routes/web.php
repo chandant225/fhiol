@@ -12,9 +12,7 @@ Route::get('backend/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@in
 Route::view('about-fred', 'frontend.pages.about.about-fred')->name('about-fred');
 Route::view('about/ed-message', 'frontend.pages.about.ed-message')->name('about.ed-message');
 Route::view('about/team', 'frontend.pages.about.team')->name('about.team');
-Route::view('about/visionmisson', 'frontend.pages.about.visionmisson')->name('about.visionmisson');
-Route::view('about/qa', 'frontend.pages.about.qa')->name('about.qa');
-Route::view('about/certificate', 'frontend.pages.about.certificate')->name('about.certificate');
+Route::view('about/quality-certification', 'frontend.pages.about.quality-certification')->name('about.quality-certification');
 
 
 //publication dropdown
@@ -26,7 +24,7 @@ Route::view('publication/publicationdetails', 'frontend.pages.publication.public
 
 //our excellence
 Route::view('latestmachine', 'frontend.excellence.latestmachine')->name('latestmachine');
-Route::view('qualitycertificate', 'frontend.excellence.qualitycertificate')->name('qualitycertificate');
+Route::view('qualitycertificate', 'frontend.excellence.qualitycertificate')->name('quality-certification');
 Route::view('iol', 'frontend.excellence.iol')->name('iol');
 Route::view('country', 'frontend.excellence.country')->name('country');
 
