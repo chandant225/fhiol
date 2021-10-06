@@ -10,7 +10,7 @@ Route::get('backend/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@in
 
 //about dropdown
 Route::view('about-fred', 'frontend.pages.about.about-fred')->name('about-fred');
-Route::view('about/intro', 'frontend.pages.about.intro')->name('about.intro');
+Route::view('about/ed-message', 'frontend.pages.about.ed-message')->name('about.ed-message');
 Route::view('about/team', 'frontend.pages.about.team')->name('about.team');
 Route::view('about/visionmisson', 'frontend.pages.about.visionmisson')->name('about.visionmisson');
 Route::view('about/qa', 'frontend.pages.about.qa')->name('about.qa');
