@@ -13,12 +13,16 @@ class ProductController extends Controller
     public function index()
     {
         $filters = collect();
+        global $filteredCategory;
+        $filteredCategory = null;
         $title = 'Products';
         $products = Product::with(['featuredImage', 'category'])->active();
 
-        $products->when(request()->filled('category_id'), function ($query) use ($filters) {
+        $products->when(request()->filled('category_id'), function ($query) use ($filters, $filteredCategory) {
             $category = Category::select('name')->where('id', request()->query('category_id'))->first();
             if ($category) {
+                global $filteredCategory;
+                $filteredCategory = $category->name;
                 $filters->push('Category: ' . $category->name);
             }
             return $query->whereHas('category', function ($query) {
@@ -31,7 +35,8 @@ class ProductController extends Controller
         return view('frontend.product.index', [
             'title' => $title,
             'products' => $products,
-            'filters' => $filters
+            'filters' => $filters,
+            'filteredCategory' => $filteredCategory
         ]);
     }
 
