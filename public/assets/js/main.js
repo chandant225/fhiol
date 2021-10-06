@@ -39,6 +39,9 @@ $(".testimonial-slider").owlCarousel({
     ],
     dots: false,
     lazyLoad: true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    autoplayHoverPause: true,
     responsive: {
         0: {
             items: 1,
@@ -51,7 +54,6 @@ $(".testimonial-slider").owlCarousel({
         1000: {
             items: 3,
             nav: true,
-            loop: false,
         },
     },
 });
