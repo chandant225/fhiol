@@ -39,7 +39,7 @@
     padding-bottom: 50px;
 }
 .category__card img {
-    box-shadow: 0 0.5rem 2rem rgba(0,0,0,.15);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
 }
 .category__title {
     font-size: calc(25px + 30 * (100vw - 375px) / 1545);
@@ -66,6 +66,17 @@
     line-height: 1.7;
 }
 
+@media screen and (min-width: 600px) {
+    .category__card {
+        margin-bottom: 4rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .category__card {
+        margin-bottom: 6rem;
+    }
+}
 
 /*
 * ===============
