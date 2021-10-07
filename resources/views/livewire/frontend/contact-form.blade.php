@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="mb-3">
-            <label for="">Mobile</label>
+            <label for="" class="required">Mobile</label>
             <input type="text" wire:model.defer="mobile" class="form-control bg-light rounded-0 @error('mobile') is-invalid  @enderror">
             <x-invalid-feedback field="mobile"></x-invalid-feedback>
         </div>

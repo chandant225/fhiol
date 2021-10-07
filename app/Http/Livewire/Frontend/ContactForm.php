@@ -18,7 +18,7 @@ class ContactForm extends Component
     protected $rules = [
         'name' => 'required',
         'email' => 'required|email',
-        'mobile' => 'required',
+        'mobile' => ['required', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'min:10'],
         'subject' => 'required',
         'message' => 'required'
     ];
