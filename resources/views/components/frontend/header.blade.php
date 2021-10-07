@@ -48,7 +48,7 @@
                                     About Us
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item mb-2" href="{{route('about-fred')}}">Fred Hellows</a></li>
+                                    <li><a class="dropdown-item mb-2" href="{{route('about-fred')}}">About Fred</a></li>
                                     <li><a class="dropdown-item mb-2" href="{{route('about.ed-message')}}">ED Message</a></li>
                                     <li><a class="dropdown-item mb-2" href="{{route('about.team')}}">Our Team</a></li>
                                     <li><a class="dropdown-item mb-2" href="{{route('about.quality-certification')}}">Quality Certification</a></li>
