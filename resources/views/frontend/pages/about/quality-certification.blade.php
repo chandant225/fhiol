@@ -11,10 +11,8 @@
                 <h2>Quality Certification</h2>
             </div>
         </section><!-- End Breadcrumbs -->
+        
         <div class="container">
-            <div class="title-left">
-                <h4>Quality Certification</h4>
-            </div>
             <div class="row align-items-center">
                 <div class="col-md-12 quality-img">
                     <img src="/theme/img/quality-1.png" alt="">

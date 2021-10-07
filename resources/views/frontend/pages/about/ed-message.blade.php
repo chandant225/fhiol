@@ -18,9 +18,6 @@
 
     
     <div class="container">
-        <div class="title-left">
-            <h4>ED Message/ Introduction</h4>
-        </div>
         <div class="row ">
             <div class="col-md-6  ">
                 <img src="/theme/img/banner/banner01.jpg" alt="" width="100%" height="90%" alt="about img">
