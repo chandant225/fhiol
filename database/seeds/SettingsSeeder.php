@@ -41,5 +41,32 @@ class SettingsSeeder extends Seeder
             'contact_us_section_title' => 'GET IN TOUCH',
             'contact_us_section_description' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic officiis doloribus soluta? Animi incidunt laboriosam iusto, blanditiis aut ipsa voluptatem?',
         ]);
+
+        // Footer
+        appSettings()->set([
+            'footer_column_one' => '<h4 class="footer-title">Who We Are </h4>
+                <p class="fontresize">
+                    <strong>Fred Hollows</strong> offers a complete range of eye care services including
+                    <strong>LASIK and PRK</strong> refractive surgery, eye exams, vision testing for glasses
+                    and contacts Lenses.
+                </p>',
+
+            'footer_column_two' => '<h4 class="footer-title">Contact Details </h4>
+                <ul class="footer-call">
+                    <li><i class="material-icons me-2">add_location</i><span class="fontresize ">GPO Box 561, Kathmandu, Nepal</span></li>
+                    <li><i class="material-icons me-2">phone</i>+977-1-4493775<br></li>
+                    <li><i class="material-icons me-2">event_available</i> tilganga@tilganga.org</li>
+                </ul>',
+
+            'footer_column_three' => ' <h4 class="footer-title"> QuickLlinks </h4>
+                <div class="clearfix">
+                    <ul class="list-type1">
+                        <li><a href="/publication">Distribution</a></li>
+                        <li><a href="/products">Products</a></li>
+                        <li><a href="/publication">Published Articles</a></li>
+                        <li><a href="/new-and-events">News & Events</a></li>
+                    </ul>
+                </div>'
+        ]);
     }
 }

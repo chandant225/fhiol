@@ -38,6 +38,7 @@
     </style>
     @stack('styles')
     {{ $styles ?? '' }}
+    {!! appSettings('header_code') !!}
 
 </head>
 
@@ -56,61 +57,51 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="/assets/js/main.js"></script>
     <script>
-        (function ($) {
+        (function($) {
+            $.fn.searchBox = function(ev) {
+                var $searchEl = $('.search-elem');
+                var $placeHolder = $('.placeholder');
+                var $sField = $('#search-field');
 
-	$.fn.searchBox = function(ev) {
+                if (ev === "open") {
+                    $searchEl.addClass('search-open')
+                };
 
-		var $searchEl = $('.search-elem');
-		var $placeHolder = $('.placeholder');
-		var $sField = $('#search-field');
+                if (ev === 'close') {
+                    $searchEl.removeClass('search-open')
+                        , $sField.val('');
+                };
 
-		if ( ev === "open") {
-			$searchEl.addClass('search-open')
-		};
-
-		if ( ev === 'close') {
-			$searchEl.removeClass('search-open'),
-			$sField.val('');
-		};
-
-		// var moveText = function() {
-		// 	$placeHolder.addClass('move-up');
-		// }
-
-		// $sField.focus(moveText);
-		// $placeHolder.on('click', moveText);
-
-		$('.submit').prop('disabled', true);
-		$('#search-field').keyup(function() {
-	        if($(this).val() != '') {
-	           $('.submit').prop('disabled', false);
-	        } else {
-                $('.submit').prop('disabled',true);
+                $('.submit').prop('disabled', true);
+                $('#search-field').keyup(function() {
+                    if ($(this).val() != '') {
+                        $('.submit').prop('disabled', false);
+                    } else {
+                        $('.submit').prop('disabled', true);
+                    }
+                });
             }
-	    });
-	}
+        }(jQuery));
 
-}(jQuery));
+        $('.search-btn').on('click', function(e) {
+            $(this).searchBox('open');
+            e.preventDefault();
+        });
 
-$('.search-btn').on('click', function(e) {
-	$(this).searchBox('open');
-	e.preventDefault();
-});
+        $('.close').on('click', function() {
+            $(this).searchBox('close');
+        });
 
-$('.close').on('click', function() {
-	$(this).searchBox('close');
-});
-
-        </script>
-
-
+    </script>
 
     @livewireScripts
     <x-livewire-alert::scripts />
     @stack('scripts')
+    {!! appSettings('footer_code') !!}
+
 </body>
 
 </html>

@@ -91,6 +91,12 @@ Route::name('backend.')->group(function () {
 
         Route::get('settings/homepage', 'HomepageSettingController@index')->name('settings.homepage.index');
         Route::post('settings/homepage', 'HomepageSettingController@store')->name('settings.homepage.store');
+
+        Route::get('settings/footer', 'FooterSettingController@index')->name('settings.footer.index');
+        Route::post('settings/footer', 'FooterSettingController@store')->name('settings.footer.store');
+
+        Route::get('settings/code-injector', 'CodeInjectorSettingController@index')->name('settings.code-injector.index');
+        Route::post('settings/code-injector', 'CodeInjectorSettingController@store')->name('settings.code-injector.store');
     });
 
     Route::get('change-password', 'ChangePasswordController@index')->name('change-password');

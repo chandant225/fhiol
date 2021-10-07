@@ -304,7 +304,7 @@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="{{ route('backend.settings.general.index') }}" class="nav-link {{ setActive('backend.settings.general.index') }}">
-                            <i class="far fa-circle nav-icon text-info"></i>
+                            <i class="far fa-circle nav-icon text-danger"></i>
                             <p>General</p>
                         </a>
                     </li>
@@ -324,6 +324,18 @@
                 <a href="{{ route('backend.settings.homepage.index') }}" class="nav-link {{ setActive('backend.settings.homepage.index') }}">
                     <i class="far fa-circle nav-icon text-warning"></i>
                     <p>Homepage Settings</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('backend.settings.footer.index') }}" class="nav-link {{ setActive('backend.settings.footer.index') }}">
+                    <i class="far fa-circle nav-icon text-danger"></i>
+                    <p>Footer Settings</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('backend.settings.code-injector.index') }}" class="nav-link {{ setActive('backend.settings.code-injector.index') }}">
+                    <i class="far fa-circle nav-icon text-primary"></i>
+                    <p>Code Inejctor</p>
                 </a>
             </li>
         </ul>

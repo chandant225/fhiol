@@ -17,12 +17,14 @@
     <link rel="stylesheet" href="{{ asset('assets/css/common.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/backend.css') }}">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+    @include('layouts.backend.codemirror-styles')
     @livewireStyles
     @stack('styles')
     <style>
         body {
             font-family: 'Nunito Sans', sans-serif;
         }
+
     </style>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -66,6 +68,7 @@
     <script src="{{ asset('assets/summernote/summernote-bs4.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/dropzone/dist/dropzone.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    @include('layouts.backend.codemirror-scripts')
     @livewireScripts
     <x-livewire-alert::scripts />
     @stack('scripts')
