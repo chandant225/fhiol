@@ -60,43 +60,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="/assets/js/main.js"></script>
     <script>
-        (function($) {
-            $.fn.searchBox = function(ev) {
-                var $searchEl = $('.search-elem');
-                var $placeHolder = $('.placeholder');
-                var $sField = $('#search-field');
+        $(function() {
+            $("#header .fa-search").click(function(e) {
+                $(".form").toggleClass("active");
+                e.stopPropagation;
+            });
+            $(document).click(function(e){
+                if($(e.target).is('.form, .searchMenu, #header .fa-search, .input')) return false;
+                else $('.form').removeClass('active');
+            })
 
-                if (ev === "open") {
-                    $searchEl.addClass('search-open')
-                };
-
-                if (ev === 'close') {
-                    $searchEl.removeClass('search-open')
-                        , $sField.val('');
-                };
-
-                $('.submit').prop('disabled', true);
-                $('#search-field').keyup(function() {
-                    if ($(this).val() != '') {
-                        $('.submit').prop('disabled', false);
-                    } else {
-                        $('.submit').prop('disabled', true);
-                    }
-                });
-            }
-        }(jQuery));
-
-        $('.search-btn').on('click', function(e) {
-            $(this).searchBox('open');
-            e.preventDefault();
-        });
-
-        $('.close').on('click', function() {
-            $(this).searchBox('close');
-        });
-
+        })
     </script>
-
     @livewireScripts
     <x-livewire-alert::scripts />
     @stack('scripts')

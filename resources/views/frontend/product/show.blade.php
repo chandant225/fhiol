@@ -33,6 +33,11 @@
                                 <p class="product-subtitle">
                                     {{ $product->sub_title }}
                                 </p>
+                                @if($product->brand_logo)
+                                <div class="ms-auto">
+                                    <img src="{{ get_uploads_url($product->brand_logo) }}" alt="brand-logo" class="{{ $product->name }}" style="max-height: 60px;" />
+                                </div>
+                                @endif
 
                                 @hasrole('admin')
                                 <div>
@@ -48,20 +53,12 @@
 
                                 @endhasrole
                             </div>
-                            @if($product->brand_logo)
-                            <div class="ms-auto">
-                                <img src="{{ get_uploads_url($product->brand_logo) }}" alt="brand-logo" class="{{ $product->name }}" style="max-height: 60px;"/>
-                                @endif
-                            </div>
                         </div>
-                        
+
                         {{-- Inquiry Button --}}
                         <div class="floating-inquiry-button">
                             <button class="btn btn-theme-primary px-3" type="button" role="button" data-bs-toggle="modal" data-bs-target="#inquiryModal">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
-                                </svg>
-                                Product <br>Inquiry
+                                Product Inquiry
                             </button>
                         </div>
 
@@ -263,7 +260,6 @@
         window.addEventListener("show-inquiry-modal", function() {
             console.log("listened by script");
         });
-
     </script>
     <script>
         $(document).ready(function() {
@@ -280,15 +276,14 @@
                 document.documentElement.clientWidth;
             if (width > 1024) {
                 $("#zoom").imagezoomsl({
-                    loadopacity: 0.1
-                , });
+                    loadopacity: 0.1,
+                });
             } else {
                 null;
             }
         }
         window.onresize = resizeForm;
         resizeForm();
-
     </script>
     @endpush
 </x-app-layout>

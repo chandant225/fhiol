@@ -86,28 +86,19 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{ route('contact-us.index') }}">Contact Us</a>
                             </li>
-                        </ul>
-                        <form class="d-flex ms-4">
-                            <div class="rounded-pill search-btn ">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <button id="button-addon2" type="submit" class="btn btn-link "><i class="fa fa-search"></i></button>
-                                    </div>
+                            <li class="nav-item">
+                                <div class="nav-link searchMenu">
+                                    <i class="fa fa-search"></i>
+                                    <form class="form">
+                                        <input type="text" class="input" placeholder="Search...">
+                                    </form>
                                 </div>
-                            </div>
-                        </form>
+                            </li>
+                        </ul>
+
                     </div>
                 </div>
             </nav>
-        </div>
-    </div>
-</div>
-<div class="search-box search-elem">
-    <button class="close">x</button>
-    <div class="inner row">
-        <div class="small-12 columns">
-            <input type="text" id="search-field" placeholder="Search">
-            <button class="submit" type="submit">Search</button>
         </div>
     </div>
 </div>
