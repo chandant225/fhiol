@@ -48,10 +48,10 @@
                                     About Us
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item mb-2" href="{{route('about-fred')}}">About Fred</a></li>
-                                    <li><a class="dropdown-item mb-2" href="{{route('about.ed-message')}}">ED Message</a></li>
-                                    <li><a class="dropdown-item mb-2" href="{{route('about.team')}}">Our Team</a></li>
-                                    <li><a class="dropdown-item mb-2" href="{{route('about.quality-certification')}}">Quality Certification</a></li>
+                                    <li><a class="dropdown-item" href="{{route('about-fred')}}">About Fred</a></li>
+                                    <li><a class="dropdown-item" href="{{route('about.ed-message')}}">ED Message</a></li>
+                                    <li><a class="dropdown-item" href="{{route('about.team')}}">Our Team</a></li>
+                                    <li><a class="dropdown-item" href="{{route('about.quality-certification')}}">Quality Certification</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -61,11 +61,11 @@
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     @foreach ($categories as $category)
                                     <li class="dropdown-submenu">
-                                        <a class="dropdown-item dropdown mb-2" href="{{ route('products.index', ['category_id' => $category->id]) }}">{{ $category->name }}</a>
+                                        <a class="dropdown-item dropdown" href="{{ route('products.index', ['category_id' => $category->id]) }}">{{ $category->name }}</a>
                                         @if(count($category->products))
                                         <ul class="dropdown-menu">
                                             @foreach ($category->products as $product)
-                                            <li><a href="{{ route('products.show', $product) }}" class="dropdown-item mb-2">{{ $product->name }}</a></li>
+                                            <li><a href="{{ route('products.show', $product) }}" class="dropdown-item">{{ $product->name }}</a></li>
                                             @endforeach
                                         </ul>
                                         @endif

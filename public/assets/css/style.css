@@ -406,6 +406,7 @@ html {
 
 #header .main-menu .dropdown .dropdown-menu li a {
     display: block;
+    padding: 10px;
 }
 
 #header .main-menu .dropdown .dropdown-submenu {
