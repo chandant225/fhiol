@@ -64,6 +64,12 @@
                             </div>
 
                             <div class="form-group">
+                                <label>Subtitle</label>
+                                <input type="text" name="subtitle" class="form-control {{ invalid_class('subtitle') }}" value="{{ old('subtitle', $category->subtitle) }}">
+                                <x-invalid-feedback field="subtitle"></x-invalid-feedback>
+                            </div>
+
+                            <div class="form-group">
                                 <label class="required">Parent Category</label>
                                 <select name="parent_id" id="" class="custom-select parent-category-select {{ invalid_class('parent_id') }}">
                                     <option value="">Select Category</option>

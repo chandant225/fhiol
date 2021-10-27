@@ -9,7 +9,7 @@
         <div class="col-md-6">
             <div class="card-body py-3">
                 <h1 class="mt-md-4"><a class="category__title" href="{{ route('products.index', ['category_id' => $category->id]) }}">{{ $category->name }}</a></h1>
-                <p class="category__subtitle">SWISS MADE EDOF IOL</p>
+                <p class="category__subtitle">{{ $category->subtitle }}</p>
                 <div class="divider"></div>
                 <p class="card-text font-poppins short__description">{{ $category->description }}</p>
                 <div>
