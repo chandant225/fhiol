@@ -78,6 +78,12 @@ Route::name('backend.')->group(function () {
     // Testimonials
     Route::get('testimonials', 'TestimonialController@index')->name('testimonials.index');
 
+    Route::get('our-team', 'OurTeamController@index')->name('our-team.index');
+    Route::get('our-team/create', 'OurTeamController@create')->name('our-team.create');
+    Route::post('our-team', 'OurTeamController@store')->name('our-team.store');
+    Route::get('our-team/{ourTeam}/edit', 'OurTeamController@edit')->name('our-team.edit');
+    Route::put('our-team/{ourTeam}', 'OurTeamController@update')->name('our-team.update');
+
     // Popup
     Route::get('popups', 'PopupController@index')->name('popups.index');
     Route::post('popups', 'PopupController@store')->name('popups.store');

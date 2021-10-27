@@ -70,6 +70,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     @include('layouts.backend.codemirror-scripts')
     @livewireScripts
+    <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>
     <x-livewire-alert::scripts />
     @stack('scripts')
 </body>

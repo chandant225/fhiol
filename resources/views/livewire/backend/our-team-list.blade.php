@@ -6,9 +6,9 @@
         <button wire:click.prevsent="$set('sortMode', true)" class="btn btn-primary">Arrange Order</button>
         @endif
     </div>
-    <div class="row" wire:sortable="sortTestimonials">
-        @foreach ($testimonials as $testimonial)
-        <div class="col-md-4" @if($sortMode) wire:sortable.item="{{ $testimonial->id }}" wire:key="testimonial-{{ $testimonial->id }}" @endif>
+    <div class="row" wire:sortable="sortData">
+        @foreach ($ourTeams as $ourTeam)
+        <div class="col-md-4" @if($sortMode) wire:sortable.item="{{ $ourTeam->id }}" wire:key="testimonial-{{ $ourTeam->id }}" @endif>
             <div class="card my-3 rounded d-flex">
                 @if ($sortMode)
                 <div class="card-header">
@@ -18,26 +18,26 @@
                 @endif
                 <div class="card-body">
                     <p class="card-text">
-                        {{ $testimonial->content }}
+                        {{ $ourTeam->content }}
                     </p>
                     <div class="d-flex">
-                        <img class="mt-2" src="{{ $testimonial->clientPhotoUrl() }}" alt="{{ $testimonial->client_name }}" style="widht: 2rem; height: 2rem; border-radius: 2.5rem;">
+                        <img class="mt-2" src="{{ $ourTeam->photoUrl() }}" alt="{{ $ourTeam->name }}" style="widht: 2rem; height: 2rem; border-radius: 2.5rem;">
                         <div class="ml-4">
-                            <div style="font-size: .9rem; font-weight: 600; line-height: 1;">{{ $testimonial->client_name }}</div>
-                            <small class="font-italic">{{ $testimonial->client_title }}</small>
+                            <div style="font-size: .9rem; font-weight: 600; line-height: 1;">{{ $ourTeam->name }}</div>
+                            <small class="font-italic">{{ $ourTeam->designation }}</small>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button wire:click="$emit('editTestimonial', '{{ $testimonial->id }}')" class="btn btn-sm btn-success px-3">Edit</button>
-                    <button wire:click="$emit('deleteTestimonial', '{{ $testimonial->id }}')" onclick="confirm('Are you sure to delete?') || event.stopImmediatePropagation()" class="btn btn-sm btn-danger px-3">Del</button>
+                    <a href="{{ route('backend.our-team.edit', $ourTeam) }}" class="btn btn-sm btn-success px-3">Edit</a>
+                    <button wire:click="deleteRecord('{{ $ourTeam->id }}')" onclick="confirm('Are you sure to delete?') || event.stopImmediatePropagation()" class="btn btn-sm btn-danger px-3">Del</button>
                 </div>
             </div>
         </div>
         @endforeach
     </div>
 
-    @if (!count($testimonials))
+    @if (!count($ourTeams))
     @include('partials.no-content')
     @endif
 
