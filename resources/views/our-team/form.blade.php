@@ -54,6 +54,7 @@
                 @endif
                 <div class="align-self-center">
                     <input type="file" name="photo" class="{{ invalid_class('photo') }}" accept="image/*">
+                    <small class="form-text">Recommended dimensions: 400X400px or 1:1 aspect ratio.</small>
                     <x-invalid-feedback field="photo"></x-invalid-feedback>
                 </div>
             </div>
