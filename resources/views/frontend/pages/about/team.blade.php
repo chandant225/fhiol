@@ -21,7 +21,7 @@
                             <div class="col-md-3 col-sm-6">
                                 <div class="member align-items-center">
                                     <div class="row ">
-                                        <div class="pic col-md-3"><img src="https://www.webfulcreations.com/themes/eyecare/wp-content/uploads/sites/8/2017/01/doctor1-1.jpg" class="img-fluid" alt="">
+                                        <div class="pic col-md-3"><img src="{{ $ourTeam->photoUrl() }}" class="img-fluid" alt="">
                                         </div>
                                         <div class="member-info ">
                                             <h4 class="mt-3">{{ $ourTeam->name }}</h4>
