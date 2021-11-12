@@ -12,6 +12,7 @@
         "artesaos/seotools": "^0.20.1",
         "cviebrock/eloquent-taggable": "^7.0",
         "diglactic/laravel-breadcrumbs": "^6.1",
+        "doctrine/dbal": "^2.12.1",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "goldspecdigital/laravel-eloquent-uuid": "^7.0",

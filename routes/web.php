@@ -19,7 +19,7 @@ Route::view('about/quality-certification', 'frontend.pages.about.quality-certifi
 Route::view('publication/news', 'frontend.pages.publication.news')->name('publication.news');
 Route::view('publication/events', 'frontend.pages.publication.events')->name('publication.events');
 Route::view('publication/article', 'frontend.pages.publication.article')->name('publication.article');
-Route::view('publication/download', 'frontend.pages.publication.download')->name('publication.download');
+Route::get('publication/download', 'DownloadController@index')->name('publication.download');
 Route::view('publication/publicationdetails', 'frontend.pages.publication.publicationdetails')->name('publication.publicationdetails');
 
 //our excellence
