@@ -4,9 +4,12 @@ namespace App\Http\Livewire\Dashboard;
 
 use App\Post;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class RecentPostsTile extends Component
 {
+    use LivewireAlert;
+    
     public $readyToLoad = false;
 
     public function loadPosts()

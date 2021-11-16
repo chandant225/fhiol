@@ -4,9 +4,12 @@ namespace App\Http\Livewire\Frontend;
 
 use App\Subscriber;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class SubscriptionForm extends Component
 {
+    use LivewireAlert;
+    
     public $email;
 
     protected $rules = [

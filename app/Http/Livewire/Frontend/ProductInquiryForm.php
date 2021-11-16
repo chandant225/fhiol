@@ -6,9 +6,11 @@ use App\Product;
 use App\ProductInquiry;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class ProductInquiryForm extends Component
 {
+    use LivewireAlert;
     public Product $product;
 
     public $customerName;

@@ -4,9 +4,12 @@ namespace App\Http\Livewire\Backend;
 
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class ChangePassword extends Component
 {
+    use LivewireAlert;
+    
     public $password = [
         'old_password' => null,
         'password' => null,

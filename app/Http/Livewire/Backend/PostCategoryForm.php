@@ -5,9 +5,11 @@ namespace App\Http\Livewire\Backend;
 use App\PostCategory;
 use Illuminate\Support\Str;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class PostCategoryForm extends Component
 {
+    use LivewireAlert;
     public PostCategory $postCategory;
 
     protected $listeners = [

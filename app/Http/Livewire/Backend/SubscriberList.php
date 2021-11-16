@@ -4,9 +4,11 @@ namespace App\Http\Livewire\Backend;
 
 use App\Subscriber;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class SubscriberList extends Component
 {
+    use LivewireAlert;
     public $paginate = 15;
 
     public function trash(Subscriber $subscriber)

@@ -5,9 +5,12 @@ namespace App\Http\Livewire\Frontend;
 use App\ContactUs;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class ContactForm extends Component
 {
+    use LivewireAlert;
+    
     public $name;
     public $email;
     public $mobile;

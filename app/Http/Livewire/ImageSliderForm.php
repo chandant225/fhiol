@@ -8,10 +8,12 @@ use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Alert\Facades\Alert;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class ImageSliderForm extends Component
 {
     use WithFileUploads;
+    use LivewireAlert;
 
     public ImageSlider $imageSlider;
     public $imageUrl = null;

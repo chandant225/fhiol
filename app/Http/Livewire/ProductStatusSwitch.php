@@ -4,9 +4,12 @@ namespace App\Http\Livewire;
 
 use App\Product;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class ProductStatusSwitch extends Component
 {
+    use LivewireAlert;
+    
     public Product $product;
     public $status;
 

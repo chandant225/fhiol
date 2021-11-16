@@ -5,10 +5,12 @@ namespace App\Http\Livewire;
 use App\ContactUs;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class ContactUsList extends Component
 {
     use WithPagination;
+    use LivewireAlert;
 
     protected $paginationTheme = 'bootstrap';
     public $deleteId = null;

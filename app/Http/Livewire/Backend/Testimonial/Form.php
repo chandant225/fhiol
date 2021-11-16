@@ -5,10 +5,12 @@ namespace App\Http\Livewire\Backend\Testimonial;
 use App\Testimonial;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class Form extends Component
 {
     use WithFileUploads;
+    use LivewireAlert;
 
     public Testimonial $testimonial;
     public $photo;

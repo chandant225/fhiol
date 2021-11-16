@@ -5,10 +5,12 @@ namespace App\Http\Livewire\Backend\Catalogue;
 use App\Catalogue;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class Form extends Component
 {
     use WithFileUploads;
+    use LivewireAlert;
 
     public $updateMode = false;
     public Catalogue $catalogue;

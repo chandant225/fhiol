@@ -4,9 +4,12 @@ namespace App\Http\Livewire\Backend;
 
 use App\PostCategory;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class PostCategoryList extends Component
 {
+    use LivewireAlert;
+    
     protected $listeners = [
         'postCategoryUpdated' => 'postCategoryUpdated'
     ];

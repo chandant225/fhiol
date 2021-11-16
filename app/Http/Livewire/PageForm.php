@@ -6,10 +6,12 @@ use App\Page;
 use App\Service\ImageService;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class PageForm extends Component
 {
     use WithFileUploads;
+    use LivewireAlert;
 
     public $page;
     public $updateMode = false;

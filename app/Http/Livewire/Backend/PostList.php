@@ -7,10 +7,12 @@ use App\PostCategory;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class PostList extends Component
 {
     use WithPagination;
+    use LivewireAlert;
 
     public $paginate = 15;
     public $postCategories;

@@ -4,9 +4,12 @@ namespace App\Http\Livewire\Dashboard;
 
 use App\Page;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class RecentPagesTile extends Component
 {
+    use LivewireAlert;
+    
     public $readyToLoad = false;
 
     public function loadPosts()

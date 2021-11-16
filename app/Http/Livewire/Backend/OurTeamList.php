@@ -5,9 +5,11 @@ namespace App\Http\Livewire\Backend;
 use App\OurTeam;
 use App\Service\ImageService;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class OurTeamList extends Component
 {
+    use LivewireAlert;
     public $sortMode = false;
 
     public function render()

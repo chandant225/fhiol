@@ -5,9 +5,11 @@ namespace App\Http\Livewire\Backend\Testimonial;
 use App\Service\ImageService;
 use App\Testimonial;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class TestimonialList extends Component
 {
+    use LivewireAlert;
     public $sortMode = false;
 
     protected $listeners = [

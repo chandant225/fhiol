@@ -4,9 +4,11 @@ namespace App\Http\Livewire\Backend;
 
 use App\Category;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class CategorySwitch extends Component
 {
+    use LivewireAlert;
     public $category;
 
     public $status = true;
