@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "310fee46b11a96c879464b1fc7127496",
+    "content-hash": "4ae7451075170b26a2cc0e542c6b0743",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -1692,26 +1692,22 @@
         },
         {
             "name": "jantinnerezo/livewire-alert",
-            "version": "2.2.1",
+            "version": "2.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jantinnerezo/livewire-alert.git",
-                "reference": "3f955ecf2e1782fbad00fba8acad4489b2d9bad2"
+                "reference": "245c495c3a89e6a16096eb67bba7cac31bd94e6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jantinnerezo/livewire-alert/zipball/3f955ecf2e1782fbad00fba8acad4489b2d9bad2",
-                "reference": "3f955ecf2e1782fbad00fba8acad4489b2d9bad2",
+                "url": "https://api.github.com/repos/jantinnerezo/livewire-alert/zipball/245c495c3a89e6a16096eb67bba7cac31bd94e6d",
+                "reference": "245c495c3a89e6a16096eb67bba7cac31bd94e6d",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "^5.5 || ^6.0 || ^7.0 || ^8.0",
                 "livewire/livewire": "^2.0",
-                "php": "^7.4|^8.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^6.15",
-                "phpunit/phpunit": "^9.5"
+                "php": "^7.1|^7.2|^7.3|^7.4|^8.0"
             },
             "type": "library",
             "extra": {
@@ -1748,7 +1744,7 @@
             ],
             "support": {
                 "issues": "https://github.com/jantinnerezo/livewire-alert/issues",
-                "source": "https://github.com/jantinnerezo/livewire-alert/tree/2.2.1"
+                "source": "https://github.com/jantinnerezo/livewire-alert/tree/2.1.8"
             },
             "funding": [
                 {
@@ -1756,7 +1752,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-11-09T12:09:07+00:00"
+            "time": "2021-10-27T18:00:13+00:00"
         },
         {
             "name": "laravel/framework",
