@@ -141,4 +141,22 @@
         </div>
     </section>
 
+    @push('styles')
+    <link rel="stylesheet" href="/assets/intl-tel-input/css/intlTelInput.css">
+    <style>
+        .iti__flag {
+            background-image: url("/assets/intl-tel-input/img/flags.png");
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi) {
+            .iti__flag {
+                background-image: url("/assets/intl-tel-input/img/flags@2x.png");
+            }
+        }
+
+    </style>
+
+    @endpush
+   
 </x-app-layout>

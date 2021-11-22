@@ -22,8 +22,16 @@
         </div>
         <div class="mb-3">
             <label for="" class="required">Mobile</label>
-            <input type="text" wire:model.defer="mobile" class="form-control bg-light rounded-0 @error('mobile') is-invalid  @enderror">
-            <x-invalid-feedback field="mobile"></x-invalid-feedback>
+            <div wire:ignore>
+                <input type="text" id="mobile" class="form-control bg-light rounded-0 @error('mobile') is-invalid  @enderror">
+            </div>
+            @error('mobile')
+            <div style="margin-top: .25rem;
+                font-size: .875em;
+                color: #dc3545;">
+                {{ $message }}
+            </div>
+            @enderror
         </div>
         <div class="mb-3">
             <label class="required">Subject</label>
@@ -56,3 +64,25 @@
         </div>
     </form>
 </div>
+ @push('scripts')
+    <script src="assets/intl-tel-input/js/intlTelInput.js"></script>
+    <script>
+        document.addEventListener('livewire:load', function () {
+
+        var mobileInput = document.querySelector("#mobile");
+        window.intlTelInput(mobileInput, {
+            utilsScript: "/assets/intl-tel-input/js/utils.js",
+        });
+
+        var iti = window.intlTelInputGlobals.getInstance(mobileInput);
+        iti.setCountry("np");
+
+        mobileInput.addEventListener("change", function(event) {
+            let fullNum = iti.getNumber(intlTelInputUtils.numberFormat.E164);;
+            console.log(fullNum);
+            @this.mobile = fullNum;
+        });
+        });
+
+    </script>
+    @endpush
