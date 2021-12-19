@@ -3,8 +3,8 @@
         <div class="col-md-5">
             {{-- @dd($product) --}}
             @if($product->featuredImage)
-            {{-- <img class="card-img-top" src="{{ $product->featuredImage->imageUrl('thumb') }}" alt="{{ $product->name }}"> --}}
-            <img class="card-img-top" src="https://en.coneyecrystal.com.tw/upload/202107091412272.png" alt="{{ $product->name }}">
+            <img class="card-img-top" src="{{ $product->featuredImage->imageUrl('thumb') }}" alt="{{ $product->name }}">
+            {{-- <img class="card-img-top" src="https://en.coneyecrystal.com.tw/upload/202107091412272.png" alt="{{ $product->name }}"> --}}
             @else
             <img class="card-img-top" src="/assets/images/image-placeholder.png" alt="{{ $product->name }}">
             @endif
