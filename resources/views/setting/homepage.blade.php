@@ -185,7 +185,7 @@
                                         <div class="card-body">
                                             <div class="form-group">
                                                 <x-form.label>Title</x-form.label>
-                                                <x-fields.input name="hp_our_excellence_one_title" :value="old('hp_our_excellence_four_title', appSettings('hp_our_excellence_four_title'))" />
+                                                <x-fields.input name="hp_our_excellence_four_title" :value="old('hp_our_excellence_four_title', appSettings('hp_our_excellence_four_title'))" />
                                             </div>
                                             <div class="form-group">
                                                 <x-form.label>Icon</x-form.label>
