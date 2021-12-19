@@ -31,15 +31,15 @@
         <div class="container py-4">
             <blockquote class="slogan">
                 <p class="text-center">
-                    The Fred Hollows Intraocular lens Laboratory (FH
-                    IOL Lab), has been striving for excellence in
-                    intraocular lenses (IOLs) manufacturing and has
-                    been producing innovative and superior
-                    intraocular lens designs and supporting products
-                    since its inception in 1995. Initiated by The
-                    Fred Hollows Foundation in Australia, its
-                    products are sold to almost 30 countries around
-                    the world.
+                   As an integral part of Tilganga Institute of Ophthalmology, The
+                    Fred Hollows Intraocular Lens Laboratory is an internationally
+                    recognized manufacturing facility which produces high quality intraocular
+                    lenses that are sold not only in Nepal, but to various countries around
+                    the world. Commissioned in 1995 with funding from the Fred Hollows
+                    Foundation in Australia, and designed and constructed by engineers
+                    and technicians from New Zealand, Australia and Nepal, the laboratory
+                    guarantees the highest quality manufacturing facility and a finished
+                    product that matches world-class standards.
                 </p>
             </blockquote>
         </div>
