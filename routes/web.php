@@ -9,11 +9,14 @@ Auth::routes(['register' => false]);
 Route::get('backend/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('backend.logs');
 
 //about dropdown
-Route::view('about-fred', 'frontend.pages.about.about-fred')->name('about-fred');
+Route::view('about-fred', 'frontend.pages.about.about')->name('about-fred');
+// Route::view('about-fred', 'frontend.pages.about.about-fred')->name('about-fred');
 Route::view('about/ed-message', 'frontend.pages.about.ed-message')->name('about.ed-message');
 Route::view('about/team', 'frontend.pages.about.team')->name('about.team');
 Route::view('about/quality-certification', 'frontend.pages.about.quality-certification')->name('about.quality-certification');
 
+//gallery
+Route::view('gallery', 'frontend.pages.gallery.gallery')->name('gallery');
 
 //publication dropdown
 Route::view('publication/news', 'frontend.pages.publication.news')->name('publication.news');

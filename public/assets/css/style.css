@@ -20,14 +20,7 @@ h5 {
 # Breadcrumbs
 --------------------------------------------------------------*/
 .breadcrumbs {
-    background: -webkit-gradient(
-            linear,
-            left top,
-            left bottom,
-            from(rgba(0, 0, 0, 0.6)),
-            to(rgba(40, 58, 90, 0.6))
-        ),
-        url("/theme/img/banner/banner03.jpg") fixed center center;
+    background:#CDDFE1;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(40, 58, 90, 0.6)),
         url("/theme/img/banner/banner03.jpg") fixed center center;
     background-size: cover;
@@ -39,7 +32,7 @@ h5 {
 .breadcrumbs h2 {
     font-size: 28px;
     font-weight: 600;
-    color: white !important;
+    color: white;
 }
 
 .breadcrumbs a {
@@ -2964,4 +2957,23 @@ a.link-unstyled {
 }
 a.link-unstyled:hover {
     text-decoration: underline;
+}
+
+/* =============Dec 19========= */
+.popup-gallery{
+    display: grid;
+    gap:1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px ,1fr));
+    grid-template-rows: max-content;
+}
+
+.popup-gallery a {
+    min-height: 17rem;
+    display:block;
+}
+.popup-gallery a img{
+    max-width:250px;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }

@@ -44,7 +44,7 @@
                                 <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link " href="#" id="navbarDropdown" data-hover="dropdown">
+                                <a class="nav-link " href="javascript:" id="navbarDropdown" data-hover="dropdown">
                                     About Us
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

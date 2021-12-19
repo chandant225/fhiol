@@ -11,7 +11,7 @@
                 <h2>Quality Certification</h2>
             </div>
         </section><!-- End Breadcrumbs -->
-        
+
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-12 quality-img">
@@ -55,11 +55,34 @@
             <div class="title-left">
                 <h4>Certification</h4>
             </div>
-            <div class="row ">
-                <div class="col-md-4 mt-4"><a href=""><img src="http://www.omnilens.in/wp-content/uploads/2017/11/217392-2017-CE-IND-NA-PS.jpg" alt=""></a></div>
-                <div class="col-md-4 mt-4 certificate-img"><a href=""><img src="http://www.omnilens.in/wp-content/uploads/2017/11/217392-2017-CE-IND-NA-PS.jpg" alt=""></a></div>
-                <div class="col-md-4 mt-4"><a href=""><img src="http://www.omnilens.in/wp-content/uploads/2017/11/217392-2017-CE-IND-NA-PS.jpg" alt=""></a></div>
-            </div>
+           <div class="popup-gallery">
+               <a href="/theme/img/certifcates/fhiol-certificate.jpg">
+                   <img src="/theme/img/certifcates/fhiol-certificate.jpg" alt="">
+               </a>
+           </div>
         </div>
     </section>
+    @push('scripts')
+    <script>
+$(document).ready(function() {
+	$('.popup-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-fade',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			// titleSrc: function(item) {
+			// 	return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+			// }
+		}
+	});
+});
+    </script>
+    @endpush
 </x-app-layout>
