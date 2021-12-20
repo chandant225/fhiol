@@ -31,7 +31,7 @@
         <div class="container py-4">
             <blockquote class="slogan">
                 <p class="text-center">
-                   As an integral part of Tilganga Institute of Ophthalmology, The
+                   As an integral part of <a target="blanc" class=" text-decoration-none" style="color:#dd6310" href="https://tilganga.org">Tilganga Institute of Ophthalmology</a> The
                     Fred Hollows Intraocular Lens Laboratory is an internationally
                     recognized manufacturing facility which produces high quality intraocular
                     lenses that are sold not only in Nepal, but to various countries around

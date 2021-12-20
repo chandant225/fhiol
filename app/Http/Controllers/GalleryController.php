@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class GalleryController extends Controller
 {
     function index(){
-        $galleries=Gallery::latest()->get();
+        $galleries=Gallery::orderBy('order','desc')->get();
         return view('frontend.pages.gallery.gallery',compact('galleries'));
     }
 }

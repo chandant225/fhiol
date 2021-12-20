@@ -16,7 +16,6 @@
                 @foreach($galleries as $gallery)
                     <a
                         href="{{ $gallery->image_url }}"
-                        title="The Cleaner"
                         ><img
                             src="{{ $gallery->image_url }}"
                             width="250"
