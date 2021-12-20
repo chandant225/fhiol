@@ -42,7 +42,7 @@ Route::name('backend.')->group(function () {
 
     Route::get('contact-us', 'ContactUsController@index')->name('contact-us.index');
     Route::get('subscribers', 'SubscriberController@index')->name('subscribers.index');
-    
+
     // Stores
     // Route::get('stores', 'StoreController@index')->name('stores.index');
     // Route::get('stores/create', 'StoreController@create')->name('stores.create');
@@ -71,7 +71,7 @@ Route::name('backend.')->group(function () {
     Route::get('videos', 'VideoController@index')->name('videos.index');
     Route::get('videos/create', 'VideoController@create')->name('videos.create');
     Route::post('videos', 'VideoController@store')->name('videos.store');
-    Route::get('videos/{video}/edit', 'VideoController@edit')->name('videos.edit'); 
+    Route::get('videos/{video}/edit', 'VideoController@edit')->name('videos.edit');
     Route::put('videos/{video}', 'VideoController@update')->name('videos.update');
     Route::delete('videos/{video}', 'VideoController@destroy')->name('videos.destroy');
 
@@ -87,6 +87,9 @@ Route::name('backend.')->group(function () {
     // Popup
     Route::get('popups', 'PopupController@index')->name('popups.index');
     Route::post('popups', 'PopupController@store')->name('popups.store');
+
+    //gallery
+    Route::view('gallery','gallery.index')->name('gallery');
 
     Route::group(['namespace' => 'Setting'], function () {
         Route::get('settings/general', 'GeneralSettingController@index')->name('settings.general.index');

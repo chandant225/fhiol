@@ -3,7 +3,7 @@
     <section id="breadcrumbs" class="breadcrumbs">
         <div class="container">
             <ol>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li>
                 <li>Gallery</li>
             </ol>
             <h2>Gallery</h2>
@@ -13,62 +13,17 @@
     <section class="my-5">
         <div class="container">
             <div class="popup-gallery">
-                <a
-                    href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg""
-                    title="The Cleaner"
-                    ><img
-                        src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg"
-                        width="250"
-                        height="250"
-                /></a>
-                <a
-                    href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg""
-                    title="Winter Dance"
-                    ><img
-                        src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg"
-                        width="250"
-                        height="250"
-                /></a>
-                <a
-                    href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg"
-                    title="The Uninvited Guest"
-                    ><img
-                        src="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg"
-                        width="250"
-                        height="250"
-                /></a>
-                <a
-                    href="http://farm9.staticflickr.com/8383/85634250581_df05e9906d_b.jpg"
-                    title="Oh no, not again!"
-                    ><img
-                        src="http://farm9.staticflickr.com/8383/85634250581_df05e9906d_s.jpg"
-                        width="250"
-                        height="250"
-                /></a>
-                <a
-                    href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg"
-                    title="Swan Lake"
-                    ><img
-                        src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg"
-                        width="250"
-                        height="250"
-                /></a>
-                <a
-                    href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg"
-                    title="The Shake"
-                    ><img
-                        src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg"
-                        width="250"
-                        height="250"
-                /></a>
-                <a
-                    href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg"
-                    title="Who's that, mommy?"
-                    ><img
-                        src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg"
-                        width="250"
-                        height="250"
-                /></a>
+                @foreach($galleries as $gallery)
+                    <a
+                        href="{{ $gallery->image_url }}"
+                        title="The Cleaner"
+                        ><img
+                            src="{{ $gallery->image_url }}"
+                            width="250"
+                            height="250"
+                    /></a>
+                @endforeach
+
             </div>
         </div>
     </section>

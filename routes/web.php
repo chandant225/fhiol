@@ -17,6 +17,7 @@ Route::view('about/quality-certification', 'frontend.pages.about.quality-certifi
 
 //gallery
 Route::view('gallery', 'frontend.pages.gallery.gallery')->name('gallery.index');
+Route::get('gallery','GalleryController@index')->name('gallery.index');
 
 //publication dropdown
 Route::view('publication/news', 'frontend.pages.publication.news')->name('publication.news');
