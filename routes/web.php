@@ -16,7 +16,7 @@ Route::view('about/team', 'frontend.pages.about.team')->name('about.team');
 Route::view('about/quality-certification', 'frontend.pages.about.quality-certification')->name('about.quality-certification');
 
 //gallery
-Route::view('gallery', 'frontend.pages.gallery.gallery')->name('gallery');
+Route::view('gallery', 'frontend.pages.gallery.gallery')->name('gallery.index');
 
 //publication dropdown
 Route::view('publication/news', 'frontend.pages.publication.news')->name('publication.news');

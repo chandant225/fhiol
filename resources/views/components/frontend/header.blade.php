@@ -84,7 +84,10 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ route('contact-us.index') }}">Contact Us</a>
+                                <a class="nav-link" aria-current="page" href="{{ route('gallery.index') }}">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="{{ route('contact-us.index') }}">Contact Us</a>
                             </li>
                             <li class="nav-item">
                                 <div class="nav-link searchMenu">
