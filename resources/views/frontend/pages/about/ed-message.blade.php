@@ -16,11 +16,11 @@
         </div>
     </section><!-- End Breadcrumbs -->
 
-    
+
     <div class="container">
         <div class="row ">
             <div class="col-md-6  ">
-                <img src="/theme/img/banner/banner01.jpg" alt="" width="100%" height="90%" alt="about img">
+                <img src="/theme/img/Sanduk-Ruit-Glocal-Khabar.jpg" alt="" width="100%" height="90%" alt="about img">
             </div>
             <div class="col-md-6">
                 <p>
@@ -52,10 +52,9 @@
     </div>
 </section>
 <!-- About Hollows-end -->
-    
+
         @push('scripts')
     <style></style>
     @endpush
-        
+
     </x-app-layout>
-    

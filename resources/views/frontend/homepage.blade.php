@@ -106,7 +106,7 @@
                 <div class="col-md-3 mb-3">
                     <div class="h-100" data-aos="fade-up" data-aos-duration="1000">
                         <div class="service-box h-100">
-                            <a href="{{ appSettings($key . 'link', '#') }}">
+                            <a href="javascript:">
                                 <div class="service-box-inner">
                                     <i>{!! appSettings($key . 'icon') !!}</i>
                                     <h5>{{ appSettings($key . 'title') }}</h5>
@@ -136,7 +136,7 @@
                     <div class="owl-carousel owl-theme testimonial-slider">
                         @foreach($testimonials as $testimonial)
                         <div class="card">
-                            <div class="content py-5 px-3 text-center mb-4">
+                            <div class="content pt-4 pb-2 px-3 text-center mb-4">
                                 <p>
                                     {!! $testimonial->content !!}
                                 </p>
@@ -162,7 +162,6 @@
             <div class="title-right">
                 <h4>Recent News And Events</h4>
             </div>
-
             <div class="row">
                 @foreach ($newsAndUpdates as $post)
                 <div class="col-md-4">
@@ -182,6 +181,7 @@
                 </div>
                 @endforeach
             </div>
+            <a href="/publications/news-and-notices" class="btn btn-theme-primary btn-md d-block mx-auto mt-4" style="width:200px">See All</a>
         </div>
     </section>
     <!-- News and Events-end -->

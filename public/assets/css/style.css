@@ -20,7 +20,7 @@ h5 {
 # Breadcrumbs
 --------------------------------------------------------------*/
 .breadcrumbs {
-    background:#CDDFE1;
+    background: #cddfe1;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(40, 58, 90, 0.6)),
         url("/theme/img/banner/banner03.jpg") fixed center center;
     background-size: cover;
@@ -317,6 +317,7 @@ html {
     font-size: 14px;
     position: relative;
     font-weight: 500;
+    white-space: nowrap;
 }
 
 #header .main-menu ul li a::before,
@@ -543,21 +544,21 @@ blockquote.slogan {
     margin: 1.5em 10px;
     padding: 2.5em 20px;
     quotes: "\201C""\201D""\2018""\2019";
-  }
-  blockquote.slogan:before {
+}
+blockquote.slogan:before {
     color: #dd6310;
     content: open-quote;
     font-size: 4em;
     line-height: 0.1em;
     margin-right: 0.25em;
     vertical-align: -0.4em;
-  }
-  blockquote.slogan p {
+}
+blockquote.slogan p {
     display: inline-block;
     padding: 20px 10px;
     font-size: 18px;
-  }
-  /* About section homepage */
+}
+/* About section homepage */
 .about-hollows {
     margin: 0 0 80px 0;
 }
@@ -2549,58 +2550,54 @@ blockquote.slogan {
 }
 
 /* ======Search box================= */
-#header .searchMenu{
+#header .searchMenu {
     position: relative;
     cursor: pointer;
     z-index: 800;
-    padding: 5px 0 0 0 ;
+    padding: 5px 0 0 0;
 }
 #header .searchMenu i {
     font-size: 22px;
 }
 #header .main-menu .form {
-  height: auto;
+    height: auto;
     z-index: 999;
-  padding: 5px 0 0 0;
-  box-sizing: border-box;
-  position: absolute;
-  top:40px;
-  right: -100px;
-  width: 200px;
-  background: #fff;
-  box-shadow: 1px 1px 2px #222;
-  transition: all 0.5s ease;
-  transform: scale(0);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
+    padding: 5px 0 0 0;
+    box-sizing: border-box;
+    position: absolute;
+    top: 40px;
+    right: -50px;
+    width: 200px;
+    background: #fff;
+    box-shadow: 1px 1px 2px #222;
+    transition: all 0.5s ease;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
 }
 
 #header .main-menu .input {
-width:200px;
-height: 40px;
-  border: 0px;
-  background: transparent;
-  box-sizing: border-box;
-  border-bottom: 3px solid #E99A64;
-  outline: none;
-  padding: 0 20px 0px;
-  color: #222;
-  font-size: inherit;
-  display: block;
-
-
+    width: 200px;
+    height: 40px;
+    border: 0px;
+    background: transparent;
+    box-sizing: border-box;
+    border-bottom: 3px solid #e99a64;
+    outline: none;
+    padding: 0 20px 0px;
+    color: #222;
+    font-size: inherit;
+    display: block;
 }
 
-
-
 #header .main-menu .form.active {
-  transform: scale(1);
+    transform: scale(1);
 }
 /* @media screen and (max-width: 640px) {
 
@@ -2611,7 +2608,6 @@ height: 40px;
     width: 260px;
   }
 } */
-
 
 /* ================= 21 september End ================== */
 /* =================22 september ===================== */
@@ -2866,8 +2862,9 @@ carousel-inner > .item > img,
     background-repeat: no-repeat;
     background-position: center center;
 }
-.carousel-control-next, .carousel-control-prev{
-width: auto !important;
+.carousel-control-next,
+.carousel-control-prev {
+    width: auto !important;
 }
 .testimonial span {
     color: #fefefe;
@@ -2899,6 +2896,9 @@ width: auto !important;
 
 .testimonial-slider.owl-theme .owl-nav [class*="owl-"]:hover {
     background: unset !important;
+}
+.testimonial .card .content p {
+    min-height: 9.5em;
 }
 /*  */
 
@@ -2960,20 +2960,20 @@ a.link-unstyled:hover {
 }
 
 /* =============Dec 19========= */
-.popup-gallery{
+.popup-gallery {
     display: grid;
-    gap:1rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px ,1fr));
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-template-rows: max-content;
 }
 
 .popup-gallery a {
     min-height: 17rem;
-    display:block;
+    display: block;
 }
-.popup-gallery a img{
-    max-width:250px;
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.popup-gallery a img {
+    max-width: 250px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
