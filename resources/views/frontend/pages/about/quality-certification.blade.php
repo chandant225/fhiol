@@ -55,7 +55,7 @@
             <div class="title-left">
                 <h4>Certification</h4>
             </div>
-           <div class="popup-gallery">
+           <div class="popup-gallery text-center">
                <a href="/theme/img/certifcates/fhiol-certificate.jpg">
                    <img src="/theme/img/certifcates/fhiol-certificate.jpg" alt="">
                </a>
