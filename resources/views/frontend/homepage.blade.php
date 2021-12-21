@@ -175,7 +175,7 @@
                                 <h5 class="card-title post__title"><a class=" line-clamp-2" href="{{ route('posts.show', $post) }}">{{ $post->title }}</a></h5>
                                 <p class="card-text"><small class="text-muted">Published at {{ $post->created_at->format('d, M Y') }}</small></p>
                                 <p class="card-text line-clamp-3">{{ $post->seo_description }}</p>
-                                <a href="#" class="btn btn-theme-primary btn-sm stretched-link">View More</a>
+                                <a href="{{ route('posts.show',$post->slug) }}" class="btn btn-theme-primary btn-sm stretched-link">View More</a>
                             </div>
                         </div>
                     </div>
