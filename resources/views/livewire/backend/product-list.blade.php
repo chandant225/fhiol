@@ -47,6 +47,10 @@
                     <option value="50">50</option>
                     <option value="100">100</option>
                 </select> records per page
+                <div class="text-info mt-1 font-weight-bold text-center">
+                    <span wire:loading wire:target="sortProducts"><i class="fas fa-spin fa-spinner"></i> Sorting Products</span>
+                    <span wire:loading.remove wire:target="sortProducts">Drag and drop rows up/down to show the products on displayed order</span>
+                </div>
             </div>
             <table class="table">
                 <tr class="bg-light">
@@ -58,9 +62,9 @@
                     <td>Status</td>
                     <td></td>
                 </tr>
-                <tbody>
+                <tbody wire:sortable="sortProducts">
                     @forelse($products as $product)
-                    <tr>
+                    <tr wire:sortable.item="{{ $product->id }}" wire:key={{ $product->id }}>
                         <td>
                             @if($product->featuredImage)
                             <img src="{{ $product->featuredImage->imageUrl() }}" alt="{{ $product->name }}" style="height: 40px; width: auto;">

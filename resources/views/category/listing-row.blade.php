@@ -1,4 +1,4 @@
-<tr>
+<div>
     <td>
         @if($level == 1) @endif
         @if($level == 2) &nbsp; - - @endif
@@ -16,4 +16,4 @@
             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
         </form>
     </td>
-</tr>
+</div>

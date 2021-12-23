@@ -38,7 +38,11 @@ class ProductController extends Controller
         // return $request;
         DB::beginTransaction();
         try {
-            $product = Product::create($request->validated());
+            $maxOrder = Product::max('order');
+
+            $product = Product::create($request->validated()+[
+                'order' => $maxOrder + 1,
+            ]);
 
             if ($request->hasFile('image')) {
                 $this->productImageService->create($product, $request->file('image'), $featured = true);

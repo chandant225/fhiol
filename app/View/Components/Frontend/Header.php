@@ -14,7 +14,7 @@ class Header extends Component
 
     public function render()
     {
-        $categories = Category::with('products')->whereNull('parent_id')->get();
+        $categories = Category::with('products')->orderBy('order','desc')->whereNull('parent_id')->get();
 
         return view('components.frontend.header', [
             'categories' => $categories
