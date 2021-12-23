@@ -15,11 +15,11 @@
             <div class="popup-gallery">
                 @foreach($galleries as $gallery)
                     <a
-                        href="{{ $gallery->thumbnail?$gallery->thumbnail_url:$gallery->image_url }}"
+                        href="{{ $gallery->image_url }}"
                         ><img
-                            src="{{ $gallery->image_url }}"
-                            width="250"
-                            height="250"
+                            src="{{ $gallery->thumbnail?$gallery->thumbnail_url:$gallery->image_url }}"
+                            width="200"
+                            height="200"
                     /></a>
                 @endforeach
 
