@@ -108,7 +108,7 @@
                         <div class="service-box h-100">
                             <a href="javascript:">
                                 <div class="service-box-inner">
-                                    <i>{!! appSettings($key . 'icon') !!}</i>
+                                    {!! appSettings($key . 'icon') !!}
                                     <h5>{{ appSettings($key . 'title') }}</h5>
                                     <br />
                                     <p>

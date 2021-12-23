@@ -3,9 +3,11 @@
 namespace App\Http\Livewire\Backend;
 
 use App\Gallery;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Intervention\Image\Facades\Image;
 
 
 class ManageGallery extends Component
@@ -29,6 +31,13 @@ class ManageGallery extends Component
         foreach($this->images as $image){
                 // save image
                 $gallery['image_path'] = $image->store('gallery_images');
+                $thumbnailName='gallery_images/thumbnail/'. time().'.'. $image->getClientOriginalExtension();
+                $img=Image::make($image->getRealPath())->fit(200,200);
+                $img->stream();
+                Storage::disk('public')->put($thumbnailName,$img);
+                $gallery['thumbnail'] = $thumbnailName;
+
+
                 $gallery['order']=$maxOrder+1;
                 $maxOrder++;
                 Gallery::create($gallery);
