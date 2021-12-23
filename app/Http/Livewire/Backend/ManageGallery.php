@@ -28,10 +28,12 @@ class ManageGallery extends Component
         ]);
         //get max order
         $maxOrder=Gallery::max('order');
+        $imageNum=1;
         foreach($this->images as $image){
                 // save image
                 $gallery['image_path'] = $image->store('gallery_images');
-                $thumbnailName='gallery_images/thumbnail/'. time().'.'. $image->getClientOriginalExtension();
+                $thumbnailName='gallery_images/thumbnail/'. $imageNum. time().'.'. $image->getClientOriginalExtension();
+                $imageNum++;
                 $img=Image::make($image->getRealPath())->fit(200,200);
                 $img->stream();
                 Storage::disk('public')->put($thumbnailName,$img);
