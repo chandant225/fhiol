@@ -23,6 +23,8 @@ class ManageGallery extends Component
 
 
     function store(){
+        ini_set("memory_limit","256M");
+        ini_set("max_execution_time", "300");
         $this->validate([
             'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ]);
