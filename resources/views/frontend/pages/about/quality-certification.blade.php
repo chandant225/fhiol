@@ -56,8 +56,9 @@
                 <h4>Certification</h4>
             </div>
            <div class="popup-gallery text-center">
-               <a href="/theme/img/certifcates/fhiol-certificate.jpg">
+               <a href="/theme/img/certifcates/fhiol-certificate.jpg" style="text-decoration:none">
                    <img src="/theme/img/certifcates/fhiol-certificate.jpg" alt="">
+                   <h5 style="background: #333;padding: 10px 0;color:#eee;font-weight:700">Image Name</h5>
                </a>
            </div>
         </div>
