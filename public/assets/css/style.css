@@ -833,7 +833,7 @@ blockquote.slogan p {
     content: '\f078';
     position: absolute;
     color:#888;
-    bottom:-15px;
+    bottom:-35px;
     right: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
@@ -850,6 +850,7 @@ blockquote.slogan p {
 .service .service-box:hover {
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px);
+    display: inline-block;
 }
 
 .service .service-box:hover span {
@@ -858,8 +859,8 @@ blockquote.slogan p {
 }
 
 .service .service-box .service-box-inner {
-      -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+      -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
       padding: 30px 15px;
       text-align: center;
       max-height:15em;
@@ -903,7 +904,7 @@ blockquote.slogan p {
 .service .service-box .service-box-inner p::after{
     content: "...";
     position: absolute;
-    right:-12px;
+    right:0;
     bottom:4px;
 }
 .service small.more-icon svg{
@@ -917,7 +918,7 @@ blockquote.slogan p {
     -o-transition: 0.5s ease-in-out;
 }
 .service .service-box:hover .service-box-inner{
-    max-height: auto;
+    max-height: max-content;
     overflow: visible;
     transition: 0.5s max-height ease-in-out;
     -webkit-transition: 0.5s max-height ease-in-out;
