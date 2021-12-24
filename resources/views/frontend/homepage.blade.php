@@ -115,7 +115,6 @@
                                         {{ appSettings($key . 'desc') }}
 
         </p>
-
                                 </div>
                             </a>
                         </div>
