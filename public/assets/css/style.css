@@ -859,17 +859,17 @@ blockquote.slogan p {
 }
 
 .service .service-box .service-box-inner {
-      -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      -webkit-box-shadow:rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
       padding: 30px 15px;
       text-align: center;
       max-height:15em;
       overflow: hidden;
-      transition:1s  ease-out;
-      -webkit-transition:1s  ease-out;
-      -moz-transition:1s  ease-out;
-      -ms-transition:1s  ease-out;
-      -o-transition:1s  ease-out;
+      transition:1s ease-out;
+      -webkit-transition:1s ease-out;
+      -moz-transition:1s ease-out;
+      -ms-transition:1s ease-out;
+      -o-transition:1s ease-out;
       z-index:10;
       border-radius: 5px;
       background: #fff;
@@ -920,11 +920,11 @@ blockquote.slogan p {
 .service .service-box:hover .service-box-inner{
     max-height: max-content;
     overflow: visible;
-    transition: 0.5s max-height ease-in-out;
-    -webkit-transition: 0.5s max-height ease-in-out;
-    -moz-transition: 0.5s max-height ease-in-out;
-    -ms-transition: 0.5s max-height ease-in-out;
-    -o-transition: 0.5s max-height ease-in-out;
+    transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    -ms-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
 }
 .service .service-box:hover:after,.service .service-box:hover p:after{
     display: none;
