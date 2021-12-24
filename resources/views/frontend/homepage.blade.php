@@ -105,15 +105,17 @@
                 @foreach ($programKeys as $key)
                 <div class="col-md-3 mb-3">
                     <div class="h-100" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="service-box h-100">
+                        <div class="service-box">
                             <a href="javascript:">
                                 <div class="service-box-inner">
                                     <i>{!! appSettings($key . 'icon') !!}</i>
                                     <h5>{{ appSettings($key . 'title') }}</h5>
                                     <br />
                                     <p>
-                                        {{ appSettings($key . 'desc') }}
-                                    </p>
+                                        <!-- {{ appSettings($key . 'desc') }} -->
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eveniet consectetur, ipsam earum aperiam voluptatem dolore tenetur minus? Delectus possimus fugit sit nulla adipisci, vitae praesentium inventore quae, assumenda deserunt itaque vero atque repudiandae autem. Quis dolor quibusdam expedita excepturi quae dicta quasi quod, exercitationem recusandae quam vero ab suscipit!
+        </p>
+
                                 </div>
                             </a>
                         </div>

@@ -728,6 +728,9 @@ blockquote.slogan p {
 .team .member .pic img {
     -webkit-transition: ease-in-out 0.3s;
     transition: ease-in-out 0.3s;
+    width:155px;
+    height:155px;
+    object-fit: cover;
 }
 
 .team .member .member-info {
@@ -740,6 +743,7 @@ blockquote.slogan p {
     margin-bottom: 5px;
     font-size: 20px;
     color: rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
 }
 
 .team .member span {
@@ -748,6 +752,7 @@ blockquote.slogan p {
     padding-bottom: 10px;
     position: relative;
     font-weight: 500;
+    white-space: nowrap;
 }
 
 .team .member span::after {
@@ -822,13 +827,21 @@ blockquote.slogan p {
 }
 
 .service .service-box {
-    -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-    padding: 30px;
-    border-radius: 5px;
-    background: #fff;
-    -webkit-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
+    position: relative;
+}
+.service .service-box::after{
+    content: '\f078';
+    position: absolute;
+    color:#888;
+    bottom:-15px;
+    right: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    font-family: Fontawesome;
+    z-index: 100;
 }
 .service .service-box a {
     text-decoration: none;
@@ -845,7 +858,24 @@ blockquote.slogan p {
 }
 
 .service .service-box .service-box-inner {
-    text-align: center;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+      padding: 30px 15px;
+      text-align: center;
+      max-height:15em;
+      overflow: hidden;
+      transition:1s  ease-out;
+      -webkit-transition:1s  ease-out;
+      -moz-transition:1s  ease-out;
+      -ms-transition:1s  ease-out;
+      -o-transition:1s  ease-out;
+      z-index:10;
+      border-radius: 5px;
+      background: #fff;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
 }
 
 .service .service-box .service-box-inner span {
@@ -867,6 +897,36 @@ blockquote.slogan p {
     font-weight: 400;
     line-height: 1.8em;
     color: #888;
+    background:#fff;
+
+}
+.service .service-box .service-box-inner p::after{
+    content: "...";
+    position: absolute;
+    right:-12px;
+    bottom:4px;
+}
+.service small.more-icon svg{
+    color: #888;
+    width:30px;
+    height:30px;
+    transition: 0.5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+}
+.service .service-box:hover .service-box-inner{
+    max-height: auto;
+    overflow: visible;
+    transition: 0.5s max-height ease-in-out;
+    -webkit-transition: 0.5s max-height ease-in-out;
+    -moz-transition: 0.5s max-height ease-in-out;
+    -ms-transition: 0.5s max-height ease-in-out;
+    -o-transition: 0.5s max-height ease-in-out;
+}
+.service .service-box:hover:after,.service .service-box:hover p:after{
+    display: none;
 }
 
 .service .service-box .service-box-inner .phone-number {
@@ -2884,6 +2944,7 @@ carousel-inner > .item > img,
     height: 6rem;
     margin-left: auto;
     margin-right: auto;
+    object-fit: cover;
 }
 .testimonial .card {
     border-radius: 10px;

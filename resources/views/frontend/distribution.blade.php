@@ -16,7 +16,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-md-8">
                     <div class="title-right">
-                        <h4 style="color: #dd6310; line-height: 1.9;">Distributor Enquiry Form</h4>
+                        <h4 style="color: #dd6310; line-height: 1.9;">Enquiry Form</h4>
                     </div>
                     @if($errors->any())
                     <div class="alert alert-danger">
