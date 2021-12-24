@@ -8,6 +8,7 @@ Auth::routes(['register' => false]);
 
 Route::get('backend/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('backend.logs');
 
+
 //about dropdown
 Route::view('about-fred', 'frontend.pages.about.about')->name('about-fred');
 // Route::view('about-fred', 'frontend.pages.about.about-fred')->name('about-fred');

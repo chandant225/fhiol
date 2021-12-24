@@ -91,6 +91,9 @@ Route::name('backend.')->group(function () {
     //gallery
     Route::view('gallery','gallery.index')->name('gallery');
 
+    //Certifications
+    Route::view('certification','certification.index')->name('certification');
+
     Route::group(['namespace' => 'Setting'], function () {
         Route::get('settings/general', 'GeneralSettingController@index')->name('settings.general.index');
         Route::post('settings/general', 'GeneralSettingController@store')->name('settings.general.store');

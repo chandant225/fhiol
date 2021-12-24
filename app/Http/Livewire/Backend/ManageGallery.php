@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Backend;
 
 use App\Gallery;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -36,17 +37,21 @@ class ManageGallery extends Component
                 $gallery['image_path'] = $image->store('gallery_images');
                 $thumbnailName='gallery_images/thumbnail/'. $imageNum. time().'.'. $image->getClientOriginalExtension();
                 $imageNum++;
-                $img=Image::make($image->getRealPath())->fit(200,200);
-                $img->stream();
-                Storage::disk('public')->put($thumbnailName,$img);
-                $gallery['thumbnail'] = $thumbnailName;
+                try{
+                    $img=Image::make($image->getRealPath())->fit(200,200);
+
+                    Storage::disk('public')->put($thumbnailName,$img->encode('jpg',50));
+                    $gallery['thumbnail'] = $thumbnailName;
+                }catch(\Exception $e){
+                    Log::error($e->getMessage());
+                }
 
 
                 $gallery['order']=$maxOrder+1;
                 $maxOrder++;
                 Gallery::create($gallery);
         }
-        $this->render();
+        // $this->render();
         $this->images=null;
         $this->alert('success', 'Image successfully added !');
     }

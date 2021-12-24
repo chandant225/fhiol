@@ -241,6 +241,16 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('backend.certification') }}" class="nav-link {{ setActive('backend.certification*') }}">
+                    <span class="nav-icon svg-icon svg-baseline">
+                        <i class="far fa-file"></i>
+                    </span>
+                    <p>
+                        Certifications
+                    </p>
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a href="{{ route('backend.downloads.index') }}" class="nav-link {{ setActive('backend.downloads.*') }}">
