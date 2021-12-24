@@ -112,8 +112,8 @@
                                     <h5>{{ appSettings($key . 'title') }}</h5>
                                     <br />
                                     <p>
-                                        <!-- {{ appSettings($key . 'desc') }} -->
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eveniet consectetur, ipsam earum aperiam voluptatem dolore tenetur minus? Delectus possimus fugit sit nulla adipisci, vitae praesentium inventore quae, assumenda deserunt itaque vero atque repudiandae autem. Quis dolor quibusdam expedita excepturi quae dicta quasi quod, exercitationem recusandae quam vero ab suscipit!
+                                        {{ appSettings($key . 'desc') }}
+
         </p>
 
                                 </div>
