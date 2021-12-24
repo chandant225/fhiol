@@ -35,7 +35,8 @@ class ProductList extends Component
     {
         $products = Product::with(['category']);
         $products = $this->filter($products)
-            ->latest()
+            ->orderBy('category_id','desc')
+            ->orderBy('order','desc')
             ->paginate($this->paginate);
 
         return view('livewire.backend.product-list', [
@@ -73,5 +74,13 @@ class ProductList extends Component
     public function search()
     {
         //
+    }
+
+    function sortProducts($arr){
+        //get max order from $arr
+        $maxOrder=max($arr);
+        foreach($arr as $order){
+            Product::find($order['value'])->update(['order' => $maxOrder['order']-$order['order']]);
+        }
     }
 }

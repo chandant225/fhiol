@@ -19,8 +19,7 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $categories = Category::with('subCategories')->whereNull('parent_id')->orderBy('name')->get();
-        return view('category.index', compact('categories'));
+        return view('category.index');
     }
 
     public function create()
@@ -49,7 +48,7 @@ class CategoryController extends Controller
     public function update(CategoryRequest $request, Category $category)
     {
         $category->fill($request->validated());
-        
+
         if ($request->hasFile('image')) {
             $this->imageService->unlinkImage($category->getOriginal('image'));
             $category->image = $this->imageService->storeImage($request->file('image'));

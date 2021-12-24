@@ -3,9 +3,11 @@
 namespace App\Http\Livewire\Backend;
 
 use App\Gallery;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Intervention\Image\Facades\Image;
 
 
 class ManageGallery extends Component
@@ -21,14 +23,25 @@ class ManageGallery extends Component
 
 
     function store(){
+        ini_set("memory_limit","256M");
+        ini_set("max_execution_time", "300");
         $this->validate([
             'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ]);
         //get max order
         $maxOrder=Gallery::max('order');
+        $imageNum=1;
         foreach($this->images as $image){
                 // save image
                 $gallery['image_path'] = $image->store('gallery_images');
+                $thumbnailName='gallery_images/thumbnail/'. $imageNum. time().'.'. $image->getClientOriginalExtension();
+                $imageNum++;
+                $img=Image::make($image->getRealPath())->fit(200,200);
+                $img->stream();
+                Storage::disk('public')->put($thumbnailName,$img);
+                $gallery['thumbnail'] = $thumbnailName;
+
+
                 $gallery['order']=$maxOrder+1;
                 $maxOrder++;
                 Gallery::create($gallery);
