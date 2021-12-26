@@ -19,7 +19,6 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
     @include('layouts.backend.codemirror-styles')
     @livewireStyles
-    <script src="https://unpkg.com/@nextapps-be/livewire-sortablejs@0.1.1/dist/livewire-sortable.js"></script>
     @stack('styles')
     <style>
         body {
@@ -73,6 +72,8 @@
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>
     <x-livewire-alert::scripts />
+    <script src="https://unpkg.com/@nextapps-be/livewire-sortablejs@0.1.1/dist/livewire-sortable.js"></script>
+
     @stack('scripts')
 </body>
 </html>

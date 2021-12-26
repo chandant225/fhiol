@@ -56,10 +56,14 @@
                 <h4>Certification</h4>
             </div>
            <div class="popup-gallery text-center">
-               <a href="/theme/img/certifcates/fhiol-certificate.jpg" style="text-decoration:none">
-                   <img src="/theme/img/certifcates/fhiol-certificate.jpg" alt="">
-                   <h5 style="background: #333;padding: 10px 0;color:#eee;font-weight:700">Image Name</h5>
-               </a>
+               @forelse($certifications as $certification)
+                    <a href="{{ $certification->image_url }}" style="text-decoration:none" class="mb-5">
+                        <img  loading="lazy" src="{{ $certification->thumbnail_url }}" alt="{{ $certification->name }}">
+                        @if($certification->name)<h5 style="background: #333;padding: 10px 0;color:#eee;font-weight:700">{{$certification->name }}</h5> @endif
+                    </a>
+                @empty
+                    <div class="text-danger text-info font-weight-bold">No Certificates</div>
+                @endforelse
            </div>
         </div>
     </section>

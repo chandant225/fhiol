@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomepageController@index')->name('home');
@@ -14,7 +15,7 @@ Route::view('about-fred', 'frontend.pages.about.about')->name('about-fred');
 // Route::view('about-fred', 'frontend.pages.about.about-fred')->name('about-fred');
 Route::view('about/ed-message', 'frontend.pages.about.ed-message')->name('about.ed-message');
 Route::view('about/team', 'frontend.pages.about.team')->name('about.team');
-Route::view('about/quality-certification', 'frontend.pages.about.quality-certification')->name('about.quality-certification');
+Route::get('about/quality-certification', 'FrontendController@certificationPage')->name('about.quality-certification');
 
 //gallery
 Route::view('gallery', 'frontend.pages.gallery.gallery')->name('gallery.index');

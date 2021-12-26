@@ -16,10 +16,11 @@ class ManageCertification extends Component
     use WithFileUploads, LivewireAlert;
     public $image;
     public $certification;
+    public $editing=false;
+    public $iteration=0;
 
     protected $rules = [
         'certification.name' => 'required|string|max:255',
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
     ];
 
     function mount(Certification $certification){
@@ -33,13 +34,24 @@ class ManageCertification extends Component
         return view('livewire.backend.manage-certification',compact('certifications'));
     }
 
-    function edit($cert_id){
-        $this->certification = Certification::find($this->cert_id);
+    function editImage($cert_id){
+        $this->certification = Certification::find($cert_id);
+        $this->editing=true;
+    }
+
+    function update(){
+        $this->validate();
+        $this->certification->save();
+        $this->resetAll();
+        $this->alert('success', 'Certification updated successfully !');
     }
 
     function store(){
-        ini_set("memory_limit","1024M");
-        ini_set("max_execution_time", "300");
+        if($this->editing) {
+            $this->update();
+            return;
+        }
+        $this->rules['image'] = 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048';
         $this->validate();
                 //get max order
                 $maxOrder=Certification::max('order');
@@ -54,10 +66,16 @@ class ManageCertification extends Component
 
                 $this->certification->save();
 
+        $this->resetAll();
+        $this->alert('success', 'Certification added successfully !');
+    }
+
+    function resetAll(){
         $this->reset(['image']);
+        $this->iteration++;
+        $this->editing=false;
         $this->certification = new Certification();
         $this->render();
-        $this->alert('success', 'Image successfully added !');
     }
 
     function deleteImage($id){

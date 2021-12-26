@@ -12,17 +12,15 @@
     <!-- End Breadcrumbs -->
     <section class="my-5">
         <div class="container">
-            <div class="popup-gallery">
-                @foreach($galleries as $gallery)
-                    <a
-                        href="{{ $gallery->image_url }}"
-                        ><img
-                            src="{{ $gallery->thumbnail?$gallery->thumbnail_url:$gallery->image_url }}"
-                            width="200"
-                            height="200"
-                    /></a>
-                @endforeach
-
+            <div class="popup-gallery text-center certificate">
+                @forelse($galleries as $gallery)
+                     <a href="{{ $gallery->image_url }}" style="text-decoration:none" class="mb-5">
+                         <img  loading="lazy" src="{{ $gallery->thumbnail_url }}" alt="{{ $gallery->name }}">
+                         @if($gallery->name)<h5 style="background: #333;padding: 10px 0;color:#eee;font-weight:700">{{$gallery->name }}</h5>@endif
+                     </a>
+                 @empty
+                     <div class="text-danger text-info font-weight-bold">No Certificates</div>
+                 @endforelse
             </div>
         </div>
     </section>
