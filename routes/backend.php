@@ -94,6 +94,12 @@ Route::name('backend.')->group(function () {
     //Certifications
     Route::view('certification','certification.index')->name('certification');
 
+    //Newsletter
+    Route::resource('newsletter', 'NewsletterController');
+    Route::patch('newsletter/{newsletter}/restore', 'NewsletterController@restore')->name('newsletter.restore');
+    Route::delete('newsletter/{newsletter}/forceDelete', 'NewsletterController@forceDelete')->name('newsletter.forceDelete');
+
+
     Route::group(['namespace' => 'Setting'], function () {
         Route::get('settings/general', 'GeneralSettingController@index')->name('settings.general.index');
         Route::post('settings/general', 'GeneralSettingController@store')->name('settings.general.store');
