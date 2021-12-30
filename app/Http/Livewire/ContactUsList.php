@@ -17,7 +17,7 @@ class ContactUsList extends Component
 
     public function confirmDelete($deleteId)
     {
-        $this->deleteId = $deleteId;
+        $this->deleteId = (int)$deleteId;
     }
 
     public function delete()
