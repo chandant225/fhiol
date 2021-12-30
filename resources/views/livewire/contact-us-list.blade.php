@@ -31,11 +31,19 @@
                                 <button type="button" wire:click="markViewed('{{ $contactMessage->id }}')" class="btn btn-sm btn-primary mr-3" data-toggle="modal" data-target="#contactUsModal_{{ $contactMessage->id }}" title="View">
                                     <span><i class="fa fa-eye"></i></span>
                                 </button>
-                                <button class="btn btn-sm btn-danger mr-3" wire:click.prevent="confirmDelete('{{ $contactMessage->id }}')" title="Delete"><span><i class="fa fa-trash-alt"></i></span></button>
+                                <button  wire:key="delete{{ $contactMessage->id }}" class="btn btn-sm btn-danger mr-3" wire:loading.attr="disabled" wire:target="confirmDelete({{ $contactMessage->id }})" wire:click.prevent="confirmDelete('{{ $contactMessage->id }}')" title="Delete">
+                                    <span>
+                                        <i wire:loading.remove wire:target="confirmDelete({{ $contactMessage->id }})" class="fa fa-trash-alt"></i>
+                                        <i wire:loading wire:target="confirmDelete({{ $contactMessage->id }})" class="fas fa-spin fa-spinner"></i>
+                                    </span>
+                                </button>
                                 @endif
                                 @if($deleteId == $contactMessage->id)
-                                <button class="btn btn-sm btn-danger mr-3" wire:click.prevent="delete()">Confirm</button>
-                                <button class="btn btn-sm btn-success" wire:click.prevent="cancelDelete()">Cancel</button>
+                                <button type="button" wire:key="confirm{{ $contactMessage->id }}" class="btn btn-sm btn-danger mr-3" wire:click.prevent="deleteMsg" wire:loading.attr="disabled" wire:target="deleteMsg">
+                                    <span wire:loading.remove wire:target="deleteMsg">Confirm</span>
+                                    <i wire:loading wire:target="deleteMsg" class="fas fa-spin fa-spinner"></i>
+                                </button>
+                                <button   wire:key="cancel{{ $contactMessage->id }}" class="btn btn-sm btn-success" wire:click.prevent="cancelDelete" wire:loading.attr="disabled" wire:target="cancelDelete"><span wire:loading.remove wire:target="cancelDelete">Cancel</span> <i wire:loading wire:target="cancelDelete" class="fas fa-spin fa-spinner"></i></button>
                                 @endif
                             </div>
                         </td>

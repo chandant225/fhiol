@@ -20,7 +20,7 @@ class ContactUsList extends Component
         $this->deleteId = (int)$deleteId;
     }
 
-    public function delete()
+    public function deleteMsg()
     {
         ContactUs::whereId($this->deleteId)->delete();
         $this->alert('success', 'Record deleted successfully');
