@@ -121,6 +121,6 @@ if (!function_exists('get_uploads_url')) {
 if (!function_exists('notification_email_receiver')) {
     function notification_email_receiver()
     {
-        return 'jmsbhatta@gmail.com';
+        return 'sales@tilganga.org';
     }
 }
