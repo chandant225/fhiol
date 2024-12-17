@@ -20,7 +20,7 @@
         "intervention/image": "^2.5",
         "jamesbhatta/app-settings": "9999999-dev",
         "jantinnerezo/livewire-alert": "^2.1",
-        "laravel/framework": "^8.75", 
+        "laravel/framework": "^7.29", 
         "laravel/tinker": "^2.5",
         "laravel/ui": "^2.4",
         "livewire/livewire": "^2.4",
